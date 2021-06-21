@@ -11,7 +11,7 @@ import leftArr from "../../images/leftArr.svg";
 import Modal from "react-bootstrap/Modal";
 // import Button from "react-bootstrap/Button";
 import Button from "../../component/Button/Button";
-
+import InputText from "../../component/InputText/InputText";
 import "./style.less";
 
 import Swiper, {
@@ -287,6 +287,19 @@ const AboutUs = (props) => {
   const [jobDescInView, setJobDescInView] = useState("");
   const [jobApplyInView, setJobApplyInView] = useState("");
   const [loading, setloading] = useState(false);
+
+  const [name, setname] = useState("");
+  const [nameerr, setnameerr] = useState("");
+  const [emailId, setemailId] = useState("");
+  const [emailIderr, setemailIderr] = useState("");
+  const [whoareyou, setwhoareyou] = useState("");
+  const [whoareyouerr, setwhoareyouerr] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumbererr, setPhoneNumbererr] = useState("");
+  const [companyName, setcompanyName] = useState("");
+  const [subject, setsubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [messageerr, setMessageerr] = useState("");
 
   const handleDescClose = () => setDescShow(false);
   const handleApplyClose = () => setApplyShow(false);
@@ -866,7 +879,7 @@ const AboutUs = (props) => {
         </Modal.Header>
         <Modal.Body className="job-apply-body">
           <div className="job-apply-body-cont">
-            <form
+            {/* <form
               id="apply-form"
               action="http://13.233.110.14:8080/job-apply"
               enctype="multipart/form-data"
@@ -917,6 +930,85 @@ const AboutUs = (props) => {
                   Submit
                 </button>
               </div>
+            </form> */}
+            <form
+              id="apply-form"
+              action="http://13.233.110.14:8080/job-apply"
+              encType="multipart/form-data"
+              method="post"
+            >
+              <Row>
+                <input type="hidden" name="job_title" value={jobApplyInView} />
+                <Col lg={6}>
+                  <InputText
+                    value={name}
+                    onChange={(e) => setname(e.target.value)}
+                    name="name"
+                    title="Name"
+                  />
+                  <div className="err">{nameerr}</div>
+                </Col>
+                <Col lg={6}>
+                  <InputText
+                    value={emailId}
+                    onChange={(e) => setemailId(e.target.value)}
+                    name="email"
+                    title="Email ID*"
+                  />
+                  <div className="err">{emailIderr}</div>
+                </Col>
+
+                <Col lg={6}>
+                  <InputText
+                    value={phoneNumber}
+                    type="tel"
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    name="contact_number"
+                    title="Mobile Number*"
+                  />
+                  <div className="err">{phoneNumbererr}</div>
+                </Col>
+
+                <Col lg={6}>
+                  <InputText
+                    value={companyName}
+                    onChange={(e) => setcompanyName(e.target.value)}
+                    name="company_name"
+                    title="Company Name"
+                  />
+                </Col>
+
+                <Col lg={12}>
+                  <InputText
+                    value={subject}
+                    onChange={(e) => setsubject(e.target.value)}
+                    name="career_summary"
+                    title="Subject"
+                  />
+                </Col>
+
+                <Col lg={12}>
+                  <div className="resume">
+                    <p>Resume* (Upload docx file, pdf upto 1 mb only)</p>
+                    <label className="file">
+                      <input
+                        type="file"
+                        id="file"
+                        aria-label="File browser example"
+                        name="resume"
+                      />
+                      <span className="file-custom"></span>
+                    </label>
+                  </div>
+                </Col>
+                <Col lg={12}>
+                  <div className="submit">
+                    <button type="submit" onClick={handleApplySubmit}>
+                      Submit
+                    </button>
+                  </div>
+                </Col>
+              </Row>
             </form>
           </div>
         </Modal.Body>

@@ -41,6 +41,7 @@ const InputText = (props) => {
     <div className="user-input-wrp">
       <input
         type={props.type ? props.type : "text"}
+        name={props.name ? props.name : ""}
         maxLength={props.limit ? 100 : null}
         className="inputText"
         value={props.value}
