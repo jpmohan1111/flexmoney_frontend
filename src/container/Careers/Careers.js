@@ -9,7 +9,8 @@ import TitleItem from "../../component/TitleItem/TitleItem";
 import rightArr from "../../images/rightArr.svg";
 import leftArr from "../../images/leftArr.svg";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
+import Button from "../../component/Button/Button";
 
 import "./style.less";
 
@@ -285,6 +286,7 @@ const AboutUs = (props) => {
   const [jobDescriptions, setJobDescriptions] = useState([]);
   const [jobDescInView, setJobDescInView] = useState("");
   const [jobApplyInView, setJobApplyInView] = useState("");
+  const [loading, setloading] = useState(false);
 
   const handleDescClose = () => setDescShow(false);
   const handleApplyClose = () => setApplyShow(false);
@@ -544,9 +546,16 @@ const AboutUs = (props) => {
       <div key={i} className="opening">
         <div className="title">{item.title}</div>
         <div className="desc" onClick={() => handleDescShow(item.description)}>
-          Job description >
+          Job Description >
         </div>
-        <button onClick={() => handleApplyShow(item.title)}>Apply now</button>
+        {/* <button onClick={() => handleApplyShow(item.title)}>Apply now</button> */}
+        <div
+          className="btnContainer"
+          onClick={() => handleApplyShow(item.title)}
+        >
+          {/* <Button loading="false" title="Apply now" /> */}
+          <Button loading={loading} title="Apply now" />
+        </div>
       </div>
     );
   });
@@ -734,7 +743,7 @@ const AboutUs = (props) => {
         </Row>
       </section>
 
-      <section className="careersec5 wow fadeIn">
+      <section className="careersec6 wow fadeIn">
         <Row className="m-0 opening-head openings-container">
           <Col className="p-0 firstcol" lg={12}>
             <div className="working-title">Current Openings </div>
@@ -804,7 +813,7 @@ const AboutUs = (props) => {
               </h4>
               <input type="file" className="cv-file-input"></input>
               <p>Upload docx file, pdf upto 1 mb only</p>
-              <button>Submit</button>
+              <Button loading={loading} title="Submit" />
             </div>
           </div>
         </Row>

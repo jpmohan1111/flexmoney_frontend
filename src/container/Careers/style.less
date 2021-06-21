@@ -210,31 +210,21 @@
 
 .careersec5 {
   display: flex;
+
   justify-content: center;
   flex-wrap: wrap;
   padding-right: 6.25em;
-  .working-title {
-    font-size: 60px;
-  }
+
   .row {
     width: 100%;
   }
+
   .working-desc {
-    font-size: 25px;
-    margin-top: 15px;
-    img {
-      left: 35px;
-      width: 25px;
-      position: relative;
-    }
-    input {
-      width: 61%;
-      padding: 15px 40px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-      background-color: #ffffff;
-    }
+    font-size: 0.85rem;
+    color: #747474;
+  }
+  .working-title {
+    font-size: 60px;
   }
   .opening-head {
     text-align: center;
@@ -242,6 +232,16 @@
   .bullets {
     flex-wrap: nowrap;
     margin-top: 65px;
+    .working-title {
+      font-size: 1rem;
+      font-weight: 700;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: left;
+      color: #333;
+    }
     > div {
       display: flex;
       margin: 0px 45px;
@@ -278,74 +278,8 @@
         border-radius: 50%;
       }
     }
-    .working-title {
-      font-size: 1rem;
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.5;
-      letter-spacing: normal;
-      text-align: left;
-      color: #333333;
-    }
-    .working-desc {
-      font-size: 0.85rem;
-      color: #747474;
-    }
   }
-  .openings-cont {
-    width: 100%;
-    margin-top: 65px;
-    padding: 4%;
-    border-radius: 20px;
-    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
 
-    .opening {
-      position: relative;
-      padding-bottom: 40px;
-      padding-bottom: 20px;
-      border-bottom: solid 1px #c2c2c2;
-      button {
-        position: absolute;
-        top: 20px;
-        right: 0px;
-        width: 200px;
-        height: 65px;
-        border-radius: 100px;
-        background-color: #333333;
-        font-size: 18px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 2.44;
-        letter-spacing: normal;
-        text-align: center;
-        color: #ffffff;
-      }
-
-      .title {
-        font-size: 1.25rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.71;
-        letter-spacing: 0.63px;
-        text-align: left;
-        color: #0bb443;
-      }
-      .desc {
-        font-size: 1rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.8;
-        letter-spacing: 0.45px;
-        text-align: left;
-        color: #333333;
-        text-decoration: underline;
-      }
-    }
-  }
   .deskPadddingLeft();
   padding-bottom: 6em;
   padding-top: 4em;
@@ -448,6 +382,28 @@
   // }
 }
 
+.careersec6 {
+  .opening-head {
+    text-align: center;
+  }
+  .working-desc {
+    font-size: 25px;
+    margin-top: 15px;
+    img {
+      left: 35px;
+      width: 25px;
+      position: relative;
+    }
+    input {
+      width: 61%;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      background-color: #ffffff;
+    }
+  }
+}
 .careersec7 {
   padding: 0px 100px;
   .drop-cv-container {
@@ -530,6 +486,8 @@
         text-shadow: 1px 1px #fff;
         font-weight: 700;
         font-size: 10pt;
+        position: relative;
+        top: 10px;
       }
       .cv-file-input:hover::before {
         border-color: black;
@@ -539,6 +497,9 @@
       }
       .cv-file-input:active::before {
         background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+      }
+      .btn {
+        margin-top: 60px;
       }
       button {
         width: 200px;
@@ -592,6 +553,84 @@
     top: 0px;
     z-index: 9;
     clip-path: circle(60% at 81% 17%);
+  }
+
+  .careersec6 {
+    padding: 10em 15.25em 13em;
+    background: #f6f6f6;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 calc(100% - 5vw));
+    .working-title {
+      font-size: 60px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .working-title {
+      font-size: 1rem;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: center;
+      color: #333333;
+    }
+  }
+
+  .openings-cont {
+    width: 100%;
+    margin-top: 65px;
+    padding: 4%;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px 0 #00000029;
+
+    .opening {
+      position: relative;
+      padding: 20px 0px;
+      border-bottom: solid 1px #c2c2c2;
+      .btn {
+        position: absolute;
+        top: 20px;
+        right: 0px;
+
+        // width: 200px;
+        // height: 65px;
+        // border-radius: 100px;
+        // background-color: #333333;
+        // font-size: 18px;
+        // font-weight: normal;
+        // font-stretch: normal;
+        // font-style: normal;
+        // line-height: 2.44;
+        // letter-spacing: normal;
+        // text-align: center;
+        // color: #ffffff;
+      }
+
+      .title {
+        font-size: 1.85rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.71;
+        letter-spacing: 0.63px;
+        text-align: left;
+        color: #0bb443;
+      }
+      .desc {
+        font-size: 1rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: 0.45px;
+        text-align: left;
+        color: #333333;
+        font-family: sans-serif;
+        border-bottom: 1px solid #000;
+        width: fit-content;
+        margin-top: 15px;
+      }
+    }
   }
 }
 @media (max-width: 834px) {
@@ -775,40 +814,57 @@
       flex-direction: column;
     }
   }
+  .careersec6 {
+    .working-title {
+      font-size: 24px;
+      font-weight: 700;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: center;
+      color: #333;
+    }
+    .opening-head {
+      text-align: center;
+    }
+    .working-desc {
+      input {
+        width: 100%;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: 0.25px;
+        text-align: left;
+        color: #b3b3b3;
+      }
+    }
+  }
 }
 @media (max-width: 834px) {
-  .careersec5 {
+  .careersec6 {
+    padding: 0 1.5em;
+    .row {
+      margin: 0px;
+    }
     .openings-cont {
       width: 100%;
       margin-top: 65px;
       padding: 4%;
       border-radius: 20px;
-      box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+      box-shadow: 0 3px 6px 0 #00000029;
 
       .opening {
         position: relative;
         padding-bottom: 40px;
         padding-bottom: 20px;
         border-bottom: solid 1px #c2c2c2;
-        button {
+        .btn {
           position: absolute;
           top: 20px;
           right: 0px;
-          width: 130px;
-          height: 38px;
-          padding: 5px 26px;
-          border-radius: 100px;
-          background-color: #333333;
-          border-radius: 100px;
-          background-color: #333333;
-          font-size: 14px;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 1.57;
-          letter-spacing: 0.42px;
-          text-align: left;
-          color: #ffffff;
         }
 
         .title {
@@ -988,33 +1044,7 @@
     .row {
       width: 100%;
     }
-    .working-desc {
-      font-size: 25px;
-      margin-top: 5px;
-      img {
-        left: 25px;
-        width: 15px;
-        position: relative;
-      }
-      input {
-        width: 80%;
-        padding: 0px 40px;
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-        background-color: #ffffff;
-        font-size: 14px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 3;
-        letter-spacing: 0.25px;
-        color: #b3b3b3;
-      }
-    }
-    .opening-head {
-      text-align: center;
-    }
+
     .bullets {
       flex-wrap: nowrap;
       margin-top: 65px;
@@ -1089,6 +1119,34 @@
     }
     .bullets {
       flex-wrap: nowrap;
+    }
+  }
+  .careersec6 {
+    .working-desc {
+      font-size: 25px;
+      margin-top: 5px;
+      position: relative;
+      img {
+        left: 25px;
+        top: 15px;
+        width: 15px;
+        position: absolute;
+      }
+      input {
+        width: 100%;
+        padding: 0px 50px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        background-color: #ffffff;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 3;
+        letter-spacing: 0.25px;
+        color: #b3b3b3;
+      }
     }
   }
 }
