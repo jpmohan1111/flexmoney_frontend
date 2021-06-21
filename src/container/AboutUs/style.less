@@ -1,0 +1,586 @@
+@import url("../../common.less");
+
+.abtsec1 {
+  .deskPaddding();
+  //   height: 46.875em;
+  background-image: url("../../images/aboutus/bannerbg2560.png");
+  background-position: center;
+  background-size: cover;
+
+  .title {
+    .f90();
+    .t-c();
+    .fontbold();
+    color: #fff;
+  }
+
+  .desc {
+    .f30();
+    .t-c();
+    .fontreg();
+    padding-top: 0.7em;
+    .color(#FFFFFF);
+  }
+}
+
+.abtsec2 {
+  padding-left: 4.75em;
+  padding-right: 4.75em;
+
+  .abtsec3_swiper {
+    margin-left: 3.75em;
+    margin-right: 3.75em;
+  }
+
+  .left_arrow,
+  .right_arrow {
+    width: 3.313em;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .swiper-slide img {
+    opacity: 0.3;
+  }
+  .swiper-slide-active img {
+    opacity: 1;
+  }
+  .swiper-pagination {
+    position: relative;
+    padding-top: 3.125em;
+  }
+  .our_effect_img {
+    background-color: #ffffff;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #0dad46;
+    width: 50px;
+    border-radius: 7px;
+    //transition: 0.6s ease;
+  }
+  .swiper-pagination-bullet {
+    background: #0dad46;
+    width: 5px;
+    height: 5px;
+    opacity: 1;
+    // transition: 0.6s ease;
+    margin-right: 6px;
+  }
+
+  .swiper-slide {
+    img {
+      border-radius: 20px;
+    }
+  }
+
+  .title {
+    .f60();
+    .t-c();
+    .c3();
+    .fontbold();
+
+    width: 100%;
+    max-width: 89.87%;
+    margin: auto;
+    padding-top: 2em;
+
+    span {
+      .c0d();
+    }
+  }
+
+  .desc {
+    .f25();
+    padding-top: 1.348em;
+    .t-c();
+    margin: auto;
+    .c3();
+    .fontreg();
+
+    span {
+      .c0d();
+      text-decoration: underline;
+    }
+  }
+
+  .row {
+    padding-top: 5em;
+  }
+}
+
+.abtsec3 {
+  background-image: url("../../images/aboutus/teambg2560.png");
+  background-position: initial;
+  background-size: cover;
+  margin-top: 7.5em;
+  .ourTeamContainer {
+    .deskPadddingLeft();
+  }
+  .title {
+    .f60();
+    .fontbold();
+    .c3();
+    padding-top: 0.493em;
+  }
+
+  .ourteam_swiper {
+    padding-top: 8.838em;
+  }
+  .swiper-pagination {
+    position: relative;
+    padding-top: 4.375em;
+    padding-bottom: 4.669em;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #ffffff;
+    width: 50px;
+    border-radius: 7px;
+    //transition: 0.6s ease;
+  }
+  .swiper-pagination-bullet {
+    background: #ffffff;
+    width: 5px;
+    height: 5px;
+    opacity: 1;
+    //transition: 0.6s ease;
+    margin-right: 6px;
+  }
+}
+
+.abtsec4 {
+  background-color: #eeeeee;
+  position: relative;
+  overflow-x: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    border-left: 160em solid #fff;
+    border-left: 169em solid #fff;
+    border-top: 9.063em solid transparent;
+    bottom: 0;
+  }
+
+  .titleItem {
+    padding-top: 2.282em;
+  }
+
+  .investorContainer {
+    justify-content: center;
+    padding-bottom: 15.188em;
+  }
+
+  .line {
+    border-right: 1px solid #d8d5d5;
+    margin-left: 4.406em;
+    margin-right: 4.406em;
+    margin-top: 2em;
+  }
+
+  .inverstorItem {
+    width: 41.75em;
+    padding-top: 4.938em;
+
+    .imgcontainer {
+      background-color: white;
+      border-radius: 20px;
+      height: 14.5em;
+      padding-left: 3.438em;
+      padding-right: 3.438em;
+    }
+
+    .desc {
+      .f25();
+      .t-c();
+      .c3();
+      padding-top: 2.068em;
+    }
+  }
+}
+
+.abtsec5 {
+  .deskPadddingLeft();
+  padding-bottom: 6em;
+  padding-top: 4em;
+
+  .firstcol {
+    flex-direction: column;
+    padding-top: 3em !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left_arrow,
+  .right_arrow {
+    width: 3.313em;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .right_arrow {
+    margin-top: 1.563em;
+  }
+
+  .title {
+    .f60();
+    .fontbold();
+    .c3();
+  }
+
+  .desc {
+    .f20();
+    .fontreg();
+    .c3();
+    padding-top: 1.068em;
+    width: 100%;
+    max-width: 81.3%;
+  }
+
+  .swiper-slide {
+    padding-top: 3em;
+    min-height: 18em;
+  }
+
+  .swiper-pagination {
+    position: relative;
+    padding-top: 4.487em;
+  }
+  .our_effect_img {
+    background-color: #ffffff;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #333333;
+    width: 50px;
+    border-radius: 7px;
+    // transition: 0.6s ease;
+  }
+  .swiper-pagination-bullet {
+    background: #333333;
+    width: 5px;
+    opacity: 1;
+    //transition: 0.6s ease;
+    margin-right: 6px;
+    height: 5px;
+  }
+
+  // .topimg {
+  //   max-width: 19.5em;
+  // }
+
+  // .advisorItem {
+  //   width: 38.938em;
+  //   background-color: #0dad46;
+  //   border-radius: 1.25em;
+  //   border-top-left-radius: 0;
+  //   margin-top: -3px;
+  //   padding-left: 2.188em;
+  //   padding-right: 2.188em;
+
+  //   .itemTitle {
+  //     .f25();
+  //     color: #ffffff;
+  //     .fontbold();
+  //     padding-top: 2.56em;
+  //   }
+
+  //   .itemDesc {
+  //     .f25();
+  //     color: #ffffff;
+  //     .fontreg();
+  //     padding-top: 1.2em;
+  //     padding-bottom: 1.208em;
+  //   }
+
+  //   .hexagone {
+  //     position: absolute;
+  //     top: -4.781em;
+  //     right: 3.125em;
+  //     width: 11.063em;
+  //   }
+  // }
+}
+
+@media (width: 1024px) {
+  .abtsec1 {
+    background-image: url("../../images/aboutus/bannerbg1024.png");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 834px) {
+  .abtsec1 {
+    background-image: url("../../images/aboutus/bannerbg834.png");
+    background-position: center;
+    background-size: cover;
+    // .mbPadding();
+
+    .title {
+      .mf50();
+      padding-top: 1.16em;
+      padding-top: 0.5em;
+      .t-c();
+      .fontbold();
+      color: #fff;
+    }
+
+    .desc {
+      .mf18();
+      width: 100%;
+      max-width: 70.1%;
+      margin: auto;
+      padding-top: 1.181em;
+      .color(#FFFFFF);
+      padding-bottom: 2.688em;
+    }
+
+    .imageContainer {
+      margin-left: -1.5em;
+      margin-right: -1.5em;
+    }
+  }
+
+  .abtsec2 {
+    // .mbPadding();
+
+    .abtsec3_swiper {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .swiper-slide img {
+      border-radius: 15px;
+    }
+
+    .title {
+      .mf24();
+      width: 100%;
+      max-width: 100%;
+      margin: auto;
+      padding-top: 1.813em;
+    }
+
+    .desc {
+      .mf16();
+      padding-top: 1em;
+    }
+    .swiper-pagination-bullet {
+      height: 4px;
+    }
+    .swiper-pagination {
+      padding-top: 2.03em;
+    }
+
+    .row {
+      padding-top: 2.73em;
+    }
+  }
+
+  .abtsec3 {
+    background-image: url("../../images/aboutus/teambg834.png");
+    background-position: inherit;
+    background-size: cover;
+    margin-top: 4.8em;
+    .ourTeamContainer {
+      padding-left: 1.5em;
+    }
+    .title {
+      .mf24();
+
+      padding-top: 0.583em;
+    }
+
+    .ourteam_swiper {
+      padding-top: 8.838em;
+    }
+    .swiper-pagination {
+      position: relative;
+      padding-top: 4.375em;
+      padding-bottom: 4.669em;
+    }
+
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: #ffffff;
+      width: 50px;
+      border-radius: 7px;
+      //transition: 0.6s ease;
+    }
+    .swiper-pagination-bullet {
+      background: #ffffff;
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+      //transition: 0.6s ease;
+      margin-right: 6px;
+    }
+  }
+
+  .abtsec4 {
+    .titleItem {
+      padding-top: 1.8em;
+    }
+
+    .investorContainer {
+      justify-content: center;
+      padding-bottom: 12.188em;
+      .mbPadding();
+    }
+
+    .line {
+      border-right: 1px solid #d8d5d5;
+      margin-left: 4.406em;
+      margin-right: 4.406em;
+    }
+
+    .inverstorItem {
+      width: 41.75em;
+      padding-top: 1.938em;
+
+      .imgcontainer {
+        background-color: white;
+        border-radius: 15px;
+        height: 7.5em;
+        padding-left: 3.438em;
+        padding-right: 3.438em;
+      }
+
+      .desc {
+        .mf16();
+        padding-top: 1.469em;
+      }
+    }
+  }
+
+  .abtsec5 {
+    padding-left: 1.5em;
+    padding-bottom: 5em;
+    // margin-top: -3em;
+
+    .firstcol {
+      padding-top: 0 !important;
+    }
+
+    .title {
+      .mf24();
+      .t-c();
+    }
+
+    .desc {
+      .mf16();
+      .t-c();
+      margin: auto;
+      padding-top: 0.906em;
+      width: 100%;
+      max-width: 81.3%;
+    }
+
+    .swiper-slide {
+      padding-top: 3.6em;
+    }
+
+    .swiper-pagination {
+      position: relative;
+      padding-top: 2.84em;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .abtsec1 {
+    background-image: url("../../images/aboutus/bannerbg480.png");
+
+    .desc {
+      max-width: 100%;
+    }
+  }
+
+  .abtsec3 {
+    background-image: url("../../images/aboutus/teambg480.png");
+
+    .ourTeamContainer {
+      padding-left: 1.5em;
+    }
+    .title {
+      .mf24();
+
+      padding-top: 0.583em;
+    }
+
+    .ourteam_swiper {
+      padding-top: 5.6em;
+    }
+    .swiper-pagination {
+      position: relative;
+      padding-top: 2.84em;
+      // padding-bottom: 4.2em;
+      padding-bottom: 2.2em;
+    }
+
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: #ffffff;
+      width: 50px;
+      border-radius: 7px;
+      //transition: 0.6s ease;
+    }
+    .swiper-pagination-bullet {
+      background: #ffffff;
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+      //transition: 0.6s ease;
+      margin-right: 6px;
+    }
+  }
+  .abtsec4 {
+    .investorContainer {
+      flex-direction: column;
+    }
+
+    .line {
+      border-right: 1px solid #d8d5d5;
+      margin-left: 4.406em;
+      margin-right: 4.406em;
+      margin-top: 0;
+    }
+
+    .inverstorItem {
+      padding-left: 3em;
+      padding-right: 3em;
+      width: auto;
+      padding-top: 3.05em;
+
+      &:first-child {
+        padding-bottom: 3.05em;
+        padding-top: 2.4em;
+        border-bottom: 1px solid #d8d5d5;
+      }
+
+      .imgcontainer {
+        background-color: white;
+        border-radius: 15px;
+        height: 11em;
+        padding-left: 3.438em;
+        padding-right: 3.438em;
+      }
+
+      .desc {
+        .mf16();
+        padding-top: 1.469em;
+      }
+    }
+  }
+  .abtsec5 {
+    // .mbPadding();
+
+    .firstcol {
+      padding: 0 !important;
+    }
+
+    .desc {
+      max-width: 100%;
+    }
+  }
+}

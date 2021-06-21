@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504.5 505.96" style="">
+  <title>Asset 3</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <path d="M66.52,99.46c-15.46,0-30.91.07-46.36-.06-2.08,0-4.48.12-5.72,1.79a6.61,6.61,0,0,0-.88,4c-.1,19.75,0,39.49,0,59.24l.32,41.68.7,91,.69,89.37q.13,16.93.24,33.87c0,1.84.07,3.81,1.15,5.29,1.51,2.06,4.41,2.4,7,2.52,34.48,1.69,69.4.24,103.93.24H410.1c25.49,0,51-.12,76.46.12a4.32,4.32,0,0,0,1.89-.26c1.45-.65,1.76-2.54,1.85-4.13,1.43-23.21.22-46.54.22-69.77v-250s0-5-6-5-93-1-93-1" fill="none" stroke="#0dad46" stroke-linecap="round" stroke-miterlimit="10" stroke-width="27" class="VawEmSjG_0"></path>
+        <path d="M219,428.94c-8.11,22.87-17.17,46-34.5,63.52h142s-25-23-29-40c-1.82-7.76-3.11-15.66-4.56-23.5" fill="none" stroke="#0dad46" stroke-linecap="round" stroke-miterlimit="10" stroke-width="27" class="VawEmSjG_1"></path>
+        <path fill="none" stroke="#0dad46" stroke-linecap="round" stroke-miterlimit="10" stroke-width="27" d="M17.02,355.46L490.52,355.29" class="VawEmSjG_2"></path>
+        <path d="M227.52,36.46c-10.79-10.83-21.94-21.46-38-22.81-17.11-1.43-37.26,7.55-46.37,22.26-4.69,7.58-7.17,16.35-8.4,25.18-2.3,16.56,3.76,25.76,14,37.91q11.37,13.48,23.21,26.56C184.06,139,196.86,151.41,208.74,165c14.93,17.13,37.27,24.46,59.08,16,6.37-2.48,11.62-6.33,14.7-12.53" fill="none" stroke="#0dad46" stroke-linecap="round" stroke-miterlimit="10" stroke-width="27" class="VawEmSjG_3"></path>
+        <path d="M224.73,101.63c8.64-9.22,22.36-11.61,35-11.37,8.25.15,16.68,1.27,24,5.12,6.09,3.23,11.06,8.18,15.93,13.07l50.65,50.79c6.76,6.78,13.57,13.62,18.79,21.65,11.32,17.42,10.13,38.69-2.15,55.44-12.62,17.19-32.9,24.14-53.32,18.25-14.36-4.14-26.16-13.3-37.09-23.12" fill="none" stroke="#0dad46" stroke-linecap="round" stroke-miterlimit="10" stroke-width="29" class="VawEmSjG_4"></path>
+      </g>
+    </g>
+  </g>
+<style data-made-with="vivus-instant">.VawEmSjG_0{stroke-dasharray:1277 1279;stroke-dashoffset:1278;animation:VawEmSjG_draw 4000ms ease 0ms forwards;}.VawEmSjG_1{stroke-dasharray:289 291;stroke-dashoffset:290;animation:VawEmSjG_draw 4000ms ease 500ms forwards;}.VawEmSjG_2{stroke-dasharray:474 476;stroke-dashoffset:475;animation:VawEmSjG_draw 4000ms ease 1000ms forwards;}.VawEmSjG_3{stroke-dasharray:343 345;stroke-dashoffset:344;animation:VawEmSjG_draw 4000ms ease 1500ms forwards;}.VawEmSjG_4{stroke-dasharray:348 350;stroke-dashoffset:349;animation:VawEmSjG_draw 4000ms ease 2000ms forwards;}@keyframes VawEmSjG_draw{100%{stroke-dashoffset:0;}}@keyframes VawEmSjG_fade{0%{stroke-opacity:1;}96.07843137254902%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style></svg>

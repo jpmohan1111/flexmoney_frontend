@@ -1,0 +1,45 @@
+@import url("../../common.less");
+
+.teamItem {
+  .itemTitle {
+    .f25();
+    .fontbold();
+    color: #ffffff;
+    padding-top: 2.32em;
+    .t-c();
+  }
+  .itemdesc {
+    .f18();
+    .fontreg();
+    color: #ffffff;
+    padding-top: 0.833em;
+    .t-c();
+  }
+
+  img {
+    width: 20.75em;
+  }
+}
+
+@media (max-width: 834px) {
+  .teamItem {
+    .itemTitle {
+      .mf16();
+      padding-top: 0.969em;
+    }
+    .itemdesc {
+      .mf14();
+
+      color: #ffffff;
+      padding-top: 0.893em;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .teamItem {
+    img {
+      width: 12.5em;
+    }
+  }
+}

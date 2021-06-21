@@ -1,0 +1,35 @@
+@import url("../../common.less");
+.titleItem {
+  .f60();
+  .t-c();
+  color: #fff;
+  .fontbold();
+  line-height: normal;
+
+  span {
+    font-style: italic;
+    font-weight: 700;
+  }
+}
+
+.descItem {
+  .f25();
+  padding-top: 1.22em;
+  .t-c();
+  max-width: 39.52em;
+  margin: auto;
+  color: #fff;
+  .fontbold();
+}
+
+@media (max-width: 1023px) {
+  .titleItem {
+    .mf24();
+
+    span {
+    }
+  }
+  .descItem {
+    .mf16();
+  }
+}

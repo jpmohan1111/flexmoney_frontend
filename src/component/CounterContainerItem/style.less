@@ -1,0 +1,58 @@
+@import url("../../common.less");
+
+.counterContainer {
+  position: relative;
+  text-align: center;
+  img {
+    max-height: 11.714em;
+    position: relative;
+    left: 0;
+  }
+
+  .count {
+    position: absolute;
+    top: 0;
+    left: 0;
+    .f160();
+    .fontbold();
+    .c0d();
+    padding-left: 0.912em;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 1023px) {
+  .counterContainer {
+    width: 100%;
+    padding-top: 0;
+    .count {
+      .mf25();
+      padding-top: 0.36em;
+    }
+
+    .countertitle {
+      .mf13();
+    }
+  }
+}
+
+@media (max-width: 834px) {
+  .counterContainer {
+    justify-content: center;
+    align-items: center;
+
+    .count {
+      left: 0;
+      right: 0;
+
+      font-size: 6em;
+      padding-top: 0;
+    }
+
+    img {
+      max-height: 5.07em;
+      margin-top: 1em;
+      margin-left: -12em;
+    }
+  }
+}

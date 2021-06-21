@@ -1,0 +1,84 @@
+@import url("../../common.less");
+
+.marquee_strip_box {
+  background-color: #333333;
+  padding-top: 0.656em;
+  padding-bottom: 0.656em;
+  .announcementTxt {
+    .f18();
+    .fontreg();
+    color: white;
+    padding-left: 1.356em;
+  }
+
+  .animg {
+    width: 2.091em;
+  }
+
+  .weareproudTxt {
+    color: white;
+    .f18();
+    .fontreg();
+
+    a {
+      .c3b();
+      text-decoration: underline;
+    }
+  }
+
+  .cross {
+    position: absolute;
+    right: 20px;
+    top: auto;
+    bottom: auto;
+    cursor: pointer;
+    width: 1.375em;
+  }
+}
+
+@media (max-width: 1023px) {
+  .marquee_strip_box {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    background-color: #333333;
+    padding-top: 0.656em;
+    padding-bottom: 0.656em;
+    .announcementTxt {
+      .mf12();
+
+      .fontreg();
+      color: white;
+      padding-left: 0.833em;
+    }
+
+    .animg {
+      width: 1.432em;
+    }
+
+    .marquee_strip {
+      .mf12();
+      .fontreg();
+      margin-top: 4px;
+      color: #ffffff;
+    }
+    span {
+      color: white;
+      .fontreg();
+      padding-top: 3px;
+      a {
+        .c3b();
+        text-decoration: underline;
+      }
+    }
+
+    .cross {
+      position: relative;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      cursor: pointer;
+      margin-left: 1em;
+      width: 1.2em;
+    }
+  }
+}

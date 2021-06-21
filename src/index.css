@@ -1,0 +1,514 @@
+@font-face {
+  font-family: GothamBold;
+  src: url(fonts/GothamBold.eot);
+  src: url(fonts/GothamBold.eot?#iefix) format("embedded-opentype"),
+    url(fonts/GothamBold.woff2) format("woff2"),
+    url(fonts/GothamBold.woff) format("woff"),
+    url(fonts/GothamBold.ttf) format("truetype"),
+    url(fonts/GothamBold.svg) format("svg");
+}
+@font-face {
+  font-family: GothamBook;
+  src: url(fonts/Gotham-Book.eot);
+  src: url(fonts/Gotham-Book.eot?#iefix) format("embedded-opentype"),
+    url(fonts/Gotham-Book.woff2) format("woff2"),
+    url(fonts/Gotham-Book.woff) format("woff"),
+    url(fonts/Gotham-Book.ttf) format("truetype"),
+    url(fonts/Gotham-Book.svg) format("svg");
+}
+@font-face {
+  font-family: GothamMedium;
+  src: url(fonts/Gotham-Medium.eot);
+  src: url(fonts/Gotham-Medium.eot?#iefix) format("embedded-opentype"),
+    url(fonts/Gotham-Medium.woff2) format("woff2"),
+    url(fonts/Gotham-Medium.woff) format("woff"),
+    url(fonts/Gotham-Medium.ttf) format("truetype"),
+    url(fonts/Gotham-Medium.svg) format("svg");
+}
+
+body {
+  margin: 0;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* img {
+  vertical-align: text-bottom;
+} */
+
+img {
+  width: 100%; /* or max-width: 100%; */
+  height: auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* a:hover {
+  color: #0dad46 !important;
+} */
+
+.us-none {
+  user-select: none;
+}
+
+:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+button:focus {
+  outline: 0px dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+}
+
+[type="submit"],
+button,
+html [type="button"] {
+  -webkit-appearance: none;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: fit-content;
+  padding-top: 7.438em;
+  padding-left: 6.375em;
+}
+
+@media (min-width: 2560px) {
+  body {
+    font-size: 18px;
+  }
+
+  .my_container {
+    max-width: 1640px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 1921px) {
+  body {
+    font-size: 19px;
+  }
+
+  .my_container {
+    max-width: 1640px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1920px) {
+  body {
+    font-size: 16px;
+  }
+
+  .my_container {
+    max-width: 1640px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1919px) {
+  body {
+    font-size: 14px;
+  }
+
+  .my_container {
+    max-width: 1298px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1919px) {
+  body {
+    font-size: 12px;
+  }
+
+  .my_container {
+    max-width: 1298px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1700px) {
+  body {
+    font-size: 11.4px;
+  }
+
+  .my_container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (width: 1536px) and (height: 836px) {
+  body {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 1440px) {
+  body {
+    font-size: 11px;
+  }
+
+  .my_container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1366px) {
+  body {
+    font-size: 10px;
+  }
+
+  .my_container {
+    max-width: 1168px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1280px) {
+  body {
+    font-size: 10.5px;
+  }
+
+  .my_container {
+    max-width: 1094px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (width: 1280px) and (height: 720px) {
+  body {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1194px) {
+  body {
+    font-size: 10px;
+  }
+
+  .my_container {
+    max-width: 1019px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 9px;
+  }
+
+  .my_container {
+    max-width: 1019px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (width: 1180px) {
+}
+
+/* @media screen and (max-width: 1180px), screen and (max-height: 834px) {
+  body {
+    font-size: 9px;
+  }
+} */
+
+@media (max-width: 834px) {
+  body {
+    font-size: 11.5px;
+  }
+
+  .my_container {
+    max-width: 712px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 414px) {
+  body {
+    font-size: 9.5px;
+  }
+}
+
+@media (max-width: 370px) {
+  body {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 8.5px;
+  }
+}
+
+/* @media (min-width: 2560px) {
+  body {
+    font-size: 18px;
+  }
+
+  .my_container {
+    max-width: 1640px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1920px) {
+  body {
+    font-size: 16px;
+  }
+
+  .my_container {
+    max-width: 1640px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1919px) {
+  body {
+    font-size: 14px;
+  }
+
+  .my_container {
+    max-width: 1298px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1520px) {
+  body {
+    font-size: 13px;
+  }
+
+  .my_container {
+    max-width: 1298px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1440px) {
+  body {
+    font-size: 12px;
+  }
+
+  .my_container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1366px) {
+  body {
+    font-size: 12px;
+  }
+
+  .my_container {
+    max-width: 1168px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1280px) {
+  body {
+    font-size: 10px;
+  }
+
+  .my_container {
+    max-width: 1094px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1194px) {
+  body {
+    font-size: 10px;
+  }
+
+  .my_container {
+    max-width: 1019px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 834px) {
+  body {
+    font-size: 11.5px;
+  }
+
+  .my_container {
+    max-width: 712px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 10px;
+  }
+} */
+
+.img-circle {
+  border-radius: 100%;
+}
+
+/*============================
+    General CSS Ends Here    
+  ============================*/
+
+.d-f {
+  display: flex;
+}
+
+.d-if {
+  display: inline-flex;
+}
+
+.c-p {
+  cursor: pointer;
+}
+
+.j-c {
+  justify-content: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.a-c {
+  align-items: center;
+}
+.jc-fe {
+  justify-content: flex-end;
+}
+
+.f-c {
+  flex-direction: column;
+}
+
+.p-r {
+  position: relative;
+}
+
+.h-f {
+  height: 100%;
+}
+
+.w-f {
+  width: 100%;
+}
+
+.w-f {
+  width: 100%;
+}
+
+.ai-b {
+  align-items: baseline;
+}
+
+.m-auto {
+  margin: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+
+.d-c {
+  display: contents;
+}
+
+.td-un {
+  text-decoration: underline;
+}
+.modal,
+.modal-open {
+  padding: 0px !important;
+}
+
+.mn-h100 {
+  min-height: 100vh;
+}
+
+@media (max-width: 1023px) {
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-top: 0;
+    padding-left: 1.5em;
+  }
+
+  /* body {
+    overflow-y: hidden;
+  } */
+}

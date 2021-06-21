@@ -1,0 +1,158 @@
+@import url("../../common.less");
+.err {
+  color: #9c0000;
+  padding-top: 0.7em;
+  .f14();
+  text-align: start;
+}
+
+option {
+  cursor: pointer;
+}
+
+select {
+  //height: 2em;
+  cursor: pointer;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='grey' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-position-x: 100% !important;
+  background-position-y: 5px;
+}
+
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.user-input-wrp {
+  position: relative;
+  width: 100%;
+  margin-top: 4.5em;
+}
+.user-input-wrp .inputText {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  box-shadow: none !important;
+  background: transparent;
+  .fontbold();
+  .f18();
+  .c52();
+}
+.user-input-wrp .inputText:focus {
+  border-bottom: 2px solid #3bb859;
+}
+.user-input-wrp .floating-label {
+  position: absolute;
+  pointer-events: none;
+  top: 0.2em;
+  top: 0em;
+  left: 0px;
+  transition: 0.2s ease all;
+  .f18();
+  .fontreg();
+  .c52();
+}
+.user-input-wrp select:focus ~ .floating-label,
+.user-input-wrp select:not(:focus):valid ~ .floating-label,
+.user-input-wrp input:focus ~ .floating-label,
+.user-input-wrp input:not(:focus):valid ~ .floating-label {
+  top: -2.5em;
+  left: 0;
+  .f14();
+
+  .c3b();
+  opacity: 1;
+}
+
+input[type="file"] {
+  display: none;
+}
+label {
+  margin: 0;
+}
+
+#file-drag {
+  border: 1px dashed #7c7c7c;
+  border-radius: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em 1em;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+  font-size: 1em;
+  color: #525252;
+  letter-spacing: 0.29px;
+}
+
+.chooseTxt {
+  .f18();
+  .ced();
+  padding-left: 0.806em;
+}
+
+.fileTxt {
+  .f16();
+  .c52();
+
+  padding-top: 0.375em;
+}
+@media (max-width: 1023px) {
+  .user-input-wrp {
+    margin-top: 4em;
+  }
+
+  .user-input-wrp .inputText {
+    .mf16();
+  }
+
+  .user-input-wrp .floating-label {
+  }
+
+  .user-input-wrp .floating-label {
+    position: absolute;
+    pointer-events: none;
+    top: 0.2em;
+    top: 0em;
+    left: 0px;
+    transition: 0.2s ease all;
+    .mf16();
+  }
+
+  .user-input-wrp select:focus ~ .floating-label,
+  .user-input-wrp select:not(:focus):valid ~ .floating-label,
+  .user-input-wrp input:focus ~ .floating-label,
+  .user-input-wrp input:not(:focus):valid ~ .floating-label {
+    top: -1.688em;
+    left: 0;
+
+    letter-spacing: 0.2px;
+
+    opacity: 1;
+    .mf12();
+  }
+  .err {
+    padding-top: 0.5em;
+    font-size: 1.2em;
+    letter-spacing: 0.25px;
+  }
+  .fileTxt {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 1023px) {
+}
