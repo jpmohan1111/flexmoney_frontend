@@ -300,7 +300,6 @@ const AboutUs = (props) => {
   useEffect(() => {
     fetch("http://13.233.110.14:8080/job-descriptions", {
       headers: {
-        "Access-Control-Allow-Origin": "*",
         accept: "*/*",
         "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
         "sec-ch-ua":
