@@ -298,7 +298,9 @@ const AboutUs = (props) => {
     setApplyShow(true);
   };
   useEffect(() => {
-    fetch("http://13.233.110.14:8080/job-descriptions")
+    fetch("http://13.233.110.14:8080/job-descriptions", {
+      mode: "no-cors",
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
