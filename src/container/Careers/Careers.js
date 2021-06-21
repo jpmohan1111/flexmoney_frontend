@@ -309,7 +309,6 @@ const AboutUs = (props) => {
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "cross-site",
       },
-      mode: "no-cors",
     })
       .then((response) => response.json())
       .then((data) => {
