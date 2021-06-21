@@ -299,6 +299,16 @@ const AboutUs = (props) => {
   };
   useEffect(() => {
     fetch("http://13.233.110.14:8080/job-descriptions", {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+        "sec-ch-ua":
+          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+      },
       mode: "no-cors",
     })
       .then((response) => response.json())
