@@ -298,7 +298,7 @@ const AboutUs = (props) => {
     setApplyShow(true);
   };
   useEffect(() => {
-    fetch("http://127.0.0.1:8080/job-descriptions")
+    fetch("http://13.233.110.14:8080/job-descriptions")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

@@ -107,6 +107,13 @@ const Header = (props) => {
               >
                 Careers
               </Link>
+              {/* <Link
+                onClick={() => setisList(false)}
+                to="/lenders"
+                className="title c-p"
+              >
+                Lenders
+              </Link> */}
               {/* <Link className="title c-p">In The News</Link>
               <Link className="title c-p">Lenders</Link>
               <Link className="title c-p">Merchants</Link>
@@ -171,6 +178,13 @@ const Header = (props) => {
               >
                 Careers
               </Link>
+              {/* <Link
+                onClick={() => setisList(false)}
+                to="/lenders"
+                className="title c-p"
+              >
+                Lenders
+              </Link> */}
               {/* <Link onClick={() => setisList(false)} className="title c-p">
                 In The News
               </Link>
