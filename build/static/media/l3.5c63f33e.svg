@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="119.934" height="119.935" viewBox="0 0 119.934 119.935">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fdfdfd;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        stroke: #fff;
+        stroke-width: 0.8px;
+      }
+
+      .cls-6 {
+        filter: url(#EasyMed);
+      }
+
+      .cls-7 {
+        filter: url(#Ellipse_1375);
+      }
+
+      .cls-8 {
+        filter: url(#Ellipse_1374);
+      }
+    </style>
+    <filter id="Ellipse_1374" x="5.225" y="5.225" width="114.709" height="114.709" filterUnits="userSpaceOnUse">
+      <feOffset dx="2.322" dy="2.322" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.452" result="blur"/>
+      <feFlood flood-color="#858585" flood-opacity="0.749"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_1375" x="0" y="0" width="114.709" height="114.709" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2.903" dy="-2.903" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.452" result="blur-2"/>
+      <feFlood flood-color="#fff" flood-opacity="0.749"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="EasyMed" x="11.257" y="13.258" width="99" height="99" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3bb859"/>
+      <stop offset="1" stop-color="#216a33"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_9393" data-name="Group 9393" transform="translate(-1108.743 -3507.742)">
+    <g id="Group_8842" data-name="Group 8842" transform="translate(148 16)">
+      <g id="Group_3413" data-name="Group 3413" transform="translate(-362 -3260)">
+        <g id="Group_3409" data-name="Group 3409" transform="translate(651.418 6336.417)">
+          <g id="Group_3406" data-name="Group 3406" transform="translate(678.582 422.582)">
+            <g class="cls-8" transform="matrix(1, 0, 0, 1, -7.26, -7.26)">
+              <circle id="Ellipse_1374-2" data-name="Ellipse 1374" class="cls-1" cx="45.234" cy="45.234" r="45.234" transform="translate(7.26 96.08) rotate(-79.05)"/>
+            </g>
+            <g class="cls-7" transform="matrix(1, 0, 0, 1, -7.26, -7.26)">
+              <circle id="Ellipse_1375-2" data-name="Ellipse 1375" class="cls-1" cx="45.234" cy="45.234" r="45.234" transform="translate(7.26 96.08) rotate(-79.05)"/>
+            </g>
+          </g>
+          <circle id="Ellipse_1376" data-name="Ellipse 1376" class="cls-2" cx="45.234" cy="45.234" r="45.234" transform="translate(678.582 511.404) rotate(-79.054)"/>
+        </g>
+        <g class="cls-6" transform="matrix(1, 0, 0, 1, 1322.74, 6751.74)">
+          <circle id="EasyMed-2" data-name="EasyMed" class="cls-3" cx="40.5" cy="40.5" r="40.5" transform="translate(20.26 19.26)"/>
+        </g>
+        <circle id="EasyMed-3" data-name="EasyMed" class="cls-4" cx="37.5" cy="37.5" r="37.5" transform="translate(1346 6774)"/>
+      </g>
+    </g>
+    <g id="Group_9306" data-name="Group 9306" transform="translate(-61 -103)">
+      <g id="_24-hours" data-name="24-hours" transform="translate(1204 3647)">
+        <path id="Path_34548" data-name="Path 34548" class="cls-3" d="M43.246,21.862A23.5,23.5,0,0,0,11.863,20.2,23.586,23.586,0,0,0,3.714,33.281l3.064.692a20.364,20.364,0,1,1-.133,8.351l.78.639,1.991-2.43L5.358,37.207h-1.3L0,40.533l1.991,2.43,1.383-1.134a23.5,23.5,0,0,0,39.871,13.26,23.495,23.495,0,0,0,0-33.227Z" transform="translate(0 -14.981)"/>
+      </g>
+      <g id="tick" transform="translate(1218.687 3661.687)">
+        <g id="Group_9302" data-name="Group 9302" transform="translate(0 0)">
+          <path id="Path_34543" data-name="Path 34543" class="cls-5" d="M24.066,68.355a1.221,1.221,0,0,0-1.727,0L7.708,82.986,2.084,77.362A1.221,1.221,0,0,0,.357,79.089l6.487,6.487a1.222,1.222,0,0,0,1.727,0L24.066,70.082A1.221,1.221,0,0,0,24.066,68.355Z" transform="translate(0 -67.997)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="119.934" height="119.935" viewBox="0 0 119.934 119.935">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fdfdfd;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        filter: url(#EasyMed);
+      }
+
+      .cls-6 {
+        filter: url(#Ellipse_1375);
+      }
+
+      .cls-7 {
+        filter: url(#Ellipse_1374);
+      }
+    </style>
+    <filter id="Ellipse_1374" x="5.225" y="5.225" width="114.709" height="114.709" filterUnits="userSpaceOnUse">
+      <feOffset dx="2.322" dy="2.322" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.452" result="blur"/>
+      <feFlood flood-color="#858585" flood-opacity="0.749"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_1375" x="0" y="0" width="114.709" height="114.709" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2.903" dy="-2.903" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.452" result="blur-2"/>
+      <feFlood flood-color="#fff" flood-opacity="0.749"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="EasyMed" x="11.258" y="13.258" width="99" height="99" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3bb859"/>
+      <stop offset="1" stop-color="#216a33"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_8841" data-name="Group 8841" transform="translate(-960.742 -3355.742)">
+    <g id="Group_3414" data-name="Group 3414" transform="translate(230 -3395)">
+      <g id="Group_3408" data-name="Group 3408" transform="translate(59.417 6335.417)">
+        <g id="Group_3406" data-name="Group 3406" transform="translate(678.582 422.582)">
+          <g class="cls-7" transform="matrix(1, 0, 0, 1, -7.26, -7.26)">
+            <circle id="Ellipse_1374-2" data-name="Ellipse 1374" class="cls-1" cx="45.234" cy="45.234" r="45.234" transform="translate(7.26 96.08) rotate(-79.05)"/>
+          </g>
+          <g class="cls-6" transform="matrix(1, 0, 0, 1, -7.26, -7.26)">
+            <circle id="Ellipse_1375-2" data-name="Ellipse 1375" class="cls-1" cx="45.234" cy="45.234" r="45.234" transform="translate(7.26 96.08) rotate(-79.05)"/>
+          </g>
+        </g>
+        <circle id="Ellipse_1376" data-name="Ellipse 1376" class="cls-2" cx="45.234" cy="45.234" r="45.234" transform="translate(678.582 511.404) rotate(-79.054)"/>
+      </g>
+      <g class="cls-5" transform="matrix(1, 0, 0, 1, 730.74, 6750.74)">
+        <circle id="EasyMed-2" data-name="EasyMed" class="cls-3" cx="40.5" cy="40.5" r="40.5" transform="translate(20.26 19.26)"/>
+      </g>
+      <circle id="EasyMed-3" data-name="EasyMed" class="cls-4" cx="37.5" cy="37.5" r="37.5" transform="translate(754 6773)"/>
+    </g>
+    <path id="puzzle_1_" data-name="puzzle (1)" class="cls-3" d="M80.465,6.7H79.344V0H55.879V6.7H54.758a5.031,5.031,0,0,0,0,10.062h1.121V27.569H54.758a5.031,5.031,0,0,0,0,10.062h1.121v6.7H79.344v-9.3H75.625a2.433,2.433,0,0,1,0-4.866h3.718v-13.4h1.121a5.031,5.031,0,0,0,0-10.062ZM76.746,27.569H75.625a5.031,5.031,0,0,0,0,10.062h1.121v4.1H58.476v-6.7H54.758a2.433,2.433,0,0,1,0-4.866h3.719v-6.7h6.7V19.747a2.433,2.433,0,0,1,4.866,0v3.718h6.7v4.1Zm3.719-13.4H76.746v6.7h-4.1V19.747a5.031,5.031,0,0,0-10.062,0v1.121h-4.1v-6.7H54.758a2.433,2.433,0,0,1,0-4.866h3.719V2.6h18.27V9.3h3.719A2.433,2.433,0,0,1,80.465,14.166Z" transform="translate(984.762 3354.913) rotate(41)"/>
+  </g>
+</svg>
