@@ -24,6 +24,7 @@ import Swiper, {
 } from "swiper";
 
 import img1 from "../../images/careers/img1.jpeg";
+import banner from "../../images/careers/banner.png";
 import search from "../../images/careers/search.png";
 import cvImage from "../../images/careers/cvImage.png";
 
@@ -97,18 +98,23 @@ Swiper.use([
 ]);
 
 const arry2 = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
+  banner,
+  banner,
+  banner,
+  banner,
+  banner,
+  //   img1,
+  //   img2,
+  //   img3,
+  //   img4,
+  //   img5,
+  //   img6,
+  //   img7,
+  //   img8,
+  //   img9,
+  //   img10,
+  //   img11,
+  //   img12,
 ];
 
 const arry3 = [
