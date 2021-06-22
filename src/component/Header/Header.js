@@ -87,7 +87,6 @@ const Header = (props) => {
             <div className="d-f">
               <NavLink
                 onClick={() => setisList(false)}
-                activeClassName="active"
                 to="/aboutus"
                 className="title c-p"
               >
@@ -96,7 +95,6 @@ const Header = (props) => {
               {/* <Link className="title c-p"> About Us</Link> */}
               <NavLink
                 onClick={() => setisList(false)}
-                activeClassName="active"
                 to="/contactus"
                 className="title c-p"
               >
@@ -104,20 +102,19 @@ const Header = (props) => {
               </NavLink>
               <Link
                 onClick={() => setisList(false)}
-                activeClassName="active"
                 to="/careers"
                 className="title c-p"
               >
                 Careers
               </Link>
-              {/* <Link
+              <Link
                 onClick={() => setisList(false)}
                 activeClassName="active"
                 to="/lenders"
                 className="title c-p"
               >
                 Lenders
-              </Link> */}
+              </Link>
               {/* <Link className="title c-p">In The News</Link>
               <Link className="title c-p">Lenders</Link>
               <Link className="title c-p">Merchants</Link>
@@ -182,13 +179,13 @@ const Header = (props) => {
               >
                 Careers
               </Link>
-              {/* <Link
+              <Link
                 onClick={() => setisList(false)}
                 to="/lenders"
                 className="title c-p"
               >
                 Lenders
-              </Link> */}
+              </Link>
               {/* <Link onClick={() => setisList(false)} className="title c-p">
                 In The News
               </Link>

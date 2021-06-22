@@ -275,6 +275,54 @@ const advisorArr = [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.",
   },
+  {
+    name: "John Doe",
+    designation: "Founder & CEO, Flipkart",
+    link: "https://www.linkedin.com/in/agarden/ ",
+    img: alex,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.",
+  },
+  {
+    name: "John Doe",
+    designation: "Founder & CEO, Flipkart",
+    link: "https://www.linkedin.com/in/agarden/ ",
+    img: alex,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.",
+  },
+  {
+    name: "John Doe",
+    designation: "Founder & CEO, Flipkart",
+    link: "https://www.linkedin.com/in/agarden/ ",
+    img: alex,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.",
+  },
+  {
+    name: "John Doe",
+    designation: "Founder & CEO, Flipkart",
+    link: "https://www.linkedin.com/in/agarden/ ",
+    img: alex,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.",
+  },
+  {
+    name: "John Doe",
+    designation: "Founder & CEO, Flipkart",
+    link: "https://www.linkedin.com/in/agarden/ ",
+    img: alex,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.",
+  },
+  {
+    name: "John Doe",
+    designation: "Founder & CEO, Flipkart",
+    link: "https://www.linkedin.com/in/agarden/ ",
+    img: alex,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.",
+  },
 ];
 
 const openingsArr = [
@@ -585,6 +633,21 @@ const AboutUs = (props) => {
       //     prevEl: ".landersec5 .left_arrow",
       //   },
     });
+    var abtsec5_swiper = new Swiper(".abtsec5_swiper.swiper-container", {
+      slidesPerView: 1,
+      grabCursor: true,
+      centeredSlides: false,
+      loop: true,
+
+      navigation: {
+        nextEl: ".landersec6 .right_arrow",
+        prevEl: ".landersec6 .left_arrow",
+      },
+      pagination: {
+        el: ".abtsec5_swiper .swiper-pagination",
+        clickable: true,
+      },
+    });
   }, []);
 
   const advisorList = advisorArr.map((item, i) => {
@@ -859,7 +922,7 @@ const AboutUs = (props) => {
           </Row>
         </div>
       </section>
-      <svg width="0" height="0">
+      <svg width="0" height="0" className="curveSvg">
         <defs>
           <clipPath id="myCurve" clipPathUnits="objectBoundingBox">
             <path
