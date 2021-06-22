@@ -100,21 +100,20 @@ const Header = (props) => {
               >
                 Contact Us
               </NavLink>
-              <Link
+              <NavLink
                 onClick={() => setisList(false)}
                 to="/careers"
                 className="title c-p"
               >
                 Careers
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 onClick={() => setisList(false)}
-                activeClassName="active"
                 to="/lenders"
                 className="title c-p"
               >
                 Lenders
-              </Link>
+              </NavLink>
               {/* <Link className="title c-p">In The News</Link>
               <Link className="title c-p">Lenders</Link>
               <Link className="title c-p">Merchants</Link>
