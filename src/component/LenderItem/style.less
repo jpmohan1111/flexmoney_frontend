@@ -1,0 +1,120 @@
+@import url("../../common.less");
+
+.topimg {
+  max-width: 19.5em;
+}
+
+.lenderItemContainer {
+  margin-right: 1.875em;
+}
+
+.lenderItem {
+  //width: 38.938em;
+
+  background-image: url("../../images/lenders/slider_bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 1.25em;
+  border-top-left-radius: 0;
+  margin-top: -3px;
+  padding-left: 2.188em;
+  padding-right: 2.188em;
+  min-height: 300px;
+
+  .itemTitle {
+    .f28();
+    font-size: 2em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: left;
+    color: #0dad46;
+    .fontbold();
+    padding-top: 2.56em;
+  }
+
+  .itemDesc {
+    .f25();
+    .fontreg();
+    padding-top: 1.2em;
+    padding-bottom: 1.208em;
+    min-height: 10em;
+    min-height: 2.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+  }
+  .itemDescrip {
+    font-size: 1.5em;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+  }
+
+  .hexagone {
+    position: absolute;
+    top: -4.781em;
+    right: 3.125em;
+    width: 11.063em;
+  }
+}
+
+@media (max-width: 1023px) {
+  .lenderItemContainer {
+    margin-right: 1.875em;
+  }
+
+  .lenderItem {
+    //width: 38.938em;
+
+    background-color: #0dad46;
+    border-radius: 1.25em;
+    border-top-left-radius: 0;
+    margin-top: -3px;
+    padding-left: 2.188em;
+    padding-right: 2.188em;
+
+    .itemTitle {
+      .mf18();
+      padding-top: 2.063em;
+    }
+
+    .itemDesc {
+      .mf16();
+      padding-top: 1em;
+      padding-bottom: 1.119em;
+      min-height: 10em;
+    }
+
+    .hexagone {
+      position: absolute;
+      top: -4.3em;
+      right: 1.688em;
+      width: 9.9em;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .lenderItemContainer {
+    //width: 38.938em;
+    margin-right: 0;
+  }
+  .lenderItem .hexagone {
+    position: absolute;
+    top: -4.3em;
+    right: 2.7em;
+    width: 9.9em;
+  }
+}
