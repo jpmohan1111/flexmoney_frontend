@@ -839,9 +839,9 @@ const AboutUs = (props) => {
                 method="post"
               >
                 <input
-                  type="drop-file"
+                  type="file"
                   className="cv-file-input"
-                  id="upload"
+                  id="cv-upload"
                   hidden
                   onChange={dropCvFileChosen}
                   name="resume"
