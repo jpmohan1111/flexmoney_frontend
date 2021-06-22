@@ -839,7 +839,7 @@ const AboutUs = (props) => {
                 method="post"
               >
                 <input
-                  type="file"
+                  type="drop-file"
                   className="cv-file-input"
                   id="upload"
                   hidden
