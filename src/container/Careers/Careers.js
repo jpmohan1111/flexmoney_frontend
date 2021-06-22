@@ -834,7 +834,7 @@ const AboutUs = (props) => {
               {/* <input type="file" className="cv-file-input"></input> */}
               <form
                 id="drop-cv-form"
-                action="http://localhost:8090/drop-cv"
+                action="http://13.233.110.14:8080/drop-cv"
                 encType="multipart/form-data"
                 method="post"
               >
