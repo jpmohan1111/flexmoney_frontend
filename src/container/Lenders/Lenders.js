@@ -9,7 +9,7 @@ import TitleItem from "../../component/TitleItem/TitleItem";
 import rightArr from "../../images/rightArr.svg";
 import leftArr from "../../images/leftArr.svg";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import Button from "../../component/Button/Button";
 
 import "./style.less";
 
@@ -21,6 +21,64 @@ import Swiper, {
   EffectFade,
   EffectCoverflow,
 } from "swiper";
+import amazon from "../../images/homepage/amazon.png";
+import decathlon from "../../images/homepage/decathlon.png";
+import flipkart from "../../images/homepage/flipkart.png";
+import myntra from "../../images/homepage/myntra.png";
+import sangeetha from "../../images/homepage/sangeetha.png";
+import tatacliq from "../../images/homepage/tatacliq.png";
+import vijaysales from "../../images/homepage/vijaysales.png";
+import bharatbooking from "../../images/homepage/bharatbooking.png";
+import bigc from "../../images/homepage/bigc.png";
+import curefit from "../../images/homepage/curefit.png";
+import dell from "../../images/homepage/dell.png";
+import duroflex from "../../images/homepage/duroflex.png";
+import emibaba from "../../images/homepage/emibaba.png";
+import khoslaelectronics from "../../images/homepage/khoslaelectronics.png";
+import kurlon from "../../images/homepage/kurlon.png";
+import lot from "../../images/homepage/lot.png";
+import pai from "../../images/homepage/pai.png";
+import poorvika from "../../images/homepage/poorvika.png";
+import qrs from "../../images/homepage/qrs.png";
+import royaloak from "../../images/homepage/royaloak.png";
+import sastiticket from "../../images/homepage/sastiticket.png";
+import urbanladder from "../../images/homepage/urbanladder.png";
+import via from "../../images/homepage/via.png";
+
+import zebrs from "../../images/homepage/zebrs.png";
+import zefo from "../../images/homepage/zefo.png";
+
+import vertical_carousal from "../../images/lenders/vertical_carousal.png";
+
+import people from "../../images/homepage/people.svg";
+import city from "../../images/homepage/city.svg";
+import lendersbg from "../../images/homepage/lendersbg.png";
+import lendersleftimg from "../../images/homepage/lendersleftimg.png";
+import merchantrightimg from "../../images/homepage/merchantrightimg.png";
+import emi from "../../images/homepage/emisvg.svg";
+import l2 from "../../images/homepage/l2.svg";
+import l3 from "../../images/homepage/l3.svg";
+import m1 from "../../images/homepage/m1.svg";
+import m2 from "../../images/homepage/m2.svg";
+import m3 from "../../images/homepage/m3.svg";
+
+import lastsecbg from "../../images/homepage/lastsecbg.png";
+import merchantsbg from "../../images/homepage/merchantsbg.png";
+
+import TestominalItem from "../../component/TestominalItem/TestominalItem";
+
+import lendersbg834 from "../../images/homepage/lendersbg834.png";
+import lendersbg1024 from "../../images/homepage/lendersbg1024.png";
+
+import bottom834 from "../../images/homepage/bottom834.png";
+
+import merchantsbg834 from "../../images/homepage/merchantsbg834.png";
+
+import lendersbg480 from "../../images/homepage/lendersbg480.png";
+
+import merchantsbg480 from "../../images/homepage/merchantsbg480.png";
+
+import bottom480 from "../../images/homepage/bottom480.png";
 
 import img1 from "../../images/careers/img1.jpeg";
 import search from "../../images/careers/search.png";
@@ -84,7 +142,7 @@ import hands from "../../images/careers/hands.png";
 
 import useWindowDimensions from "../../useWindowDimensions";
 import TeamMemberItem from "../../component/TeamMemberItem/TeamMemberItem";
-import AdvisorItem from "../../component/AdvisorItem/AdvisorItem";
+import LenderItem from "../../component/LenderItem/LenderItem";
 
 Swiper.use([
   Navigation,
@@ -202,59 +260,20 @@ const teamArr = [
 
 const advisorArr = [
   {
-    name: "Alex Garden",
-    designation: "Chairman & CEO, Zume Inc, (former) President Zynga Studios",
+    name: "John Doe",
+    designation: "Founder & CEO, Flipkart",
     link: "https://www.linkedin.com/in/agarden/ ",
     img: alex,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.",
   },
   {
-    name: "Ambarish Malpani",
-    designation:
-      "Successful Technologist & Serial Entrepreneur, multiple exits (including 1 IPO)",
-    link: "https://www.linkedin.com/in/ambarish/	 ",
-    img: ambarish,
-  },
-  {
-    name: "Beerud Sheth",
-    designation:
-      "CEO & Co-Founder GupShup; Founding CEO eLance (NASDAQ: UPWK) ",
-    link: "https://www.linkedin.com/in/beerud/",
-    img: beerud,
-  },
-  {
-    name: "Ben Davey ",
-    designation:
-      "Chief Investment Officer EFIC1 (SPAC focused on Fintech and Fin Svcs), (former) CEO Barclays Ventures, Group Head of Strategy, Barclays ",
-    link: "https://www.linkedin.com/in/ben-davey-7186b7161/?originalSubdomain=uk",
-    img: ben,
-  },
-  {
-    name: "Mike Smith",
-    designation:
-      "(former) Chief Product and Technology Officer, Barclays Ventures, Director, Amazon Ad Platform, CTO Corbis",
-    link: "https://www.linkedin.com/in/mikesmith9/?originalSubdomain=uk ",
-    img: mike,
-  },
-  {
-    name: "Rajeev Dewal",
-    designation:
-      "Founder Dewal & Co, Head Legal RBL, Head Legal & Compliance Capital First, Head Compliance Barclays Corporate-India, Head Legal & Compliance Tata AIG, Head Legal Standard Chartered Bank",
-    link: "https://www.linkedin.com/in/rajeevdewal/",
-    img: rajeev,
-  },
-  {
-    name: "Ramesh Narayanaswamy",
-    designation:
-      "Group CTO Aditya Birla Capital, (former) Group CTO & CIOO CIMB Group, Group CIO SingPost, Global Head of Retail Banking Technology Soln Delivery, Standard Chartered Group",
-    link: "https://www.linkedin.com/in/ramesh-narayanaswamy-276aa9/?originalSubdomain=sg",
-    img: ramesh,
-  },
-  {
-    name: "Rishad Byramjee",
-    designation:
-      "MD & Group CEO, Casby Logistics, Board of Directors, Centrum Group",
-    link: "https://www.linkedin.com/in/rishad-byramjee-b8667319/",
-    img: rishad,
+    name: "John Doe",
+    designation: "Founder & CEO, Flipkart",
+    link: "https://www.linkedin.com/in/agarden/ ",
+    img: alex,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.",
   },
 ];
 
@@ -359,6 +378,59 @@ const AboutUs = (props) => {
       console.log(res);
     });
   };
+  const merchantsArr = [
+    { img: urbanladder },
+    { img: via },
+    { img: vijaysales },
+    { img: zebrs },
+    { img: zefo },
+    { img: amazon },
+    { img: bharatbooking },
+    { img: bigc },
+    { img: curefit },
+    { img: decathlon },
+    { img: dell },
+    { img: duroflex },
+    { img: emibaba },
+    { img: flipkart },
+    { img: khoslaelectronics },
+    { img: kurlon },
+    { img: lot },
+    { img: myntra },
+    { img: pai },
+    { img: poorvika },
+    { img: qrs },
+    { img: royaloak },
+    { img: sangeetha },
+    { img: sastiticket },
+    { img: tatacliq },
+
+    { img: urbanladder },
+    { img: via },
+    { img: vijaysales },
+    { img: zebrs },
+    { img: zefo },
+    { img: amazon },
+    { img: bharatbooking },
+    { img: bigc },
+    { img: curefit },
+    { img: decathlon },
+    { img: dell },
+    { img: duroflex },
+    { img: emibaba },
+    { img: flipkart },
+    { img: khoslaelectronics },
+    { img: kurlon },
+    { img: lot },
+    { img: myntra },
+    { img: pai },
+    { img: poorvika },
+    { img: qrs },
+    { img: royaloak },
+    { img: sangeetha },
+    { img: sastiticket },
+    { img: tatacliq },
+  ];
   useEffect(() => {
     document.title = "Flexmoney: Careers";
     document.getElementsByTagName("META")[3].content =
@@ -518,12 +590,25 @@ const AboutUs = (props) => {
   const advisorList = advisorArr.map((item, i) => {
     return (
       <div key={i} className="swiper-slide">
-        <AdvisorItem
+        <LenderItem
           img={item.img}
           title={item.name}
           desc={item.designation}
+          description={item.description}
           link={item.link}
         />
+      </div>
+    );
+  });
+
+  const merchantLogoList = merchantsArr.map((item, i) => {
+    return (
+      <div key={i} className="slide slidemarginright">
+        <div className="d-f">
+          <div>
+            <img src={item.img} className="img-fluid" alt="" />
+          </div>
+        </div>
       </div>
     );
   });
@@ -614,68 +699,25 @@ const AboutUs = (props) => {
           </Col>
         </Row>
       </section>
-
-      {/* <section
-		className="landersec3 wow fadeInUp"
-		data-wow-duration="2s"
-		data-wow-delay="0.5s"
-	  >
-		<div className="ourTeamContainer">
-		  <div className="title">Team</div>
-		  <div className="swiper-container ourteam_swiper">
-			<div className="swiper-wrapper">{teamArrList}</div>
-			<div className="swiper-pagination"></div>
-		  </div>
-		</div>
-	  </section> */}
-      {/* <section
-		className="landersec4 wow fadeInUp"
-		data-wow-duration="2s"
-		data-wow-delay="0.5s"
-	  >
-		<TitleItem black title="Institutional Investors" />
-
-		<div className="investorContainer d-f">
-		  <div className="inverstorItem">
-			<div className="imgcontainer d-f  j-c a-c">
-			  <div>
-				{" "}
-				<img
-				  onClick={() =>
-					window.open("https://www.pravegavc.com/", "_blank")
-				  }
-				  src={pravega}
-				  className="fluid c-p"
-				/>
-			  </div>
-			</div>
-			<div className="desc">
-			  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-			  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-			  erat.
-			</div>
-		  </div>
-		  <div className="line"></div>
-		  <div className="inverstorItem">
-			<div className="imgcontainer d-f  j-c a-c">
-			  <div>
-				<img
-				  onClick={() =>
-					window.open("https://z5capital.com/", "_blank")
-				  }
-				  src={z5}
-				  className="fluid c-p"
-				/>
-			  </div>
-			</div>
-			<div className="desc">
-			  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-			  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-			  erat.
-			</div>
-		  </div>
-		</div>
-	  </section> */}
+      <section className="landersecVertical wow fadeIn">
+        <div className="landersecVertical--cont">
+          <div className="item">
+            Start offering EMI & Pay Later solutions across 3800+ merchants
+            across leading categories with your Branding
+          </div>
+          <div className="item">
+            Offer Purchase financing to all existing customer segments through
+            Mobile number based Cardless experience
+          </div>
+          <div className="item">
+            Secure & frictionless integration with legacy banking systems.
+            Access entire merchant network with Single Integration
+          </div>
+        </div>
+        <div className="img--cont">
+          <img src={vertical_carousal} alt="" />
+        </div>
+      </section>
 
       <section className="landersec5 wow fadeIn">
         <Row className="m-0 opening-head">
@@ -683,11 +725,20 @@ const AboutUs = (props) => {
             <div className="working-title">
               Multi-category Merchant EMI Network
             </div>
-            <div className="working-desc">
-              Increase stickiness and consumption as users start using their
-              cardless credit lines <br /> across different categories of
-              merchants
-            </div>
+
+            {width > 480 ? (
+              <div className="working-desc">
+                Increase stickiness and consumption as users start using their
+                cardless credit lines <br /> across different categories of
+                merchants
+              </div>
+            ) : (
+              <div className="working-desc">
+                Increase stickiness and consumption as users
+                <br /> start using their cardless credit lines across
+                <br /> different categories of merchants
+              </div>
+            )}
           </Col>
         </Row>
         <Row className=" networks">
@@ -728,239 +779,86 @@ const AboutUs = (props) => {
               <img src="/lenders/watches.png" alt="1" />
               <p className="network__desc">Watches & Accessories</p>
             </div>
-            <div>
+            <div className="network">
               <img src="/lenders/home_and_furnishing.png" alt="1" />
               <p>Home & Furnishing</p>
             </div>
           </div>
         </Row>
-        <Row className=" bullets">
-          <div>
-            <div className="working-img-cont">
-              <img src={lamp} alt="" />
+        <Row className="merchants">
+          <div className="merchant-partner">
+            <div className="merchant-partner__head">
+              3800+ Merchant Partners
             </div>
-            <div>
-              <div className="working-title">Build the future</div>
-              <div className="working-desc">
-                Be a part of the team that is revolutionizing the Buy Now Pay
-                Later landscape in the county
-              </div>
+            <div className="merchant-partner__desc">
+              Plug-in to our network of merchants with ‘Single Integration’
             </div>
           </div>
-          <div>
-            <div className="working-img-cont">
-              <img src={heart} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Open Work culture</div>
-              <div className="working-desc">
-                Work in a transparent and open culture where All Hands are on
-                Deck
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="working-img-cont">
-              <img src={hands} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Diverse team</div>
-              <div className="working-desc">
-                Work alongside colleagues with diverse backgrounds and
-                experiences ranging from Technology to Finance, from Silicon
-                Valley to Singapore
-              </div>
+          <div className="slider-cont">
+            <div className="slider">
+              <div className="slide-track">{merchantLogoList}</div>
             </div>
           </div>
         </Row>
       </section>
 
-      <section className="landersec5 wow fadeIn">
-        <Row className="m-0 opening-head openings-container">
-          <Col className="p-0 firstcol" lg={12}>
-            <div className="working-title">Current Openings </div>
-            <div className="working-desc">
-              <img src={search} alt="" />
-              <input type="text" placeholder="Search jobs, titles, keywords" />
+      <section className="landersec6 wow fadeIn">
+        <Row className="m-0">
+          <Col className="p-0 firstcol" lg={4}>
+            <div className="title">
+              What our Lending <br /> Partners say
+            </div>
+            <div className="desc">
+              Hear from those who have been with us in our journey
+            </div>
+          </Col>
+          {width > 1023 ? (
+            <Col className="p-0 d-f j-c f-c a-c" lg={1}>
+              <div className="d-f f-c">
+                <div>
+                  <img className="left_arrow" src={leftArr} />
+                </div>
+                <div>
+                  <img className="right_arrow" src={rightArr} />
+                </div>
+              </div>
+            </Col>
+          ) : null}
+          <Col className="p-0" lg={7}>
+            <div className="abtsec5_swiper swiper-container">
+              <div className="swiper-wrapper">{advisorList}</div>
+              <div className="swiper-pagination"></div>
             </div>
           </Col>
         </Row>
-        <Row className="">
-          <div className="openings-cont">
-            {/* <div className="opening">
-			  <h2>Project manager</h2>
-			  <h4>Job description ></h4>
-			  <button>Apply now</button>
-			</div> */}
-            {openingsList}
-          </div>
-          {/* <div>
-			<div className="working-img-cont">
-			  <img src={lamp} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Build the future</div>
-			  <div className="working-desc">
-				Be a part of the team that is revolutionizing the Buy Now Pay
-				Later landscape in the county
-			  </div>
-			</div>
-		  </div>
-		  <div>
-			<div className="working-img-cont">
-			  <img src={heart} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Open Work culture</div>
-			  <div className="working-desc">
-				Work in a transparent and open culture where All Hands are on
-				Deck
-			  </div>
-			</div>
-		  </div>
-		  <div>
-			<div className="working-img-cont">
-			  <img src={hands} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Diverse team</div>
-			  <div className="working-desc">
-				Work alongside colleagues with diverse backgrounds and
-				experiences ranging from Technology to Finance, from Silicon
-				Valley to Singapore
-			  </div>
-			</div>
-		  </div> */}
-        </Row>
       </section>
-      <section className="landersec7 wow fadeIn drop-cv">
-        <Row className=" drop-cv-container">
-          <div>
-            <img src={cvImage} className="img-fluid" />
-            <div>
-              <h2 className="head">Drop your CV here</h2>
-              <h4 className="desc">
-                Didn't find what you were looking for? Drop your CV here, we
-                will consider your profile for future job postings
-              </h4>
-              <input type="file" className="cv-file-input"></input>
-              <p>Upload docx file, pdf upto 1 mb only</p>
-              <button>Submit</button>
-            </div>
-          </div>
-        </Row>
+
+      <section className="landersec7 wow  fadeIn p-r">
+        <img
+          src={width > 834 ? lastsecbg : width < 481 ? bottom480 : bottom834}
+          className="fluid"
+        />
+        <div className="content">
+          <Row className="m-0">
+            <Col lg={10} className="p-0">
+              <div className="title">Reach out for more!</div>
+              <div className="desc">
+                Reach out and our experienced team will help you with the best
+                solution to help you grow your business
+              </div>
+              <Button
+                onClick={() =>
+                  window.open(
+                    "https://instacred.me/new-user-activation?utm_source=FMwebsite",
+                    "_blank"
+                  )
+                }
+                title="GET IN TOUCH WITH US"
+              />
+            </Col>
+          </Row>
+        </div>
       </section>
-      {/* <Button variant="primary" onClick={handleShow}>
-		Launch demo modal
-	  </Button> */}
-
-      <Modal
-        show={descShow}
-        onHide={handleDescClose}
-        className="job-desc-modal"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title className="job-desc-head">Job Description</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div>
-            <h5 className="job-desc-resp-head">Job Role & Responsibilities</h5>
-            <div>
-              <p className="job-desc-sub-head">Core Responsibilities:</p>
-              <p className="job-desc-sub-desc">{parse(jobDescInView)}</p>
-              {/*<p className="job-desc-sub-head">Additional Responsibilities:</p>
-               <p className="job-desc-sub-desc">
-                Analyze data to identify key leverage points to increase
-                conversion, engagement and retention of the product Develop a
-                product roadmap, design wireframes, write requirements, and work
-                in
-              </p> */}
-            </div>
-          </div>
-        </Modal.Body>
-        {/* <Modal.Footer>
-		  <Button variant="secondary" onClick={handleClose}>
-			Close
-		  </Button>
-		  <Button variant="primary" onClick={handleClose}>
-			Save Changes
-		  </Button>
-		</Modal.Footer> */}
-      </Modal>
-
-      <Modal
-        show={applyShow}
-        onHide={handleApplyClose}
-        className="job-apply-modal"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title className="job-apply-head">Apply Now</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="job-apply-body">
-          <div className="job-apply-body-cont">
-            <form
-              id="apply-form"
-              action="http://127.0.0.1:8080/job-apply"
-              enctype="multipart/form-data"
-              method="post"
-            >
-              <input type="hidden" name="job_title" value={jobApplyInView} />
-              <div className="name">
-                <input name="name" placeholder="Name" type="text" />
-              </div>
-              <div className="email">
-                <input name="email" placeholder="Email" type="text" />
-              </div>
-              <div className="contact">
-                <input
-                  name="contact_number"
-                  placeholder="Contact number"
-                  type="text"
-                />
-              </div>
-              <div className="company">
-                <input
-                  name="company_name"
-                  placeholder="Company Name"
-                  type="text"
-                />
-              </div>
-              <div className="career">
-                <input
-                  name="career_summary"
-                  placeholder="Career Summary/message"
-                  type="text"
-                />
-              </div>
-              <div className="resume">
-                <p>Resume* (Upload docx file, pdf upto 1 mb only)</p>
-                <label className="file">
-                  <input
-                    type="file"
-                    id="file"
-                    aria-label="File browser example"
-                    name="resume"
-                  />
-                  <span className="file-custom"></span>
-                </label>
-              </div>
-              <div className="submit">
-                <button type="submit" onClick={handleApplySubmit}>
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-        </Modal.Body>
-        {/* <Modal.Footer>
-		  <Button variant="secondary" onClick={handleClose}>
-			Close
-		  </Button>
-		  <Button variant="primary" onClick={handleClose}>
-			Save Changes
-		  </Button>
-		</Modal.Footer> */}
-      </Modal>
       <svg width="0" height="0">
         <defs>
           <clipPath id="myCurve" clipPathUnits="objectBoundingBox">
@@ -971,22 +869,6 @@ const AboutUs = (props) => {
 								  L 1,1
 								  C .65 .8, .35 .8, 0 1
 								  Z"
-            />
-          </clipPath>
-        </defs>
-      </svg>
-      <svg width="0" height="0">
-        <defs>
-          <clipPath id="myCurve2" clipPathUnits="objectBoundingBox">
-            <path
-              xmlns="http://www.w3.org/2000/svg"
-              d="M576.83 441.94L194.82 441.94L194.82 115.06L391.22 116.76"
-              id="b5xL3XXJPw"
-            />
-            <path
-              xmlns="http://www.w3.org/2000/svg"
-              d="M576.83 441.94C564.55 434.98 556.86 430.63 553.79 428.89C464.69 378.41 406.14 287.33 397.22 185.32C396.42 176.18 394.42 153.32 391.22 116.76"
-              id="b6Ej1WFgz"
             />
           </clipPath>
         </defs>

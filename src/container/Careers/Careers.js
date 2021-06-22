@@ -287,6 +287,7 @@ const AboutUs = (props) => {
   const [jobDescInView, setJobDescInView] = useState("");
   const [jobApplyInView, setJobApplyInView] = useState("");
   const [loading, setloading] = useState(false);
+  const [dropCvFileName, setDropCvFileName] = useState("");
 
   const [name, setname] = useState("");
   const [nameerr, setnameerr] = useState("");
@@ -300,6 +301,12 @@ const AboutUs = (props) => {
   const [subject, setsubject] = useState("");
   const [message, setMessage] = useState("");
   const [messageerr, setMessageerr] = useState("");
+
+  const dropCvFileChosen = (e) => {
+    console.log(e);
+    console.log(e.target.files[0].name);
+    setDropCvFileName(e.target.files[0].name);
+  };
 
   const handleDescClose = () => setDescShow(false);
   const handleApplyClose = () => setApplyShow(false);
@@ -824,9 +831,30 @@ const AboutUs = (props) => {
                 Didn't find what you were looking for? Drop your CV here, we
                 will consider your profile for future job postings
               </h4>
-              <input type="file" className="cv-file-input"></input>
-              <p>Upload docx file, pdf upto 1 mb only</p>
-              <Button loading={loading} title="Submit" />
+              {/* <input type="file" className="cv-file-input"></input> */}
+              <form
+                id="drop-cv-form"
+                action="http://localhost:8090/drop-cv"
+                encType="multipart/form-data"
+                method="post"
+              >
+                <input
+                  type="file"
+                  className="cv-file-input"
+                  id="upload"
+                  hidden
+                  onChange={dropCvFileChosen}
+                  name="resume"
+                />
+                <label for="upload">
+                  Choose file <span>{dropCvFileName}</span>
+                </label>
+                <p>Upload docx file, pdf upto 1 mb only</p>
+                {/* <Button type="submit" loading={loading} title="Submit" /> */}
+                <button type="submit" onClick={handleApplySubmit}>
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
         </Row>
@@ -989,8 +1017,23 @@ const AboutUs = (props) => {
 
                 <Col lg={12}>
                   <div className="resume">
-                    <p>Resume* (Upload docx file, pdf upto 1 mb only)</p>
-                    <label className="file">
+                    {/* <p>Resume* (Upload docx file, pdf upto 1 mb only)</p> */}
+                    <input
+                      type="file"
+                      className="cv-file-input"
+                      id="upload"
+                      hidden
+                      name="resume"
+                      onChange={dropCvFileChosen}
+                    />
+                    <label for="upload">
+                      <span>Choose file</span>
+                    </label>
+                    <p>
+                      <span>Upload docx file, pdf upto 1 mb only</span> -{" "}
+                      {dropCvFileName}
+                    </p>
+                    {/* <label className="file">
                       <input
                         type="file"
                         id="file"
@@ -998,7 +1041,7 @@ const AboutUs = (props) => {
                         name="resume"
                       />
                       <span className="file-custom"></span>
-                    </label>
+                    </label> */}
                   </div>
                 </Col>
                 <Col lg={12}>
