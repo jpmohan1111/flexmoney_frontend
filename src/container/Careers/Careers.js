@@ -25,6 +25,7 @@ import Swiper, {
 
 import img1 from "../../images/careers/img1.jpeg";
 import banner from "../../images/careers/banner.png";
+import bannermobile from "../../images/careers/mobilebanner.png";
 import search from "../../images/careers/search.png";
 import cvImage from "../../images/careers/cvImage.png";
 
@@ -117,20 +118,22 @@ const arry2 = [
   //   img12,
 ];
 
-const arry3 = [
-  mbimg1,
-  mbimg2,
-  mbimg3,
-  mbimg4,
-  mbimg5,
-  mbimg6,
-  mbimg7,
-  mbimg8,
-  mbimg9,
-  mbimg10,
-  mbimg11,
-  mbimg12,
-];
+const arry3 = [bannermobile, bannermobile, bannermobile, bannermobile];
+
+// const arry3 = [
+//   mbimg1,
+//   mbimg2,
+//   mbimg3,
+//   mbimg4,
+//   mbimg5,
+//   mbimg6,
+//   mbimg7,
+//   mbimg8,
+//   mbimg9,
+//   mbimg10,
+//   mbimg11,
+//   mbimg12,
+// ];
 
 const teamArr = [
   {
@@ -324,6 +327,25 @@ const AboutUs = (props) => {
   const handleApplyShow = (title) => {
     setJobApplyInView(title);
     setApplyShow(true);
+  };
+  const handleJobSearch = (evt) => {
+    console.log(evt);
+    console.log(evt.target.value);
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    fetch(
+      `http://127.0.0.1:8090/job-search?search=${evt.target.value}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        setJobDescriptions(result.items);
+      })
+      .catch((error) => console.log("error", error));
   };
   useEffect(() => {
     fetch("http://13.233.110.14:8080/job-descriptions", {
@@ -724,7 +746,8 @@ const AboutUs = (props) => {
           <Col className="p-0 firstcol" lg={12}>
             <div className="working-title">Working with Flexmoney </div>
             <div className="working-desc">
-              Looking for talented and passionate individuals to join our team
+              Looking for talented and passionate <br />
+              individuals to join our team
             </div>
           </Col>
         </Row>
@@ -775,7 +798,11 @@ const AboutUs = (props) => {
             <div className="working-title">Current Openings </div>
             <div className="working-desc">
               <img src={search} alt="" />
-              <input type="text" placeholder="Search jobs, titles, keywords" />
+              <input
+                onChange={handleJobSearch}
+                type="text"
+                placeholder="Search jobs, titles, keywords"
+              />
             </div>
           </Col>
         </Row>

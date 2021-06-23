@@ -480,7 +480,7 @@ const AboutUs = (props) => {
     { img: tatacliq },
   ];
   useEffect(() => {
-    document.title = "Flexmoney: Careers";
+    document.title = "Flexmoney: Lenders";
     document.getElementsByTagName("META")[3].content =
       "Leading the Buy Now Pay Later Revolution in India. InstaCred, Flexmoney's Credit Platform, enables Lenders to offer instant cardless finance across its merchant network";
 
