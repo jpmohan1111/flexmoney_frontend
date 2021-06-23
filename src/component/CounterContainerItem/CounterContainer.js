@@ -6,6 +6,10 @@ import VisibilitySensor from "react-visibility-sensor";
 import "./style.less";
 
 const CounterContainer = (props) => {
+  let className = "count ";
+  if (props.colorClass) {
+    className += props.colorClass;
+  }
   return (
     <div className="d-f  a-c counterContainer">
       <img src={props.img} />
@@ -13,7 +17,7 @@ const CounterContainer = (props) => {
         {({ countUpRef, start }) => (
           <VisibilitySensor onChange={start} delayedCall>
             <>
-              <div className="count">
+              <div className={className}>
                 <span ref={countUpRef} />
                 <span>{props.span}</span>
               </div>

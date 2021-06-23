@@ -10,6 +10,7 @@ import rightArr from "../../images/rightArr.svg";
 import leftArr from "../../images/leftArr.svg";
 import Modal from "react-bootstrap/Modal";
 import Button from "../../component/Button/Button";
+import CounterContainerItem from "../../component/CounterContainerItem/CounterContainer";
 
 import "./style.less";
 
@@ -809,12 +810,13 @@ const AboutUs = (props) => {
             <img className="right" src={cityscape} alt="" />
             <div className="consumers-partner__desc">
               <div className="consumers-partner__desc_25m">
-                <p>25M</p>
+                {/* <p>25M</p>*/}
+                <CounterContainerItem colorClass="cw" span="M+" count="28" />
                 <p>Credit Lines</p>
               </div>
               <div className="across">across</div>
               <div className="consumers-partner__desc_100plus">
-                <p>100+</p>
+                <CounterContainerItem colorClass="cw" span="+" count="100" />
                 <p>Cities</p>
               </div>
             </div>

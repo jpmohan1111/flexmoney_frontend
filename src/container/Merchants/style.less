@@ -731,18 +731,19 @@
     background-image: url("../../images/merchants/consumer_network_bg.png");
     background-size: 100%;
     padding: 100px;
+    background-repeat: no-repeat;
     &-partner {
       position: relative;
       width: 100%;
       > img {
         width: 150px;
         position: absolute;
-        top: 50%;
+        top: 40%;
         &.left {
-          left: 100px;
+          left: 50px;
         }
         &.right {
-          right: 100px;
+          right: 50px;
         }
       }
       &__head {
@@ -772,6 +773,7 @@
         justify-content: space-evenly;
         position: relative;
         z-index: 9;
+        color: #fff;
         p:first-child {
           font-size: 7em;
           font-weight: bold;
@@ -1254,6 +1256,8 @@
         z-index: 9;
         flex-direction: column;
         align-items: center;
+        padding-left: 20%;
+
         p:first-child {
           font-size: 7em;
           font-weight: bold;
