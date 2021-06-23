@@ -12,7 +12,11 @@ const Button = (props) => {
       onClick={props.onClick}
       style={props.loading ? { pointerEvents: "none", cursor: "none" } : null}
       className={
-        props.fournotfonund ? "btn effect-1 fournotbtn" : "btn effect-1 "
+        props.noeffect
+          ? "btn"
+          : props.fournotfonund
+          ? "btn effect-1 fournotbtn"
+          : "btn effect-1 "
       }
     >
       {props.loading && <i class="fa fa-circle-o-notch fa-spin"></i>}

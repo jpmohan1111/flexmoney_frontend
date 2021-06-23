@@ -635,17 +635,26 @@ const AboutUs = (props) => {
     });
     var abtsec5_swiper = new Swiper(".abtsec5_swiper.swiper-container", {
       slidesPerView: 1,
-      grabCursor: true,
-      centeredSlides: false,
+      spaceBetween: 30,
       loop: true,
+      autoHeight: false,
+      autoplay: {
+        delay: 5000,
+      },
 
-      navigation: {
-        nextEl: ".landersec6 .right_arrow",
-        prevEl: ".landersec6 .left_arrow",
+      breakpoints: {
+        767: {
+          spaceBetween: 0,
+          slidesPerView: 1.6,
+        },
       },
       pagination: {
         el: ".abtsec5_swiper .swiper-pagination",
         clickable: true,
+      },
+      navigation: {
+        nextEl: ".landersec6 .right_arrow",
+        prevEl: ".landersec6 .left_arrow",
       },
     });
   }, []);
@@ -916,6 +925,7 @@ const AboutUs = (props) => {
                     "_blank"
                   )
                 }
+                noeffect="true"
                 title="GET IN TOUCH WITH US"
               />
             </Col>
