@@ -337,7 +337,7 @@ const AboutUs = (props) => {
     };
 
     fetch(
-      `http://127.0.0.1:8090/job-search?search=${evt.target.value}`,
+      `${process.env.REACT_APP_API_ENDPOINT}/job-search?search=${evt.target.value}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -348,7 +348,7 @@ const AboutUs = (props) => {
       .catch((error) => console.log("error", error));
   };
   useEffect(() => {
-    fetch("http://13.233.110.14:8080/job-descriptions", {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/job-descriptions`, {
       headers: {
         accept: "*/*",
         "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
@@ -867,7 +867,7 @@ const AboutUs = (props) => {
               {/* <input type="file" className="cv-file-input"></input> */}
               <form
                 id="drop-cv-form"
-                action="http://13.233.110.14:8080/drop-cv"
+                action={`${process.env.REACT_APP_API_ENDPOINT}/drop-cv`}
                 encType="multipart/form-data"
                 method="post"
               >
@@ -994,7 +994,7 @@ const AboutUs = (props) => {
             </form> */}
             <form
               id="apply-form"
-              action="http://13.233.110.14:8080/job-apply"
+              action={`${process.env.REACT_APP_API_ENDPOINT}/job-apply`}
               encType="multipart/form-data"
               method="post"
             >
