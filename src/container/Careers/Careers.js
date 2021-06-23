@@ -875,11 +875,11 @@ const AboutUs = (props) => {
                   type="file"
                   className="cv-file-input"
                   id="cv-upload"
-                  hidden
                   onChange={dropCvFileChosen}
+                  hidden
                   name="resume"
                 />
-                <label for="upload">
+                <label for="cv-upload">
                   Choose file <span>{dropCvFileName}</span>
                 </label>
                 <p>Upload docx file, pdf upto 1 mb only</p>
