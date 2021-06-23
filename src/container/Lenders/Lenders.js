@@ -144,6 +144,9 @@ import useWindowDimensions from "../../useWindowDimensions";
 import TeamMemberItem from "../../component/TeamMemberItem/TeamMemberItem";
 import LenderItem from "../../component/LenderItem/LenderItem";
 
+import banner from "../../images/careers/banner.png";
+import bannermobile from "../../images/careers/mobilebanner.png";
+
 Swiper.use([
   Navigation,
   Pagination,
@@ -154,34 +157,26 @@ Swiper.use([
 ]);
 
 const arry2 = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
+  banner,
+  banner,
+  banner,
+  banner,
+  banner,
+  //   img1,
+  //   img2,
+  //   img3,
+  //   img4,
+  //   img5,
+  //   img6,
+  //   img7,
+  //   img8,
+  //   img9,
+  //   img10,
+  //   img11,
+  //   img12,
 ];
 
-const arry3 = [
-  mbimg1,
-  mbimg2,
-  mbimg3,
-  mbimg4,
-  mbimg5,
-  mbimg6,
-  mbimg7,
-  mbimg8,
-  mbimg9,
-  mbimg10,
-  mbimg11,
-  mbimg12,
-];
+const arry3 = [bannermobile, bannermobile, bannermobile, bannermobile];
 
 const teamArr = [
   {
