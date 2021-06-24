@@ -543,7 +543,7 @@ const Lenders = (props) => {
           <div className="title">Multi-category Merchant EMI Network</div>
           <div className="desc">
             Increase stickiness and consumption as users start using their
-            cardless credit lines across different categories of merchants
+            cardless credit lines across hello different categories of merchants
           </div>
         </div>
 
