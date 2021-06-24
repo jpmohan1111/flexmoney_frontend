@@ -662,7 +662,7 @@
   }
   .flex_wrapper{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
   }
@@ -672,6 +672,10 @@
     align-items: flex-start;
     width: 30.250em
   }
+  .middle_boxx{
+    margin-left: 8.375em;
+    margin-right: 8.375em;
+  }
   .card_text_wrapper{
     margin-left: 1.250em;
   }
@@ -680,12 +684,12 @@
     .fontreg();
     color: #2B2B2B;
     margin-bottom: 0.220em;
-
   }
   .text_desc{
     .f18();
     .fontreg();
     color: #747474;
+    text-align: justify;
   }
   .card_img{
     width: 6.625em;
@@ -697,6 +701,18 @@
 
 
 // vijay media query start
+@media (max-width: 1025px){
+  .newsec2{
+    .middle_boxx{
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .flex_wrapper{
+      justify-content: space-between;
+    }
+  }
+
+}
 @media (max-width: 834px){
   .newsec1{
     position: relative;
@@ -740,6 +756,8 @@
       width: 25em;
       margin: 1em;
     }
+    
+    
   }
 
 }

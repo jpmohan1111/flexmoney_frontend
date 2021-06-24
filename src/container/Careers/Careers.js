@@ -752,7 +752,7 @@ const AboutUs = (props) => {
         </div>
         <div className="flex_wrapper">
           <div className="boxx">
-          <div className="card_logo">
+            <div className="card_logo">
               <img src={sec2logo1} className="card_img" />
             </div>
             <div className="card_text_wrapper">
@@ -763,7 +763,7 @@ const AboutUs = (props) => {
               </div>
             </div>
           </div>
-          <div className="boxx">
+          <div className="boxx middle_boxx">
             <div className="card_logo">
               <img src={sec2logo2} className="card_img" />
             </div>
