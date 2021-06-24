@@ -753,7 +753,11 @@ const AboutUs = (props) => {
           onClick={() => handleApplyShow(item.title)}
         >
           {/* <Button loading="false" title="Apply now" /> */}
-          <Button loading={loading} title="Apply now" />
+          {width > 480 ? (
+            <Button loading={loading} title="Apply now" />
+          ) : (
+            <Button noeffect="true" loading={loading} title="Apply now" />
+          )}
         </div>
       </div>
     );
