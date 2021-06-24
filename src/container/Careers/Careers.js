@@ -314,13 +314,11 @@ const AboutUs = (props) => {
 
   const [totalJobDescCount, setTotalJobDescCount] = useState(0);
   const [currJobDescPage, setCurrJobDescPage] = useState(1);
+  const [jobSearchVal, setJobSearchVal] = useState("");
 
   const [fileSizealert, setFileSizealert] = useState("");
   const [showApplySuccesstxt, setShowApplySuccesstxt] = useState(false);
-
-  const jobDescListPageClick = (pageNum) => {
-    if (pageNum < 1 || pageNum > totalJobDescCount) return;
-    console.log(pageNum);
+  const fetchJobDesc = (pageNum) => {
     fetch(
       `${process.env.REACT_APP_API_ENDPOINT}/job-descriptions?count=5&page=${pageNum}`,
       {
@@ -343,6 +341,11 @@ const AboutUs = (props) => {
         setTotalJobDescCount(data.totalCount);
         setCurrJobDescPage(pageNum);
       });
+  };
+  const jobDescListPageClick = (pageNum) => {
+    if (pageNum < 1 || pageNum > totalJobDescCount) return;
+    console.log(pageNum);
+    fetchJobDesc(pageNum);
   };
   const dropCvFileChosen = (e) => {
     console.log(e);
@@ -373,10 +376,16 @@ const AboutUs = (props) => {
   const handleJobSearch = (evt) => {
     console.log(evt);
     console.log(evt.target.value);
+    setJobSearchVal(evt.target.value);
+    if (evt.target.value == "") {
+      fetchJobDesc(1);
+      return;
+    }
     var requestOptions = {
       method: "GET",
       redirect: "follow",
     };
+    setJobSearchVal(evt.target.value);
 
     fetch(
       `${process.env.REACT_APP_API_ENDPOINT}/job-search?search=${evt.target.value}`,
@@ -390,27 +399,28 @@ const AboutUs = (props) => {
       .catch((error) => console.log("error", error));
   };
   useEffect(() => {
-    fetch(
-      `${process.env.REACT_APP_API_ENDPOINT}/job-descriptions?count=5&page=${currJobDescPage}`,
-      {
-        headers: {
-          accept: "*/*",
-          "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
-          "sec-ch-ua":
-            '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
-          "sec-ch-ua-mobile": "?0",
-          "sec-fetch-dest": "empty",
-          "sec-fetch-mode": "cors",
-          "sec-fetch-site": "cross-site",
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setJobDescriptions(data.items);
-        setTotalJobDescCount(data.totalCount);
-      });
+    fetchJobDesc(currJobDescPage);
+    // fetch(
+    //   `${process.env.REACT_APP_API_ENDPOINT}/job-descriptions?count=5&page=${currJobDescPage}`,
+    //   {
+    //     headers: {
+    //       accept: "*/*",
+    //       "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+    //       "sec-ch-ua":
+    //         '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+    //       "sec-ch-ua-mobile": "?0",
+    //       "sec-fetch-dest": "empty",
+    //       "sec-fetch-mode": "cors",
+    //       "sec-fetch-site": "cross-site",
+    //     },
+    //   }
+    // )
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //     setJobDescriptions(data.items);
+    //     setTotalJobDescCount(data.totalCount);
+    //   });
   }, []);
 
   const getVal = (selector) => {
@@ -1001,56 +1011,59 @@ const AboutUs = (props) => {
 			</div> */}
             {openingsList}
           </div>
-          <div className="pagination_container">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="8.86"
-              height="14.6"
-              viewBox="0 0 8.86 14.6"
-              className={1 == currJobDescPage ? "disabled" : ""}
-              onClick={() => jobDescListPageClick(currJobDescPage - 1)}
-            >
-              <path
-                id="Icon_awesome-chevron-right"
-                data-name="Icon awesome-chevron-right"
-                d="M2.168,10.515l6.5,6.5a.8.8,0,0,0,1.135,0l.758-.758a.8.8,0,0,0,0-1.133L5.41,9.948l5.15-5.174a.8.8,0,0,0,0-1.133L9.8,2.883a.8.8,0,0,0-1.135,0l-6.5,6.5A.8.8,0,0,0,2.168,10.515Z"
-                transform="translate(-1.933 -2.648)"
-                fill="#4c4c4c"
-              />
-            </svg>
-            {Array.from(Array(Math.ceil(totalJobDescCount / 5)).keys()).map(
-              (page) => {
-                return (
-                  <button
-                    className={page + 1 == currJobDescPage ? "active" : ""}
-                    onClick={() => jobDescListPageClick(page + 1)}
-                  >
-                    {page + 1}
-                  </button>
-                );
-              }
-            )}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="8.86"
-              height="14.6"
-              viewBox="0 0 8.86 14.6"
-              className={
-                Math.ceil(totalJobDescCount / 5) == currJobDescPage
-                  ? "disabled"
-                  : ""
-              }
-              onClick={() => jobDescListPageClick(currJobDescPage + 1)}
-            >
-              <path
-                id="Icon_awesome-chevron-right"
-                data-name="Icon awesome-chevron-right"
-                d="M10.558,10.515l-6.5,6.5a.8.8,0,0,1-1.135,0l-.758-.758a.8.8,0,0,1,0-1.133L7.316,9.948,2.167,4.774a.8.8,0,0,1,0-1.133l.758-.758a.8.8,0,0,1,1.135,0l6.5,6.5A.8.8,0,0,1,10.558,10.515Z"
-                transform="translate(-1.933 -2.648)"
-                fill="#4c4c4c"
-              />
-            </svg>
-          </div>
+
+          {jobSearchVal == "" && (
+            <div className="pagination_container">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="8.86"
+                height="14.6"
+                viewBox="0 0 8.86 14.6"
+                className={1 == currJobDescPage ? "disabled" : ""}
+                onClick={() => jobDescListPageClick(currJobDescPage - 1)}
+              >
+                <path
+                  id="Icon_awesome-chevron-right"
+                  data-name="Icon awesome-chevron-right"
+                  d="M2.168,10.515l6.5,6.5a.8.8,0,0,0,1.135,0l.758-.758a.8.8,0,0,0,0-1.133L5.41,9.948l5.15-5.174a.8.8,0,0,0,0-1.133L9.8,2.883a.8.8,0,0,0-1.135,0l-6.5,6.5A.8.8,0,0,0,2.168,10.515Z"
+                  transform="translate(-1.933 -2.648)"
+                  fill="#4c4c4c"
+                />
+              </svg>
+              {Array.from(Array(Math.ceil(totalJobDescCount / 5)).keys()).map(
+                (page) => {
+                  return (
+                    <button
+                      className={page + 1 == currJobDescPage ? "active" : ""}
+                      onClick={() => jobDescListPageClick(page + 1)}
+                    >
+                      {page + 1}
+                    </button>
+                  );
+                }
+              )}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="8.86"
+                height="14.6"
+                viewBox="0 0 8.86 14.6"
+                className={
+                  Math.ceil(totalJobDescCount / 5) == currJobDescPage
+                    ? "disabled"
+                    : ""
+                }
+                onClick={() => jobDescListPageClick(currJobDescPage + 1)}
+              >
+                <path
+                  id="Icon_awesome-chevron-right"
+                  data-name="Icon awesome-chevron-right"
+                  d="M10.558,10.515l-6.5,6.5a.8.8,0,0,1-1.135,0l-.758-.758a.8.8,0,0,1,0-1.133L7.316,9.948,2.167,4.774a.8.8,0,0,1,0-1.133l.758-.758a.8.8,0,0,1,1.135,0l6.5,6.5A.8.8,0,0,1,10.558,10.515Z"
+                  transform="translate(-1.933 -2.648)"
+                  fill="#4c4c4c"
+                />
+              </svg>
+            </div>
+          )}
           {/* <div>
 			<div className="working-img-cont">
 			  <img src={lamp} alt="" />
