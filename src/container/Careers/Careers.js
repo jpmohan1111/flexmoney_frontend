@@ -310,6 +310,8 @@ const AboutUs = (props) => {
   const [companyName, setcompanyName] = useState("");
   const [subject, setsubject] = useState("");
   const [cvapplyFile, setCvapplyFile] = useState([]);
+  const [nofileErr, setNofileErr] = useState("");
+
   const [fileSizealert, setFileSizealert] = useState("");
   const [showApplySuccesstxt, setShowApplySuccesstxt] = useState(false);
 
@@ -502,7 +504,9 @@ const AboutUs = (props) => {
     // });
   };
   const handleDropCvSubmit = (evt) => {
-    if (true) {
+    if (document.querySelector("#cv-upload").files.length == 0) {
+      setNofileErr("Choose a file");
+    } else {
       let formData = new FormData();
       formData.append(
         "resume_file",
@@ -529,7 +533,7 @@ const AboutUs = (props) => {
           }
         })
         .catch((error) => {
-          alert("Something Went Wrong");
+          //   alert("Something Went Wrong");
           //showToast("danger");
         });
     }
@@ -1070,7 +1074,11 @@ const AboutUs = (props) => {
                   </svg>
                   <span>Choose File </span> <span>{dropCvFileName}</span>
                 </label>
-                <p>Upload docx file, pdf upto 1 mb only</p>
+                <p>
+                  Upload docx file, pdf upto 1 mb only{" "}
+                  <span className="err">{nofileErr}</span>
+                </p>
+
                 {/* <Button type="submit" loading={loading} title="Submit" /> */}
                 <button type="submit" onClick={handleDropCvSubmit}>
                   Submit
