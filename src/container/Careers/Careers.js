@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import axios from "axios";
 import parse from "html-react-parser";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -303,15 +304,14 @@ const AboutUs = (props) => {
   const [nameerr, setnameerr] = useState("");
   const [emailId, setemailId] = useState("");
   const [emailIderr, setemailIderr] = useState("");
-  const [whoareyou, setwhoareyou] = useState("");
-  const [whoareyouerr, setwhoareyouerr] = useState("");
+
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumbererr, setPhoneNumbererr] = useState("");
   const [companyName, setcompanyName] = useState("");
   const [subject, setsubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [messageerr, setMessageerr] = useState("");
+  const [cvapplyFile, setCvapplyFile] = useState([]);
   const [fileSizealert, setFileSizealert] = useState("");
+  const [showApplySuccesstxt, setShowApplySuccesstxt] = useState(false);
 
   const dropCvFileChosen = (e) => {
     console.log(e);
@@ -383,9 +383,10 @@ const AboutUs = (props) => {
     return elm.value;
   };
   const handleApplySubmit = (evt) => {
+    var formIsValid = true;
     // console.log(evt);
     // evt.preventDefault();
-    return;
+    // return;
     let reqData = {
       name: getVal('.job-apply-body-cont input[name="name"]'),
       email: getVal('.job-apply-body-cont input[name="email"]'),
@@ -396,7 +397,7 @@ const AboutUs = (props) => {
       career_summary: getVal(
         '.job-apply-body-cont input[name="career_summary"]'
       ),
-      resume_file: document.querySelector("#file").files[0],
+      resume_file: document.querySelector("#upload").files[0],
     };
     console.log(reqData);
     let formData = new FormData();
@@ -417,21 +418,121 @@ const AboutUs = (props) => {
       "career_summary",
       getVal('.job-apply-body-cont input[name="career_summary"]')
     );
-    // formData.append("resume_file", document.querySelector("#file").files[0]);
+    formData.append("resume_file", document.querySelector("#upload").files[0]);
     console.log(formData);
     // let formData2 = new FormData(document.getElementById("apply-form"));
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/job-apply`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        // "Content-Type": "application/x-www-form-urlencoded",
-        // "Content-Type": "multipart/form-data",
-      },
-      body: JSON.stringify(reqData),
-      //   body: formData,
-    }).then((res) => {
-      console.log(res);
-    });
+
+    if (!name) {
+      formIsValid = false;
+      setnameerr("*Please enter your name.");
+    } else {
+      setnameerr("");
+    }
+
+    if (typeof name !== "undefined") {
+      if (!name.match(/^[a-zA-Z ]*$/)) {
+        formIsValid = false;
+        setnameerr("*Please enter alphabet characters only.");
+      }
+    }
+
+    if (typeof emailId !== "undefined") {
+      //regular expression for email validation
+      var pattern = new RegExp(
+        /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+      );
+      if (!pattern.test(emailId)) {
+        formIsValid = false;
+        setemailIderr("*Please enter valid email-Id.");
+      } else {
+        setemailIderr("");
+      }
+    }
+
+    if (typeof phoneNumber !== "undefined") {
+      if (!phoneNumber.match(/^[0-9]{10}$/)) {
+        formIsValid = false;
+        setPhoneNumbererr("*Please enter valid mobile number.");
+      } else {
+        setPhoneNumbererr("");
+      }
+    }
+    if (formIsValid) {
+      axios({
+        method: "post",
+        url: `${process.env.REACT_APP_API_ENDPOINT}/job-apply`,
+        //   data: JSON.stringify(reqData),
+        data: formData,
+        //   withCredentials: true,
+      })
+        .then((response) => {
+          console.log(response);
+          if (response.status == 200) {
+            setname("");
+            setemailId("");
+            setsubject("");
+            setPhoneNumber("");
+            setcompanyName("");
+            setCvapplyFile("");
+            setShowApplySuccesstxt(true);
+            setTimeout(() => {
+              setShowApplySuccesstxt(false);
+              setApplyShow(false);
+              document.querySelector("#upload").value = null;
+              setDropCvFileName("");
+            }, 1000);
+          }
+        })
+        .catch((error) => {
+          // alert("Something Went Wrong");
+          //showToast("danger");
+        });
+    }
+    // fetch(`${process.env.REACT_APP_API_ENDPOINT}/job-apply2`, {
+    //   method: "post",
+    //   headers: {
+    //     // "Content-Type": "application/json",
+    //     // "Content-Type": "application/x-www-form-urlencoded",
+    //     "Content-Type": "multipart/form-data",
+    //   },
+    //   body: JSON.stringify(reqData),
+    //   //   body: formData,
+    // }).then((res) => {
+    //   console.log(res);
+    // });
+  };
+  const handleDropCvSubmit = (evt) => {
+    if (true) {
+      let formData = new FormData();
+      formData.append(
+        "resume_file",
+        document.querySelector("#cv-upload").files[0]
+      );
+      console.log(formData);
+      axios({
+        method: "post",
+        url: `${process.env.REACT_APP_API_ENDPOINT}/drop-cv`,
+        //   data: JSON.stringify(reqData),
+        data: formData,
+        //   withCredentials: true,
+      })
+        .then((response) => {
+          console.log(response);
+          if (response.status == 200) {
+            setCvapplyFile("");
+            document.querySelector("#cv-upload").value = null;
+            setDropCvFileName("");
+            setShowApplySuccesstxt(true);
+            setTimeout(() => {
+              setShowApplySuccesstxt(false);
+            }, 1000);
+          }
+        })
+        .catch((error) => {
+          alert("Something Went Wrong");
+          //showToast("danger");
+        });
+    }
   };
   useEffect(() => {
     document.title = "Flexmoney: Careers";
@@ -909,12 +1010,13 @@ const AboutUs = (props) => {
                 we will consider your profile for future job <br /> postings
               </h4>
               {/* <input type="file" className="cv-file-input"></input> */}
-              <form
+              {/* <form
                 id="drop-cv-form"
                 action={`${process.env.REACT_APP_API_ENDPOINT}/drop-cv`}
                 encType="multipart/form-data"
                 method="post"
-              >
+              > */}
+              <div id="drop-cv-form">
                 <input
                   type="file"
                   className="cv-file-input"
@@ -970,10 +1072,16 @@ const AboutUs = (props) => {
                 </label>
                 <p>Upload docx file, pdf upto 1 mb only</p>
                 {/* <Button type="submit" loading={loading} title="Submit" /> */}
-                <button type="submit" onClick={handleApplySubmit}>
+                <button type="submit" onClick={handleDropCvSubmit}>
                   Submit
                 </button>
-              </form>
+                {showApplySuccesstxt && (
+                  <div className="thankyouTxt">
+                    Thank you! We'll get back to you soon
+                  </div>
+                )}
+              </div>
+              {/* </form> */}
             </div>
           </div>
         </Row>
@@ -1079,94 +1187,99 @@ const AboutUs = (props) => {
             </div> */}
             {/* </form> */}
 
-            <form
+            {/* <form
               id="apply-form"
               action={`${process.env.REACT_APP_API_ENDPOINT}/job-apply`}
               encType="multipart/form-data"
               method="post"
-            >
-              <Row>
-                <input type="hidden" name="job_title" value={jobApplyInView} />
-                <Col lg={6}>
-                  <InputText
-                    value={name}
-                    onChange={(e) => setname(e.target.value)}
-                    name="name"
-                    title="Name"
-                  />
-                  <div className="err">{nameerr}</div>
-                </Col>
-                <Col lg={6}>
-                  <InputText
-                    value={emailId}
-                    onChange={(e) => setemailId(e.target.value)}
-                    name="email"
-                    title="Email ID*"
-                  />
-                  <div className="err">{emailIderr}</div>
-                </Col>
+            > */}
+            <Row>
+              <input type="hidden" name="job_title" value={jobApplyInView} />
+              <Col lg={6}>
+                <InputText
+                  value={name}
+                  onChange={(e) => setname(e.target.value)}
+                  name="name"
+                  title="Name"
+                />
+                <div className="err">{nameerr}</div>
+              </Col>
+              <Col lg={6}>
+                <InputText
+                  value={emailId}
+                  onChange={(e) => setemailId(e.target.value)}
+                  name="email"
+                  title="Email ID*"
+                />
+                <div className="err">{emailIderr}</div>
+              </Col>
 
-                <Col lg={6}>
-                  <InputText
-                    value={phoneNumber}
-                    type="tel"
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    name="contact_number"
-                    title="Mobile Number*"
-                  />
-                  <div className="err">{phoneNumbererr}</div>
-                </Col>
+              <Col lg={6}>
+                <InputText
+                  value={phoneNumber}
+                  type="tel"
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  name="contact_number"
+                  title="Mobile Number*"
+                />
+                <div className="err">{phoneNumbererr}</div>
+              </Col>
 
-                <Col lg={6}>
-                  <InputText
-                    value={companyName}
-                    onChange={(e) => setcompanyName(e.target.value)}
-                    name="company_name"
-                    title="Company Name"
-                  />
-                </Col>
+              <Col lg={6}>
+                <InputText
+                  value={companyName}
+                  onChange={(e) => setcompanyName(e.target.value)}
+                  name="company_name"
+                  title="Company Name"
+                />
+              </Col>
 
-                <Col lg={12}>
-                  <InputText
-                    value={subject}
-                    onChange={(e) => setsubject(e.target.value)}
-                    name="career_summary"
-                    title="Subject"
-                  />
-                </Col>
+              <Col lg={12}>
+                <InputText
+                  value={subject}
+                  onChange={(e) => setsubject(e.target.value)}
+                  name="career_summary"
+                  title="Subject"
+                />
+              </Col>
 
-                <Col lg={12}>
-                  <div className="resume">
-                    <input
-                      type="file"
-                      className="cv-file-input"
-                      id="upload"
-                      hidden
-                      name="resume"
-                      accept="application/pdf"
-                      onChange={handleJobApplyFileChosen}
-                    />
-                    <label for="upload">
-                      <span>Choose file</span>
-                    </label>
-                    <p>
-                      <span>
-                        Upload docx file, pdf upto 1 mb only{" "}
-                        <span className="size-alert">{fileSizealert}</span>
-                      </span>{" "}
-                      - {dropCvFileName}
-                    </p>
+              <Col lg={12}>
+                <div className="resume">
+                  <input
+                    type="file"
+                    className="cv-file-input"
+                    id="upload"
+                    hidden
+                    name="resume"
+                    accept="application/pdf"
+                    onChange={handleJobApplyFileChosen}
+                  />
+                  <label for="upload">
+                    <span>Choose file</span>
+                  </label>
+                  <p>
+                    <span>
+                      Upload docx file, pdf upto 1 mb only{" "}
+                      <span className="size-alert">{fileSizealert}</span>
+                    </span>{" "}
+                    - {dropCvFileName}
+                  </p>
+                </div>
+              </Col>
+              <Col lg={12}>
+                <div className="submit">
+                  <button type="submit" onClick={handleApplySubmit}>
+                    Submit
+                  </button>
+                </div>
+                {showApplySuccesstxt && (
+                  <div className="thankyouTxt">
+                    Thank you! We'll get back to you soon
                   </div>
-                </Col>
-                <Col lg={12}>
-                  <div className="submit">
-                    <button type="submit" onClick={handleApplySubmit}>
-                      Submit
-                    </button>
-                  </div>
-                </Col>
-              </Row>
-            </form>
+                )}
+              </Col>
+            </Row>
+            {/* </form> */}
           </div>
         </Modal.Body>
         {/* <Modal.Footer>
