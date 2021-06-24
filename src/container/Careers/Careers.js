@@ -464,9 +464,9 @@ const AboutUs = (props) => {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
-      // autoplay: {
-      //   delay: 2000,
-      // },
+      autoplay: {
+        delay: 2000,
+      },
       pagination: {
         el: ".newsec1_swiper .swiper-pagination",
         clickable: true,
@@ -476,9 +476,9 @@ const AboutUs = (props) => {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
-      // autoplay: {
-      //   delay: 2000,
-      // },
+      autoplay: {
+        delay: 2000,
+      },
       pagination: {
         el: ".mbnewsec1_swiper .swiper-pagination",
         clickable: true,
@@ -644,7 +644,7 @@ const AboutUs = (props) => {
       <div key={i} className="opening">
         <div className="title">{item.title}</div>
         <div className="desc" onClick={() => handleDescShow(item.description)}>
-          Job Description {">"}
+          <span className='desc_span'>Job Description</span> &nbsp; {">"}
         </div>
         {/* <button onClick={() => handleApplyShow(item.title)}>Apply now</button> */}
         <div
@@ -1282,7 +1282,7 @@ const AboutUs = (props) => {
                       onChange={handleJobApplyFileChosen}
                     />
                     <label for="upload">
-                      <span>Choose file</span>
+                      <span style={{ fontSize: '2em', display: 'block', marginTop: '1em'}}>Choose file</span>
                     </label>
                     <p>
                       <span>

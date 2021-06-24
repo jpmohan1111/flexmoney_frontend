@@ -2,7 +2,12 @@
 *{
   // outline: 1px solid orangered;
 }
-
+.modal-header .close {
+  font-size: 4em;
+  padding-right: 0.5em;
+  // padding: 1rem 1rem;
+  // margin: -2rem -1rem -1rem auto;
+}
 .careersec1 {
   min-height: 35vh;
   padding-left: 1.25em;
@@ -942,16 +947,18 @@
 
   .openings-cont {
     width: 100%;
-    margin-top: 65px;
-    padding-top: 3.750em;
-    padding-bottom: 5.375em;
+    margin-top: 2.625em;
+    
+    padding: 3.750em 5.656em 5.375em 5.656em;
     border-radius: 1.250em;
     box-shadow: 0 3px 6px 0 #00000029;
     background-color: #ffffff;
     .opening {
       position: relative;
-      padding: 20px 0px;
+      // padding: 2.625em 0px;
       border-bottom: solid 1px #c2c2c2;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
       .btn {
         position: absolute;
         top: 20px;
@@ -972,28 +979,33 @@
       }
 
       .title {
-        font-size: 1.85rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.71;
-        letter-spacing: 0.63px;
+        font-size: 2.188em;
+        letter-spacing: 0.018em;
+        line-height: 1.714em;
         text-align: left;
         color: #0bb443;
+        .fontreg();
       }
       .desc {
-        font-size: 1rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1;
-        letter-spacing: 0.45px;
+        // font-size: 1rem;
+        // font-weight: normal;
+        // font-stretch: normal;
+        // font-style: normal;
+        // line-height: 1;
+        // letter-spacing: 0.45px;
+        // font-family: sans-serif;
+        // margin-top: 15px;
+        // border-bottom: 1px solid #000;
         text-align: left;
         color: #333333;
-        font-family: sans-serif;
-        border-bottom: 1px solid #000;
         width: fit-content;
-        margin-top: 15px;
+        .f25();
+        .fontreg();
+        margin-top: 0.5em;
+      }
+      .desc_span{
+        border-bottom: 1px solid #333333;
+
       }
     }
   }
@@ -1258,19 +1270,24 @@
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          right: 1em;
-          width: 9.5em;
+          right: 0.5em;
+          width: 8.5em;
+    height: 3.5em;
         }
 
         .title {
-          font-size: 16px;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 1.75;
-          letter-spacing: 0.29px;
+          // font-size: 1.6em;
+          // font-weight: normal;
+          // font-stretch: normal;
+          // font-style: normal;
+          // line-height: 1.75;
+          // letter-spacing: 0.29px;
+          .mf16();
+          .fontreg();
           text-align: left;
           color: #0bb443;
+          width: 100%;
+          max-width: 62%;
         }
         .desc {
           font-size: 14px;
@@ -1559,25 +1576,30 @@
 
 .job-desc-modal {
   .job-desc-head {
-    font-size: 40px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
+    // font-size: 40px;
+    // font-weight: bold;
+    // font-stretch: normal;
+    // font-style: normal;
+    // line-height: 1.5;
+    // letter-spacing: normal;
     text-align: center;
     width: 100%;
     color: #333333;
+    .f60();
+    .fontbold();
+    margin-top: 1.033em;
   }
   .job-desc-resp-head {
-    font-size: 15px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: 0.45px;
+    // font-size: 15px;
+    // font-weight: normal;
+    // font-stretch: normal;
+    // font-style: normal;
+    // line-height: 1.8;
+    // letter-spacing: 0.45px;
     text-align: left;
     color: #0bb443;
+    .f25();
+    .fontreg();
   }
   .job-desc-sub-head {
   }
@@ -1618,7 +1640,7 @@
         width: 95%;
         height: auto;
         border-bottom: solid 2px #3bb859;
-
+        margin-top: 2em;
         > input {
           color: transparent;
           width: 100%;
@@ -1679,7 +1701,7 @@
           position: absolute;
           bottom: 10px;
           font-weight: 700;
-          font-size: 1.25em;
+          font-size: 1.8em;
           letter-spacing: 0.25px;
           line-height: 1;
           color: #525252;
@@ -1693,43 +1715,57 @@
         }
       }
       button {
-        width: 150px;
-        margin: 35px 0px;
-        height: 40px;
-        border-radius: 100px;
+        // width: 150px;
+        // margin: 35px 0px;
+        // height: 40px;
+        // border-radius: 100px;
         background-color: #333333;
         margin-right: auto;
         box-shadow: 0 9px 12px 0 rgba(59, 184, 89, 0.3);
-        font-size: 14px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 2.44;
-        letter-spacing: normal;
+        // font-size: 14px;
+        // font-weight: normal;
+        // font-stretch: normal;
+        // font-style: normal;
+        // line-height: 2.44;
+        // letter-spacing: normal;
         text-align: left;
         color: #ffffff;
-        padding: 3px 50px;
+        // padding: 3px 50px;
+        .f18();
+        .fontreg();
+        margin-top: 5.000em;
+        width: 11.444em;
+        height: 3.944em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5.556em;
       }
     }
     .job-apply-head {
-      font-size: 40px;
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.5;
-      letter-spacing: normal;
+      // font-size: 40px;
+      // font-weight: bold;
+      // font-stretch: normal;
+      // font-style: normal;
+      // line-height: 1.5;
+      // letter-spacing: normal;
       text-align: center;
       width: 100%;
       color: #333333;
+      .f60();
+      .fontbold();
+      margin-top: 1.033em;
     }
     .job-apply-body {
       input {
+        font-size: 1.7em;
         display: block;
-        height: 20px;
+        height: 38px;
         width: 90%;
         margin: 0;
         border: none;
         border-bottom: solid 2px #3bb859;
+        padding-bottom: 0.7em;
         &[name="career_summary"] {
           width: 95%;
         }
@@ -1865,7 +1901,7 @@
     .job-apply-body-cont {
       display: flex;
       flex-wrap: wrap;
-      padding: 0px 30px 45px 30px;
+      // padding: 0px 30px 45px 30px;
       input {
         font-size: 16px;
         font-weight: normal;
@@ -1877,20 +1913,34 @@
         color: #595959;
       }
       button {
-        width: 117px;
-        height: 38px;
-        padding: 7px 30px;
-        border-radius: 100px;
+        // width: 117px;
+        // height: 38px;
+        // padding: 7px 30px;
+        // border-radius: 100px;
+        // font-size: 14px;
+        // font-weight: normal;
+        // font-stretch: normal;
+        // font-style: normal;
+        // line-height: 1.57;
+        // letter-spacing: 0.42px;
+        // yoo
         background-color: #333333;
-        font-size: 14px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.57;
-        letter-spacing: 0.42px;
+        margin-right: auto;
+        box-shadow: 0 9px 12px 0 rgb(59 184 89 / 30%);
         text-align: left;
         color: #ffffff;
-        margin: auto;
+        font-size: 1.25em;
+        letter-spacing: 0.25px;
+        line-height: 1.556em;
+        font-family: Merriweather Sans;
+        // margin-top: 5em;
+        width: 11.444em;
+        height: 3.944em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5.556em;
+        margin: 3em auto 0;
       }
 
       .name,
@@ -2011,8 +2061,8 @@
     .job-apply-body {
       input {
         display: block;
-        height: 50px;
-        width: 90%;
+        height: 35px;
+        width: 100%;
         margin: 0;
         border: none;
         border-bottom: solid 2px #3bb859;
@@ -2044,16 +2094,21 @@
   }
   .job-desc-modal {
     .job-desc-head {
+      // font-size: 24px;
+      // font-weight: bold;
+      // font-stretch: normal;
+      // font-style: normal;
+      // line-height: 1.5;
+      // letter-spacing: normal;
       width: 100%;
-      font-size: 24px;
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.5;
-      letter-spacing: normal;
       text-align: center;
       color: #333333;
+      .mf24();
+      .fontbold();
     }
+    .modal-header .close {
+      font-size: 3em;
+  }
     .job-desc-resp-head {
       font-size: 15px;
       font-weight: normal;
@@ -2074,7 +2129,7 @@
       text-align: left;
     }
     .job-desc-sub-desc {
-      font-size: 10px;
+      font-size: 1.5em;
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
