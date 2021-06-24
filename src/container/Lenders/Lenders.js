@@ -19,6 +19,7 @@ import Swiper, {
 } from "swiper";
 //----------------------- images imports ------------------------//
 import bannerimg from "../../images/lenders/bannerimg.png";
+import bannerimg2 from "../../images/lenders/bannerimg2.png";
 import tabbannerimg from "../../images/lenders/tabbannerimg.png";
 
 import rightimg from "../../images/lenders/rightimg.png";
@@ -73,7 +74,43 @@ const sectionOnebannerDataArr = [
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
   {
+    img: bannerimg2,
+    mbimg: tabbannerimg,
+    title: "Lenders",
+    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
+  },
+  {
     img: bannerimg,
+    mbimg: tabbannerimg,
+    title: "Lenders",
+    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
+  },
+  {
+    img: bannerimg2,
+    mbimg: tabbannerimg,
+    title: "Lenders",
+    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
+  },
+  {
+    img: bannerimg,
+    mbimg: tabbannerimg,
+    title: "Lenders",
+    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
+  },
+  {
+    img: bannerimg2,
+    mbimg: tabbannerimg,
+    title: "Lenders",
+    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
+  },
+  {
+    img: bannerimg,
+    mbimg: tabbannerimg,
+    title: "Lenders",
+    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
+  },
+  {
+    img: bannerimg2,
     mbimg: tabbannerimg,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",

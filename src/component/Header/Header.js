@@ -102,13 +102,6 @@ const Header = (props) => {
               </NavLink>
               <NavLink
                 onClick={() => setisList(false)}
-                to="/careers"
-                className="title c-p"
-              >
-                Careers
-              </NavLink>
-              <NavLink
-                onClick={() => setisList(false)}
                 to="/lenders"
                 className="title c-p"
               >
@@ -121,6 +114,14 @@ const Header = (props) => {
               >
                 Merchants
               </NavLink>
+              <NavLink
+                onClick={() => setisList(false)}
+                to="/careers"
+                className="title c-p"
+              >
+                Careers
+              </NavLink>
+              
               {/* <NavLink
                 onClick={() => setisList(false)}
                 to="/In-the-news"
@@ -186,13 +187,7 @@ const Header = (props) => {
               >
                 Contact Us
               </Link>
-              <Link
-                onClick={() => setisList(false)}
-                to="/careers"
-                className="title c-p"
-              >
-                Careers
-              </Link>
+             
               <Link
                 onClick={() => setisList(false)}
                 to="/lenders"
@@ -207,6 +202,13 @@ const Header = (props) => {
               >
                 Merchants
               </NavLink>
+              <Link
+                onClick={() => setisList(false)}
+                to="/careers"
+                className="title c-p"
+              >
+                Careers
+              </Link>
               {/* <NavLink
                 onClick={() => setisList(false)}
                 to="/In-the-news"

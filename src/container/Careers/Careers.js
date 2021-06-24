@@ -90,6 +90,18 @@ import useWindowDimensions from "../../useWindowDimensions";
 import TeamMemberItem from "../../component/TeamMemberItem/TeamMemberItem";
 import AdvisorItem from "../../component/AdvisorItem/AdvisorItem";
 
+// -----------------------vijay image imports start----------------
+import slider1desk from "../../images/careers/slider1desk.png";
+import bgdesk from "../../images/careers/bgdesk.png";
+import bgmobile from "../../images/careers/bgmobile.png";
+import slider1mob from "../../images/careers/slider1mob.png";
+
+import sec2logo1 from "../../images/careers/sec2logo1.png";
+import sec2logo2 from "../../images/careers/sec2logo2.png";
+import sec2logo3 from "../../images/careers/sec2logo3.png";
+
+// -----------------------vijay image imports end ----------------
+
 Swiper.use([
   Navigation,
   Pagination,
@@ -448,6 +460,31 @@ const AboutUs = (props) => {
       live: false,
     }).init();
 
+    var newcareersec1_swiper = new Swiper(".newsec1_swiper.swiper-container", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      // autoplay: {
+      //   delay: 2000,
+      // },
+      pagination: {
+        el: ".newsec1_swiper .swiper-pagination",
+        clickable: true,
+      },
+    });
+    var mbnewsec1_swiper = new Swiper(".mbnewsec1_swiper.swiper-container", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      // autoplay: {
+      //   delay: 2000,
+      // },
+      pagination: {
+        el: ".mbnewsec1_swiper .swiper-pagination",
+        clickable: true,
+      },
+    });
+
     var pastexp_swiper2 = new Swiper(".careersec3_swiper.swiper-container", {
       //   effect: "coverflow",
       grabCursor: true,
@@ -607,7 +644,7 @@ const AboutUs = (props) => {
       <div key={i} className="opening">
         <div className="title">{item.title}</div>
         <div className="desc" onClick={() => handleDescShow(item.description)}>
-          Job Description >
+          Job Description {">"}
         </div>
         {/* <button onClick={() => handleApplyShow(item.title)}>Apply now</button> */}
         <div
@@ -656,41 +693,141 @@ const AboutUs = (props) => {
 
   return (
     <>
-      <section className="careersec1 wow fadeIn">
+      <section className="newsec1 wow fadeIn">
+        {width > 1023 ? (
+          <div className="newsec1_wrapper">
+            <div className="newsec1_swiper swiper-container">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide">
+                  <img src={slider1desk} className="slider_img" />
+                </div>
+                <div className="swiper-slide">
+                  <img src={slider1desk} className="slider_img" />
+                </div>
+                <div className="swiper-slide">
+                  <img src={slider1desk} className="slider_img" />
+                </div>
+              </div>
+              <div className="swiper-pagination"></div>
+            </div>
+            <div className="text_content">
+              <div className="text_wrapper">
+                <div className="title">Careers</div>
+                <div className="desc">We are recruiting!</div>
+              </div>
+              <img src={bgdesk} className="greenbgcut" />
+            </div>
+          </div>
+        ) : (
+          <div className="mb_newsec1_wrapper">
+            <div className="mbnewsec1_swiper swiper-container">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide">
+                  <img src={slider1mob} className="mb_slider_img" />
+                </div>
+                <div className="swiper-slide">
+                  <img src={slider1mob} className="mb_slider_img" />
+                </div>
+                <div className="swiper-slide">
+                  <img src={slider1mob} className="mb_slider_img" />
+                </div>
+              </div>
+              <div className="swiper-pagination"></div>
+            </div>
+            <div className="mb_container">
+              <img src={bgmobile} className="bgmobile" />
+              <div className="mb_text_container">
+                <div className="title">Careers</div>
+                <div className="desc">We are recruiting!</div>
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
+
+      <section className="newsec2 wow fadeIn">
+        <div className="title">Working with Flexmoney</div>
+        <div className="desc">
+          Looking for talented and passionate individuals to join our team
+        </div>
+        <div className="flex_wrapper">
+          <div className="boxx">
+          <div className="card_logo">
+              <img src={sec2logo1} className="card_img" />
+            </div>
+            <div className="card_text_wrapper">
+              <div className="text_title">Build the future</div>
+              <div className="text_desc">
+                Be a part of the team that is revolutionizing the Buy Now Pay
+                Later landscape in the county
+              </div>
+            </div>
+          </div>
+          <div className="boxx">
+            <div className="card_logo">
+              <img src={sec2logo2} className="card_img" />
+            </div>
+
+            <div className="card_text_wrapper">
+              <div className="text_title">Open Work Culture</div>
+              <div className="text_desc">
+                Work in a transparent and open culture where All Hands are on
+                Deck
+              </div>
+            </div>
+          </div>
+          <div className="boxx">
+            <div className="card_logo">
+              <img src={sec2logo1} className="card_img" />
+            </div>
+
+            <div className="card_text_wrapper">
+              <div className="text_title">Diverse Team</div>
+              <div className="text_desc">
+                Work alongside colleagues with diverse backgrounds and
+                experiences ranging from Technology to Finance, from Silicon
+                Valley to Singapore
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="careersec1 wow fadeIn">
         <Breadcrumb history={props.history} t2="Careers" />
         <div className="main-head">
           <div className="title">Careers</div>
           <div className="desc">We are recruiting</div>
         </div>
-      </section>
-      <section className="careersec2 wow fadeInUp" data-wow-duration="2s">
+      </section> */}
+      {/* <section className="careersec2 wow fadeInUp" data-wow-duration="2s">
         <Row className="m-0">
           <Col lg={12} className="p-0">
-            <div className="d-f j-c ">
-              {/* {width <= 834 ? null : (
+            <div className="d-f j-c "> */}
+      {/* {width <= 834 ? null : (
 				<div className="d-f a-c">
 				  <div>
 					<img className="left_arrow" src={leftArr} />
 				  </div>
 				</div>
 			  )} */}
-              <div className="careersec3_swiper swiper-container">
+      {/* <div className="careersec3_swiper swiper-container">
                 <div className="swiper-wrapper">
                   {width > 480 ? list2 : list3}
                 </div>
-              </div>
-              {/* {width <= 834 ? null : (
+              </div> */}
+      {/* {width <= 834 ? null : (
 				<div className="d-f a-c">
 				  <div>
 					<img className="right_arrow" src={rightArr} />
 				  </div>
 				</div>
 			  )} */}
-            </div>
+      {/* </div>
             <div className="swiper-pagination"></div>
           </Col>
         </Row>
-      </section>
+      </section> */}
 
       {/* <section
 		className="careersec3 wow fadeInUp"
@@ -753,12 +890,11 @@ const AboutUs = (props) => {
 		  </div>
 		</div>
 	  </section> */}
-
+      {/* 
       <section className="careersec5 wow fadeIn">
         <Row className="m-0 opening-head">
           <Col className="p-0 firstcol" lg={12}>
             <div className="working-title">Working with Flexmoney </div>
-            {/* <div className="working-desc"> */}
             {width <= 834 ? (
               <div className="working-desc">
                 Looking for talented and passionate <br />
@@ -769,11 +905,10 @@ const AboutUs = (props) => {
                 Looking for talented and passionate individuals to join our team
               </div>
             )}
-            {/* </div> */}
           </Col>
         </Row>
         <Row className=" bullets">
-          <div>
+          <div className="bullet_div">
             <div className="working-img-cont">
               <img src={lamp} alt="" />
             </div>
@@ -787,13 +922,13 @@ const AboutUs = (props) => {
                 </div>
               ) : (
                 <div className="working-desc">
-                  Be a part of the team that is revolutionizing <br /> the Buy
-                  Now Pay Later landscape in the county
+                  Be a part of the team that is revolutionizing the Buy Now Pay
+                  Later landscape in the county
                 </div>
               )}
             </div>
           </div>
-          <div>
+          <div className="bullet_div">
             <div className="working-img-cont">
               <img src={heart} alt="" />
             </div>
@@ -806,13 +941,13 @@ const AboutUs = (props) => {
                 </div>
               ) : (
                 <div className="working-desc">
-                  Work in a transparent and open culture <br /> where All Hands
-                  are on Deck
+                  Work in a transparent and open culture where All Hands are on
+                  Deck
                 </div>
               )}
             </div>
           </div>
-          <div>
+          <div className="bullet_div">
             <div className="working-img-cont">
               <img src={hands} alt="" />
             </div>
@@ -826,15 +961,15 @@ const AboutUs = (props) => {
                 </div>
               ) : (
                 <div className="working-desc">
-                  Work alongside colleagues with diverse <br /> backgrounds and
-                  experiences ranging from <br /> Technology to Finance, from
-                  Silicon Valley <br /> to Singapore
+                  Work alongside colleagues with diverse backgrounds and
+                  experiences ranging from Technology to Finance, from Silicon
+                  Valley to Singapore
                 </div>
               )}
             </div>
           </div>
         </Row>
-      </section>
+      </section> */}
 
       <section className="careersec6 wow fadeIn">
         <Row className="m-0 opening-head openings-container">
