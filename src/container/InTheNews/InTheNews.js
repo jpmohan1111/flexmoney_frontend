@@ -27,7 +27,6 @@ import img1 from "../../images/careers/img1.jpeg";
 import banner from "../../images/careers/banner.png";
 import bannermobile from "../../images/careers/mobilebanner.png";
 import search from "../../images/careers/search.png";
-import upload from "../../images/careers/upload.png";
 import cvImage from "../../images/careers/cvImage.png";
 
 import img2 from "../../images/careers/img2.jpeg";
@@ -89,6 +88,7 @@ import hands from "../../images/careers/hands.png";
 import useWindowDimensions from "../../useWindowDimensions";
 import TeamMemberItem from "../../component/TeamMemberItem/TeamMemberItem";
 import AdvisorItem from "../../component/AdvisorItem/AdvisorItem";
+import icici from "../../images/inthenews/800px-ICICI_Bank_Logo.png";
 
 Swiper.use([
   Navigation,
@@ -311,21 +311,11 @@ const AboutUs = (props) => {
   const [subject, setsubject] = useState("");
   const [message, setMessage] = useState("");
   const [messageerr, setMessageerr] = useState("");
-  const [fileSizealert, setFileSizealert] = useState("");
 
   const dropCvFileChosen = (e) => {
     console.log(e);
     console.log(e.target.files[0].name);
     setDropCvFileName(e.target.files[0].name);
-  };
-  const handleJobApplyFileChosen = (e) => {
-    console.log(e);
-    console.log(e.target.files[0].name);
-    console.log(e.target.files[0].size);
-    setDropCvFileName(e.target.files[0].name);
-    if (e.target.files[0].size > 1000000)
-      setFileSizealert("file size more than 1 MB!");
-    else setFileSizealert("");
   };
 
   const handleDescClose = () => setDescShow(false);
@@ -389,9 +379,7 @@ const AboutUs = (props) => {
     let reqData = {
       name: getVal('.job-apply-body-cont input[name="name"]'),
       email: getVal('.job-apply-body-cont input[name="email"]'),
-      contact_number: getVal(
-        '.job-apply-body-cont input[name="contact_number"]'
-      ),
+      contact_number: getVal('.job-apply-body-cont input[name="contact"]'),
       company_name: getVal('.job-apply-body-cont input[name="company_name"]'),
       career_summary: getVal(
         '.job-apply-body-cont input[name="career_summary"]'
@@ -407,7 +395,7 @@ const AboutUs = (props) => {
     );
     formData.append(
       "contact_number",
-      getVal('.job-apply-body-cont input[name="contact_number"]')
+      getVal('.job-apply-body-cont input[name="contact"]')
     );
     formData.append(
       "company_name",
@@ -417,18 +405,18 @@ const AboutUs = (props) => {
       "career_summary",
       getVal('.job-apply-body-cont input[name="career_summary"]')
     );
-    // formData.append("resume_file", document.querySelector("#file").files[0]);
+    formData.append("resume_file", document.querySelector("#file").files[0]);
     console.log(formData);
-    // let formData2 = new FormData(document.getElementById("apply-form"));
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/job-apply`, {
+    let formData2 = new FormData(document.getElementById("apply-form"));
+    fetch("http://127.0.0.1:8080/job-apply", {
       method: "post",
       headers: {
-        "Content-Type": "application/json",
+        // "Content-Type": "application/json",
         // "Content-Type": "application/x-www-form-urlencoded",
-        // "Content-Type": "multipart/form-data",
+        "Content-Type": "multipart/form-data",
       },
-      body: JSON.stringify(reqData),
-      //   body: formData,
+      //   body: JSON.stringify(reqData),
+      body: formData2,
     }).then((res) => {
       console.log(res);
     });
@@ -659,37 +647,28 @@ const AboutUs = (props) => {
       <section className="careersec1 wow fadeIn">
         <Breadcrumb history={props.history} t2="Careers" />
         <div className="main-head">
-          <div className="title">Careers</div>
-          <div className="desc">We are recruiting</div>
+          <div className="title">In the News</div>
+          <div className="desc">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et.
+          </div>
         </div>
       </section>
-      <section className="careersec2 wow fadeInUp" data-wow-duration="2s">
-        <Row className="m-0">
-          <Col lg={12} className="p-0">
-            <div className="d-f j-c ">
-              {/* {width <= 834 ? null : (
-				<div className="d-f a-c">
-				  <div>
-					<img className="left_arrow" src={leftArr} />
-				  </div>
-				</div>
-			  )} */}
-              <div className="careersec3_swiper swiper-container">
-                <div className="swiper-wrapper">
-                  {width > 480 ? list2 : list3}
-                </div>
-              </div>
-              {/* {width <= 834 ? null : (
-				<div className="d-f a-c">
-				  <div>
-					<img className="right_arrow" src={rightArr} />
-				  </div>
-				</div>
-			  )} */}
-            </div>
-            <div className="swiper-pagination"></div>
-          </Col>
-        </Row>
+      <section className="main-news">
+        <div className="details">
+          <div className="title">
+            Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners
+          </div>
+          <div className="date">FEB 21, 2021</div>
+          <div className="desc">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et...
+          </div>
+          <div className="read-more">Read more</div>
+        </div>
+        <div className="image">
+          <img src={icici} alt="" />
+        </div>
       </section>
 
       {/* <section
@@ -758,18 +737,10 @@ const AboutUs = (props) => {
         <Row className="m-0 opening-head">
           <Col className="p-0 firstcol" lg={12}>
             <div className="working-title">Working with Flexmoney </div>
-            {/* <div className="working-desc"> */}
-            {width <= 834 ? (
-              <div className="working-desc">
-                Looking for talented and passionate <br />
-                individuals to join our team
-              </div>
-            ) : (
-              <div className="working-desc">
-                Looking for talented and passionate individuals to join our team
-              </div>
-            )}
-            {/* </div> */}
+            <div className="working-desc">
+              Looking for talented and passionate <br />
+              individuals to join our team
+            </div>
           </Col>
         </Row>
         <Row className=" bullets">
@@ -779,18 +750,10 @@ const AboutUs = (props) => {
             </div>
             <div>
               <div className="working-title">Build the future</div>
-
-              {width <= 834 ? (
-                <div className="working-desc">
-                  Be a part of the team that is revolutionizing the Buy Now Pay
-                  Later landscape in the county
-                </div>
-              ) : (
-                <div className="working-desc">
-                  Be a part of the team that is revolutionizing <br /> the Buy
-                  Now Pay Later landscape in the county
-                </div>
-              )}
+              <div className="working-desc">
+                Be a part of the team that is revolutionizing the Buy Now Pay
+                Later landscape in the county
+              </div>
             </div>
           </div>
           <div>
@@ -799,17 +762,10 @@ const AboutUs = (props) => {
             </div>
             <div>
               <div className="working-title">Open Work culture</div>
-              {width <= 834 ? (
-                <div className="working-desc">
-                  Work in a transparent and open culture where All Hands are on
-                  Deck
-                </div>
-              ) : (
-                <div className="working-desc">
-                  Work in a transparent and open culture <br /> where All Hands
-                  are on Deck
-                </div>
-              )}
+              <div className="working-desc">
+                Work in a transparent and open culture where All Hands are on
+                Deck
+              </div>
             </div>
           </div>
           <div>
@@ -818,19 +774,11 @@ const AboutUs = (props) => {
             </div>
             <div>
               <div className="working-title">Diverse team</div>
-              {width <= 834 ? (
-                <div className="working-desc">
-                  Work alongside colleagues with diverse backgrounds and
-                  experiences ranging from Technology to Finance, from Silicon
-                  Valley to Singapore
-                </div>
-              ) : (
-                <div className="working-desc">
-                  Work alongside colleagues with diverse <br /> backgrounds and
-                  experiences ranging from <br /> Technology to Finance, from
-                  Silicon Valley <br /> to Singapore
-                </div>
-              )}
+              <div className="working-desc">
+                Work alongside colleagues with diverse backgrounds and
+                experiences ranging from Technology to Finance, from Silicon
+                Valley to Singapore
+              </div>
             </div>
           </div>
         </Row>
@@ -845,7 +793,7 @@ const AboutUs = (props) => {
               <input
                 onChange={handleJobSearch}
                 type="text"
-                placeholder="Search by title, skills and location"
+                placeholder="Search jobs, titles, keywords"
               />
             </div>
           </Col>
@@ -905,8 +853,8 @@ const AboutUs = (props) => {
             <div>
               <h2 className="head">Drop your CV here</h2>
               <h4 className="desc">
-                Didn't find what you were looking for? Drop your CV <br /> here,
-                we will consider your profile for future job <br /> postings
+                Didn't find what you were looking for? Drop your CV here, we
+                will consider your profile for future job postings
               </h4>
               {/* <input type="file" className="cv-file-input"></input> */}
               <form
@@ -924,49 +872,7 @@ const AboutUs = (props) => {
                   name="resume"
                 />
                 <label for="cv-upload">
-                  {/* <img src={upload} alt="" /> */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20.999 20.97"
-                  >
-                    <g id="upload-f" transform="translate(0 -0.358)">
-                      <g
-                        id="Group_9403"
-                        data-name="Group 9403"
-                        transform="translate(0 13.166)"
-                      >
-                        <g id="Group_9402" data-name="Group 9402">
-                          <path
-                            id="Path_34633"
-                            data-name="Path 34633"
-                            d="M19.359,312.642v5.7a.821.821,0,0,1-.82.82H2.461a.821.821,0,0,1-.82-.82v-5.7H0v5.7A2.464,2.464,0,0,0,2.461,320.8H18.539A2.464,2.464,0,0,0,21,318.343v-5.7Z"
-                            transform="translate(0 -312.642)"
-                          />
-                        </g>
-                      </g>
-                      <g
-                        id="Group_9405"
-                        data-name="Group 9405"
-                        transform="translate(5.402 0.358)"
-                      >
-                        <g
-                          id="Group_9404"
-                          data-name="Group 9404"
-                          transform="translate(0 0)"
-                        >
-                          <path
-                            id="Path_34634"
-                            data-name="Path 34634"
-                            d="M136.813.358l-5.1,5.1,1.16,1.16L135.993,3.5V16.283h1.641V3.5l3.117,3.117,1.16-1.16Z"
-                            transform="translate(-131.716 -0.358)"
-                          />
-                        </g>
-                      </g>
-                    </g>
-                  </svg>
-                  <span>Choose File </span> <span>{dropCvFileName}</span>
+                  Choose file <span>{dropCvFileName}</span>
                 </label>
                 <p>Upload docx file, pdf upto 1 mb only</p>
                 {/* <Button type="submit" loading={loading} title="Submit" /> */}
@@ -994,7 +900,7 @@ const AboutUs = (props) => {
           <div>
             <h5 className="job-desc-resp-head">Job Role & Responsibilities</h5>
             <div>
-              {/* <p className="job-desc-sub-head">Core Responsibilities:</p> */}
+              <p className="job-desc-sub-head">Core Responsibilities:</p>
               <p className="job-desc-sub-desc">{parse(jobDescInView)}</p>
               {/*<p className="job-desc-sub-head">Additional Responsibilities:</p>
                <p className="job-desc-sub-desc">
@@ -1031,54 +937,53 @@ const AboutUs = (props) => {
               action="http://13.233.110.14:8080/job-apply"
               enctype="multipart/form-data"
               method="post"
-            > */}
-            {/* <input type="hidden" name="job_title" value={jobApplyInView} />
-            <div className="name">
-              <input name="name" placeholder="Name" type="text" />
-            </div>
-            <div className="email">
-              <input name="email" placeholder="Email" type="text" />
-            </div>
-            <div className="contact">
-              <input
-                name="contact_number"
-                placeholder="Contact number"
-                type="text"
-              />
-            </div>
-            <div className="company">
-              <input
-                name="company_name"
-                placeholder="Company Name"
-                type="text"
-              />
-            </div>
-            <div className="career">
-              <input
-                name="career_summary"
-                placeholder="Career Summary/message"
-                type="text"
-              />
-            </div>
-            <div className="resume">
-              <p>Resume* (Upload docx file, pdf upto 1 mb only)</p>
-              <label className="file">
+            >
+              <input type="hidden" name="job_title" value={jobApplyInView} />
+              <div className="name">
+                <input name="name" placeholder="Name" type="text" />
+              </div>
+              <div className="email">
+                <input name="email" placeholder="Email" type="text" />
+              </div>
+              <div className="contact">
                 <input
-                  type="file"
-                  id="file"
-                  aria-label="File browser example"
-                  name="resume"
+                  name="contact_number"
+                  placeholder="Contact number"
+                  type="text"
                 />
-                <span className="file-custom"></span>
-              </label>
-            </div>
-            <div className="submit">
-              <button type="submit" onClick={handleApplySubmit}>
-                Submit
-              </button>
-            </div> */}
-            {/* </form> */}
-
+              </div>
+              <div className="company">
+                <input
+                  name="company_name"
+                  placeholder="Company Name"
+                  type="text"
+                />
+              </div>
+              <div className="career">
+                <input
+                  name="career_summary"
+                  placeholder="Career Summary/message"
+                  type="text"
+                />
+              </div>
+              <div className="resume">
+                <p>Resume* (Upload docx file, pdf upto 1 mb only)</p>
+                <label className="file">
+                  <input
+                    type="file"
+                    id="file"
+                    aria-label="File browser example"
+                    name="resume"
+                  />
+                  <span className="file-custom"></span>
+                </label>
+              </div>
+              <div className="submit">
+                <button type="submit" onClick={handleApplySubmit}>
+                  Submit
+                </button>
+              </div>
+            </form> */}
             <form
               id="apply-form"
               action={`${process.env.REACT_APP_API_ENDPOINT}/job-apply`}
@@ -1137,25 +1042,31 @@ const AboutUs = (props) => {
 
                 <Col lg={12}>
                   <div className="resume">
+                    {/* <p>Resume* (Upload docx file, pdf upto 1 mb only)</p> */}
                     <input
                       type="file"
                       className="cv-file-input"
                       id="upload"
                       hidden
                       name="resume"
-                      accept="application/pdf"
-                      onChange={handleJobApplyFileChosen}
+                      onChange={dropCvFileChosen}
                     />
                     <label for="upload">
                       <span>Choose file</span>
                     </label>
                     <p>
-                      <span>
-                        Upload docx file, pdf upto 1 mb only{" "}
-                        <span className="size-alert">{fileSizealert}</span>
-                      </span>{" "}
-                      - {dropCvFileName}
+                      <span>Upload docx file, pdf upto 1 mb only</span> -{" "}
+                      {dropCvFileName}
                     </p>
+                    {/* <label className="file">
+                      <input
+                        type="file"
+                        id="file"
+                        aria-label="File browser example"
+                        name="resume"
+                      />
+                      <span className="file-custom"></span>
+                    </label> */}
                   </div>
                 </Col>
                 <Col lg={12}>

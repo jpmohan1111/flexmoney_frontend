@@ -214,11 +214,11 @@
 
 .careersec5 {
   display: flex;
+
   justify-content: center;
   flex-wrap: wrap;
   padding-right: 6.25em;
-  padding-bottom: 6em;
-  padding-top: 2em;
+
   .row {
     width: 100%;
   }
@@ -236,7 +236,6 @@
   .bullets {
     flex-wrap: nowrap;
     margin-top: 65px;
-    justify-content: space-around;
     .working-title {
       font-size: 1rem;
       font-weight: 700;
@@ -286,6 +285,8 @@
   }
 
   .deskPadddingLeft();
+  padding-bottom: 6em;
+  padding-top: 4em;
 
   .firstcol {
     flex-direction: column;
@@ -433,7 +434,7 @@
         color: #333333;
       }
       .desc {
-        font-size: 2em;
+        font-size: 25px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -441,7 +442,7 @@
         letter-spacing: normal;
         text-align: left;
         color: #494949;
-        margin: 1em 0px;
+        margin: 2em 0px 0px;
       }
       //   .cv-file-input {
       //     border-radius: 10px;
@@ -466,58 +467,13 @@
       //       font-size: 10pt;
       //     }
       //   }
-      #drop-cv-form {
-        .cv-file-input {
-          color: transparent;
+      .cv-file-input {
+        color: transparent;
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+        + label {
           width: 100%;
-          border-radius: 10px;
-          display: block;
-
-          + label {
-            width: 100%;
-            border: 1px solid #999;
-            border-radius: 10px;
-            padding: 18px 8px;
-            outline: none;
-            white-space: nowrap;
-            -webkit-user-select: none;
-            cursor: pointer;
-            text-shadow: 1px 1px #fff;
-            font-weight: 700;
-            font-size: 10pt;
-            color: #3ab658;
-            height: 60px;
-
-            display: flex;
-
-            > svg {
-              width: 15px;
-            }
-            > span {
-              margin-left: 10px;
-              font-size: 1.2em;
-              font-weight: normal;
-            }
-            > span:last-child {
-              color: #000;
-              font-weight: normal;
-              float: right;
-              position: relative;
-              margin-left: auto;
-            }
-          }
-        }
-        > p {
-          margin-top: 15px;
-        }
-        .cv-file-input::-webkit-file-upload-button {
-          visibility: hidden;
-        }
-        .cv-file-input::before {
-          content: "Choose File";
-          color: #3ab658;
-          display: block;
-          // background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
           border: 1px solid #999;
           border-radius: 3px;
           padding: 10px 8px;
@@ -528,18 +484,44 @@
           text-shadow: 1px 1px #fff;
           font-weight: 700;
           font-size: 10pt;
-          position: relative;
-          top: 10px;
+          color: #3ab658;
+          > span {
+            color: #000;
+            font-weight: normal;
+            float: right;
+            position: relative;
+          }
         }
-        .cv-file-input:hover::before {
-          border-color: black;
-        }
-        .cv-file-input:active {
-          outline: 0;
-        }
-        .cv-file-input:active::before {
-          background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-        }
+      }
+      .cv-file-input::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+      .cv-file-input::before {
+        content: "Choose File";
+        color: #3ab658;
+        display: block;
+        // background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+        border: 1px solid #999;
+        border-radius: 3px;
+        padding: 10px 8px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        text-shadow: 1px 1px #fff;
+        font-weight: 700;
+        font-size: 10pt;
+        position: relative;
+        top: 10px;
+      }
+      .cv-file-input:hover::before {
+        border-color: black;
+      }
+      .cv-file-input:active {
+        outline: 0;
+      }
+      .cv-file-input:active::before {
+        background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
       }
       .btn {
         margin-top: 45px;
@@ -590,7 +572,62 @@
       left: 100px;
     }
   }
+  .main-news {
+    display: flex;
+    width: 55%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 20px;
+    position: relative;
+    bottom: 150px;
+    z-index: 9;
+    background: #fff;
+
+    .details {
+      padding: 30px;
+      max-width: 60%;
+
+      .title {
+        font-size: 2em;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.8;
+        letter-spacing: normal;
+        text-align: left;
+        color: #333333;
+      }
+      .date,
+      .read-more {
+        font-size: 1em;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.67;
+        letter-spacing: normal;
+        text-align: left;
+        color: #3bb859;
+
+        padding: 1em 0px;
+      }
+      .desc {
+        font-size: 1.5em;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.8;
+        letter-spacing: 0.5px;
+        text-align: left;
+        color: #333333;
+      }
+    }
+    .image {
+      background-image: url("../../images/inthenews/innews_bg.png");
+    }
+  }
   .careersec2 {
     height: 100vh;
     position: absolute;
@@ -599,23 +636,20 @@
     clip-path: circle(60% at 81% 38%);
   }
   .careersec5 {
-    .working-title {
-      font-weight: bold;
-    }
     .working-desc {
+      font-size: 25px;
+      color: #747474;
     }
     .bullets {
       .working-desc {
-        font-size: 1.2em;
-        color: #747474;
+        font-size: 18px;
       }
     }
   }
-
   .careersec6 {
     padding: 10em 15.25em 13em;
     background: #f6f6f6;
-    clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 calc(100% - 5vw));
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 calc(100% - 5vw));
 
     .working-title {
       font-size: 60px;
@@ -625,32 +659,6 @@
       letter-spacing: normal;
       text-align: center;
       color: #333333;
-      font-weight: bold;
-    }
-    .working-desc {
-      font-size: 25px;
-      margin-top: 15px;
-
-      width: 61%;
-      margin: auto;
-      position: relative;
-
-      img {
-        width: 20px;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        margin: 25px 10px;
-      }
-      input {
-        width: 100%;
-        padding: 15px 40px;
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-        background-color: #ffffff;
-        color: #b3b3b3;
-      }
     }
   }
 
@@ -1287,12 +1295,8 @@
 @media (min-width: 834px) {
   .job-apply-modal {
     > .modal-dialog {
-      min-width: 70vw;
-      height: 90vh;
-      min-height: 90vh;
-      > .modal-content {
-        min-height: 100%;
-      }
+      max-width: none;
+      width: 60vw;
     }
     .job-apply-body-cont {
       display: flex;
@@ -1380,12 +1384,8 @@
           font-weight: 700;
           font-size: 1.25em;
           letter-spacing: 0.25px;
-          line-height: 1;
+          line-height: 0.556em;
           color: #525252;
-          width: 80%;
-          .size-alert {
-            color: red;
-          }
           span {
             font-size: 0.85em;
           }
@@ -1441,9 +1441,9 @@
         &:hover,
         &:focus,
         &:active:focus {
-          color: #333333;
+          color: #ff5722;
           outline: none;
-          //   border-bottom: 1px solid #333333;
+          border-bottom: 1px solid #ff5722;
           &::placeholder {
             color: #ff5722;
             position: relative;
@@ -1506,46 +1506,14 @@
     }
     .job-desc-sub-head {
     }
-
+    .job-desc-sub-desc {
+    }
     #apply-form {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       /* padding: 30px; */
       justify-content: center;
-    }
-  }
-  .job-desc-modal {
-    .modal-dialog {
-      min-width: 70vw;
-      height: 90vh;
-      min-height: 90vh;
-      > .modal-content {
-        min-height: 100%;
-        max-height: 100%;
-        > .modal-body {
-          height: 100%;
-          max-height: 100%;
-          overflow: scroll;
-          > div {
-            max-height: 100%;
-            overflow: scroll;
-          }
-        }
-      }
-    }
-    .job-desc-sub-desc,
-    ul {
-      font-size: 1.25em;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.8;
-      letter-spacing: 0.45px;
-      text-align: left;
-      color: #333333;
-    }
-    ul {
     }
   }
 }

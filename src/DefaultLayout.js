@@ -50,6 +50,9 @@ const Lenders = React.lazy(() =>
 const Merchants = React.lazy(() =>
   retry(() => import("./container/Merchants/Merchants"))
 );
+const InTheNews = React.lazy(() =>
+  retry(() => import("./container/InTheNews/InTheNews"))
+);
 
 const DefaultLayout = (props) => {
   const [show, setShow] = useState(true);
@@ -77,6 +80,7 @@ const DefaultLayout = (props) => {
               <Route exact path="/careers" component={Careers} />
               <Route exact path="/lenders" component={Lenders} />
               <Route exact path="/merchants" component={Merchants} />
+              <Route exact path="/in-the-news" component={InTheNews} />
               <Route exact path="/contactus" component={ContactUs} />
               <Route exact path="/404" component={PageNotFound} />
               <Route exact path="/500" component={InternalServerError} />
