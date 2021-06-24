@@ -47,6 +47,9 @@ const Careers = React.lazy(() =>
 const Lenders = React.lazy(() =>
   retry(() => import("./container/Lenders/Lenders"))
 );
+// const Merchants = React.lazy(() =>
+//   retry(() => import("./container/Merchants/Merchants")) 
+// );
 const Merchants = React.lazy(() =>
   retry(() => import("./container/Merchants/Merchants"))
 );
