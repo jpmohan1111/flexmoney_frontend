@@ -1348,7 +1348,11 @@
             font-weight: 700;
             font-size: 10pt;
           }
+          + label {
+            color: red;
+          }
         }
+
         .cv-file-input {
           color: transparent;
           width: 100%;
@@ -1452,7 +1456,7 @@
           outline: none;
           //   border-bottom: 1px solid #333333;
           &::placeholder {
-            color: #ff5722;
+            color: #333333;
             position: relative;
             -webkit-transform: translateY(-15px);
             transform: translateY(-15px);
@@ -1681,6 +1685,10 @@
           color: transparent;
           width: 100%;
           border-radius: 10px;
+          + label {
+            display: block;
+            margin-top: 10px;
+          }
           &:-webkit-file-upload-button {
             visibility: hidden;
           }
@@ -1731,9 +1739,9 @@
         &:hover,
         &:focus,
         &:active:focus {
-          color: #ff5722;
+          color: #333;
           outline: none;
-          border-bottom: 1px solid #ff5722;
+          //   border-bottom: 1px solid #ff5722;
           &::placeholder {
             color: #ff5722;
             position: relative;
