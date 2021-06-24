@@ -49,7 +49,7 @@ import via from "../../images/homepage/via.png";
 import zebrs from "../../images/homepage/zebrs.png";
 import zefo from "../../images/homepage/zefo.png";
 
-import vertical_carousal from "../../images/lenders/vertical_carousal.png";
+// import vertical_carousal from "../../images/lenders/vertical_carousal.png";
 
 import people from "../../images/homepage/people.svg";
 import city from "../../images/homepage/city.svg";
@@ -689,7 +689,7 @@ const AboutUs = (props) => {
       <div key={i} className="opening">
         <div className="title">{item.title}</div>
         <div className="desc" onClick={() => handleDescShow(item.description)}>
-          Job description >
+          Job description 
         </div>
         <button onClick={() => handleApplyShow(item.title)}>Apply now</button>
       </div>
@@ -785,7 +785,7 @@ const AboutUs = (props) => {
           </div>
         </div>
         <div className="img--cont">
-          <img src={vertical_carousal} alt="" />
+          {/* <img src={vertical_carousal} alt="" /> */}
         </div>
       </section>
 
