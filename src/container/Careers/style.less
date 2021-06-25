@@ -2,8 +2,53 @@
 * {
   // outline: 1px solid orangered;
 }
+
+.newsec1_wrapper .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 5px;
+}
+
+.newsec1_wrapper .swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsec1_wrapper .swiper-pagination-bullet {
+  width: 0.625em;
+  height: 0.625em;
+  display: inline-block;
+  border-radius: 100%;
+  opacity: 1;
+  transition: 0.3s ease;
+  background: #818181;
+  z-index: 9;
+}
+
+.newsec1_wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+  height: 4px;
+  width: 28px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  background: #818181;
+}
+
+.newsec1_wrapper .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 20px;
+  margin: 0 10px;
+  margin-bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .modal-content{
   border-radius: 1.25em;
+}
+ul{
+  padding-left: 1.3em;
 }
 .modal-header .close {
   font-size: 4em;
@@ -646,7 +691,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 22;
+    z-index: 1;
     width: 68.813em;
     height: 100%;
   }
@@ -1675,7 +1720,7 @@
     color: #333333;
     .f60();
     .fontbold();
-    margin-top: 1.033em;
+    margin-top: 0.3em;
   }
   .job-desc-resp-head {
     // font-size: 15px;
@@ -2003,10 +2048,11 @@
         > .modal-body {
           height: 43.6125em;
           max-height: 43.6125em;
-          overflow: scroll;
+          overflow: hidden;
+          padding-bottom: 4em;
           > div {
             max-height: 100%;
-            overflow: scroll;
+            overflow-y: scroll;
           }
         }
       }
@@ -2324,6 +2370,9 @@
   .job-apply-modal .job-apply-body-cont .resume > input + label{
     font-size: 1.8em !important;
   }
+  .job-desc-modal .job-desc-resp-head{
+    padding-left: 0.5em;
+  }
   
 }
 @media (max-width: 480px) {
@@ -2341,5 +2390,8 @@
   }
   .modal-body{
     padding: 1rem 0.3rem;
+  }
+  .job-desc-modal .job-desc-sub-desc{
+    padding: 0.5em 1em;
   }
 }

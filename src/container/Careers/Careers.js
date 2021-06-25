@@ -620,7 +620,7 @@ const AboutUs = (props) => {
         delay: 2000,
       },
       pagination: {
-        el: ".newsec1_swiper .swiper-pagination",
+        el: ".newsec1_wrapper .swiper-pagination",
         clickable: true,
       },
     });
@@ -877,7 +877,7 @@ const AboutUs = (props) => {
                   <img src={slider1desk} className="slider_img" />
                 </div>
               </div>
-              <div className="swiper-pagination"></div>
+              
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -886,6 +886,7 @@ const AboutUs = (props) => {
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
+            <div className="swiper-pagination"></div>
           </div>
         ) : (
           <div className="mb_newsec1_wrapper">
