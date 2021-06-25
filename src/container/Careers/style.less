@@ -1400,6 +1400,9 @@
         height: auto;
         border-bottom: solid 2px #3bb859;
 
+        min-height: 95px;
+        position: relative;
+
         > input {
           color: transparent;
           width: 100%;
@@ -1448,6 +1451,8 @@
             color: #3ab658;
             text-align: right;
             border: none;
+            position: absolute;
+            bottom: 0px;
             > span {
               padding: 5px;
               border: 1px dashed rgb(182 172 172);
@@ -1461,16 +1466,18 @@
           }
         }
         > p {
-          position: absolute;
-          bottom: 10px;
           font-weight: 700;
           font-size: 1.25em;
           letter-spacing: 0.25px;
           line-height: 1;
           color: #525252;
           width: 80%;
+          position: absolute;
+          bottom: 5px;
           .size-alert {
             color: red;
+            display: block;
+            margin: 10px 0px;
           }
           span {
             font-size: 0.85em;
