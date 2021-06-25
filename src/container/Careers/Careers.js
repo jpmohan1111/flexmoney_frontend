@@ -853,7 +853,7 @@ const AboutUs = (props) => {
         <span className="home_crumb" onClick={() => props.history.push("/")}>
           Home
         </span>
-        &nbsp; {">"} &nbsp;Career
+        &nbsp; {">"} &nbsp;Careers
       </div>
 
       <section className="newsec1 wow fadeIn">
@@ -871,7 +871,7 @@ const AboutUs = (props) => {
                   <img src={slider1desk} className="slider_img" />
                 </div>
               </div>
-              {/* <div className="swiper-pagination"></div> */}
+              <div className="swiper-pagination"></div>
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -1348,6 +1348,7 @@ const AboutUs = (props) => {
         show={descShow}
         onHide={handleDescClose}
         className="job-desc-modal"
+        centered
       >
         <Modal.Header closeButton>
           <Modal.Title className="job-desc-head">Job Description</Modal.Title>
@@ -1382,6 +1383,7 @@ const AboutUs = (props) => {
         show={applyShow}
         onHide={handleApplyClose}
         className="job-apply-modal"
+        centered
       >
         <Modal.Header closeButton>
           <Modal.Title className="job-apply-head">Apply Now</Modal.Title>

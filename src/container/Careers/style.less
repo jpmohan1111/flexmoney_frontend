@@ -2,9 +2,17 @@
 * {
   // outline: 1px solid orangered;
 }
+.modal-content{
+  border-radius: 1.25em;
+}
 .modal-header .close {
   font-size: 4em;
   padding-right: 0.5em;
+  font-size: 4em;
+    padding-right: 0.5em;
+    position: absolute;
+    right: 0.2em;
+    top: 0.2em;
   // padding: 1rem 1rem;
   // margin: -2rem -1rem -1rem auto;
 }
@@ -719,6 +727,7 @@
     .f18();
     .fontreg();
     color: #747474;
+    font-size: 1.125em;
   }
   .card_img {
     width: 6.625em;
@@ -1961,17 +1970,20 @@
   .job-desc-modal {
     .modal-dialog {
       min-width: 70vw;
-      height: 90vh;
-      min-height: 90vh;
+      // height: 90vh;
+      // min-height: 90vh;
       > .modal-content {
         min-height: 100%;
         max-height: 100%;
+        width: 100%;
+    max-width: 89%;
+    margin: auto;
         .modal-header {
           border: none;
         }
         > .modal-body {
-          height: 100%;
-          max-height: 100%;
+          height: 43.6125em;
+          max-height: 43.6125em;
           overflow: scroll;
           > div {
             max-height: 100%;
