@@ -532,9 +532,9 @@ const Lenders = (props) => {
         )}
       </section>
 
-      <div className="lenderssec2 wow fadeIn">
+      <div className="lenderssec2 wow fadeInUp">
         {width > 1023 ? (
-          <div className="lendersec2_flex">
+          <div className="lendersec2_flex wow fadeInUp">
             <div className="flex_left">
               <img src={verticalline} className="verticalline" />
               {secTwoTimelineList}
@@ -547,7 +547,7 @@ const Lenders = (props) => {
             </div>
           </div>
         ) : (
-          <div className="mblenderssec2">
+          <div className="mblenderssec2 wow fadeInUp">
             <div className="mblenderssec2_swiper swiper-container">
               <div className="swiper-wrapper">{sectionTwoMbCarouselList}</div>
               <div className="swiper-pagination"></div>
@@ -556,7 +556,7 @@ const Lenders = (props) => {
         )}
       </div>
 
-      <div className="lenderssec3 wow fadeIn">
+      <div className="lenderssec3 wow fadeInUp">
         <div className="heading_wrapper">
           <div className="title">Multi-category Merchant EMI Network</div>
           <div className="desc">
@@ -570,7 +570,7 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="lenderssec4 wow fadeIn">
+      <div className="lenderssec4 wow fadeInUp">
         <div className="heading_wrapper">
           <div className="title">3800+ Merchant Partners</div>
           <div className="desc">
@@ -583,7 +583,7 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="lendersec5 wow fadeIn">
+      <div className="lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />
@@ -618,7 +618,7 @@ const Lenders = (props) => {
         </Row>
       </div>
 
-      <div className="lenderssec6 wow fadeIn">
+      <div className="lenderssec6 wow fadeInUp">
         <div className="lenderssec6_wrapper">
           {width > 1023 ? (
             <img src={footerbg} className="footerbg fluid" />

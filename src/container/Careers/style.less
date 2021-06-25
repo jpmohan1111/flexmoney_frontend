@@ -699,7 +699,8 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 30.25em;
+    width: 29em;
+    max-width: 100%;
   }
   .middle_boxx {
     margin-left: 8.375em;
@@ -1011,10 +1012,12 @@
         margin-top: 0.5em;
       }
       .desc_span {
-        border-bottom: 1px solid #333333;
+        // border-bottom: 1px solid #333333;
       }
     }
   }
+}
+@media (min-width: 765px){
   .pagination_container {
     width: 100%;
     display: flex;
@@ -1044,7 +1047,10 @@
       }
     }
   }
+  
 }
+
+
 @media (max-width: 834px) {
   .careersec1 {
     background-image: url("../../images/aboutus/bannerbg834.png");
@@ -1809,7 +1815,8 @@
             margin: 10px 0px;
           }
           span {
-            font-size: 0.85em;
+            font-size: 0.7em;
+            color: #595959;
           }
         }
       }
@@ -2014,9 +2021,9 @@
     .job-apply-body-cont {
       display: flex;
       flex-wrap: wrap;
-      padding: 0px 30px 45px 30px;
+      padding: 0px 15px 0px 15px;
       .floating-label {
-        top: 1.7em;
+        // top: 1.7em;
       }
       input {
         font-size: 16px;
@@ -2078,9 +2085,9 @@
           letter-spacing: 0.32px;
           text-align: left;
           color: #595959;
-          padding: 5px 0px;
-          margin: 5px 0px;
-          border-bottom: solid 2px #dddddd;
+          // padding: 5px 0px;
+          // margin: 5px 0px;
+          // border-bottom: solid 2px #dddddd;
         }
       }
       .file {
@@ -2261,7 +2268,8 @@
 }
 @media (max-width: 834px) {
   .careersec6 .working-desc input {
-    width: 92%;
+    width: 100%;
+    max-width: 92%;
     padding: 0px 50px;
     border: none;
     border-radius: 5px;
@@ -2276,12 +2284,29 @@
     color: #b3b3b3;
   }
   .careersec6 .working-desc img {
-    margin: 0.5em 0.4em;
-    top: 3px;
+    margin: 0.3em 0.4em;
+    // top: 3px;
+    left: 1.855em;
   }
+  .job-apply-modal .job-apply-body-cont .resume > input + label{
+    font-size: 1.8em !important;
+  }
+  
 }
-@media (max-width: 480) {
+@media (max-width: 480px) {
   .careersec6 .working-desc img {
-    margin: 1em 0.4em;
+    margin: 0.2em 0.4em;
+    padding: 5px 0 0 0;
+    top: 8px !important;
+    left: 1em;
+  }
+  .job-apply-modal .job-apply-body-cont .resume > p{
+    font-size: 1.3em;
+  }
+  .job-apply-modal .job-apply-body-cont .resume > input + label{
+    font-size: 2em !important;
+  }
+  .modal-body{
+    padding: 1rem 0.3rem;
   }
 }
