@@ -502,6 +502,10 @@ const AboutUs = (props) => {
         setPhoneNumbererr("");
       }
     }
+    if (fileSizealert != "") {
+      formIsValid = false;
+    }
+
     if (formIsValid) {
       axios({
         method: "post",
