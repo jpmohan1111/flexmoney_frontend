@@ -1,4 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+
 import parse from "html-react-parser";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -347,6 +349,7 @@ const openingsArr = [
   },
 ];
 const AboutUs = (props) => {
+  const { id } = useParams();
   const { height, width } = useWindowDimensions();
   const [applyShow, setApplyShow] = useState(false);
   const [descShow, setDescShow] = useState(false);
@@ -523,25 +526,19 @@ const AboutUs = (props) => {
       <section className="newssec1 wow fadeIn">
         <Breadcrumb history={props.history} t2="Careers" />
         <div className="main-head">
-          <div className="title">In the News</div>
-          <div className="desc">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et.
+          <div className="title">In the News {id}</div>
+          <div className="title">
+            Flexmoney welcomes ICICI Bank to its Merchant Partners
           </div>
+
+          <div className="date">FEBRUARY 21, 2021</div>
         </div>
       </section>
       <section className="main-news">
         <div className="details">
-          {width > 480 ? (
-            <div className="title">
-              Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners
-            </div>
-          ) : (
-            <div className="title">
-              Flexmoney welcomes ICICI Bank to its Merchant Partners
-            </div>
-          )}
-
+          <div className="title">
+            Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners
+          </div>
           <div className="date">FEB 21, 2021</div>
           <div className="desc">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam

@@ -48,13 +48,16 @@ const Lenders = React.lazy(() =>
   retry(() => import("./container/Lenders/Lenders"))
 );
 // const Merchants = React.lazy(() =>
-//   retry(() => import("./container/Merchants/Merchants")) 
+//   retry(() => import("./container/Merchants/Merchants"))
 // );
 const Merchants = React.lazy(() =>
   retry(() => import("./container/Merchants/Merchants"))
 );
 const InTheNews = React.lazy(() =>
   retry(() => import("./container/InTheNews/InTheNews"))
+);
+const NewsPage = React.lazy(() =>
+  retry(() => import("./container/NewsPage/NewsPage"))
 );
 
 const DefaultLayout = (props) => {
@@ -84,6 +87,7 @@ const DefaultLayout = (props) => {
               <Route exact path="/lenders" component={Lenders} />
               <Route exact path="/merchants" component={Merchants} />
               <Route exact path="/in-the-news" component={InTheNews} />
+              <Route exact path="/in-the-news/:id" component={NewsPage} />
               <Route exact path="/contactus" component={ContactUs} />
               <Route exact path="/404" component={PageNotFound} />
               <Route exact path="/500" component={InternalServerError} />
