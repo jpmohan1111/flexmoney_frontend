@@ -18,9 +18,10 @@ import Swiper, {
   EffectCoverflow,
 } from "swiper";
 //----------------------- images imports ------------------------//
-import bannerimg from "../../images/lenders/bannerimg.png";
-import bannerimg2 from "../../images/lenders/bannerimg2.png";
-import tabbannerimg from "../../images/lenders/tabbannerimg.png";
+// import bannerimg from "../../images/lenders/bannerimg.png";
+// import lenders_banner1 from "../../images/lenders/lenders_banner1.png";
+import lenders_banner1 from "../../images/lenders/lenders_banner1.jpg";
+import lenders_banner1_mob from "../../images/lenders/lenders_banner1_mob.jpg";
 
 import rightimg from "../../images/lenders/rightimg.png";
 import mbrightimg from "../../images/lenders/mbrightimg.png";
@@ -72,60 +73,43 @@ Swiper.use([
 ]);
 
 const sectionOnebannerDataArr = [
+  
   {
-    img: bannerimg,
-    mbimg: tabbannerimg,
+    img: lenders_banner1,
+    mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
+ 
   {
-    img: bannerimg2,
-    mbimg: tabbannerimg,
+    img: lenders_banner1,
+    mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
+ 
   {
-    img: bannerimg,
-    mbimg: tabbannerimg,
+    img: lenders_banner1,
+    mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
+ 
   {
-    img: bannerimg2,
-    mbimg: tabbannerimg,
+    img: lenders_banner1,
+    mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
+ 
   {
-    img: bannerimg,
-    mbimg: tabbannerimg,
+    img: lenders_banner1,
+    mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
-  {
-    img: bannerimg2,
-    mbimg: tabbannerimg,
-    title: "Lenders",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
-  },
-  {
-    img: bannerimg,
-    mbimg: tabbannerimg,
-    title: "Lenders",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
-  },
-  {
-    img: bannerimg2,
-    mbimg: tabbannerimg,
-    title: "Lenders",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
-  },
-  {
-    img: bannerimg,
-    mbimg: tabbannerimg,
-    title: "Lenders",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
-  },
+ 
+  
 ];
 const sectionTwoDataArr = [
   {
@@ -496,21 +480,27 @@ const Lenders = (props) => {
             <div className="newsec1_swiper swiper-container">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  <img src={slider1desk} className="slider_img" />
+                  <img src={lenders_banner1} className="slider_img" />
                 </div>
                 <div className="swiper-slide">
-                  <img src={slider1desk} className="slider_img" />
+                  <img src={lenders_banner1} className="slider_img" />
                 </div>
                 <div className="swiper-slide">
-                  <img src={slider1desk} className="slider_img" />
+                  <img src={lenders_banner1} className="slider_img" />
                 </div>
               </div>
               <div className="swiper-pagination"></div>
             </div>
             <div className="text_content">
               <div className="text_wrapper">
-                <div className="title">Careers</div>
-                <div className="desc">We are recruiting!</div>
+                <div className="title">Lenders</div>
+                <div className="desc">Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network</div>
+                <div className='lenders_btn'>
+                <Button
+                  onClick={() => props.history.push("contactus")}
+                  title="Contact Us"
+                />
+                </div>
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
@@ -520,13 +510,13 @@ const Lenders = (props) => {
             <div className="mbnewsec1_swiper swiper-container">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
+                  <img src={lenders_banner1_mob} className="mb_slider_img" />
                 </div>
                 <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
+                  <img src={lenders_banner1_mob} className="mb_slider_img" />
                 </div>
                 <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
+                  <img src={lenders_banner1_mob} className="mb_slider_img" />
                 </div>
               </div>
               <div className="swiper-pagination"></div>
@@ -534,8 +524,8 @@ const Lenders = (props) => {
             <div className="mb_container">
               <img src={bgmobile} className="bgmobile" />
               <div className="mb_text_container">
-                <div className="title">Careers</div>
-                <div className="desc">We are recruiting!</div>
+                <div className="title">Lenders</div>
+                <div className="desc">Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network</div>
               </div>
             </div>
           </div>

@@ -693,6 +693,14 @@ const AboutUs = (props) => {
 
   return (
     <>
+      <div className="lender_breadcrumb">
+        <span className="home_crumb" onClick={() => props.history.push("/")}>
+          Home
+        </span>
+        &nbsp; {">"} &nbsp;Career
+      </div>
+
+
       <section className="newsec1 wow fadeIn">
         {width > 1023 ? (
           <div className="newsec1_wrapper">
