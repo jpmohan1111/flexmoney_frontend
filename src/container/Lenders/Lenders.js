@@ -119,7 +119,7 @@ const sectionTwoDataArr = [
   },
   {
     desc: "Offer Purchase financing to all existing customer segments through Mobile number based Cardless experience",
-    rightImg: flipkart,
+    rightImg: rightimg,
     mbImg: mbrightimg,
   },
   {
