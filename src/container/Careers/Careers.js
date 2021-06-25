@@ -716,7 +716,7 @@ const AboutUs = (props) => {
                   <img src={slider1desk} className="slider_img" />
                 </div>
               </div>
-              <div className="swiper-pagination"></div>
+              {/* <div className="swiper-pagination"></div> */}
             </div>
             <div className="text_content">
               <div className="text_wrapper">

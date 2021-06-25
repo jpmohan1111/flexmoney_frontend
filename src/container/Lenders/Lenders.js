@@ -489,7 +489,7 @@ const Lenders = (props) => {
                   <img src={lenders_banner1} className="slider_img" />
                 </div>
               </div>
-              <div className="swiper-pagination"></div>
+              {/* <div className="swiper-pagination"></div> */}
             </div>
             <div className="text_content">
               <div className="text_wrapper">
