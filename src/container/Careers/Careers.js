@@ -1040,8 +1040,8 @@ const AboutUs = (props) => {
             <div>
               <h2 className="head">Drop your CV here</h2>
               <h4 className="desc">
-                Didn't find what you were looking for? Drop your CV <br /> here,
-                we will consider your profile for future job <br /> postings
+                Didn't find what you were looking for? Drop your CV here,
+                we will consider your profile for future job postings
               </h4>
               {/* <input type="file" className="cv-file-input"></input> */}
               <form
@@ -1282,7 +1282,7 @@ const AboutUs = (props) => {
                       onChange={handleJobApplyFileChosen}
                     />
                     <label for="upload">
-                      <span style={{ fontSize: '2em', display: 'block', marginTop: '1em'}}>Choose file</span>
+                      <span style={{ fontSize: '1.2em', display: 'block', marginTop: '1em'}}>Choose file</span>
                     </label>
                     <p>
                       <span>
