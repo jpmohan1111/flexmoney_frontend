@@ -541,7 +541,7 @@ const AboutUs = (props) => {
               setApplyShow(false);
               document.querySelector("#upload").value = null;
               setDropCvFileName("");
-            }, 1000);
+            }, 2000);
           }
         })
         .catch((error) => {
@@ -588,7 +588,7 @@ const AboutUs = (props) => {
             setShowApplySuccesstxt(true);
             setTimeout(() => {
               setShowApplySuccesstxt(false);
-            }, 1000);
+            }, 2000);
           }
         })
         .catch((error) => {
@@ -1139,7 +1139,7 @@ const AboutUs = (props) => {
           <Col className="p-0 firstcol" lg={12}>
             <div className="working-title">Current Openings </div>
             <div className="working-desc">
-              <img src={search} alt="" style={{top: '8px'}}/>
+              <img src={search} alt="" style={{ top: "8px" }} />
               <input
                 onChange={handleJobSearch}
                 type="text"
@@ -1322,7 +1322,9 @@ const AboutUs = (props) => {
                 </label>
                 <p>
                   Upload docx file, pdf upto 1 mb only{" "}
-                  <span className="err"><br /> {nofileErr}</span>
+                  <span className="err">
+                    <br /> {nofileErr}
+                  </span>
                 </p>
 
                 {/* <Button type="submit" loading={loading} title="Submit" /> */}
