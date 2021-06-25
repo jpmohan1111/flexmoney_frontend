@@ -111,6 +111,62 @@
     background: #fff;
   }
 }
+.newsec1{
+  position: relative;
+  .newsec1_wrapper{
+    height: 100vh;
+  }
+  .newsec1_swiper{
+    height: 100%;
+    
+  }
+  .slider_img{
+    height: 100%;
+  }
+  
+  .text_content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 22;
+    width: 68.813em;
+    height: 100%;    
+  }
+  .greenbgcut{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  .text_wrapper{
+    position: absolute;
+    z-index: 23;
+    top: 29.688em;
+    left: 6.250em;
+  }
+  .title{
+    .f90();
+    .fontbold();
+    color: #FFFFFF;
+    z-index: 32;
+  }
+  .desc{
+    .f25();
+    .fontreg();
+    margin-top: 1em;
+    color: #fff;
+    width: 100%;
+    max-width: 52%;
+  }
+
+  // .swiper-pagination{
+  //   position: relative;
+  //   z-index: 400;
+  //   bottom: 5em;
+  //   background-color: #fff;
+  // }
+  
+}
 // --------------------------------section 2--------------------------------//
 .lenderssec2 {
   background-image: linear-gradient(45deg, #f1fff7, #ffffff);
@@ -517,6 +573,22 @@ display: none
   //   border: 1px solid #ffffff;
   // }
 }
+@media (max-width: 1910px){
+ 
+  .newsec1{
+    .newsec1_wrapper{
+      height: initial;
+    }
+    .newsec1_swiper{
+      height: initial;
+      
+    }
+    .slider_img{
+      height: initial;
+    }
+  }
+   
+  }
 @media (max-width: 1910px) {
   .lenderssec1 {
     .bannerbg {
@@ -627,6 +699,57 @@ display: none
     }
   }
 
+  .newsec1{
+    position: relative;
+    
+    .mb_container{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 22;
+      width: 100%;
+      height: 25em;
+    }
+    .bgmobile{
+      height: 100%;
+    }
+    .mb_text_container{
+      position: absolute;
+      top: 5em;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      width: 4.375em;
+      background: #fff;
+    }
+    .swiper-pagination-bullet {
+      border-radius: 7px;
+      background: #fff;
+      height: 0.313em;
+      width: 0.625em;
+      opacity: 1;
+    }
+    .desc {
+      font-size: 1.6em;
+      letter-spacing: 0px;
+      line-height: 1.625em;
+      margin-top: 1em;
+      color: #fff;
+      width: 100%;
+      max-width: 100%;
+    }
+   .title {
+      font-size: 5.0em;
+      letter-spacing: 0px;
+      line-height: 1.5em;  
+    }
+
+  }
+
+
   .lenderssec2 {
     padding: 4.5em 1.5em 3.22em 1.5em;
     .mbdesc {
@@ -689,6 +812,11 @@ display: none
     .slider::before {
       width: 106px;
     }
+    .title {
+      font-size: 2.4em;
+      letter-spacing: 0px;
+      line-height: 1.5em;
+  }
   }
     // merchants section 4
   .ms4_counting_num .a-c{
@@ -759,7 +887,12 @@ display: none
       }
       .title {
         text-align: center;
+        // font-size: 2.4em;
+        // letter-spacing: 0.48px;
+        // line-height: 1.5em;
+
       }
+    
       .desc {
         text-align: center;
         margin: 0 auto;
@@ -830,6 +963,27 @@ display: none
       width: 100%;
       max-width: 94%;
     }
+  }
+  .newsec1{
+    padding-top: 15em;
+    .mb_container{
+      height: 23em;
+      .title{
+        .mf50();
+        padding: 0 1em;
+      }
+      .desc{
+        .mf16();
+      }
+    }
+    .swiper-wrapper{
+      height: 70em;
+    }
+    .mb_slider_img{
+      height: 100%;
+    }
+    
+  
   }
   //<------------------------ section 2----------------------------->
   .lenderssec2 .mbrightimg {

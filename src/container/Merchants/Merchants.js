@@ -60,6 +60,18 @@ import footerrightimg from "../../images/merchants/footerrightimg.png";
 import mbfooterbg from "../../images/merchants/mbfooterbg.png";
 //-----------------------end of images imports ------------------------//
 
+// -----------------------vijay image imports start----------------
+import slider1desk from "../../images/merchants/merchants_banner1.jpg";
+import bgdesk from "../../images/careers/bgdesk.png";
+import bgmobile from "../../images/careers/bgmobile.png";
+import slider1mob from "../../images/merchants/merchants_banner1_mob.jpg";
+
+import sec2logo1 from "../../images/careers/sec2logo1.png";
+import sec2logo2 from "../../images/careers/sec2logo2.png";
+import sec2logo3 from "../../images/careers/sec2logo3.png";
+
+// -----------------------vijay image imports end ----------------
+
 Swiper.use([
   Navigation,
   Pagination,
@@ -267,7 +279,30 @@ const sectionFiveLendersDataArr = [
   },
 ];
 
-
+var newcareersec1_swiper = new Swiper(".newsec1_swiper.swiper-container", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  // autoplay: {
+  //   delay: 2000,
+  // },
+  pagination: {
+    el: ".newsec1_swiper .swiper-pagination",
+    clickable: true,
+  },
+});
+var mbnewsec1_swiper = new Swiper(".mbnewsec1_swiper.swiper-container", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  // autoplay: {
+  //   delay: 2000,
+  // },
+  pagination: {
+    el: ".mbnewsec1_swiper .swiper-pagination",
+    clickable: true,
+  },
+});
 
 
 const Lenders = (props) => {
@@ -279,43 +314,67 @@ const Lenders = (props) => {
     new WOW.WOW({
       live: false,
     }).init();
-
-    var lenderssec1_swiper = new Swiper(".banner_right_img.swiper-container", {
+    var newcareersec1_swiper = new Swiper(".newsec1_swiper.swiper-container", {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true,
-      },
-      autoplay: {
-        delay: 2000,
-      },
+      // autoplay: {
+      //   delay: 2000,
+      // },
       pagination: {
-        el: ".lenderssec1 .swiper-pagination",
+        el: ".newsec1_swiper .swiper-pagination",
         clickable: true,
       },
     });
-    var mb_lenderssec1_swiper = new Swiper(
-      ".mb_lenderssec1_swiper.swiper-container",
-      {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        autoHeight: false,
-        loop: true,
-        effect: "fade",
-        fadeEffect: {
-          crossFade: true,
-        },
-        autoplay: {
-          delay: 2000,
-        },
-        pagination: {
-          el: ".mb_lenderssec1_swiper .swiper-pagination",
-          clickable: true,
-        },
-      }
-    );
+    var mbnewsec1_swiper = new Swiper(".mbnewsec1_swiper.swiper-container", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      // autoplay: {
+      //   delay: 2000,
+      // },
+      pagination: {
+        el: ".mbnewsec1_swiper .swiper-pagination",
+        clickable: true,
+      },
+    });
+  
+    // var lenderssec1_swiper = new Swiper(".banner_right_img.swiper-container", {
+    //   slidesPerView: 1,
+    //   spaceBetween: 0,
+    //   loop: true,
+    //   effect: "fade",
+    //   fadeEffect: {
+    //     crossFade: true,
+    //   },
+    //   autoplay: {
+    //     delay: 2000,
+    //   },
+    //   pagination: {
+    //     el: ".lenderssec1 .swiper-pagination",
+    //     clickable: true,
+    //   },
+    // });
+    // var mb_lenderssec1_swiper = new Swiper(
+    //   ".mb_lenderssec1_swiper.swiper-container",
+    //   {
+    //     slidesPerView: 1,
+    //     spaceBetween: 0,
+    //     autoHeight: false,
+    //     loop: true,
+    //     effect: "fade",
+    //     fadeEffect: {
+    //       crossFade: true,
+    //     },
+    //     autoplay: {
+    //       delay: 2000,
+    //     },
+    //     pagination: {
+    //       el: ".mb_lenderssec1_swiper .swiper-pagination",
+    //       clickable: true,
+    //     },
+    //   }
+    // );
     // setInterval for section 2
     setInterval(() => {
       if (indexCount.current <= 2) {
@@ -464,55 +523,57 @@ const Lenders = (props) => {
         &nbsp; {">"} &nbsp;Merchants
       </div>
 
-      <div className="lenderssec1 wow fadeIn">
-        {/* <Breadcrumb history={props.history} t2="Lender" className='breadcrumb'/> */}
+      <section className="newsec1 wow fadeIn">
         {width > 1023 ? (
-          <>
-            <div className="lenderssec1_swiper swiper-container">
-              <div className="bannerbg">
-                <div className="text_container">
-                  <h1 className="title">Merchants</h1>
-                  <p className="desc">
-                    Offer branded Cardless EMI & Pay Later across our
-                    omni-channel Merchant Network
-                  </p>
-                  <div className='btn_div'>
-                    <Button
-                      onClick={() => props.history.push("contactus")}
-                      title="Contact Us"
-                    />
-                  </div>
-                  {/* <button
-                    onClick={() => props.history.push("/contactus")}
-                    className="banner_btn"
-                  >
-                    <div>Contact Us <i className="fa fa-angle-right angle_right"></i></div>
-                    
-                  </button> */}
+          <div className="newsec1_wrapper">
+            <div className="newsec1_swiper swiper-container">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide">
+                  <img src={slider1desk} className="slider_img" />
                 </div>
-                <div className="banner_right_img swiper-container">
-                  <div className="swiper-wrapper">{bannerList}</div>
-                  <div className="swiper-pagination"></div>
+                <div className="swiper-slide">
+                  <img src={slider1desk} className="slider_img" />
+                </div>
+                <div className="swiper-slide">
+                  <img src={slider1desk} className="slider_img" />
                 </div>
               </div>
-            </div>
-          </>
-        ) : (
-          <div className="mb_bannerbg">
-            <div className="mb_text_container">
-              <div className="title">Merchants</div>
-              <p className="desc">
-                Offer branded Cardless EMI & Pay Later across our omni-channel
-                Merchant Network
-              </p>
-            </div>
-            <div className="mb_lenderssec1_swiper swiper-container">
-              <div className="swiper-wrapper">{mbBannerList}</div>
               <div className="swiper-pagination"></div>
+            </div>
+            <div className="text_content">
+              <div className="text_wrapper">
+                <div className="title">Merchants</div>
+                <div className="desc">Grow your business with Instant EMI from a network of reputed Lenders</div>
+              </div>
+              <img src={bgdesk} className="greenbgcut" />
+            </div>
+          </div>
+        ) : (
+          <div className="mb_newsec1_wrapper">
+            <div className="mbnewsec1_swiper swiper-container">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide">
+                  <img src={slider1mob} className="mb_slider_img" />
+                </div>
+                <div className="swiper-slide">
+                  <img src={slider1mob} className="mb_slider_img" />
+                </div>
+                <div className="swiper-slide">
+                  <img src={slider1mob} className="mb_slider_img" />
+                </div>
+              </div>
+              <div className="swiper-pagination"></div>
+            </div>
+            <div className="mb_container">
+              <img src={bgmobile} className="bgmobile" />
+              <div className="mb_text_container">
+                <div className="title">Merchants</div>
+                <div className="desc">Grow your business with Instant EMI from a network of reputed Lenders</div>
+              </div>
             </div>
           </div>
         )}
-      </div>
+      </section>
 
       <div className="lenderssec2 wow fadeIn">
         {width > 1023 ? (
