@@ -11,9 +11,9 @@ import leftArr from "../../images/leftArr.svg";
 import Modal from "react-bootstrap/Modal";
 // import Button from "react-bootstrap/Button";
 import Button from "../../component/Button/Button";
-import InputText from "../../component/InputText/InputText";
-import "./style.less";
 
+import "./style.less";
+import InputText from "../../component/InputText/InputText";
 import Swiper, {
   Navigation,
   Pagination,
@@ -119,7 +119,64 @@ const arry2 = [
   //   img12,
 ];
 
-const arry3 = [bannermobile, bannermobile, bannermobile, bannermobile];
+const arry3 = [
+  {
+    title: "Flexmoney welcomes ICICI Bank to its Merchant Partners",
+    date: "FEB 21, 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
+  },
+  {
+    title: "Flexmoney welcomes ICICI Bank to its Merchant Partners",
+    date: "FEB 21, 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
+  },
+  {
+    title: "Flexmoney welcomes ICICI Bank to its Merchant Partners",
+    date: "FEB 21, 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
+  },
+
+  {
+    title: "Flexmoney : 2020 Annual Reports lorem ipsum",
+    date: "FEB 20, 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
+  },
+  {
+    title: "Flexmoney : 2020 Annual Reports lorem ipsum",
+    date: "FEB 20, 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
+  },
+  {
+    title: "Flexmoney : 2020 Annual Reports lorem ipsum",
+    date: "FEB 20, 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
+  },
+
+  {
+    title: "How Instacred works : A comprehensive guide ",
+    date: "FEB 16, 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
+  },
+  {
+    title: "How Instacred works : A comprehensive guide ",
+    date: "FEB 16, 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
+  },
+  {
+    title: "How Instacred works : A comprehensive guide ",
+    date: "FEB 16, 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
+  },
+];
 
 // const arry3 = [
 //   mbimg1,
@@ -634,10 +691,11 @@ const AboutUs = (props) => {
 
   const list3 = arry3.map((item, i) => {
     return (
-      <div key={i} className="swiper-slide">
-        <div className="our_effect_img">
-          <img src={item} className="img-fluid" />
-        </div>
+      <div className="details">
+        <div className="title">{item.title}</div>
+        <div className="date">{item.date}</div>
+        <div className="desc">{item.description}</div>
+        <div className="read-more">Read more</div>
       </div>
     );
   });
@@ -670,455 +728,35 @@ const AboutUs = (props) => {
           <img src={icici} alt="" />
         </div>
       </section>
-
-      {/* <section
-		className="careersec3 wow fadeInUp"
-		data-wow-duration="2s"
-		data-wow-delay="0.5s"
-	  >
-		<div className="ourTeamContainer">
-		  <div className="title">Team</div>
-		  <div className="swiper-container ourteam_swiper">
-			<div className="swiper-wrapper">{teamArrList}</div>
-			<div className="swiper-pagination"></div>
-		  </div>
-		</div>
-	  </section> */}
-      {/* <section
-		className="careersec4 wow fadeInUp"
-		data-wow-duration="2s"
-		data-wow-delay="0.5s"
-	  >
-		<TitleItem black title="Institutional Investors" />
-
-		<div className="investorContainer d-f">
-		  <div className="inverstorItem">
-			<div className="imgcontainer d-f  j-c a-c">
-			  <div>
-				{" "}
-				<img
-				  onClick={() =>
-					window.open("https://www.pravegavc.com/", "_blank")
-				  }
-				  src={pravega}
-				  className="fluid c-p"
-				/>
-			  </div>
-			</div>
-			<div className="desc">
-			  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-			  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-			  erat.
-			</div>
-		  </div>
-		  <div className="line"></div>
-		  <div className="inverstorItem">
-			<div className="imgcontainer d-f  j-c a-c">
-			  <div>
-				<img
-				  onClick={() =>
-					window.open("https://z5capital.com/", "_blank")
-				  }
-				  src={z5}
-				  className="fluid c-p"
-				/>
-			  </div>
-			</div>
-			<div className="desc">
-			  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-			  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-			  erat.
-			</div>
-		  </div>
-		</div>
-	  </section> */}
-
-      <section className="careersec5 wow fadeIn">
-        <Row className="m-0 opening-head">
-          <Col className="p-0 firstcol" lg={12}>
-            <div className="working-title">Working with Flexmoney </div>
-            <div className="working-desc">
-              Looking for talented and passionate <br />
-              individuals to join our team
-            </div>
-          </Col>
-        </Row>
-        <Row className=" bullets">
-          <div>
-            <div className="working-img-cont">
-              <img src={lamp} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Build the future</div>
-              <div className="working-desc">
-                Be a part of the team that is revolutionizing the Buy Now Pay
-                Later landscape in the county
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="working-img-cont">
-              <img src={heart} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Open Work culture</div>
-              <div className="working-desc">
-                Work in a transparent and open culture where All Hands are on
-                Deck
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="working-img-cont">
-              <img src={hands} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Diverse team</div>
-              <div className="working-desc">
-                Work alongside colleagues with diverse backgrounds and
-                experiences ranging from Technology to Finance, from Silicon
-                Valley to Singapore
-              </div>
-            </div>
-          </div>
-        </Row>
+      <section className="careersec2 wow fadeIn">
+        <div className="dropdown-cont">
+          <InputText
+            dropdown
+            list={[
+              {
+                name: "",
+                value: "",
+                notselected: true,
+              },
+              {
+                name: "Merchant",
+                value: "Merchant",
+              },
+              {
+                name: "Lender",
+                value: "Lender",
+              },
+              {
+                name: "Others",
+                value: "Others",
+              },
+            ]}
+            onChange={(e) => setwhoareyou(e.target.value)}
+            title="Who are you?*"
+            id="Who are you?"
+          />
+        </div>
       </section>
-
-      <section className="careersec6 wow fadeIn">
-        <Row className="m-0 opening-head openings-container">
-          <Col className="p-0 firstcol" lg={12}>
-            <div className="working-title">Current Openings </div>
-            <div className="working-desc">
-              <img src={search} alt="" />
-              <input
-                onChange={handleJobSearch}
-                type="text"
-                placeholder="Search jobs, titles, keywords"
-              />
-            </div>
-          </Col>
-        </Row>
-        <Row className="">
-          <div className="openings-cont">
-            {/* <div className="opening">
-			  <h2>Project manager</h2>
-			  <h4>Job description ></h4>
-			  <button>Apply now</button>
-			</div> */}
-            {openingsList}
-          </div>
-          {/* <div>
-			<div className="working-img-cont">
-			  <img src={lamp} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Build the future</div>
-			  <div className="working-desc">
-				Be a part of the team that is revolutionizing the Buy Now Pay
-				Later landscape in the county
-			  </div>
-			</div>
-		  </div>
-		  <div>
-			<div className="working-img-cont">
-			  <img src={heart} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Open Work culture</div>
-			  <div className="working-desc">
-				Work in a transparent and open culture where All Hands are on
-				Deck
-			  </div>
-			</div>
-		  </div>
-		  <div>
-			<div className="working-img-cont">
-			  <img src={hands} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Diverse team</div>
-			  <div className="working-desc">
-				Work alongside colleagues with diverse backgrounds and
-				experiences ranging from Technology to Finance, from Silicon
-				Valley to Singapore
-			  </div>
-			</div>
-		  </div> */}
-        </Row>
-      </section>
-      <section className="careersec7 wow fadeIn drop-cv">
-        <Row className=" drop-cv-container">
-          <div>
-            <img src={cvImage} className="img-fluid" />
-            <div>
-              <h2 className="head">Drop your CV here</h2>
-              <h4 className="desc">
-                Didn't find what you were looking for? Drop your CV here, we
-                will consider your profile for future job postings
-              </h4>
-              {/* <input type="file" className="cv-file-input"></input> */}
-              <form
-                id="drop-cv-form"
-                action={`${process.env.REACT_APP_API_ENDPOINT}/drop-cv`}
-                encType="multipart/form-data"
-                method="post"
-              >
-                <input
-                  type="file"
-                  className="cv-file-input"
-                  id="cv-upload"
-                  onChange={dropCvFileChosen}
-                  hidden
-                  name="resume"
-                />
-                <label for="cv-upload">
-                  Choose file <span>{dropCvFileName}</span>
-                </label>
-                <p>Upload docx file, pdf upto 1 mb only</p>
-                {/* <Button type="submit" loading={loading} title="Submit" /> */}
-                <button type="submit" onClick={handleApplySubmit}>
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-        </Row>
-      </section>
-      {/* <Button variant="primary" onClick={handleShow}>
-		Launch demo modal
-	  </Button> */}
-
-      <Modal
-        show={descShow}
-        onHide={handleDescClose}
-        className="job-desc-modal"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title className="job-desc-head">Job Description</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div>
-            <h5 className="job-desc-resp-head">Job Role & Responsibilities</h5>
-            <div>
-              <p className="job-desc-sub-head">Core Responsibilities:</p>
-              <p className="job-desc-sub-desc">{parse(jobDescInView)}</p>
-              {/*<p className="job-desc-sub-head">Additional Responsibilities:</p>
-               <p className="job-desc-sub-desc">
-                Analyze data to identify key leverage points to increase
-                conversion, engagement and retention of the product Develop a
-                product roadmap, design wireframes, write requirements, and work
-                in
-              </p> */}
-            </div>
-          </div>
-        </Modal.Body>
-        {/* <Modal.Footer>
-		  <Button variant="secondary" onClick={handleClose}>
-			Close
-		  </Button>
-		  <Button variant="primary" onClick={handleClose}>
-			Save Changes
-		  </Button>
-		</Modal.Footer> */}
-      </Modal>
-
-      <Modal
-        show={applyShow}
-        onHide={handleApplyClose}
-        className="job-apply-modal"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title className="job-apply-head">Apply Now</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="job-apply-body">
-          <div className="job-apply-body-cont">
-            {/* <form
-              id="apply-form"
-              action="http://13.233.110.14:8080/job-apply"
-              enctype="multipart/form-data"
-              method="post"
-            >
-              <input type="hidden" name="job_title" value={jobApplyInView} />
-              <div className="name">
-                <input name="name" placeholder="Name" type="text" />
-              </div>
-              <div className="email">
-                <input name="email" placeholder="Email" type="text" />
-              </div>
-              <div className="contact">
-                <input
-                  name="contact_number"
-                  placeholder="Contact number"
-                  type="text"
-                />
-              </div>
-              <div className="company">
-                <input
-                  name="company_name"
-                  placeholder="Company Name"
-                  type="text"
-                />
-              </div>
-              <div className="career">
-                <input
-                  name="career_summary"
-                  placeholder="Career Summary/message"
-                  type="text"
-                />
-              </div>
-              <div className="resume">
-                <p>Resume* (Upload docx file, pdf upto 1 mb only)</p>
-                <label className="file">
-                  <input
-                    type="file"
-                    id="file"
-                    aria-label="File browser example"
-                    name="resume"
-                  />
-                  <span className="file-custom"></span>
-                </label>
-              </div>
-              <div className="submit">
-                <button type="submit" onClick={handleApplySubmit}>
-                  Submit
-                </button>
-              </div>
-            </form> */}
-            <form
-              id="apply-form"
-              action={`${process.env.REACT_APP_API_ENDPOINT}/job-apply`}
-              encType="multipart/form-data"
-              method="post"
-            >
-              <Row>
-                <input type="hidden" name="job_title" value={jobApplyInView} />
-                <Col lg={6}>
-                  <InputText
-                    value={name}
-                    onChange={(e) => setname(e.target.value)}
-                    name="name"
-                    title="Name"
-                  />
-                  <div className="err">{nameerr}</div>
-                </Col>
-                <Col lg={6}>
-                  <InputText
-                    value={emailId}
-                    onChange={(e) => setemailId(e.target.value)}
-                    name="email"
-                    title="Email ID*"
-                  />
-                  <div className="err">{emailIderr}</div>
-                </Col>
-
-                <Col lg={6}>
-                  <InputText
-                    value={phoneNumber}
-                    type="tel"
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    name="contact_number"
-                    title="Mobile Number*"
-                  />
-                  <div className="err">{phoneNumbererr}</div>
-                </Col>
-
-                <Col lg={6}>
-                  <InputText
-                    value={companyName}
-                    onChange={(e) => setcompanyName(e.target.value)}
-                    name="company_name"
-                    title="Company Name"
-                  />
-                </Col>
-
-                <Col lg={12}>
-                  <InputText
-                    value={subject}
-                    onChange={(e) => setsubject(e.target.value)}
-                    name="career_summary"
-                    title="Subject"
-                  />
-                </Col>
-
-                <Col lg={12}>
-                  <div className="resume">
-                    {/* <p>Resume* (Upload docx file, pdf upto 1 mb only)</p> */}
-                    <input
-                      type="file"
-                      className="cv-file-input"
-                      id="upload"
-                      hidden
-                      name="resume"
-                      onChange={dropCvFileChosen}
-                    />
-                    <label for="upload">
-                      <span>Choose file</span>
-                    </label>
-                    <p>
-                      <span>Upload docx file, pdf upto 1 mb only</span> -{" "}
-                      {dropCvFileName}
-                    </p>
-                    {/* <label className="file">
-                      <input
-                        type="file"
-                        id="file"
-                        aria-label="File browser example"
-                        name="resume"
-                      />
-                      <span className="file-custom"></span>
-                    </label> */}
-                  </div>
-                </Col>
-                <Col lg={12}>
-                  <div className="submit">
-                    <button type="submit" onClick={handleApplySubmit}>
-                      Submit
-                    </button>
-                  </div>
-                </Col>
-              </Row>
-            </form>
-          </div>
-        </Modal.Body>
-        {/* <Modal.Footer>
-		  <Button variant="secondary" onClick={handleClose}>
-			Close
-		  </Button>
-		  <Button variant="primary" onClick={handleClose}>
-			Save Changes
-		  </Button>
-		</Modal.Footer> */}
-      </Modal>
-      <svg width="0" height="0">
-        <defs>
-          <clipPath id="myCurve" clipPathUnits="objectBoundingBox">
-            <path
-              d="M 0,1
-								  L 0,0
-								  L 1,0
-								  L 1,1
-								  C .65 .8, .35 .8, 0 1
-								  Z"
-            />
-          </clipPath>
-        </defs>
-      </svg>
-      <svg width="0" height="0">
-        <defs>
-          <clipPath id="myCurve2" clipPathUnits="objectBoundingBox">
-            <path
-              xmlns="http://www.w3.org/2000/svg"
-              d="M576.83 441.94L194.82 441.94L194.82 115.06L391.22 116.76"
-              id="b5xL3XXJPw"
-            />
-            <path
-              xmlns="http://www.w3.org/2000/svg"
-              d="M576.83 441.94C564.55 434.98 556.86 430.63 553.79 428.89C464.69 378.41 406.14 287.33 397.22 185.32C396.42 176.18 394.42 153.32 391.22 116.76"
-              id="b6Ej1WFgz"
-            />
-          </clipPath>
-        </defs>
-      </svg>
     </>
   );
 };
