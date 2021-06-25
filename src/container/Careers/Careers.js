@@ -796,7 +796,13 @@ const AboutUs = (props) => {
       <div key={i} className="opening">
         <div className="title">{item.title}</div>
         <div className="desc" onClick={() => handleDescShow(item.description)}>
-          <span className="desc_span">Job Description</span> &nbsp; {">"}
+          <span
+            className="desc_span"
+            style={{ cursor: "pointer", borderBottom: "1px solid black"}}
+          >
+            Job Description
+          </span>{" "}
+          <span>&nbsp; {">"}</span>
         </div>
         {/* <button onClick={() => handleApplyShow(item.title)}>Apply now</button> */}
         <div
@@ -908,7 +914,11 @@ const AboutUs = (props) => {
         )}
       </section>
 
-      <section className="newsec2 wow fadeInUp">
+      <section
+        className="newsec2 wow fadeInUp"
+        data-wow-duration="2s"
+        data-wow-delay="1s"
+      >
         <div className="title">Working with Flexmoney</div>
         <div className="desc">
           Looking for talented and passionate individuals to join our team
@@ -1134,16 +1144,17 @@ const AboutUs = (props) => {
         </Row>
       </section> */}
 
-      <section className="careersec6 wow fadeInUp">
+      <section className="careersec6 wow fadeInUp" data-wow-duration="1.3s"
+        data-wow-delay="1.7s">
         <Row className="m-0 opening-head openings-container wow fadeInUp">
           <Col className="p-0 firstcol" lg={12}>
             <div className="working-title">Current Openings </div>
             <div className="working-desc">
-              <img src={search} alt="" style={{top: '8px'}}/>
+              <img src={search} alt="" style={{ top: "8px" }} />
               <input
                 onChange={handleJobSearch}
                 type="text"
-                placeholder="Search by title, skills and location"
+                placeholder="Search jobs, titles, keywords"
               />
             </div>
           </Col>
@@ -1249,7 +1260,8 @@ const AboutUs = (props) => {
 		  </div> */}
         </Row>
       </section>
-      <section className="careersec7 wow fadeIn drop-cv">
+      <section className="careersec7 wow fadeInUp drop-cv" data-wow-duration="1.5s"
+        data-wow-delay="1.5s">
         <Row className=" drop-cv-container wow fadeInUp">
           <div>
             <img src={cvImage} className="img-fluid" />
@@ -1318,11 +1330,14 @@ const AboutUs = (props) => {
                       </g>
                     </g>
                   </svg>
-                  <span>Choose File </span> <span>{dropCvFileName}</span>
+                  <span>Choose File </span> 
                 </label>
                 <p>
                   Upload docx file, pdf upto 1 mb only{" "}
-                  <span className="err"><br /> {nofileErr}</span>
+                  <span className="err">
+                    <br /> {nofileErr}
+                  </span>
+                  <span style={{color: '#3AB658'}}>{dropCvFileName}</span>
                 </p>
 
                 {/* <Button type="submit" loading={loading} title="Submit" /> */}
@@ -1456,7 +1471,7 @@ const AboutUs = (props) => {
                   value={name}
                   onChange={(e) => setname(e.target.value)}
                   name="name"
-                  title="Name"
+                  title="Name*"
                 />
                 <div className="err">{nameerr}</div>
               </Col>
@@ -1476,7 +1491,7 @@ const AboutUs = (props) => {
                   type="tel"
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   name="contact_number"
-                  title="Mobile Number*"
+                  title="contact Number*"
                 />
                 <div className="err">{phoneNumbererr}</div>
               </Col>
@@ -1495,7 +1510,7 @@ const AboutUs = (props) => {
                   value={subject}
                   onChange={(e) => setsubject(e.target.value)}
                   name="career_summary"
-                  title="Subject"
+                  title="Career Summary / Message"
                 />
               </Col>
 
@@ -1511,11 +1526,18 @@ const AboutUs = (props) => {
                     onChange={handleJobApplyFileChosen}
                   />
                   <label for="upload">
-                    <span>Choose file</span>
+                    <span>
+                      {" "}
+                      <img
+                        src={upload}
+                        style={{ width: "1.5em", paddingRight: "0.5em" }}
+                      />{" "}
+                      Add File
+                    </span>
                   </label>
                   <p>
-                    <span>
-                      Upload docx file, pdf upto 1 mb only{" "}
+                    <span style={{ color: "#595959" }}>
+                      Resume* (Upload docx file, pdf upto 1 mb only){" "}
                       <span className="size-alert">{fileSizealert}</span>
                     </span>
                     {dropCvFileName}
