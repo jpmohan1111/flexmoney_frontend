@@ -908,7 +908,7 @@ const AboutUs = (props) => {
         )}
       </section>
 
-      <section className="newsec2 wow fadeIn">
+      <section className="newsec2 wow fadeInUp">
         <div className="title">Working with Flexmoney</div>
         <div className="desc">
           Looking for talented and passionate individuals to join our team
@@ -1134,12 +1134,12 @@ const AboutUs = (props) => {
         </Row>
       </section> */}
 
-      <section className="careersec6 wow fadeIn">
-        <Row className="m-0 opening-head openings-container">
+      <section className="careersec6 wow fadeInUp">
+        <Row className="m-0 opening-head openings-container wow fadeInUp">
           <Col className="p-0 firstcol" lg={12}>
             <div className="working-title">Current Openings </div>
             <div className="working-desc">
-              <img src={search} alt="" />
+              <img src={search} alt="" style={{top: '8px'}}/>
               <input
                 onChange={handleJobSearch}
                 type="text"
@@ -1250,7 +1250,7 @@ const AboutUs = (props) => {
         </Row>
       </section>
       <section className="careersec7 wow fadeIn drop-cv">
-        <Row className=" drop-cv-container">
+        <Row className=" drop-cv-container wow fadeInUp">
           <div>
             <img src={cvImage} className="img-fluid" />
             <div>
@@ -1322,7 +1322,7 @@ const AboutUs = (props) => {
                 </label>
                 <p>
                   Upload docx file, pdf upto 1 mb only{" "}
-                  <span className="err">{nofileErr}</span>
+                  <span className="err"><br /> {nofileErr}</span>
                 </p>
 
                 {/* <Button type="submit" loading={loading} title="Submit" /> */}
@@ -1515,8 +1515,8 @@ const AboutUs = (props) => {
                     <span>
                       Upload docx file, pdf upto 1 mb only{" "}
                       <span className="size-alert">{fileSizealert}</span>
-                    </span>{" "}
-                    - {dropCvFileName}
+                    </span>
+                    {dropCvFileName}
                   </p>
                 </div>
               </Col>

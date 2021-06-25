@@ -549,7 +549,7 @@ const Lenders = (props) => {
             </div>
           </div>
         ) : (
-          <div className="mb_newsec1_wrapper">
+          <div className="mb_newsec1_wrapper wow fadeInUp">
             <div className="mbnewsec1_swiper swiper-container">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
@@ -575,7 +575,7 @@ const Lenders = (props) => {
         )}
       </section>
 
-      <div className="lenderssec2 wow fadeIn">
+      <div className="lenderssec2 wow fadeInUp">
         {width > 1023 ? (
           <div className="lendersec2_flex">
             <div className="flex_left">
@@ -590,7 +590,7 @@ const Lenders = (props) => {
             </div>
           </div>
         ) : (
-          <div className="mblenderssec2">
+          <div className="mblenderssec2 wow fadeInUp">
             <div className="mblenderssec2_swiper swiper-container">
               <div className="swiper-wrapper">{sectionTwoMbCarouselList}</div>
               <div className="swiper-pagination"></div>
@@ -613,7 +613,7 @@ const Lenders = (props) => {
         </div>
       </div> */}
 
-      <div className="lenderssec4 wow fadeIn">
+      <div className="lenderssec4 wow fadeInUp">
         <div className="heading_wrapper">
           <div className="title">Our Lending Partners</div>
         </div>
@@ -624,7 +624,7 @@ const Lenders = (props) => {
       </div>
 
 
-      <div className="merchant_section_4 wow fadeIn">
+      <div className="merchant_section_4 wow fadeInUp">
         <div className="ms4_content">
           <div className="ms4_heading">
             <div className="title">Consumers on our Network</div>
@@ -669,7 +669,7 @@ const Lenders = (props) => {
 
 
       
-      <div className="lendersec5 wow fadeIn">
+      <div className="lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />
@@ -704,7 +704,7 @@ const Lenders = (props) => {
         </Row>
       </div>
 
-      <div className="lenderssec6 wow fadeIn">
+      <div className="lenderssec6 wow fadeInUp">
         <div className="lenderssec6_wrapper">
           {width > 1023 ? (
             <img src={footerbg} className="footerbg fluid" />
