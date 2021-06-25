@@ -18,9 +18,10 @@ import Swiper, {
   EffectCoverflow,
 } from "swiper";
 //----------------------- images imports ------------------------//
-import bannerimg from "../../images/lenders/bannerimg.png";
-import bannerimg2 from "../../images/lenders/bannerimg2.png";
-import tabbannerimg from "../../images/lenders/tabbannerimg.png";
+// import bannerimg from "../../images/lenders/bannerimg.png";
+// import lenders_banner1 from "../../images/lenders/lenders_banner1.png";
+import lenders_banner1 from "../../images/lenders/lenders_banner1.jpg";
+import lenders_banner1_mob from "../../images/lenders/lenders_banner1_mob.jpg";
 
 import rightimg from "../../images/lenders/rightimg.png";
 import mbrightimg from "../../images/lenders/mbrightimg.png";
@@ -55,6 +56,11 @@ import leftquoteBlur from "../../images/lenders/left-quote.png";
 import footerbg from "../../images/lenders/footerbg.png";
 import footerrightimg from "../../images/lenders/footerrightimg.png";
 import mbfooterbg from "../../images/lenders/mbfooterbg.png";
+import slider1desk from "../../images/careers/slider1desk.png";
+import bgdesk from "../../images/careers/bgdesk.png";
+import bgmobile from "../../images/careers/bgmobile.png";
+import slider1mob from "../../images/careers/slider1mob.png";
+
 //-----------------------end of images imports ------------------------//
 
 Swiper.use([
@@ -67,60 +73,43 @@ Swiper.use([
 ]);
 
 const sectionOnebannerDataArr = [
+  
   {
-    img: bannerimg,
-    mbimg: tabbannerimg,
+    img: lenders_banner1,
+    mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
+ 
   {
-    img: bannerimg2,
-    mbimg: tabbannerimg,
+    img: lenders_banner1,
+    mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
+ 
   {
-    img: bannerimg,
-    mbimg: tabbannerimg,
+    img: lenders_banner1,
+    mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
+ 
   {
-    img: bannerimg2,
-    mbimg: tabbannerimg,
+    img: lenders_banner1,
+    mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
+ 
   {
-    img: bannerimg,
-    mbimg: tabbannerimg,
+    img: lenders_banner1,
+    mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
-  {
-    img: bannerimg2,
-    mbimg: tabbannerimg,
-    title: "Lenders",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
-  },
-  {
-    img: bannerimg,
-    mbimg: tabbannerimg,
-    title: "Lenders",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
-  },
-  {
-    img: bannerimg2,
-    mbimg: tabbannerimg,
-    title: "Lenders",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
-  },
-  {
-    img: bannerimg,
-    mbimg: tabbannerimg,
-    title: "Lenders",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
-  },
+ 
+  
 ];
 const sectionTwoDataArr = [
   {
@@ -130,7 +119,7 @@ const sectionTwoDataArr = [
   },
   {
     desc: "Offer Purchase financing to all existing customer segments through Mobile number based Cardless experience",
-    rightImg: flipkart,
+    rightImg: rightimg,
     mbImg: mbrightimg,
   },
   {
@@ -310,42 +299,7 @@ const Lenders = (props) => {
       live: false,
     }).init();
 
-    var lenderssec1_swiper = new Swiper(".banner_right_img.swiper-container", {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      loop: true,
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true,
-      },
-      autoplay: {
-        delay: 2000,
-      },
-      pagination: {
-        el: ".lenderssec1 .swiper-pagination",
-        clickable: true,
-      },
-    });
-    var mb_lenderssec1_swiper = new Swiper(
-      ".mb_lenderssec1_swiper.swiper-container",
-      {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        autoHeight: false,
-        loop: true,
-        effect: "fade",
-        fadeEffect: {
-          crossFade: true,
-        },
-        autoplay: {
-          delay: 2000,
-        },
-        pagination: {
-          el: ".mb_lenderssec1_swiper .swiper-pagination",
-          clickable: true,
-        },
-      }
-    );
+   
     // setInterval for section 2
     setInterval(() => {
       if (indexCount.current <= 2) {
@@ -357,6 +311,32 @@ const Lenders = (props) => {
       setIndex(indexCount.current);
     }, 2500);
     // end of setInterval for section 2
+
+    var newcareersec1_swiper = new Swiper(".newsec1_swiper.swiper-container", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+      },
+      pagination: {
+        el: ".newsec1_swiper .swiper-pagination",
+        clickable: true,
+      },
+    });
+    var mbnewsec1_swiper = new Swiper(".mbnewsec1_swiper.swiper-container", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+      },
+      pagination: {
+        el: ".mbnewsec1_swiper .swiper-pagination",
+        clickable: true,
+      },
+    });
+
     var mblenderssec2_swiper = new Swiper(
       ".mblenderssec2_swiper.swiper-container",
       {
@@ -494,55 +474,63 @@ const Lenders = (props) => {
         &nbsp; {">"} &nbsp;Lender
       </div>
 
-      <div className="lenderssec1 wow fadeIn">
-        {/* <Breadcrumb history={props.history} t2="Lender" className='breadcrumb'/> */}
+      <section className="newsec1 wow fadeIn">
         {width > 1023 ? (
-          <>
-            <div className="lenderssec1_swiper swiper-container">
-              <div className="bannerbg">
-                <div className="text_container">
-                  <h1 className="title">Lenders</h1>
-                  <p className="desc">
-                    Offer branded Cardless EMI & Pay Later across our
-                    omni-channel Merchant Network
-                  </p>
-                  <div className='btn_div'>
-                    <Button
-                      onClick={() => props.history.push("contactus")}
-                      title="Contact Us"
-                    />
-                  </div>
-                  {/* <button
-                    onClick={() => props.history.push("/contactus")}
-                    className="banner_btn"
-                  >
-                    <div>Contact Us <i className="fa fa-angle-right angle_right"></i></div>
-                    
-                  </button> */}
+          <div className="newsec1_wrapper">
+            <div className="newsec1_swiper swiper-container">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide">
+                  <img src={lenders_banner1} className="slider_img" />
                 </div>
-                <div className="banner_right_img swiper-container">
-                  <div className="swiper-wrapper">{bannerList}</div>
-                  <div className="swiper-pagination"></div>
+                <div className="swiper-slide">
+                  <img src={lenders_banner1} className="slider_img" />
+                </div>
+                <div className="swiper-slide">
+                  <img src={lenders_banner1} className="slider_img" />
                 </div>
               </div>
+              {/* <div className="swiper-pagination"></div> */}
             </div>
-          </>
+            <div className="text_content">
+              <div className="text_wrapper">
+                <div className="title">Lenders</div>
+                <div className="desc">Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network</div>
+                <div className='lenders_btn'>
+                <Button
+                  onClick={() => props.history.push("contactus")}
+                  title="Contact Us"
+                />
+                </div>
+              </div>
+              <img src={bgdesk} className="greenbgcut" />
+            </div>
+          </div>
         ) : (
-          <div className="mb_bannerbg">
-            <div className="mb_text_container">
-              <div className="title">Lenders</div>
-              <p className="desc">
-                Offer branded Cardless EMI & Pay Later across our omni-channel
-                Merchant Network
-              </p>
-            </div>
-            <div className="mb_lenderssec1_swiper swiper-container">
-              <div className="swiper-wrapper">{mbBannerList}</div>
+          <div className="mb_newsec1_wrapper">
+            <div className="mbnewsec1_swiper swiper-container">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide">
+                  <img src={lenders_banner1_mob} className="mb_slider_img" />
+                </div>
+                <div className="swiper-slide">
+                  <img src={lenders_banner1_mob} className="mb_slider_img" />
+                </div>
+                <div className="swiper-slide">
+                  <img src={lenders_banner1_mob} className="mb_slider_img" />
+                </div>
+              </div>
               <div className="swiper-pagination"></div>
+            </div>
+            <div className="mb_container">
+              <img src={bgmobile} className="bgmobile" />
+              <div className="mb_text_container">
+                <div className="title">Lenders</div>
+                <div className="desc">Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network</div>
+              </div>
             </div>
           </div>
         )}
-      </div>
+      </section>
 
       <div className="lenderssec2 wow fadeIn">
         {width > 1023 ? (

@@ -46,74 +46,62 @@ Swiper.use([
 
 const testominalArr = [
   {
-    desc:
-      "Very much satisfied with the service.I will definetly recommend to other people who don’t have credit card & still want to purchase on EMI. The repayment of EMI is also very easy as it automatically gets debited from the account.",
+    desc: "Very much satisfied with the service.I will definetly recommend to other people who don’t have credit card & still want to purchase on EMI. The repayment of EMI is also very easy as it automatically gets debited from the account.",
     name: "- Arabinda",
     male: true,
   },
   {
-    desc:
-      "Service is very hassle free. No need of documents and we get an instant credit which can be used for EMI purchase. I will defintely use it again.",
+    desc: "Service is very hassle free. No need of documents and we get an instant credit which can be used for EMI purchase. I will defintely use it again.",
     name: "- Srimanta",
     male: true,
   },
   {
-    desc:
-      "This is not my first EMI purchase. I have done it before with my credit card but in comparison with that the Instacred Cardless EMI purchase is more comfortable and easy.",
+    desc: "This is not my first EMI purchase. I have done it before with my credit card but in comparison with that the Instacred Cardless EMI purchase is more comfortable and easy.",
     name: "- Sonia",
     male: false,
   },
   {
-    desc:
-      "Happy with the service. I will prefer Instacred for my EMI purchase in comparison with a Credit Card. To avail a credit card it's a time consuming task and here I got the credit instantly. ",
+    desc: "Happy with the service. I will prefer Instacred for my EMI purchase in comparison with a Credit Card. To avail a credit card it's a time consuming task and here I got the credit instantly. ",
     name: "- Sunil",
     male: true,
   },
   {
-    desc:
-      "Good option for EMI purchase. Less hectic and very few steps to complete the purchase. I will prefer Instacred over a credit card EMI purchase.",
+    desc: "Good option for EMI purchase. Less hectic and very few steps to complete the purchase. I will prefer Instacred over a credit card EMI purchase.",
     name: "- Augustine",
     male: true,
   },
   {
-    desc:
-      "Very good service. Easy to complete the purchase and would like to do more purchase across different categories available.",
+    desc: "Very good service. Easy to complete the purchase and would like to do more purchase across different categories available.",
     name: "- Manjula",
     male: false,
   },
   {
-    desc:
-      "Happy with such a easy EMI service available. Very hassle free to complete the purchase and would also recommend to others",
+    desc: "Happy with such a easy EMI service available. Very hassle free to complete the purchase and would also recommend to others",
     name: "- Ankur",
     male: true,
   },
   {
-    desc:
-      "Very easy in terms of completing my EMI purchase. No requirement of card details for the purchase. All you need is mobile number and will definitely use it again.",
+    desc: "Very easy in terms of completing my EMI purchase. No requirement of card details for the purchase. All you need is mobile number and will definitely use it again.",
     name: "- Latif",
     male: true,
   },
   {
-    desc:
-      "Happy and want to do more purchases in future. Easy and understanding steps to complete the EMI purchase online without any card requirement.",
+    desc: "Happy and want to do more purchases in future. Easy and understanding steps to complete the EMI purchase online without any card requirement.",
     name: "- Joyson",
     male: true,
   },
   {
-    desc:
-      "Service is good. Very convenient to do the EMI purchase just with the mobile number.",
+    desc: "Service is good. Very convenient to do the EMI purchase just with the mobile number.",
     name: "- Elabanta",
     male: true,
   },
   {
-    desc:
-      "Less steps and easy to complete the purchase. No card requirement and hassle free service. Interest rate is high, please help with that.",
+    desc: "Less steps and easy to complete the purchase. No card requirement and hassle free service. Interest rate is high, please help with that.",
     name: "- Stephan",
     male: true,
   },
   {
-    desc:
-      "Very good and helpful product. Bought my first few products on EMI and the process was so simple and easy. The direct debit from bank a/c makes life simple and hassle free.",
+    desc: "Very good and helpful product. Bought my first few products on EMI and the process was so simple and easy. The direct debit from bank a/c makes life simple and hassle free.",
     name: "- Christoper",
     male: true,
   },
@@ -123,26 +111,22 @@ const testominalArr = [
     male: true,
   },
   {
-    desc:
-      "Have credit Card from banks as well and compared to them it is very easy to use, repayment is directly from bank account which is the biggest advantage.",
+    desc: "Have credit Card from banks as well and compared to them it is very easy to use, repayment is directly from bank account which is the biggest advantage.",
     name: "- Ragani",
     male: false,
   },
   {
-    desc:
-      "Great option to buy things online. Very simple EMIs and simple to get. Thank you for giving this credit scheme",
+    desc: "Great option to buy things online. Very simple EMIs and simple to get. Thank you for giving this credit scheme",
     name: "- Shibu",
     male: true,
   },
   {
-    desc:
-      "Like it. Works good. First time buying mobile phone on EMI, very easy and simple to use.",
+    desc: "Like it. Works good. First time buying mobile phone on EMI, very easy and simple to use.",
     name: "- Jeeve",
     male: true,
   },
   {
-    desc:
-      "I was very surprised and happy! And it help me to buy my favorite things with out ready cash! Thank You ",
+    desc: "I was very surprised and happy! And it help me to buy my favorite things with out ready cash! Thank You ",
     name: "Ajeesh",
     male: true,
   },
