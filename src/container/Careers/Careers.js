@@ -798,7 +798,7 @@ const AboutUs = (props) => {
         <div className="desc" onClick={() => handleDescShow(item.description)}>
           <span
             className="desc_span"
-            style={{ cursor: "pointer", borderBottom: "1px solid black"}}
+            style={{ cursor: "pointer", borderBottom: "1px solid black" }}
           >
             Job Description
           </span>{" "}
@@ -877,7 +877,6 @@ const AboutUs = (props) => {
                   <img src={slider1desk} className="slider_img" />
                 </div>
               </div>
-              
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -1145,18 +1144,23 @@ const AboutUs = (props) => {
         </Row>
       </section> */}
 
-      <section className="careersec6 wow fadeInUp" data-wow-duration="1.3s"
-        data-wow-delay="1.7s">
+      <section
+        className="careersec6 wow fadeInUp"
+        // data-wow-duration="1.3s"
+        // data-wow-delay="1.7s"
+      >
         <Row className="m-0 opening-head openings-container wow fadeInUp">
           <Col className="p-0 firstcol" lg={12}>
             <div className="working-title">Current Openings </div>
             <div className="working-desc">
-              <img src={search} alt="" style={{ top: "8px" }} />
-              <input
-                onChange={handleJobSearch}
-                type="text"
-                placeholder="Search jobs, titles, keywords"
-              />
+              <div className='working-desc-div'>
+                <img src={search} alt="" />
+                <input
+                  onChange={handleJobSearch}
+                  type="text"
+                  placeholder="Search jobs, titles, keywords"
+                />
+              </div>
             </div>
           </Col>
         </Row>
@@ -1261,8 +1265,11 @@ const AboutUs = (props) => {
 		  </div> */}
         </Row>
       </section>
-      <section className="careersec7 wow fadeInUp drop-cv" data-wow-duration="1.5s"
-        data-wow-delay="1.5s">
+      <section
+        className="careersec7 wow fadeInUp drop-cv"
+        data-wow-duration="1.5s"
+        data-wow-delay="1.5s"
+      >
         <Row className=" drop-cv-container wow fadeInUp">
           <div>
             <img src={cvImage} className="img-fluid" />
@@ -1331,14 +1338,14 @@ const AboutUs = (props) => {
                       </g>
                     </g>
                   </svg>
-                  <span>Choose File </span> 
+                  <span>Choose File </span>
                 </label>
                 <p>
                   Upload docx file, pdf upto 1 mb only{" "}
                   <span className="err">
                     <br /> {nofileErr}
                   </span>
-                  <span style={{color: '#3AB658'}}>{dropCvFileName}</span>
+                  <span style={{ color: "#3AB658" }}>{dropCvFileName}</span>
                 </p>
 
                 {/* <Button type="submit" loading={loading} title="Submit" /> */}
