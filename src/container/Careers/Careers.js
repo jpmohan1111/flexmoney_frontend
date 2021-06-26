@@ -371,9 +371,10 @@ const AboutUs = (props) => {
     console.log(e.target.files[0].name);
     console.log(e.target.files[0].size);
     setDropCvFileName(e.target.files[0].name);
-    if (e.target.files[0].size > 1000000)
+    if (e.target.files[0].size > 1000000) {
       setFileSizealert("file size more than 1 MB!");
-    else setFileSizealert("");
+      setFileerr("");
+    } else setFileSizealert("");
   };
 
   const handleDescClose = () => setDescShow(false);
@@ -462,6 +463,10 @@ const AboutUs = (props) => {
     let formData = new FormData();
     formData.append("name", getVal('.job-apply-body-cont input[name="name"]'));
     formData.append(
+      "job_title",
+      getVal('.job-apply-body-cont input[name="job_title"]')
+    );
+    formData.append(
       "email",
       getVal('.job-apply-body-cont input[name="email"]')
     );
@@ -517,7 +522,7 @@ const AboutUs = (props) => {
       }
     }
     console.log(fileSizealert);
-    if (fileSizealert == "") {
+    if (fileSizealert != "") {
       formIsValid = false;
       setFileerr("*Please upload cv");
     }
@@ -1274,6 +1279,7 @@ const AboutUs = (props) => {
                 <input
                   type="file"
                   className="cv-file-input"
+                  accept="application/pdf,.doc,.docx"
                   id="cv-upload"
                   onChange={dropCvFileChosen}
                   hidden
@@ -1511,7 +1517,7 @@ const AboutUs = (props) => {
                     id="upload"
                     hidden
                     name="resume"
-                    accept="application/pdf"
+                    accept="application/pdf,.doc,.docx,"
                     onChange={handleJobApplyFileChosen}
                   />
                   <label for="upload">
@@ -1521,7 +1527,7 @@ const AboutUs = (props) => {
                     <span>
                       Upload docx file, pdf upto 1 mb only{" "}
                       <span className="size-alert">{fileSizealert}</span>
-                      <span className="size-alert">{fileerr}</span>
+                      <span className="size-alert block">{fileerr}</span>
                     </span>
                     {dropCvFileName}
                   </p>

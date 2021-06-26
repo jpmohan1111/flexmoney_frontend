@@ -344,6 +344,7 @@ const AboutUs = (props) => {
   const [TotalNewsCount, setTotalNewsCount] = useState();
   const [CurrNewsPage, setCurrNewsPage] = useState();
   let location = useLocation();
+  const history = useHistory();
 
   const fetchNews = (pageNum, count) => {
     fetch(
@@ -403,9 +404,12 @@ const AboutUs = (props) => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setNewsTitle(data.news.title);
-        setNewsDate(data.news.date);
-        setNewsContent(data.news.content);
+        if (!data.news) history.push("/404");
+        else {
+          setNewsTitle(data.news.title);
+          setNewsDate(data.news.date);
+          setNewsContent(data.news.content);
+        }
       });
   };
   const handleJobSearch = (evt) => {
@@ -429,7 +433,7 @@ const AboutUs = (props) => {
   };
   useEffect(() => {
     fetchNews(1, 3);
-    fetchNewsById(id);
+    // fetchNewsById(id);
   }, []);
 
   const newsList = news.map((item, i) => {
@@ -557,7 +561,7 @@ const AboutUs = (props) => {
   return (
     <>
       <section className="newspage1 wow fadeIn">
-        <Breadcrumb history={props.history} t2="Careers" />
+        <Breadcrumb history={props.history} t2={`In the News > ${newsTitle}`} />
         <div className="main-head">
           <div className="title">{newsTitle}</div>
 

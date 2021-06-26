@@ -541,7 +541,7 @@ const AboutUs = (props) => {
   return (
     <>
       <section className="newssec1 wow fadeIn">
-        <Breadcrumb history={props.history} t2="Careers" />
+        <Breadcrumb history={props.history} t2="In the news" />
         <div className="main-head">
           <div className="title">In the News</div>
           <div className="desc">
