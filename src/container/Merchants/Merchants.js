@@ -304,7 +304,6 @@ var mbnewsec1_swiper = new Swiper(".mbnewsec1_swiper.swiper-container", {
   },
 });
 
-
 const Lenders = (props) => {
   const { height, width } = useWindowDimensions();
   const [index, setIndex] = useState(0);
@@ -338,7 +337,7 @@ const Lenders = (props) => {
         clickable: true,
       },
     });
-  
+
     // var lenderssec1_swiper = new Swiper(".banner_right_img.swiper-container", {
     //   slidesPerView: 1,
     //   spaceBetween: 0,
@@ -403,41 +402,44 @@ const Lenders = (props) => {
       }
     );
 
-    var lendersec5_swiper = new Swiper(".lendersec5_swiper.swiper-container", {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      loop: true,
-      autoHeight: false,
-      autoplay: {
-        delay: 5000,
-      },
-      breakpoints: {
-        767: {
-          slidesPerView: 1.4,
+    var merchantsec5_swiper = new Swiper(
+      ".merchantsec5_swiper.swiper-container",
+      {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        autoHeight: false,
+        autoplay: {
+          delay: 5000,
         },
-        1280: {
-          slidesPerView: 1.5,
-        },
-        1365: {
-          slidesPerView: 1.6,
-        },
+        breakpoints: {
+          767: {
+            slidesPerView: 1.4,
+          },
+          1280: {
+            slidesPerView: 1.5,
+          },
+          1365: {
+            slidesPerView: 1.6,
+          },
 
-        1533: {
-          slidesPerView: 1.6,
+          1533: {
+            slidesPerView: 1.6,
+          },
+          1919: {
+            slidesPerView: 1.5,
+          },
         },
-        1919: {
-          slidesPerView: 1.5,
+        pagination: {
+          el: ".merchantsec5 .swiper-pagination",
+          clickable: true,
         },
-      },
-      pagination: {
-        el: ".lendersec5 .swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".lendersec5 .right_arrow",
-        prevEl: ".lendersec5 .left_arrow",
-      },
-    });
+        navigation: {
+          nextEl: ".merchantsec5 .right_arrow",
+          prevEl: ".merchantsec5 .left_arrow",
+        },
+      }
+    );
   }, []);
 
   const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
@@ -543,7 +545,10 @@ const Lenders = (props) => {
             <div className="text_content">
               <div className="text_wrapper">
                 <div className="title">Merchants</div>
-                <div className="desc">Grow your business with Instant EMI from a network of reputed Lenders</div>
+                <div className="desc">
+                  Grow your business with Instant EMI from a network of reputed
+                  Lenders
+                </div>
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
@@ -568,7 +573,10 @@ const Lenders = (props) => {
               <img src={bgmobile} className="bgmobile" />
               <div className="mb_text_container">
                 <div className="title">Merchants</div>
-                <div className="desc">Grow your business with Instant EMI from a network of reputed Lenders</div>
+                <div className="desc">
+                  Grow your business with Instant EMI from a network of reputed
+                  Lenders
+                </div>
               </div>
             </div>
           </div>
@@ -577,7 +585,7 @@ const Lenders = (props) => {
 
       <div className="lenderssec2 wow fadeInUp">
         {width > 1023 ? (
-          <div className="lendersec2_flex">
+          <div className="merchantsec2_flex">
             <div className="flex_left">
               <img src={verticalline} className="verticalline" />
               {secTwoTimelineList}
@@ -613,7 +621,7 @@ const Lenders = (props) => {
         </div>
       </div> */}
 
-      <div className="lenderssec4 wow fadeInUp">
+      <div className="merchantsec4 wow fadeInUp">
         <div className="heading_wrapper">
           <div className="title">Our Lending Partners</div>
         </div>
@@ -623,16 +631,13 @@ const Lenders = (props) => {
         </div>
       </div>
 
-
       <div className="merchant_section_4 wow fadeInUp">
         <div className="ms4_content">
           <div className="ms4_heading">
             <div className="title">Consumers on our Network</div>
           </div>
-          
-          
-          <div className="ms4_counting_num">
 
+          <div className="ms4_counting_num">
             <div className="ms4_cn_left">
               <img className="ms4_img_left" src={people2} alt="" />
               <CounterContainerItem colorClass="cw" span="M+" count="28" />
@@ -656,20 +661,10 @@ const Lenders = (props) => {
               <p>Cities</p>
             </div>
           </div>
-
-
         </div>
       </div>
 
-
-
-
-
-
-
-
-      
-      <div className="lendersec5 wow fadeInUp">
+      <div className="merchantsec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />
@@ -696,7 +691,7 @@ const Lenders = (props) => {
           ) : null}
 
           <Col className="p-0 third_col" lg={7}>
-            <div className="lendersec5_swiper swiper-container">
+            <div className="merchantsec5_swiper swiper-container">
               <div className="swiper-wrapper">{lendersList}</div>
               <div className="swiper-pagination"></div>
             </div>
