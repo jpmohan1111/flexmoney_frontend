@@ -519,9 +519,6 @@ const AboutUs = (props) => {
         <Breadcrumb history={props.history} t2="Careers" />
         <div className="main-head">
           <div className="title">{newsTitle}</div>
-          <div className="title">
-            Flexmoney welcomes ICICI Bank to its Merchant Partners
-          </div>
 
           <div className="date">{formatDate(newsDate)}</div>
         </div>

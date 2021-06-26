@@ -319,6 +319,7 @@ const AboutUs = (props) => {
 
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumbererr, setPhoneNumbererr] = useState("");
+  const [fileerr, setFileerr] = useState("");
   const [companyName, setcompanyName] = useState("");
   const [subject, setsubject] = useState("");
   const [cvapplyFile, setCvapplyFile] = useState([]);
@@ -365,6 +366,7 @@ const AboutUs = (props) => {
     setDropCvFileName(e.target.files[0].name);
   };
   const handleJobApplyFileChosen = (e) => {
+    setFileerr("");
     console.log(e);
     console.log(e.target.files[0].name);
     console.log(e.target.files[0].size);
@@ -514,8 +516,10 @@ const AboutUs = (props) => {
         setPhoneNumbererr("");
       }
     }
-    if (fileSizealert != "") {
+    console.log(fileSizealert);
+    if (fileSizealert == "") {
       formIsValid = false;
+      setFileerr("*Please upload cv");
     }
 
     if (formIsValid) {
@@ -1517,6 +1521,7 @@ const AboutUs = (props) => {
                     <span>
                       Upload docx file, pdf upto 1 mb only{" "}
                       <span className="size-alert">{fileSizealert}</span>
+                      <span className="size-alert">{fileerr}</span>
                     </span>
                     {dropCvFileName}
                   </p>
