@@ -1019,47 +1019,25 @@ ul {
       }
     }
   }
-
+  .row_opening{
+    justify-content: center;
+  }
   .openings-cont {
     width: 100%;
     max-width: 91.875em;
     margin-top: 2.625em;
-
-    padding: 2em 5.656em 4em 5.656em;
+    padding: 3.750em 5.656em 5.375em 5.656em;
     border-radius: 1.25em;
     box-shadow: 0 3px 6px 0 #00000029;
     background-color: #ffffff;
-    .openings-cont:nth-child(5) {
-      border-bottom: 0;
-    }
+    
     .opening {
       position: relative;
-      // padding: 2.625em 0px;
       border-bottom: solid 1px #c2c2c2;
-      margin-bottom: 2em;
-      padding-bottom: 3.5em;
-      margin-top: 3.5em;
-      // margin-bottom: 3.5em;
-
-      .btn {
-        position: absolute;
-        top: 20px;
-        right: 0px;
-
-        // width: 200px;
-        // height: 65px;
-        // border-radius: 100px;
-        // background-color: #333333;
-        // font-size: 18px;
-        // font-weight: normal;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 2.44;
-        // letter-spacing: normal;
-        // text-align: center;
-        // color: #ffffff;
-      }
-
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2.875em 0;
       .title {
         font-size: 2.188em;
         letter-spacing: 0.018em;
@@ -1069,25 +1047,21 @@ ul {
         .fontreg();
       }
       .desc {
-        // font-size: 1rem;
-        // font-weight: normal;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 1;
-        // letter-spacing: 0.45px;
-        // font-family: sans-serif;
-        // margin-top: 15px;
-        // border-bottom: 1px solid #000;
-        text-align: left;
         color: #333333;
-        width: fit-content;
         .f25();
         .fontreg();
-        margin-top: 0.5em;
       }
-      .desc_span {
-        // border-bottom: 1px solid #333333;
+      .desc_span{
+        cursor: pointer;
+        border-bottom: 1px solid #000;
       }
+    }
+    .opening:nth-child(1){
+     padding-top: 0; 
+    }
+    .opening:nth-child(5){
+      padding-bottom: 0;
+      border-bottom: none;
     }
   }
   .thankyouTxt {
@@ -1659,9 +1633,10 @@ ul {
 
   .careersec6 {
     background: #f6f6f6;
-    // background-image: url("../../images/careers/ad.png");
     background-image: url("../../images/careers/bg_mask_mob.png");
     padding: 0 1.5em;
+    margin-bottom: -1em;
+    padding-bottom: 7em;
     clip-path: polygon(0 0, 100% 40px, 100% 100%, 0 99%);
     .working-title {
       font-size: 2.4em;
@@ -1676,53 +1651,52 @@ ul {
     }
     .openings-cont {
       width: 100%;
-      margin-top: 4em;
-
-      border-radius: 5px;
+      max-width: 91.875em;
+      margin-top: 2.5em;
+      padding: 3em 0;
+      border-radius: 1.25em;
       box-shadow: 0 3px 6px 0 #00000029;
-      background-color: #fff;
-
+      background-color: #ffffff;
+      
       .opening {
-        padding: 4%;
         position: relative;
-        padding-bottom: 40px;
-        padding-bottom: 20px;
         border-bottom: solid 1px #c2c2c2;
-        .btn {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          right: 0.5em;
-          width: 8.5em;
-          height: 3.5em;
-          border: 2px solid #3bb859;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 2.875em 0;
+        .opening-left{
+          padding-left: 1.5em;
         }
-
+        .opening-right{
+          padding-right: 1.5em;
+        }
         .title {
-          // font-size: 1.6em;
-          // font-weight: normal;
-          // font-stretch: normal;
-          // font-style: normal;
-          // line-height: 1.75;
-          // letter-spacing: 0.29px;
-          .mf16();
-          .fontreg();
-          text-align: left;
+          font-size: 1.6em;
+          letter-spacing: 0.29px;
+          line-height: 1.5em;
+          // text-align: left;
           color: #0bb443;
-          width: 100%;
-          max-width: 62%;
+          .fontreg();
         }
         .desc {
-          font-size: 14px;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 2.21;
-          letter-spacing: 0.25px;
-          text-align: left;
           color: #333333;
-          // text-decoration: underline;
+          font-size: 1.4em;
+          letter-spacing: 0.25px;
+          line-height: 3.214em;
+          .fontreg();
         }
+        .desc_span{
+          cursor: pointer;
+          border-bottom: 1px solid #000;
+        }
+      }
+      .opening:nth-child(1){
+       padding-top: 0; 
+      }
+      .opening:nth-child(5){
+        padding-bottom: 0;
+        border-bottom: none;
       }
     }
     .working-desc {

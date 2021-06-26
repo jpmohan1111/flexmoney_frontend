@@ -794,22 +794,23 @@ const AboutUs = (props) => {
   const openingsList = jobDescriptions.map((item, i) => {
     return (
       <div key={i} className="opening">
+        <div className='opening-left'>
         <div className="title">{item.title}</div>
         <div className="desc" onClick={() => handleDescShow(item.description)}>
           <span
             className="desc_span"
-            style={{ cursor: "pointer", borderBottom: "1px solid black" }}
-          >
+            >
             Job Description
           </span>{" "}
           <span>&nbsp; {">"}</span>
         </div>
-        {/* <button onClick={() => handleApplyShow(item.title)}>Apply now</button> */}
+        </div>
+
         <div
+          className='opening-right'
           className="btnContainer"
           onClick={() => handleApplyShow(item.title)}
         >
-          {/* <Button loading="false" title="Apply now" /> */}
           {width > 480 ? (
             <Button loading={loading} title="Apply now" />
           ) : (
@@ -1164,7 +1165,7 @@ const AboutUs = (props) => {
             </div>
           </Col>
         </Row>
-        <Row className="">
+        <Row className="row_opening">
           <div className="openings-cont">
             {/* <div className="opening">
 			  <h2>Project manager</h2>
