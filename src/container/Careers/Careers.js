@@ -1009,6 +1009,7 @@ const AboutUs = (props) => {
         onHide={handleDescClose}
         className="job-desc-modal"
         centered
+        scrollable='true'
       >
         <Modal.Header closeButton>
           <Modal.Title className="job-desc-head">Job Description</Modal.Title>
@@ -1098,7 +1099,7 @@ const AboutUs = (props) => {
                     onChange={handleJobApplyFileChosen}
                   />
                   <label for="upload">
-                    <span>
+                    <span className='addFileSpan'>
                       {" "}
                       <img
                         src={upload}
@@ -1109,18 +1110,21 @@ const AboutUs = (props) => {
                   </label>
                   <p>
                     <span style={{ color: "#595959" }}>
-                      Resume* (Upload docx file, pdf upto 1 mb only){" "}
-                      <span className="size-alert">{fileSizealert}</span>
+                      <span className='innerSpan'>Resume*</span> (Upload docx file, pdf upto 1 mb only){" "}
                     </span>
-                    {dropCvFileName}
                   </p>
                 </div>
+                <div className="dropcvfilenamediv">
+                    {dropCvFileName}
+                </div>
+                <span className="size-alert" style={{color: 'red'}}>{fileSizealert}</span>
               </Col>
               <Col lg={12}>
-                <div className="submit">
-                  <button type="submit" onClick={handleApplySubmit}>
+                <div className="submit jobSubmitDiv">
+                  {/* <button type="submit" onClick={handleApplySubmit} className='btnSubmitHover'>
                     Submit
-                  </button>
+                  </button> */}
+                  <Button title='Submit' onClick={handleApplySubmit}/>
                 </div>
                 {showApplySuccesstxt && (
                   <div className="thankyouTxt">

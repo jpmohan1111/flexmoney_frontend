@@ -1116,14 +1116,31 @@ ul {
       .submit {
         width: 100%;
       }
+      span.rightjobarrow{
+        visibility: hidden;
+        padding-left: 0.3em;
+      }
+      .btnSubmitHover:hover span.rightjobarrow{
+        visibility: visible;
+        padding-left: 0.3em;
+      }
+      .submit.jobSubmitDiv{
+        margin-top: 5em;
+      }
       .resume {
         width: 100%;
         height: auto;
-        border-bottom: solid 2px #3bb859;
+        border-bottom: solid 2px #dddddd;
 
         min-height: 110px;
         position: relative;
-
+        
+        span{
+          font-size: 0.5em;
+        }
+        .innerSpan{
+          font-size: 1em;
+        }
         > input {
           color: transparent;
           width: 100%;
@@ -1204,34 +1221,24 @@ ul {
           width: 80%;
           position: absolute;
           bottom: 5px;
+          padding-bottom: 0.15em;
           .size-alert {
             color: red;
             display: block;
             margin: 10px 0px;
           }
           span {
-            font-size: 0.64em;
+            font-size: 0.7em;
             color: #595959;
           }
         }
       }
       button {
-        // width: 150px;
-        // margin: 35px 0px;
-        // height: 40px;
-        // border-radius: 100px;
         background-color: #333333;
         margin-right: auto;
         box-shadow: 0 9px 12px 0 rgba(59, 184, 89, 0.3);
-        // font-size: 14px;
-        // font-weight: normal;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 2.44;
-        // letter-spacing: normal;
         text-align: left;
         color: #ffffff;
-        // padding: 3px 50px;
         .f18();
         .fontreg();
         margin-top: 5em;
@@ -1337,9 +1344,6 @@ ul {
         }
       }
     }
-    .job-desc-sub-head {
-    }
-
     #apply-form {
       width: 100%;
       display: flex;
@@ -1350,14 +1354,12 @@ ul {
   }
   .job-desc-modal {
     .modal-dialog {
-      min-width: 70vw;
-      // height: 90vh;
-      // min-height: 90vh;
+      max-width: 73.313em;
+
       > .modal-content {
-        min-height: 100%;
-        max-height: 100%;
+        min-height: 55.313em;
         width: 100%;
-        max-width: 89%;
+        max-width: 73.313em;
         margin: auto;
         .modal-header {
           border: none;
@@ -1366,7 +1368,8 @@ ul {
           height: 43.6125em;
           max-height: 43.6125em;
           overflow: hidden;
-          padding-bottom: 4em;
+          padding-left: 1.875em;
+          // padding-right: 2.875em;
           > div {
             max-height: 100%;
             overflow-y: scroll;
@@ -1388,6 +1391,10 @@ ul {
     ul {
     }
   }
+  .dropcvfilenamediv {
+    font-size: 1.4em;
+  }
+
 }
 @media (min-width: 765px) {
   .pagination_container {
@@ -1817,9 +1824,8 @@ ul {
       display: flex;
       flex-wrap: wrap;
       padding: 0px 15px 0px 15px;
-      .floating-label {
-        // top: 1.7em;
-      }
+      padding-bottom: 3.2em;
+     
       input {
         font-size: 16px;
         font-weight: normal;
@@ -1999,10 +2005,7 @@ ul {
         }
       }
     }
-    .job-desc-sub-head {
-    }
-    .job-desc-sub-desc {
-    }
+  
   }
   .job-desc-modal {
     .job-desc-head {
@@ -2019,7 +2022,8 @@ ul {
       .fontbold();
     }
     .modal-header .close {
-      font-size: 3em;
+      font-size: 4em;
+      right: 0.2em;
     }
     .job-desc-resp-head {
       font-size: 15px;
@@ -2057,6 +2061,65 @@ ul {
   .job-desc-modal .job-desc-resp-head {
     padding-left: 0.5em;
   }
+  .job-apply-modal .job-apply-body-cont .resume > p span{
+    font-size: 1.7em;
+    color: #595959;
+  }
+  .job-apply-modal .job-apply-body-cont {
+
+    .resume{
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 3.5em;
+      
+      .addFileSpan{
+        border: 1px dashed #DDDDDD;
+        padding: 0.2em 0.7em;
+        border-radius: 0.5em;
+        max-width: 10.8em;
+        margin-top: 0.7em;
+        display: inline-block;
+        font-size: 0.9em;
+      }
+      p{
+    border-bottom: 2px solid #DDDDDD;
+
+        padding-bottom: 1em;
+        color: #525252;
+        font-family: Merriweather Sans;
+        span{
+          font-size: 0.8em;
+        }
+        .innerSpan{
+          font-size: 1.6em;
+        }
+      }
+    }
+    .dropcvfilenamediv{
+      font-size: 1.7em;
+    }
+    .size-alert{
+      font-size: 1.4em;
+    }
+  }
+  .job-apply-modal .job-apply-body input{
+    border-bottom: 2px solid #DDDDDD;
+  }
+  .user-input-wrp {
+    margin-top: 3em;
+}
+.submit.jobSubmitDiv{
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+}
+.modal-dialog-centered.modal-dialog-scrollable .modal-content {
+  max-height: 72.5em;
+  max-width: 98%;
+}
+.modal-header{
+  border-bottom: none;
+}
 }
 
 @media (max-width: 480px) {
@@ -2284,7 +2347,7 @@ ul {
     font-size: 2em !important;
   }
   .modal-body {
-    padding: 1rem 0.3rem;
+    padding: 0 0.3rem;
   }
   .job-desc-modal .job-desc-sub-desc {
     padding: 0.5em 1em;
