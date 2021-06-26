@@ -118,36 +118,9 @@ const arry2 = [
   banner,
   banner,
   banner,
-  //   img1,
-  //   img2,
-  //   img3,
-  //   img4,
-  //   img5,
-  //   img6,
-  //   img7,
-  //   img8,
-  //   img9,
-  //   img10,
-  //   img11,
-  //   img12,
 ];
 
 const arry3 = [bannermobile, bannermobile, bannermobile, bannermobile];
-
-// const arry3 = [
-//   mbimg1,
-//   mbimg2,
-//   mbimg3,
-//   mbimg4,
-//   mbimg5,
-//   mbimg6,
-//   mbimg7,
-//   mbimg8,
-//   mbimg9,
-//   mbimg10,
-//   mbimg11,
-//   mbimg12,
-// ];
 
 const teamArr = [
   {
@@ -412,27 +385,6 @@ const AboutUs = (props) => {
   };
   useEffect(() => {
     fetchJobDesc(currJobDescPage);
-    // fetch(
-    //   `${process.env.REACT_APP_API_ENDPOINT}/job-descriptions?count=5&page=${currJobDescPage}`,
-    //   {
-    //     headers: {
-    //       accept: "*/*",
-    //       "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
-    //       "sec-ch-ua":
-    //         '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
-    //       "sec-ch-ua-mobile": "?0",
-    //       "sec-fetch-dest": "empty",
-    //       "sec-fetch-mode": "cors",
-    //       "sec-fetch-site": "cross-site",
-    //     },
-    //   }
-    // )
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     setJobDescriptions(data.items);
-    //     setTotalJobDescCount(data.totalCount);
-    //   });
   }, []);
 
   const getVal = (selector) => {
@@ -549,18 +501,6 @@ const AboutUs = (props) => {
           //showToast("danger");
         });
     }
-    // fetch(`${process.env.REACT_APP_API_ENDPOINT}/job-apply2`, {
-    //   method: "post",
-    //   headers: {
-    //     // "Content-Type": "application/json",
-    //     // "Content-Type": "application/x-www-form-urlencoded",
-    //     "Content-Type": "multipart/form-data",
-    //   },
-    //   body: JSON.stringify(reqData),
-    //   //   body: formData,
-    // }).then((res) => {
-    //   console.log(res);
-    // });
   };
   const handleDropCvSubmit = (evt) => {
     if (document.querySelector("#cv-upload").files.length == 0) {
@@ -638,93 +578,9 @@ const AboutUs = (props) => {
     });
 
     var pastexp_swiper2 = new Swiper(".careersec3_swiper.swiper-container", {
-      //   effect: "coverflow",
       grabCursor: true,
       centeredSlides: true,
       loop: true,
-
-      //   autoplay: {
-      //     delay: 5000,
-      //   },
-
-      //   breakpoints: {
-      //     1921: {
-      //       slidesPerView: "2",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 510,
-      //         depth: 320,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //     1680: {
-      //       slidesPerView: "1.5",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 698,
-      //         depth: 300,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //     1520: {
-      //       slidesPerView: "1.5",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 490,
-      //         depth: 450,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //     1440: {
-      //       slidesPerView: "1.55",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 450,
-      //         depth: 420,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-
-      //     1366: {
-      //       slidesPerView: "1.55",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 448,
-      //         depth: 368,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //     1280: {
-      //       slidesPerView: "1.55",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 450,
-      //         depth: 290,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //     1024: {
-      //       slidesPerView: "1.7",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 270,
-      //         depth: 370,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //   },
-
-      //   navigation: {
-      //     nextEl: ".careersec2 .right_arrow",
-      //     prevEl: ".careersec2 .left_arrow",
-      //   },
       pagination: {
         el: ".careersec2 .swiper-pagination",
         clickable: true,
@@ -807,8 +663,7 @@ const AboutUs = (props) => {
         </div>
 
         <div
-          className='opening-right'
-          className="btnContainer"
+          className="opening-right btnContainer"
           onClick={() => handleApplyShow(item.title)}
         >
           {width > 480 ? (
@@ -967,183 +822,6 @@ const AboutUs = (props) => {
         </div>
       </section>
 
-      {/* <section className="careersec1 wow fadeIn">
-        <Breadcrumb history={props.history} t2="Careers" />
-        <div className="main-head">
-          <div className="title">Careers</div>
-          <div className="desc">We are recruiting</div>
-        </div>
-      </section> */}
-      {/* <section className="careersec2 wow fadeInUp" data-wow-duration="2s">
-        <Row className="m-0">
-          <Col lg={12} className="p-0">
-            <div className="d-f j-c "> */}
-      {/* {width <= 834 ? null : (
-				<div className="d-f a-c">
-				  <div>
-					<img className="left_arrow" src={leftArr} />
-				  </div>
-				</div>
-			  )} */}
-      {/* <div className="careersec3_swiper swiper-container">
-                <div className="swiper-wrapper">
-                  {width > 480 ? list2 : list3}
-                </div>
-              </div> */}
-      {/* {width <= 834 ? null : (
-				<div className="d-f a-c">
-				  <div>
-					<img className="right_arrow" src={rightArr} />
-				  </div>
-				</div>
-			  )} */}
-      {/* </div>
-            <div className="swiper-pagination"></div>
-          </Col>
-        </Row>
-      </section> */}
-
-      {/* <section
-		className="careersec3 wow fadeInUp"
-		data-wow-duration="2s"
-		data-wow-delay="0.5s"
-	  >
-		<div className="ourTeamContainer">
-		  <div className="title">Team</div>
-		  <div className="swiper-container ourteam_swiper">
-			<div className="swiper-wrapper">{teamArrList}</div>
-			<div className="swiper-pagination"></div>
-		  </div>
-		</div>
-	  </section> */}
-      {/* <section
-		className="careersec4 wow fadeInUp"
-		data-wow-duration="2s"
-		data-wow-delay="0.5s"
-	  >
-		<TitleItem black title="Institutional Investors" />
-
-		<div className="investorContainer d-f">
-		  <div className="inverstorItem">
-			<div className="imgcontainer d-f  j-c a-c">
-			  <div>
-				{" "}
-				<img
-				  onClick={() =>
-					window.open("https://www.pravegavc.com/", "_blank")
-				  }
-				  src={pravega}
-				  className="fluid c-p"
-				/>
-			  </div>
-			</div>
-			<div className="desc">
-			  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-			  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-			  erat.
-			</div>
-		  </div>
-		  <div className="line"></div>
-		  <div className="inverstorItem">
-			<div className="imgcontainer d-f  j-c a-c">
-			  <div>
-				<img
-				  onClick={() =>
-					window.open("https://z5capital.com/", "_blank")
-				  }
-				  src={z5}
-				  className="fluid c-p"
-				/>
-			  </div>
-			</div>
-			<div className="desc">
-			  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-			  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-			  erat.
-			</div>
-		  </div>
-		</div>
-	  </section> */}
-      {/* 
-      <section className="careersec5 wow fadeIn">
-        <Row className="m-0 opening-head">
-          <Col className="p-0 firstcol" lg={12}>
-            <div className="working-title">Working with Flexmoney </div>
-            {width <= 834 ? (
-              <div className="working-desc">
-                Looking for talented and passionate <br />
-                individuals to join our team
-              </div>
-            ) : (
-              <div className="working-desc">
-                Looking for talented and passionate individuals to join our team
-              </div>
-            )}
-          </Col>
-        </Row>
-        <Row className=" bullets">
-          <div className="bullet_div">
-            <div className="working-img-cont">
-              <img src={lamp} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Build the future</div>
-
-              {width <= 834 ? (
-                <div className="working-desc">
-                  Be a part of the team that is revolutionizing the Buy Now Pay
-                  Later landscape in the county
-                </div>
-              ) : (
-                <div className="working-desc">
-                  Be a part of the team that is revolutionizing the Buy Now Pay
-                  Later landscape in the county
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="bullet_div">
-            <div className="working-img-cont">
-              <img src={heart} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Open Work culture</div>
-              {width <= 834 ? (
-                <div className="working-desc">
-                  Work in a transparent and open culture where All Hands are on
-                  Deck
-                </div>
-              ) : (
-                <div className="working-desc">
-                  Work in a transparent and open culture where All Hands are on
-                  Deck
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="bullet_div">
-            <div className="working-img-cont">
-              <img src={hands} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Diverse team</div>
-              {width <= 834 ? (
-                <div className="working-desc">
-                  Work alongside colleagues with diverse backgrounds and
-                  experiences ranging from Technology to Finance, from Silicon
-                  Valley to Singapore
-                </div>
-              ) : (
-                <div className="working-desc">
-                  Work alongside colleagues with diverse backgrounds and
-                  experiences ranging from Technology to Finance, from Silicon
-                  Valley to Singapore
-                </div>
-              )}
-            </div>
-          </div>
-        </Row>
-      </section> */}
 
       <section
         className="careersec6 wow fadeInUp"
@@ -1227,43 +905,7 @@ const AboutUs = (props) => {
               </svg>
             </div>
           )}
-          {/* <div>
-			<div className="working-img-cont">
-			  <img src={lamp} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Build the future</div>
-			  <div className="working-desc">
-				Be a part of the team that is revolutionizing the Buy Now Pay
-				Later landscape in the county
-			  </div>
-			</div>
-		  </div>
-		  <div>
-			<div className="working-img-cont">
-			  <img src={heart} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Open Work culture</div>
-			  <div className="working-desc">
-				Work in a transparent and open culture where All Hands are on
-				Deck
-			  </div>
-			</div>
-		  </div>
-		  <div>
-			<div className="working-img-cont">
-			  <img src={hands} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Diverse team</div>
-			  <div className="working-desc">
-				Work alongside colleagues with diverse backgrounds and
-				experiences ranging from Technology to Finance, from Silicon
-				Valley to Singapore
-			  </div>
-			</div>
-		  </div> */}
+         
         </Row>
       </section>
       <section
@@ -1280,13 +922,7 @@ const AboutUs = (props) => {
                 Didn't find what you were looking for? Drop your CV here, we
                 will consider your profile for future job postings
               </h4>
-              {/* <input type="file" className="cv-file-input"></input> */}
-              {/* <form
-                id="drop-cv-form"
-                action={`${process.env.REACT_APP_API_ENDPOINT}/drop-cv`}
-                encType="multipart/form-data"
-                method="post"
-              > */}
+             
               <div id="drop-cv-form">
                 <input
                   type="file"
@@ -1381,26 +1017,12 @@ const AboutUs = (props) => {
           <div>
             <h5 className="job-desc-resp-head">Job Role & Responsibilities</h5>
             <div>
-              {/* <p className="job-desc-sub-head">Core Responsibilities:</p> */}
               <p className="job-desc-sub-desc">{parse(jobDescInView)}</p>
-              {/*<p className="job-desc-sub-head">Additional Responsibilities:</p>
-               <p className="job-desc-sub-desc">
-                Analyze data to identify key leverage points to increase
-                conversion, engagement and retention of the product Develop a
-                product roadmap, design wireframes, write requirements, and work
-                in
-              </p> */}
+              
             </div>
           </div>
         </Modal.Body>
-        {/* <Modal.Footer>
-		  <Button variant="secondary" onClick={handleClose}>
-			Close
-		  </Button>
-		  <Button variant="primary" onClick={handleClose}>
-			Save Changes
-		  </Button>
-		</Modal.Footer> */}
+        
       </Modal>
 
       <Modal
@@ -1414,65 +1036,6 @@ const AboutUs = (props) => {
         </Modal.Header>
         <Modal.Body className="job-apply-body">
           <div className="job-apply-body-cont">
-            {/* <form
-              id="apply-form"
-              action="http://13.233.110.14:8080/job-apply"
-              enctype="multipart/form-data"
-              method="post"
-            > */}
-            {/* <input type="hidden" name="job_title" value={jobApplyInView} />
-            <div className="name">
-              <input name="name" placeholder="Name" type="text" />
-            </div>
-            <div className="email">
-              <input name="email" placeholder="Email" type="text" />
-            </div>
-            <div className="contact">
-              <input
-                name="contact_number"
-                placeholder="Contact number"
-                type="text"
-              />
-            </div>
-            <div className="company">
-              <input
-                name="company_name"
-                placeholder="Company Name"
-                type="text"
-              />
-            </div>
-            <div className="career">
-              <input
-                name="career_summary"
-                placeholder="Career Summary/message"
-                type="text"
-              />
-            </div>
-            <div className="resume">
-              <p>Resume* (Upload docx file, pdf upto 1 mb only)</p>
-              <label className="file">
-                <input
-                  type="file"
-                  id="file"
-                  aria-label="File browser example"
-                  name="resume"
-                />
-                <span className="file-custom"></span>
-              </label>
-            </div>
-            <div className="submit">
-              <button type="submit" onClick={handleApplySubmit}>
-                Submit
-              </button>
-            </div> */}
-            {/* </form> */}
-
-            {/* <form
-              id="apply-form"
-              action={`${process.env.REACT_APP_API_ENDPOINT}/job-apply`}
-              encType="multipart/form-data"
-              method="post"
-            > */}
             <Row>
               <input type="hidden" name="job_title" value={jobApplyInView} />
               <Col lg={6}>
@@ -1566,17 +1129,8 @@ const AboutUs = (props) => {
                 )}
               </Col>
             </Row>
-            {/* </form> */}
           </div>
         </Modal.Body>
-        {/* <Modal.Footer>
-		  <Button variant="secondary" onClick={handleClose}>
-			Close
-		  </Button>
-		  <Button variant="primary" onClick={handleClose}>
-			Save Changes
-		  </Button>
-		</Modal.Footer> */}
       </Modal>
       <svg width="0" height="0">
         <defs>
