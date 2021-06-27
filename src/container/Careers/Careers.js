@@ -269,7 +269,7 @@ const openingsArr = [
     name: "VP - Head of Product",
   },
 ];
-const AboutUs = (props) => {
+const Careers = (props) => {
   const { height, width } = useWindowDimensions();
   const [applyShow, setApplyShow] = useState(false);
   const [descShow, setDescShow] = useState(false);
@@ -649,7 +649,7 @@ const AboutUs = (props) => {
             onClick={() => handleDescShow(item.description)}
           >
             <span className="desc_span">Job Description</span>{" "}
-            <span><i class="fa fa-angle-right" style={{paddingLeft: '0.2em', fontWeight:'500'}}></i></span>
+            <span><i class="fa fa-angle-right" style={{paddingLeft: '0.2em', fontWeight:'bold'}}></i></span>
           </div>
         </div>
 
@@ -728,7 +728,7 @@ const AboutUs = (props) => {
             <div className="text_content">
               <div className="text_wrapper">
                 <div className="title">Careers</div>
-                <div className="desc">We are recruiting!</div>
+                <div className="career_desc">We are recruiting!</div>
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
@@ -754,7 +754,7 @@ const AboutUs = (props) => {
               <img src={bgmobile} className="bgmobile" />
               <div className="mb_text_container">
                 <div className="title">Careers</div>
-                <div className="desc">We are recruiting!</div>
+                <div className="career_desc">We are recruiting!</div>
               </div>
             </div>
           </div>
@@ -1002,7 +1002,7 @@ const AboutUs = (props) => {
           <Modal.Title className="job-desc-head">Job Description</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>
+          <div className='scrollbar scrollbar-primary'>
             <h5 className="job-desc-resp-head">Job Role & Responsibilities</h5>
             <div>
               <p className="job-desc-sub-desc">{parse(jobDescInView)}</p>
@@ -1049,7 +1049,7 @@ const AboutUs = (props) => {
                   type="tel"
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   name="contact_number"
-                  title="contact Number*"
+                  title="Contact Number*"
                 />
                 <div className="err">{phoneNumbererr}</div>
               </Col>
@@ -1097,7 +1097,7 @@ const AboutUs = (props) => {
                     {dropCvFileName ? (
                       <div className="dropcvfilenamediv">{dropCvFileName}</div>
                     ) : (
-                      <span style={{ color: "#595959" }}>
+                      <span className='outerSpan'>
                         <span className="innerSpan">Resume*</span> (Upload docx
                         file, pdf upto 1 mb only){" "}
                       </span>
@@ -1159,4 +1159,4 @@ const AboutUs = (props) => {
   );
 };
 
-export default AboutUs;
+export default Careers;

@@ -2,6 +2,39 @@
 * {
   // outline: 1px solid orangered;
 }
+::marker {
+  color: #0bb443 !important;
+}
+
+.scrollbar {
+  overflow: scroll;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 0;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* custom colors  */
+.scrollbar-primary::-webkit-scrollbar {
+  background-color: #E9E9E9;
+}
+.scrollbar-primary {
+  scrollbar-color: #D5D5D5 #f5f5f5;
+}
+.scrollbar-primary::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #D5D5D5;
+}
+
+
 
 .newsec1_wrapper
   .swiper-container-horizontal
@@ -18,22 +51,23 @@
 
 .newsec1_wrapper .swiper-pagination-bullet {
   width: 0.625em;
-  height: 0.625em;
+  height: 0.313em;
   display: inline-block;
+  margin: 0 3.5px;
   border-radius: 100%;
   opacity: 1;
   transition: 0.3s ease;
-  background: #818181;
+  background: #FFFFFF;
   z-index: 9;
 }
 
 .newsec1_wrapper .swiper-pagination-bullet-active {
   opacity: 1;
-  height: 4px;
-  width: 28px;
+  height: 0.313em;
+  width: 4.375em;
   border-radius: 15px;
   transition: 0.3s ease;
-  background: #818181;
+  background: #FFFFFF;
 }
 
 .newsec1_wrapper
@@ -118,7 +152,7 @@ ul {
     color: #ffffff;
     z-index: 32;
   }
-  .desc {
+  .career_desc {
     .f25();
     .fontreg();
     margin-top: 1em;
@@ -257,7 +291,7 @@ ul {
         .mf50();
         padding-top: initial;
       }
-      .desc {
+      .career_desc {
         .mf16();
       }
     }
@@ -805,7 +839,7 @@ ul {
     color: #333333;
     .f60();
     .fontbold();
-    margin-top: 0.3em;
+    margin-top: 0.7em;
   }
   .job-desc-resp-head {
     text-align: left;
@@ -940,7 +974,7 @@ ul {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 2.875em 0;
+      padding: 2.5em 0;
       .title {
         font-size: 2.188em;
         letter-spacing: 0.018em;
@@ -1041,8 +1075,14 @@ ul {
         span{
           font-size: 0.5em;
         }
+        .outerSpan{
+          color: #595959;
+          .fontbold();
+          // font-size: 0.6em;
+        }
         .innerSpan{
           font-size: 1em;
+          // color: #595959;
         }
         > input {
           color: transparent;
@@ -1131,7 +1171,7 @@ ul {
             margin: 10px 0px;
           }
           span {
-            font-size: 0.7em;
+            font-size: 0.6em;
             color: #595959;
           }
         }
@@ -1164,7 +1204,7 @@ ul {
     }
     .job-apply-body {
       input {
-        font-size: 1.7em;
+        font-size: 1.125em;
         display: block;
         height: 38px;
         // width: 90%;
@@ -1570,7 +1610,7 @@ ul {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 3em 0;
+        padding: 2em 0;
         .opening-left{
           padding-left: 1.5em;
         }
@@ -1632,7 +1672,7 @@ ul {
         height: 1.286em;
         position: absolute;
         left: 1.2em;
-        top: 1em;
+        top: 0.85em;
       }
       input {
         width: 100%;
@@ -1889,6 +1929,7 @@ ul {
       letter-spacing: normal;
       text-align: center;
       color: #333333;
+      .fontbold();
     }
     .job-apply-body {
       input {
@@ -1940,7 +1981,7 @@ ul {
       right: 0.2em;
     }
     .job-desc-resp-head {
-      font-size: 15px;
+      font-size: 1.6em;
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
@@ -1973,7 +2014,7 @@ ul {
     font-size: 1.8em !important;
   }
   .job-desc-modal .job-desc-resp-head {
-    padding-left: 0.5em;
+    padding-left: 0.938em;
   }
   .job-apply-modal .job-apply-body-cont .resume > p span{
     font-size: 1.7em;
@@ -1993,7 +2034,7 @@ ul {
         max-width: 10.8em;
         margin-top: 0.7em;
         display: inline-block;
-        font-size: 0.9em;
+        font-size: 0.7em;
       }
       p{
     border-bottom: 2px solid #DDDDDD;
@@ -2004,8 +2045,13 @@ ul {
         span{
           font-size: 0.8em;
         }
+        .outerSpan{
+          color: #595959;
+          .fontbold();
+        }
         .innerSpan{
           font-size: 1.6em;
+          // color: #595959;
         }
       }
     }
@@ -2034,6 +2080,12 @@ ul {
 .modal-header{
   border-bottom: none;
 }
+// .addFileSpan{
+//   img{
+//     max-width: 18px;
+//     height: 15px;
+//   }
+// }
 }
 
 @media (max-width: 480px) {
@@ -2160,6 +2212,7 @@ ul {
       letter-spacing: normal;
       text-align: center;
       color: #333333;
+      // .fontbold();
     }
     .row {
       width: 100%;
