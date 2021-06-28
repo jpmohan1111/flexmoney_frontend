@@ -358,6 +358,7 @@ const Lenders = (props) => {
       slidesPerView: 1,
       spaceBetween: 10,
       loop: true,
+      grabCursor: true,
       autoHeight: false,
       autoplay: {
         delay: 5000,
@@ -390,6 +391,7 @@ const Lenders = (props) => {
       },
     });
   }, []);
+  // window.location.reload();
 
   const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
     <div className="swiper-slide" key={i}>
@@ -471,7 +473,7 @@ const Lenders = (props) => {
         <span className="home_crumb" onClick={() => props.history.push("/")}>
           Home
         </span>
-        &nbsp; {">"} &nbsp;Lender
+        &nbsp; {">"} &nbsp;Lenders
       </div>
 
       <section className="newsec1 wow fadeIn">
@@ -489,7 +491,7 @@ const Lenders = (props) => {
                   <img src={lenders_banner1} className="slider_img" />
                 </div>
               </div>
-              {/* <div className="swiper-pagination"></div> */}
+              <div className="swiper-pagination"></div>
             </div>
             <div className="text_content">
               <div className="text_wrapper">

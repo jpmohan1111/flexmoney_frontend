@@ -23,7 +23,7 @@ import bannerimg from "../../images/merchants/bannerimg.png";
 import tabbannerimg from "../../images/merchants/tabbannerimg.png";
 
 import rightimg from "../../images/merchants/rightimg.png";
-import mbrightimg from "../../images/merchants/mbrightimg.png";
+import mbrightimg from "../../images/merchants/mbrightimg.svg";
 import graydot from "../../images/merchants/graydot.png";
 import greendot from "../../images/merchants/greendot.png";
 import verticalline from "../../images/merchants/verticalline.png";
@@ -48,12 +48,19 @@ import flipkart from "../../images/merchants/flipkart.png";
 import myntra from "../../images/merchants/myntra.png";
 import vijaysales from "../../images/merchants/vijaysales.png";
 
+import icici from "../../images/merchants/icici.png";
+import hdfc from "../../images/merchants/hdfc.png";
+import kodak from "../../images/merchants/kodak.png";
+import feederal from "../../images/merchants/feederal.png";
+import homecredit from "../../images/merchants/homecredit.png";
+import idfc from "../../images/merchants/idfc.png";
+
 import people2 from "../../images/merchants/merchant_s5_people.svg";
 import cityscape from "../../images/merchants/merchant_s5_city.svg";
 
 import cardbg from "../../images/merchants/cardbg.svg";
 import leftquote from "../../images/merchants/leftquote.svg";
-import leftquoteBlur from "../../images/merchants/left-quote.png";
+// import leftquoteBlur from "../../images/merchants/left-quote.png";
 
 import footerbg from "../../images/merchants/footerbg.png";
 import footerrightimg from "../../images/merchants/footerrightimg.png";
@@ -103,17 +110,17 @@ const sectionOnebannerDataArr = [
 ];
 const sectionTwoDataArr = [
   {
-    desc: "Start offering EMI & Pay Later solutions across 3800+ merchants across leading categories with your Branding",
+    desc: "Get access to 25M+ Pre-Approved users across 6 Banks & NBFC with Single Integration",
     rightImg: rightimg,
     mbImg: mbrightimg,
   },
   {
-    desc: "Offer Purchase financing to all existing customer segments through Mobile number based Cardless experience",
+    desc: "Increase Conversion & Order Value with our Smart Eligibility Check API",
     rightImg: rightimg,
     mbImg: mbrightimg,
   },
   {
-    desc: "Secure & frictionless integration with legacy banking systems. Access entire merchant network with Single Integration",
+    desc: "Issue new credit lines to users to complete the transaction. Fully Digital and Paperless experience that takes less than 5 minutes",
     rightImg: rightimg,
     mbImg: mbrightimg,
   },
@@ -162,88 +169,94 @@ const sectionThreeCardDataArr = [
 ];
 const sectionFourImgArr = [
   {
-    img: vijaysales,
+    img: icici,
   },
   {
-    img: amazon,
+    img: hdfc,
   },
   {
-    img: flipkart,
+    img: kodak,
   },
   {
-    img: decathlon,
+    img: feederal,
   },
   {
-    img: myntra,
+    img: homecredit,
   },
   {
-    img: vijaysales,
+    img: idfc,
   },
   {
-    img: decathlon,
+    img: icici,
   },
   {
-    img: vijaysales,
+    img: hdfc,
   },
   {
-    img: amazon,
+    img: kodak,
   },
   {
-    img: flipkart,
+    img: feederal,
   },
   {
-    img: decathlon,
+    img: homecredit,
   },
   {
-    img: myntra,
+    img: idfc,
   },
   {
-    img: vijaysales,
+    img: icici,
   },
   {
-    img: decathlon,
+    img: hdfc,
   },
   {
-    img: vijaysales,
+    img: kodak,
   },
   {
-    img: amazon,
+    img: feederal,
   },
   {
-    img: flipkart,
+    img: homecredit,
   },
   {
-    img: decathlon,
+    img: idfc,
   },
   {
-    img: myntra,
+    img: icici,
   },
   {
-    img: vijaysales,
+    img: hdfc,
   },
   {
-    img: decathlon,
+    img: kodak,
   },
   {
-    img: vijaysales,
+    img: feederal,
   },
   {
-    img: amazon,
+    img: homecredit,
   },
   {
-    img: flipkart,
+    img: idfc,
   },
   {
-    img: decathlon,
+    img: icici,
   },
   {
-    img: myntra,
+    img: hdfc,
   },
   {
-    img: vijaysales,
+    img: kodak,
   },
   {
-    img: decathlon,
+    img: feederal,
+  },
+  {
+    img: homecredit,
+  },
+  {
+    img: idfc,
   },
 ];
 const sectionFiveLendersDataArr = [
@@ -402,44 +415,41 @@ const Lenders = (props) => {
       }
     );
 
-    var merchantsec5_swiper = new Swiper(
-      ".merchantsec5_swiper.swiper-container",
-      {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        loop: true,
-        autoHeight: false,
-        autoplay: {
-          delay: 5000,
+    var lendersec5_swiper = new Swiper(".lendersec5_swiper.swiper-container", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loop: true,
+      autoHeight: false,
+      autoplay: {
+        delay: 5000,
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 1.4,
         },
-        breakpoints: {
-          767: {
-            slidesPerView: 1.4,
-          },
-          1280: {
-            slidesPerView: 1.5,
-          },
-          1365: {
-            slidesPerView: 1.6,
-          },
+        1280: {
+          slidesPerView: 1.5,
+        },
+        1365: {
+          slidesPerView: 1.6,
+        },
 
-          1533: {
-            slidesPerView: 1.6,
-          },
-          1919: {
-            slidesPerView: 1.5,
-          },
+        1533: {
+          slidesPerView: 1.6,
         },
-        pagination: {
-          el: ".merchantsec5 .swiper-pagination",
-          clickable: true,
+        1919: {
+          slidesPerView: 1.5,
         },
-        navigation: {
-          nextEl: ".merchantsec5 .right_arrow",
-          prevEl: ".merchantsec5 .left_arrow",
-        },
-      }
-    );
+      },
+      pagination: {
+        el: ".lendersec5 .swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".lendersec5 .right_arrow",
+        prevEl: ".lendersec5 .left_arrow",
+      },
+    });
   }, []);
 
   const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
@@ -549,6 +559,12 @@ const Lenders = (props) => {
                   Grow your business with Instant EMI from a network of reputed
                   Lenders
                 </div>
+                <div className="lenders_btn">
+                  <Button
+                    onClick={() => props.history.push("contactus")}
+                    title="Contact Us"
+                  />
+                </div>
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
@@ -585,7 +601,7 @@ const Lenders = (props) => {
 
       <div className="lenderssec2 wow fadeInUp">
         {width > 1023 ? (
-          <div className="merchantsec2_flex">
+          <div className="lendersec2_flex">
             <div className="flex_left">
               <img src={verticalline} className="verticalline" />
               {secTwoTimelineList}
@@ -607,21 +623,7 @@ const Lenders = (props) => {
         )}
       </div>
 
-      {/* <div className="lenderssec3 wow fadeIn">
-        <div className="heading_wrapper">
-          <div className="title">Multi-category Merchant EMI Network</div>
-          <div className="desc">
-            Increase stickiness and consumption as users start using their
-            cardless credit lines across hello different categories of merchants
-          </div>
-        </div>
-
-        <div className="cards_wrapper">
-          <div className="card_flex">{lendersSecThreeCards}</div>
-        </div>
-      </div> */}
-
-      <div className="merchantsec4 wow fadeInUp">
+      <div className="lenderssec4 wow fadeInUp">
         <div className="heading_wrapper">
           <div className="title">Our Lending Partners</div>
         </div>
@@ -664,7 +666,7 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="merchantsec5 wow fadeInUp">
+      <div className="lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />
@@ -691,7 +693,7 @@ const Lenders = (props) => {
           ) : null}
 
           <Col className="p-0 third_col" lg={7}>
-            <div className="merchantsec5_swiper swiper-container">
+            <div className="lendersec5_swiper swiper-container">
               <div className="swiper-wrapper">{lendersList}</div>
               <div className="swiper-pagination"></div>
             </div>

@@ -16,101 +16,54 @@
   // font-size: ;
   cursor: pointer;
 }
-// --------------------------------section 1--------------------------------//
-.lenderssec1 {
-  position: relative;
-  .bannerbg {
-    background-image: url("../../images/merchants/backgrounddesk.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    // height: calc(100vh - 0.625em);
-    height: 100vh;
-    .swiper-pagination-fraction,
-    .swiper-pagination-custom,
-    .swiper-container-horizontal > .swiper-pagination-bullets {
-      left: -18em;
-    }
-  }
 
-  .banner_right_img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: calc(100vw - 35.313em);
-    height: 100%;
-  }
-  .banner_slide_img {
-    position: absolute;
-    right: -4px;
-    top: 0;
-    // width:100%;
-    height: 100%;
-  }
-  .text_container {
-    position: absolute;
-    top: 28.4em;
-    left: 6.25em;
-    .title {
-      .f90();
-      .fontbold();
-      color: #ffffff;
-    }
-    .desc {
-      .f25();
-      // .fontbold();
-      .fontreg();
-      color: #ffffff;
-      margin-top: 1.12em;
-      max-width: 45%;
-    }
-    .btn_div {
-      margin-top: 2.634em;
-    }
-    //   .banner_btn {
-    //     margin-top: 2.634em;
-    //     font-size: 1.125em;
-    //     line-height: 2.444em;
-    //     letter-spacing: 0.03em;
-    //     border: 0.167em solid #3bb859;
-    //     border-radius: 5.556em;
-    //     width: 10.889em;
-    //     height: 3.944em;
-    //     text-transform: capitalize;
-    //     background-color: #333333;
-    //     color: #ffffff;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     // transition: all 0.2s ease;
-
-    //   }
-
-    //   .angle_right {
-    //     padding-left: 0.5em;
-    //     font-size: 1.5em;
-    //     transform: translateY(-0.05em);
-    //     display: none;
-    //     transition: 0.2s ease;
-    //  }
-    //  .banner_btn:hover .angle_right{
-    //    display: initial;
-    //  }
-  }
-
+.newsec1_wrapper
+  .swiper-container-horizontal
+  > .swiper-pagination-bullets
   .swiper-pagination-bullet {
-    left: -20em;
-    border-radius: 7px;
-    background: #fff;
-    height: 0.313em;
-    width: 0.625em;
-    opacity: 1;
-  }
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    width: 4.375em;
-    background: #fff;
-  }
+  margin: 5px;
 }
+
+.newsec1_wrapper .swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsec1_wrapper .swiper-pagination-bullet {
+  width: 0.625em;
+  height: 0.313em;
+  display: inline-block;
+  margin: 0 3.5px;
+  border-radius: 100%;
+  opacity: 1;
+  transition: 0.3s ease;
+  background: #ffffff;
+  z-index: 9;
+}
+
+.newsec1_wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+  height: 0.313em;
+  width: 4.375em;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  background: #ffffff;
+}
+
+.newsec1_wrapper
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 20px;
+  margin: 0 10px;
+  margin-bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+// --------------------------------section 1--------------------------------//
+
 .newsec1 {
   position: relative;
   .newsec1_wrapper {
@@ -144,39 +97,44 @@
     left: 6.25em;
   }
   .title {
-    .f90();
-    .fontbold();
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 5.625em;
+    letter-spacing: 0px;
+    line-height: 1.222em;
     color: #ffffff;
     z-index: 32;
   }
   .desc {
-    .f25();
-    .fontreg();
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 1.563em;
+    letter-spacing: 0px;
+    line-height: 1.8em;
     margin-top: 1em;
     color: #fff;
     width: 100%;
     max-width: 52%;
   }
-
-  // .swiper-pagination{
-  //   position: relative;
-  //   z-index: 400;
-  //   bottom: 5em;
-  //   background-color: #fff;
-  // }
+  .lenders_btn {
+    margin-top: 2em;
+  }
 }
 // --------------------------------section 2--------------------------------//
 .lenderssec2 {
   background-image: linear-gradient(45deg, #f1fff7, #ffffff);
   padding: 7.25em 5.293em 6.625em 6.25em;
 
-  .merchantsec2_flex {
+  .lendersec2_flex {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
   .flex_left {
     position: relative;
+  }
+  .flex_right {
+    margin: auto 0;
   }
   .verticalline {
     position: absolute;
@@ -195,14 +153,17 @@
     border-radius: 5.563em;
     padding: 3.125em 5.5em 3.125em 5.688em;
     position: relative;
-    cursor: pointer;
   }
   .desc_wrapper:nth-child(3) {
     margin: 6.063em 0;
   }
   .desc {
-    .f25();
-    .fontbold();
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 1.563em;
+    letter-spacing: 0px;
+    line-height: 1.8em;
+    color: #333333;
   }
   .dot_circle {
     width: 1.25em;
@@ -216,77 +177,26 @@
     top: 1em;
   }
 }
-// --------------------------------section 3--------------------------------//
-.lenderssec3 {
-  margin-top: 6.25em;
-  .heading_wrapper {
-    width: 100%;
-    max-width: 80.438em;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .title {
-    .f60();
-    .fontbold();
-  }
-  .desc {
-    .f25();
-    .fontreg();
-    width: 100%;
-    max-width: 37.12em;
-    // max-width: 928px;
-    margin: 0 auto;
-  }
-  .card_flex {
-    width: 100%;
-    max-width: 107.5em;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .lender_card {
-    width: 19em;
-    height: 19em;
-    margin-top: 2.875em;
-    border-radius: 1.25em;
-    .bShadow3616 ();
-  }
-  .lender_card_img {
-    width: 9.375em;
-    height: 9.375em;
-  }
-  .card_title {
-    margin-top: 1.48em;
-    .fontreg();
-    .f25();
-    text-align: center;
-    max-width: 75%;
-    width: 100%;
-    line-height: 1.5em;
-    // padding-left: 2.500em;
-    // padding-right: 2.500em;
-  }
-}
-// --------------------------------section 4--------------------------------//
-.merchantsec4 {
-  // background: url("../../images/merchants/partners_desktop.png") center no-repeat;
-  // background-size: cover;
-  margin-top: 6.208em;
-  // height: 38.563em;
-  // height: 44.563em;
-  // padding: 9em 0 6em 0;
 
+// --------------------------------section 4--------------------------------//
+.lenderssec4 {
+  margin-top: 6.208em;
   .title {
     color: #333333;
-    .fontbold();
-    .f60();
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 3.75em;
+    letter-spacing: 0px;
+    line-height: 1.5em;
     text-align: center;
     margin-bottom: 1.217em;
   }
   .desc {
-    .f25();
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.563em;
+    letter-spacing: 0px;
+    line-height: 1.8em;
     color: #fff;
     margin-top: 0.72em;
     margin-bottom: 3.4em;
@@ -348,8 +258,11 @@
   background-repeat: no-repeat;
 }
 .merchant_section_4 .ms4_heading .title {
-  .fontbold();
-  .f60();
+  font-family: "Merriweather Sans";
+  font-weight: bold;
+  font-size: 3.75em;
+  letter-spacing: 0px;
+  line-height: 1.5em;
   text-align: center;
   color: #ffffff;
   padding-top: 3.084em;
@@ -378,8 +291,11 @@
 }
 
 .ms4_counting_num .ms4_cn_middle {
-  .f25();
-  .fontreg();
+  font-family: "Merriweather Sans";
+  font-weight: bold;
+  font-size: 1.563em;
+  letter-spacing: 0.5px;
+  line-height: 2em;
   color: #ffffff;
   margin: 0 5.4em;
 }
@@ -394,24 +310,29 @@
   align-items: center;
 }
 .ms4_counting_num1 .ms4_cn_left p {
-  .f25();
-  .fontreg();
+  font-family: "Merriweather Sans";
+  font-weight: bold;
+  font-size: 1.563em;
+  letter-spacing: 0.5px;
+  line-height: 2em;
   color: #ffffff;
   text-align: center;
   padding-bottom: 2.319em;
 }
 
 .ms4_counting_num1 .ms4_cn_right p {
-  .f25();
-  .fontreg();
+  font-family: "Merriweather Sans";
+  font-weight: bold;
+  font-size: 1.563em;
+  letter-spacing: 0.5px;
+  line-height: 2em;
   color: #ffffff;
   text-align: center;
   padding-bottom: 2.319em;
 }
 
 // --------------------------------section 5--------------------------------//
-.merchantsec5 {
-  // margin-top: 6.25em;
+.lendersec5 {
   padding-top: 7.715em;
   padding-left: 5.25em;
   padding-bottom: 5.625em;
@@ -426,16 +347,22 @@
       padding-top: 3.844em;
     }
     .title {
-      .f60();
-      .fontbold();
-      .c3();
+      font-family: "Merriweather Sans";
+      font-weight: bold;
+      font-size: 3.75em;
+      letter-spacing: 0px;
+      line-height: 1.5em;
+      color: #333333;
       width: 100%;
       max-width: 100%;
     }
     .desc {
-      .f25();
-      .fontreg();
-      .c3();
+      font-family: "Merriweather Sans";
+      font-weight: normal;
+      font-size: 1.563em;
+      letter-spacing: 0px;
+      line-height: 1.8em;
+      color: #333333;
       margin-top: 1.5em;
       max-width: 93%;
     }
@@ -462,16 +389,12 @@
       background-image: url("../../images/merchants/cardbg.svg");
       background-position: center;
       background-size: cover;
-      // .bShadow3616();
-      //   margin-right: 10px;
     }
     .partner_img {
       width: 16.813em;
       height: 7.688em;
       position: absolute;
       left: 24.375em;
-      // .bShadow3616();
-      // bottom: 19.5em;
     }
     .partner_content {
       padding-left: 3.188em;
@@ -479,20 +402,31 @@
       padding-bottom: 1em;
     }
     .partner_name {
+      font-family: "Merriweather Sans";
+      font-weight: bold;
       font-size: 2.188em;
-      .c0d();
-      .fontbold();
+      letter-spacing: 0px;
+      line-height: 1.714em;
+      color: #0dad46;
     }
     .partner_designation {
-      margin-top: 0.188em; //
-      .c3();
-      .fontbold();
-      .f25();
+      margin-top: 0.188em;
+      font-family: "Merriweather Sans";
+      font-weight: bold;
+      font-size: 1.563em;
+      letter-spacing: 0px;
+      line-height: 1.8em;
+      color: #333333;
     }
     .partner_desc {
       margin-top: 0.6em; //
-      .f25();
-      .fontreg();
+      font-family: "Merriweather Sans";
+      font-weight: normal;
+      font-size: 1.563em;
+      letter-spacing: 0px;
+      line-height: 1.8em;
+      color: #333333;
+      padding-right: 2.08em;
     }
     .swiper-pagination {
       position: relative;
@@ -521,8 +455,7 @@
     position: absolute;
     width: 100%;
     max-width: 28.92%;
-    // width: 28.063em;
-    // height: 33.125em;
+
     right: 5.563em;
     bottom: 3.813em;
   }
@@ -532,24 +465,32 @@
     left: 6.375em;
   }
   .title {
-    .f60();
-    .fontbold();
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 3.75em;
+    letter-spacing: 0px;
+    line-height: 2.167em;
     margin-bottom: 0;
     color: #ffffff;
   }
 
   .desc {
-    .f25();
-    .fontreg();
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.563em;
+    letter-spacing: 0px;
+    line-height: 1.8em;
     color: #ffffff;
     margin-top: 1.28em;
-    // max-width: 34.32em;
     max-width: 70%;
     width: 100%;
   }
   .lenderssec6_btn {
-    .f25();
-    .fontbold();
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.563em;
+    letter-spacing: 0px;
+    line-height: 1.8em;
     width: 14.56em;
     height: 3em;
     margin-top: 1.8em;
@@ -559,11 +500,6 @@
     border-radius: 5px;
     transition: all 0.3s;
   }
-  // .lenderssec6_btn:hover {
-  //   color: #ffffff;
-  //   background-color: #0dad46;
-  //   border: 1px solid #ffffff;
-  // }
 }
 @media (max-width: 1910px) {
   .newsec1 {
@@ -592,7 +528,7 @@
 }
 
 @media (max-width: 1600px) {
-  .merchantsec5 {
+  .lendersec5 {
     .first_col {
       .desc {
         .f25();
@@ -614,12 +550,7 @@
     }
   }
 }
-// @media (max-width: 1536px) and (min-width: 1280px){
-//   .merchantsec4{
-//     height: 44.563em;
-//     padding: 11.5em 0 6em 0;
-//   }
-// }
+
 @media (max-width: 1024px) {
   .lenderssec1 {
     .bannerbg {
@@ -627,7 +558,7 @@
     }
   }
 
-  .merchantsec5 .first_col .title {
+  .lendersec5 .first_col .title {
     width: 100%;
   }
 
@@ -643,49 +574,6 @@
     left: 1.5em;
     font-size: 1.3em;
     top: 4.8em;
-  }
-  .lenderssec1 {
-    position: relative;
-    .mb_bannerbg {
-      background-image: url("../../images/merchants/backgroundmobile.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      height: 100em;
-      position: relative;
-    }
-    .mb_lenderssec1_swiper {
-      position: absolute;
-      bottom: 0;
-      height: 73em;
-      width: 100%;
-    }
-    .mb_banner_slide_img {
-      width: 100%;
-      height: 100%;
-    }
-    .mb_text_container {
-      position: absolute;
-      top: 10.4em;
-      text-align: center;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-    }
-    .title {
-      .mf50();
-      .fontbold();
-      color: #fff;
-      padding-top: 0;
-    }
-    .desc {
-      .mf16();
-      .fontreg();
-      color: #fff;
-      margin: 0.525em auto 0;
-      width: 100%;
-      max-width: 73%;
-      letter-spacing: 0;
-    }
   }
 
   .newsec1 {
@@ -740,8 +628,11 @@
   .lenderssec2 {
     padding: 4.5em 1.5em 3.22em 1.5em;
     .mbdesc {
-      .mf20();
-      .fontbold();
+      font-family: "Merriweather Sans";
+      font-weight: bold;
+      font-size: 2em;
+      letter-spacing: 0px;
+      line-height: 1.6em;
       text-align: center;
       margin-bottom: 1.3em;
       line-height: 1.6em;
@@ -779,10 +670,20 @@
     padding-left: 1.5em;
     padding-right: 1.5em;
     .title {
-      .mf24();
+      font-family: "Merriweather Sans";
+      font-weight: bold;
+      font-size: 2.4em;
+      letter-spacing: 0px;
+      line-height: 1.5em;
+      color: #333333;
     }
     .desc {
-      .mf16();
+      font-family: "Merriweather Sans";
+      font-weight: normal;
+      font-size: 1.6em;
+      letter-spacing: 0px;
+      line-height: 1.625em;
+      color: #333333;
       width: 100%;
       max-width: 94%;
       margin: 1.154em auto 0;
@@ -792,8 +693,7 @@
     }
   }
 
-  .merchantsec4 {
-    // background: url("../../images/merchants/mbmerchantbg.png");
+  .lenderssec4 {
     background-size: cover;
     .slider::after,
     .slider::before {
@@ -832,8 +732,10 @@
   .ms4_counting_num .ms4_cn_left p,
   .ms4_counting_num .ms4_cn_right p {
     display: block;
-    .f25();
-    .fontreg();
+    font-size: 1.6em;
+    letter-spacing: 0px;
+    line-height: 1.25em;
+    font-weight: bold;
     color: #ffffff;
     text-align: center;
     padding-bottom: 2.319em;
@@ -856,7 +758,12 @@
     left: -5em;
     bottom: 5.375em;
   }
-
+  .ms4_counting_num .ms4_cn_middle {
+    font-size: 1.4em;
+    letter-spacing: 0px;
+    line-height: 1.286em;
+    font-weight: normal;
+  }
   .ms4_counting_num1 .ms4_cn_left p {
     display: none;
   }
@@ -865,7 +772,7 @@
     display: none;
   }
 
-  .merchantsec5 {
+  .lendersec5 {
     padding-left: 1.5em;
     padding-right: 1.5em;
     .first_col {
@@ -874,9 +781,6 @@
       }
       .title {
         text-align: center;
-        // font-size: 2.4em;
-        // letter-spacing: 0.48px;
-        // line-height: 1.5em;
       }
 
       .desc {
@@ -928,43 +832,24 @@
 }
 @media (max-width: 480px) {
   //<------------------------ section 1----------------------------->
-  .lenderssec1 {
-    .mb_lenderssec1_swiper {
-      height: 50em;
-    }
 
-    .mb_bannerbg {
-      // height: 73.7em;
-      height: 75.7em;
-    }
-
-    .mb_text_container {
-      width: 100%;
-      padding: 0 1.5em;
-      top: 8.5em;
-    }
-
-    .desc {
-      margin: 1.125em auto 0;
-      width: 100%;
-      max-width: 94%;
-    }
-  }
   .newsec1 {
     padding-top: 15em;
     .mb_container {
       height: 23em;
       .title {
-        .mf50();
+        font-size: 5em;
+        letter-spacing: 0px;
+        line-height: 1.222em;
         padding: 0 1em;
       }
       .desc {
-        .mf16();
+        font-size: 1.6em;
+        letter-spacing: 0px;
+        line-height: 1.625em;
       }
     }
-    // .swiper-wrapper{
-    //   height: 70em;
-    // }
+
     .mb_slider_img {
       height: auto;
     }
@@ -986,7 +871,12 @@
     }
     .card_title {
       max-width: 90%;
-      .mf14();
+      font-family: "Merriweather Sans";
+      font-weight: normal;
+      font-size: 1.4em;
+      letter-spacing: 0px;
+      line-height: 1.643em;
+      color: #333333;
       margin-bottom: 2em;
     }
     .card_flex {
@@ -1000,15 +890,17 @@
   }
   //<------------------------ section 4----------------------------->
 
-  .merchantsec4 {
-    // padding-top: 11em;
-    // padding-bottom: 6.2em;
+  .lenderssec4 {
     .title {
-      .mf24();
+      font-size: 2.4em;
+      letter-spacing: 0px;
+      line-height: 1.333em;
       margin-bottom: 0.708em;
     }
     .desc {
-      .mf16();
+      font-size: 1.6em;
+      letter-spacing: 0px;
+      line-height: 1.625em;
       width: 100%;
       max-width: 89%;
       margin: 1.063em auto 2.813em;
@@ -1031,7 +923,7 @@
   }
 
   //<------------------------ section 5----------------------------->
-  .merchantsec5 {
+  .lendersec5 {
     padding-top: 5em;
     padding-bottom: 4em;
     .first_col {
@@ -1044,7 +936,9 @@
         padding-top: 0;
       }
       .title {
-        .mf25();
+        font-size: 2.4em;
+        letter-spacing: 0px;
+        line-height: 1.333em;
         padding: 0 1em 0 1em;
         line-height: 1.5em;
         // width: 80%;
@@ -1076,6 +970,7 @@
       }
       .partner_desc {
         width: 97%;
+        padding-right: 0;
       }
     }
   }
@@ -1088,20 +983,24 @@
       right: 1.5em;
     }
     .title {
-      .mf24();
+      font-size: 2.4em;
+      letter-spacing: 0px;
+      line-height: 1.5em;
     }
     .desc {
       margin-top: 0.68em;
       max-width: 100%;
-      .mf14();
-      letter-spacing: 0.55px;
+      font-size: 1.4em;
+      line-height: 1.714em;
+      letter-spacing: 0px;
     }
     .lenderssec6_btn {
       margin-top: 1.6em;
       width: 13.438em;
       height: 2.813em;
-      .mf16();
-      letter-spacing: 0;
+      font-size: 1.4em;
+      letter-spacing: 0px;
+      line-height: 1.714em;
     }
     .mbfooter_bg {
       height: auto;

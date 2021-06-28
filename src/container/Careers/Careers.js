@@ -269,7 +269,7 @@ const openingsArr = [
     name: "VP - Head of Product",
   },
 ];
-const AboutUs = (props) => {
+const Careers = (props) => {
   const { height, width } = useWindowDimensions();
   const [applyShow, setApplyShow] = useState(false);
   const [descShow, setDescShow] = useState(false);
@@ -390,9 +390,6 @@ const AboutUs = (props) => {
   };
   const handleApplySubmit = (evt) => {
     var formIsValid = true;
-    // console.log(evt);
-    // evt.preventDefault();
-    // return;
     let reqData = {
       name: getVal('.job-apply-body-cont input[name="name"]'),
       email: getVal('.job-apply-body-cont input[name="email"]'),
@@ -507,7 +504,7 @@ const AboutUs = (props) => {
   };
   const handleDropCvSubmit = (evt) => {
     if (document.querySelector("#cv-upload").files.length == 0) {
-      setNofileErr("Choose a file");
+      setNofileErr("choose file");
     } else {
       let formData = new FormData();
       formData.append(
@@ -529,6 +526,7 @@ const AboutUs = (props) => {
             document.querySelector("#cv-upload").value = null;
             setDropCvFileName("");
             setShowApplySuccesstxt(true);
+            setNofileErr("");
             setTimeout(() => {
               setShowApplySuccesstxt(false);
             }, 2000);
@@ -660,7 +658,12 @@ const AboutUs = (props) => {
             onClick={() => handleDescShow(item.description)}
           >
             <span className="desc_span">Job Description</span>{" "}
-            <span>&nbsp; {">"}</span>
+            <span>
+              <i
+                class="fa fa-angle-right"
+                style={{ paddingLeft: "0.2em", fontWeight: "bold" }}
+              ></i>
+            </span>
           </div>
         </div>
 
@@ -739,7 +742,7 @@ const AboutUs = (props) => {
             <div className="text_content">
               <div className="text_wrapper">
                 <div className="title">Careers</div>
-                <div className="desc">We are recruiting!</div>
+                <div className="career_desc">We are recruiting!</div>
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
@@ -765,7 +768,7 @@ const AboutUs = (props) => {
               <img src={bgmobile} className="bgmobile" />
               <div className="mb_text_container">
                 <div className="title">Careers</div>
-                <div className="desc">We are recruiting!</div>
+                <div className="career_desc">We are recruiting!</div>
               </div>
             </div>
           </div>
@@ -826,8 +829,8 @@ const AboutUs = (props) => {
 
       <section
         className="careersec6 wow fadeInUp"
-        // data-wow-duration="1.3s"
-        // data-wow-delay="1.7s"
+        data-wow-duration="1s"
+        data-wow-delay="1.7s"
       >
         <Row className="m-0 opening-head openings-container wow fadeInUp">
           <Col className="p-0 firstcol" lg={12}>
@@ -913,7 +916,7 @@ const AboutUs = (props) => {
         data-wow-duration="1.5s"
         data-wow-delay="1.5s"
       >
-        <Row className=" drop-cv-container wow fadeInUp">
+        <Row className="drop-cv-container wow fadeInUp m-0">
           <div>
             <img src={cvImage} className="img-fluid" />
             <div>
@@ -934,7 +937,6 @@ const AboutUs = (props) => {
                   name="resume"
                 />
                 <label for="cv-upload">
-                  {/* <img src={upload} alt="" /> */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -980,16 +982,15 @@ const AboutUs = (props) => {
                 </label>
                 <p>
                   Upload docx file, pdf upto 1 mb only{" "}
-                  <span className="err">
-                    <br /> {nofileErr}
-                  </span>
-                  <span style={{ color: "#3AB658" }}>{dropCvFileName}</span>
+                  <div style={{ color: "#3AB658" }}>{dropCvFileName}</div>
+                  <span className="err">{nofileErr}</span>
                 </p>
-
-                {/* <Button type="submit" loading={loading} title="Submit" /> */}
-                <button type="submit" onClick={handleDropCvSubmit}>
+                <div className="cv-btn">
+                  <Button title="Submit" onClick={handleDropCvSubmit} />
+                </div>
+                {/* <button type="submit" onClick={handleDropCvSubmit}>
                   Submit
-                </button>
+                </button> */}
                 {showApplySuccesstxt && (
                   <div className="thankyouTxt">
                     Thank you! We'll get back to you soon
@@ -1001,21 +1002,19 @@ const AboutUs = (props) => {
           </div>
         </Row>
       </section>
-      {/* <Button variant="primary" onClick={handleShow}>
-		Launch demo modal
-	  </Button> */}
 
       <Modal
         show={descShow}
         onHide={handleDescClose}
         className="job-desc-modal"
         centered
+        scrollable="true"
       >
         <Modal.Header closeButton>
           <Modal.Title className="job-desc-head">Job Description</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>
+          <div className="scrollbar scrollbar-primary">
             <h5 className="job-desc-resp-head">Job Role & Responsibilities</h5>
             <div>
               <p className="job-desc-sub-desc">{parse(jobDescInView)}</p>
@@ -1062,7 +1061,7 @@ const AboutUs = (props) => {
                   type="tel"
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   name="contact_number"
-                  title="contact Number*"
+                  title="Contact Number*"
                 />
                 <div className="err">{phoneNumbererr}</div>
               </Col>
@@ -1097,7 +1096,7 @@ const AboutUs = (props) => {
                     onChange={handleJobApplyFileChosen}
                   />
                   <label for="upload">
-                    <span>
+                    <span className="addFileSpan">
                       {" "}
                       <img
                         src={upload}
@@ -1107,20 +1106,26 @@ const AboutUs = (props) => {
                     </span>
                   </label>
                   <p>
-                    <span style={{ color: "#595959" }}>
-                      Resume* (Upload docx file, pdf upto 1 mb only){" "}
-                      <span className="size-alert">{fileSizealert}</span>
-                      <span className="size-alert block">{fileerr}</span>
-                    </span>
-                    {dropCvFileName}
+                    {dropCvFileName ? (
+                      <div className="dropcvfilenamediv">{dropCvFileName}</div>
+                    ) : (
+                      <span className="outerSpan">
+                        <span className="innerSpan">Resume*</span> (Upload docx
+                        file, pdf upto 1 mb only){" "}
+                      </span>
+                    )}
                   </p>
                 </div>
+                <span className="size-alert" style={{ color: "red" }}>
+                  {fileSizealert}
+                </span>
               </Col>
               <Col lg={12}>
-                <div className="submit">
-                  <button type="submit" onClick={handleApplySubmit}>
+                <div className="submit jobSubmitDiv">
+                  {/* <button type="submit" onClick={handleApplySubmit} className='btnSubmitHover'>
                     Submit
-                  </button>
+                  </button> */}
+                  <Button title="Submit" onClick={handleApplySubmit} />
                 </div>
                 {showApplySuccesstxt && (
                   <div className="thankyouTxt">
@@ -1166,4 +1171,4 @@ const AboutUs = (props) => {
   );
 };
 
-export default AboutUs;
+export default Careers;
