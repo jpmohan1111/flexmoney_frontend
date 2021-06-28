@@ -374,6 +374,8 @@ const AboutUs = (props) => {
   const [currNewsPage, setCurrNewsPage] = useState(1);
   const [totalNewsCount, setTotalNewsCount] = useState(0);
 
+  const [newsCategories, setNewsCategories] = useState([]);
+
   const fetchNews = (pageNum) => {
     fetch(
       `${process.env.REACT_APP_API_ENDPOINT}/news?count=9&page=${pageNum}`,
@@ -398,6 +400,27 @@ const AboutUs = (props) => {
         setCurrNewsPage(pageNum);
       });
   };
+
+  const fetchNewsCategories = () => {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/news-categories`, {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+        "sec-ch-ua":
+          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setNewsCategories(data.items);
+      });
+  };
+
   const newsListPageClick = (pageNum) => {
     if (pageNum < 1 || pageNum > totalNewsCount) return;
     fetchNews(pageNum);
@@ -441,6 +464,7 @@ const AboutUs = (props) => {
   };
   useEffect(() => {
     fetchNews(currNewsPage);
+    fetchNewsCategories();
   }, []);
 
   useEffect(() => {
@@ -578,12 +602,10 @@ const AboutUs = (props) => {
         <div className="dropdowns">
           <select>
             <option value="0">Select category:</option>
-            <option value="1">All posts</option>
-            <option value="2">achievements</option>
-            <option value="3">aclaimant</option>
-            <option value="4">blog</option>
-            <option value="5">fun</option>
-            <option value="6">news</option>
+            <option value="all">All posts</option>
+            {newsCategories.map((cat) => {
+              return <option value={cat}>{cat}</option>;
+            })}
           </select>
           <select>
             <option value="0">Select year</option>
