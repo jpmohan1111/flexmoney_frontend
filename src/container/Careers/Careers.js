@@ -903,7 +903,9 @@ const Careers = (props) => {
 			  <button>Apply now</button>
 			</div> */}
             {openingsList}
-            {nojobsFoundErr && <div className="no-jobs">No jobs found</div>}
+            {jobDescriptions.length == 0 && (
+              <div className="no-jobs">No jobs found</div>
+            )}
           </div>
 
           {jobSearchVal == "" && (
