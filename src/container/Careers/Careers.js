@@ -807,13 +807,11 @@ const Careers = (props) => {
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
-              {
-                width < 500 ? (
-                    <img src={bgmobile} className="bgmobile" />
-                  ): (
-                    <img src={bg_ipad} className="bgmobile" />
-                  )
-              }
+              {width < 500 ? (
+                <img src={bgmobile} className="bgmobile" />
+              ) : (
+                <img src={bg_ipad} className="bgmobile" />
+              )}
               <div className="mb_text_container">
                 <div className="title">Careers</div>
                 <div className="career_desc">We are recruiting!</div>
@@ -1024,13 +1022,11 @@ const Careers = (props) => {
       >
         <Row className="drop-cv-container wow fadeInUp m-0">
           <div>
-            {
-              width > 1023 ? (
-                <img src={cvImage} className="img-fluid" />
-              ): (
-                <img src={ mbleftimgcv} className="img-fluid" />
-              )
-            }
+            {width > 1023 ? (
+              <img src={cvImage} className="img-fluid" />
+            ) : (
+              <img src={mbleftimgcv} className="img-fluid" />
+            )}
             <div>
               <h2 className="head">Drop your CV here</h2>
               <h4 className="desc">
@@ -1229,12 +1225,8 @@ const Careers = (props) => {
                     )}
                   </p>
                 </div>
-                <span className="size-alert" style={{ color: "red" }}>
-                  {fileSizealert}
-                </span>
-                <span className="size-alert" style={{ color: "red" }}>
-                  {nofileErr}
-                </span>
+                <span className="err">{fileSizealert}</span>
+                <span className="err">{nofileErr}</span>
               </Col>
               <Col lg={12}>
                 <div className="submit jobSubmitDiv">
