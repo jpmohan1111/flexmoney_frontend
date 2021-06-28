@@ -337,6 +337,11 @@ const Careers = (props) => {
     console.log(e);
     console.log(e.target.files[0].name);
     setDropCvFileName(e.target.files[0].name);
+    setNofileErr("");
+    if (e.target.files[0].size > 1000000) {
+      setFileSizealert("file size more than 1 MB!");
+      setFileerr("");
+    } else setFileSizealert("");
   };
   const handleJobApplyFileChosen = (e) => {
     console.log(e);
@@ -348,6 +353,13 @@ const Careers = (props) => {
       setFileerr("");
       setNofileErr("");
     } else setFileSizealert("");
+  };
+
+  const handleCvFileChosen = (e) => {
+    console.log(e);
+    console.log(e.target.files[0].name);
+    console.log(e.target.files[0].size);
+    setDropCvFileName(e.target.files[0].name);
   };
 
   const handleDescClose = () => setDescShow(false);
@@ -513,8 +525,12 @@ const Careers = (props) => {
     }
   };
   const handleDropCvSubmit = (evt) => {
-    if (document.querySelector("#cv-upload").files.length == 0) {
-      setNofileErr("choose file");
+    if (
+      document.querySelector("#cv-upload").files.length == 0 ||
+      fileSizealert
+    ) {
+      if (document.querySelector("#cv-upload").files.length == 0)
+        setNofileErr("choose file");
     } else {
       let formData = new FormData();
       formData.append(
@@ -1010,6 +1026,7 @@ const Careers = (props) => {
                   Upload docx file, pdf upto 1 mb only{" "}
                   <div style={{ color: "#3AB658" }}>{dropCvFileName}</div>
                   <span className="err">{nofileErr}</span>
+                  <span className="err">{fileSizealert}</span>
                 </p>
                 <div className="cv-btn">
                   <Button title="Submit" onClick={handleDropCvSubmit} />
