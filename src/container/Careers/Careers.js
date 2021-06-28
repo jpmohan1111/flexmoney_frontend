@@ -340,11 +340,12 @@ const Careers = (props) => {
     let fileName = e.target.files[0].name;
     let dot = fileName.lastIndexOf(".") + 1;
     var extFile = fileName.substr(dot, fileName.length).toLowerCase();
+    setDropCvFileName(e.target.files[0].name);
     if (!["pdf", "doc", "docx"].includes(extFile)) {
       setFileSizealert("File format not valid");
       return;
     }
-    setDropCvFileName(e.target.files[0].name);
+
     setNofileErr("");
     if (e.target.files[0].size > 1000000) {
       setFileSizealert("file size more than 1 MB!");
@@ -359,11 +360,12 @@ const Careers = (props) => {
     let fileName = e.target.files[0].name;
     let dot = fileName.lastIndexOf(".") + 1;
     var extFile = fileName.substr(dot, fileName.length).toLowerCase();
+    setDropCvFileName(e.target.files[0].name);
     if (!["pdf", "doc", "docx"].includes(extFile)) {
       setFileSizealert("File format not valid");
       return;
     }
-    setDropCvFileName(e.target.files[0].name);
+
     if (e.target.files[0].size > 1000000) {
       setFileSizealert("file size more than 1 MB!");
       setFileerr("");
