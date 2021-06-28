@@ -381,6 +381,10 @@ const AboutUs = (props) => {
   const [yearselected, setyearselected] = useState("all");
   const [categorySelected, setcategorySelected] = useState("all");
 
+  const [featuredNewsTitle, setFeaturedNewsTitle] = useState("all");
+  const [featuredNewsDate, setFeaturedNewsDate] = useState("all");
+  const [featuredNewsSummary, setFeaturedNewsSummary] = useState("all");
+
   const fetchNews = (pageNum) => {
     fetch(
       `${process.env.REACT_APP_API_ENDPOINT}/news?count=9&page=${pageNum}`,
@@ -470,6 +474,50 @@ const AboutUs = (props) => {
         setNewsYears(data.items);
       });
   };
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const fetchFeaturedNews = () => {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/news-featured`, {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+        "sec-ch-ua":
+          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        let featuredNews = data.items[0];
+        featuredNews.date = new Date(featuredNews.date);
+        if (featuredNews) {
+          setFeaturedNewsTitle(featuredNews.title);
+          setFeaturedNewsDate(
+            `${
+              monthNames[featuredNews.date.getMonth()]
+            } ${featuredNews.date.getDate()}, ${featuredNews.date.getFullYear()}`
+          );
+          setFeaturedNewsSummary(featuredNews.summary);
+        }
+      });
+  };
 
   const categoryChange = (e) => {
     console.log(e.target.value);
@@ -506,29 +554,11 @@ const AboutUs = (props) => {
     setJobApplyInView(title);
     setApplyShow(true);
   };
-  const handleJobSearch = (evt) => {
-    console.log(evt);
-    console.log(evt.target.value);
-    var requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch(
-      `${process.env.REACT_APP_API_ENDPOINT}/job-search?search=${evt.target.value}`,
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result);
-        setJobDescriptions(result.items);
-      })
-      .catch((error) => console.log("error", error));
-  };
   useEffect(() => {
     fetchNews(currNewsPage);
     fetchNewsCategories();
     fetchNewsYears();
+    fetchFeaturedNews();
   }, []);
 
   useEffect(() => {
@@ -650,19 +680,18 @@ const AboutUs = (props) => {
         <div className="details">
           {width > 480 ? (
             <div className="title">
-              Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners
+              {/* Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners */}
+              {featuredNewsTitle}
             </div>
           ) : (
             <div className="title">
-              Flexmoney welcomes ICICI Bank to its Merchant Partners
+              {/* Flexmoney welcomes ICICI Bank to its Merchant Partners */}
+              {featuredNewsTitle}
             </div>
           )}
 
-          <div className="date">FEB 21, 2021</div>
-          <div className="desc">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et...
-          </div>
+          <div className="date">{featuredNewsDate}</div>
+          <div className="desc">{featuredNewsSummary}</div>
           <div className="read-more">Read more</div>
         </div>
         <div className="image">

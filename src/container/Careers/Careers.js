@@ -331,9 +331,9 @@ const Careers = (props) => {
   };
   const jobDescListPageClick = (e, num) => {
     const pageNum = num || e.selected + 1;
-    console.log(pageNum);
+
     if (pageNum < 1 || pageNum > totalJobDescCount) return;
-    console.log(pageNum);
+
     fetchJobDesc(pageNum);
   };
   const dropCvFileChosen = (e) => {
@@ -386,7 +386,6 @@ const Careers = (props) => {
     setDescShow(true);
   };
   useEffect(() => {
-    console.log(applyShow);
     if (!applyShow) {
       setDropApplyFileName("");
       setFileSizealert("");
@@ -402,8 +401,6 @@ const Careers = (props) => {
     setApplyShow(true);
   };
   const handleJobSearch = (evt) => {
-    console.log(evt);
-    console.log(evt.target.value);
     setJobSearchVal(evt.target.value);
     if (evt.target.value == "") {
       fetchJobDesc(1);
@@ -421,7 +418,6 @@ const Careers = (props) => {
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
         setJobDescriptions(result.items);
         if (result.items.length == 0) setNojobsFoundErr(true);
       })
@@ -511,7 +507,7 @@ const Careers = (props) => {
         setPhoneNumbererr("");
       }
     }
-    console.log(fileSizealert);
+
     if (fileSizealert != "") {
       formIsValid = false;
       setFileerr("*Please upload cv");
@@ -529,7 +525,6 @@ const Careers = (props) => {
         //   withCredentials: true,
       })
         .then((response) => {
-          console.log(response);
           if (response.status == 200) {
             setname("");
             setemailId("");
