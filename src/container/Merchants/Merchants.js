@@ -22,7 +22,7 @@ import Swiper, {
 import bannerimg from "../../images/merchants/bannerimg.png";
 import tabbannerimg from "../../images/merchants/tabbannerimg.png";
 
-import rightimg from "../../images/merchants/rightimg.png";
+import rightimg from "../../images/merchants/rightimg.svg";
 import mbrightimg from "../../images/merchants/mbrightimg.svg";
 import graydot from "../../images/merchants/graydot.png";
 import greendot from "../../images/merchants/greendot.png";
