@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 import parse from "html-react-parser";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -286,6 +287,7 @@ const Careers = (props) => {
 
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumbererr, setPhoneNumbererr] = useState("");
+  const [fileerr, setFileerr] = useState("");
   const [companyName, setcompanyName] = useState("");
   const [subject, setsubject] = useState("");
   const [cvapplyFile, setCvapplyFile] = useState([]);
@@ -297,6 +299,8 @@ const Careers = (props) => {
 
   const [fileSizealert, setFileSizealert] = useState("");
   const [showApplySuccesstxt, setShowApplySuccesstxt] = useState(false);
+
+  const [nojobsFoundErr, setNojobsFoundErr] = useState(false);
   const fetchJobDesc = (pageNum) => {
     fetch(
       `${process.env.REACT_APP_API_ENDPOINT}/job-descriptions?count=5&page=${pageNum}`,
@@ -317,28 +321,61 @@ const Careers = (props) => {
       .then((data) => {
         console.log(data);
         setJobDescriptions(data.items);
+
         setTotalJobDescCount(data.totalCount);
         setCurrJobDescPage(pageNum);
       });
   };
-  const jobDescListPageClick = (pageNum) => {
+  const jobDescListPageClick = (e) => {
+    const pageNum = e.selected + 1;
+    console.log(pageNum);
     if (pageNum < 1 || pageNum > totalJobDescCount) return;
     console.log(pageNum);
     fetchJobDesc(pageNum);
   };
   const dropCvFileChosen = (e) => {
+    setFileerr("");
     console.log(e);
     console.log(e.target.files[0].name);
+    let fileName = e.target.files[0].name;
+    let dot = fileName.lastIndexOf(".") + 1;
+    var extFile = fileName.substr(dot, fileName.length).toLowerCase();
+    if (!["pdf", "doc", "docx"].includes(extFile)) {
+      setFileSizealert("File format not valid");
+      return;
+    }
     setDropCvFileName(e.target.files[0].name);
+    setNofileErr("");
+    if (e.target.files[0].size > 1000000) {
+      setFileSizealert("file size more than 1 MB!");
+      setFileerr("");
+    } else setFileSizealert("");
   };
   const handleJobApplyFileChosen = (e) => {
+    setFileerr("");
+    console.log(e);
+    console.log(e.target.files[0].name);
+    console.log(e.target.files[0].size);
+    let fileName = e.target.files[0].name;
+    let dot = fileName.lastIndexOf(".") + 1;
+    var extFile = fileName.substr(dot, fileName.length).toLowerCase();
+    if (!["pdf", "doc", "docx"].includes(extFile)) {
+      setFileSizealert("File format not valid");
+      return;
+    }
+    setDropCvFileName(e.target.files[0].name);
+    if (e.target.files[0].size > 1000000) {
+      setFileSizealert("file size more than 1 MB!");
+      setFileerr("");
+      setNofileErr("");
+    } else setFileSizealert("");
+  };
+
+  const handleCvFileChosen = (e) => {
     console.log(e);
     console.log(e.target.files[0].name);
     console.log(e.target.files[0].size);
     setDropCvFileName(e.target.files[0].name);
-    if (e.target.files[0].size > 1000000)
-      setFileSizealert("file size more than 1 MB!");
-    else setFileSizealert("");
   };
 
   const handleDescClose = () => setDescShow(false);
@@ -374,6 +411,7 @@ const Careers = (props) => {
       .then((result) => {
         console.log(result);
         setJobDescriptions(result.items);
+        if (result.items.length == 0) setNojobsFoundErr(true);
       })
       .catch((error) => console.log("error", error));
   };
@@ -402,6 +440,10 @@ const Careers = (props) => {
     console.log(reqData);
     let formData = new FormData();
     formData.append("name", getVal('.job-apply-body-cont input[name="name"]'));
+    formData.append(
+      "job_title",
+      getVal('.job-apply-body-cont input[name="job_title"]')
+    );
     formData.append(
       "email",
       getVal('.job-apply-body-cont input[name="email"]')
@@ -457,8 +499,13 @@ const Careers = (props) => {
         setPhoneNumbererr("");
       }
     }
+    console.log(fileSizealert);
     if (fileSizealert != "") {
       formIsValid = false;
+      setFileerr("*Please upload cv");
+    }
+    if (document.querySelector("#upload").files.length == 0) {
+      setNofileErr("*Choose a file");
     }
 
     if (formIsValid) {
@@ -484,7 +531,7 @@ const Careers = (props) => {
               setApplyShow(false);
               document.querySelector("#upload").value = null;
               setDropCvFileName("");
-            }, 1000);
+            }, 2000);
           }
         })
         .catch((error) => {
@@ -494,9 +541,13 @@ const Careers = (props) => {
     }
   };
   const handleDropCvSubmit = (evt) => {
-    if (document.querySelector("#cv-upload").files.length == 0) {
-      setNofileErr("choose file");
-    }else{
+    if (
+      document.querySelector("#cv-upload").files.length == 0 ||
+      fileSizealert
+    ) {
+      if (document.querySelector("#cv-upload").files.length == 0)
+        setNofileErr("choose file");
+    } else {
       let formData = new FormData();
       formData.append(
         "resume_file",
@@ -517,10 +568,10 @@ const Careers = (props) => {
             document.querySelector("#cv-upload").value = null;
             setDropCvFileName("");
             setShowApplySuccesstxt(true);
-            setNofileErr('')
+            setNofileErr("");
             setTimeout(() => {
               setShowApplySuccesstxt(false);
-            }, 1000);
+            }, 2000);
           }
         })
         .catch((error) => {
@@ -649,7 +700,12 @@ const Careers = (props) => {
             onClick={() => handleDescShow(item.description)}
           >
             <span className="desc_span">Job Description</span>{" "}
-            <span><i class="fa fa-angle-right" style={{paddingLeft: '0.2em', fontWeight:'bold'}}></i></span>
+            <span>
+              <i
+                class="fa fa-angle-right"
+                style={{ paddingLeft: "0.2em", fontWeight: "bold" }}
+              ></i>
+            </span>
           </div>
         </div>
 
@@ -841,6 +897,7 @@ const Careers = (props) => {
 			  <button>Apply now</button>
 			</div> */}
             {openingsList}
+            {nojobsFoundErr && <div className="no-jobs">No jobs found</div>}
           </div>
 
           {jobSearchVal == "" && (
@@ -861,7 +918,7 @@ const Careers = (props) => {
                   fill="#4c4c4c"
                 />
               </svg>
-              {Array.from(Array(Math.ceil(totalJobDescCount / 5)).keys()).map(
+              {/* {Array.from(Array(Math.ceil(totalJobDescCount / 5)).keys()).map(
                 (page) => {
                   return (
                     <button
@@ -872,7 +929,22 @@ const Careers = (props) => {
                     </button>
                   );
                 }
-              )}
+              )} */}
+
+              <ReactPaginate
+                previousLabel={"prev"}
+                nextLabel={"next"}
+                breakLabel={"..."}
+                breakClassName={"break-me"}
+                pageCount={Math.ceil(totalJobDescCount / 5)}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={2}
+                onPageChange={jobDescListPageClick}
+                containerClassName={"pagination"}
+                subContainerClassName={"pages pagination"}
+                activeClassName={"active"}
+              />
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8.86"
@@ -916,6 +988,7 @@ const Careers = (props) => {
                 <input
                   type="file"
                   className="cv-file-input"
+                  accept=".pdf,.doc,.docx"
                   id="cv-upload"
                   onChange={dropCvFileChosen}
                   hidden
@@ -968,13 +1041,11 @@ const Careers = (props) => {
                 <p>
                   Upload docx file, pdf upto 1 mb only{" "}
                   <div style={{ color: "#3AB658" }}>{dropCvFileName}</div>
-                  <span className="err">
-                    {nofileErr}
-                  </span>
+                  <span className="err">{nofileErr}</span>
+                  <span className="err">{fileSizealert}</span>
                 </p>
-                <div className='cv-btn'>
-                <Button title='Submit' onClick={handleDropCvSubmit}/>
-
+                <div className="cv-btn">
+                  <Button title="Submit" onClick={handleDropCvSubmit} />
                 </div>
                 {/* <button type="submit" onClick={handleDropCvSubmit}>
                   Submit
@@ -1002,7 +1073,7 @@ const Careers = (props) => {
           <Modal.Title className="job-desc-head">Job Description</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className='scrollbar scrollbar-primary'>
+          <div className="scrollbar scrollbar-primary">
             <h5 className="job-desc-resp-head">Job Role & Responsibilities</h5>
             <div>
               <p className="job-desc-sub-desc">{parse(jobDescInView)}</p>
@@ -1080,7 +1151,6 @@ const Careers = (props) => {
                     id="upload"
                     hidden
                     name="resume"
-                    accept="application/pdf"
                     onChange={handleJobApplyFileChosen}
                   />
                   <label for="upload">
@@ -1097,7 +1167,7 @@ const Careers = (props) => {
                     {dropCvFileName ? (
                       <div className="dropcvfilenamediv">{dropCvFileName}</div>
                     ) : (
-                      <span className='outerSpan'>
+                      <span className="outerSpan">
                         <span className="innerSpan">Resume*</span> (Upload docx
                         file, pdf upto 1 mb only){" "}
                       </span>
@@ -1106,6 +1176,9 @@ const Careers = (props) => {
                 </div>
                 <span className="size-alert" style={{ color: "red" }}>
                   {fileSizealert}
+                </span>
+                <span className="size-alert" style={{ color: "red" }}>
+                  {nofileErr}
                 </span>
               </Col>
               <Col lg={12}>

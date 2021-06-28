@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useHistory, useParams } from "react-router-dom";
 
 import parse from "html-react-parser";
@@ -137,44 +138,6 @@ const newsArray = [
   {
     title: "Flexmoney welcomes ICICI Bank to its Merchant Partners",
     date: "FEB 21, 2021",
-    description:
-      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
-  },
-
-  {
-    title: "Flexmoney : 2020 Annual Reports lorem ipsum",
-    date: "FEB 20, 2021",
-    description:
-      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
-  },
-  {
-    title: "Flexmoney : 2020 Annual Reports lorem ipsum",
-    date: "FEB 20, 2021",
-    description:
-      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
-  },
-  {
-    title: "Flexmoney : 2020 Annual Reports lorem ipsum",
-    date: "FEB 20, 2021",
-    description:
-      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
-  },
-
-  {
-    title: "How Instacred works : A comprehensive guide ",
-    date: "FEB 16, 2021",
-    description:
-      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
-  },
-  {
-    title: "How Instacred works : A comprehensive guide ",
-    date: "FEB 16, 2021",
-    description:
-      "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
-  },
-  {
-    title: "How Instacred works : A comprehensive guide ",
-    date: "FEB 16, 2021",
     description:
       "Lorem ipsum dolor sit amet, consetetur asdf sadisn sadipscing elitr, sed diam nonumy eirmod as tempor invidunt ut de labore et dol...",
   },
@@ -348,6 +311,7 @@ const openingsArr = [
     name: "VP - Head of Product",
   },
 ];
+
 const AboutUs = (props) => {
   const { id } = useParams();
   const { height, width } = useWindowDimensions();
@@ -372,6 +336,41 @@ const AboutUs = (props) => {
   const [message, setMessage] = useState("");
   const [messageerr, setMessageerr] = useState("");
 
+  const [newsTitle, setNewsTitle] = useState("");
+  const [newsDate, setNewsDate] = useState(undefined);
+  const [newsContent, setNewsContent] = useState("");
+
+  const [news, setNews] = useState([]);
+  const [TotalNewsCount, setTotalNewsCount] = useState();
+  const [CurrNewsPage, setCurrNewsPage] = useState();
+  let location = useLocation();
+  const history = useHistory();
+
+  const fetchNews = (pageNum, count) => {
+    fetch(
+      `${process.env.REACT_APP_API_ENDPOINT}/news?count=${count}&page=${pageNum}`,
+      {
+        headers: {
+          accept: "*/*",
+          "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+          "sec-ch-ua":
+            '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+          "sec-ch-ua-mobile": "?0",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "cross-site",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setNews(data.items);
+        setTotalNewsCount(data.totalCount);
+        setCurrNewsPage(pageNum);
+      });
+  };
+
   const dropCvFileChosen = (e) => {
     console.log(e);
     console.log(e.target.files[0].name);
@@ -388,6 +387,30 @@ const AboutUs = (props) => {
   const handleApplyShow = (title) => {
     setJobApplyInView(title);
     setApplyShow(true);
+  };
+  const fetchNewsById = (newsId) => {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/news/${newsId}`, {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+        "sec-ch-ua":
+          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (!data.news) history.push("/404");
+        else {
+          setNewsTitle(data.news.title);
+          setNewsDate(data.news.date);
+          setNewsContent(data.news.content);
+        }
+      });
   };
   const handleJobSearch = (evt) => {
     console.log(evt);
@@ -409,25 +432,26 @@ const AboutUs = (props) => {
       .catch((error) => console.log("error", error));
   };
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/job-descriptions`, {
-      headers: {
-        accept: "*/*",
-        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
-        "sec-ch-ua":
-          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
-        "sec-ch-ua-mobile": "?0",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "cross-site",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setJobDescriptions(data.items);
-      });
+    fetchNews(1, 3);
+    // fetchNewsById(id);
   }, []);
 
+  const newsList = news.map((item, i) => {
+    return (
+      <NavLink to={`/in-the-news/${item._id}`} key={i}>
+        <NewsItem
+          title={item.title}
+          date={item.date}
+          description={item.summary}
+          link={item.link}
+        />
+      </NavLink>
+    );
+  });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    fetchNewsById(id);
+  }, [location]);
   useEffect(() => {
     document.title = "Flexmoney: Careers";
     document.getElementsByTagName("META")[3].content =
@@ -444,17 +468,6 @@ const AboutUs = (props) => {
     }).init();
   }, []);
 
-  const newsList = newsArray.map((item, i) => {
-    return (
-      <NewsItem
-        title={item.title}
-        date={item.date}
-        description={item.description}
-        link={item.link}
-        key={i}
-      />
-    );
-  });
   const advisorList = advisorArr.map((item, i) => {
     return (
       <div key={i} className="swiper-slide">
@@ -521,19 +534,107 @@ const AboutUs = (props) => {
     );
   });
 
+  const formatDate = (date) => {
+    date = new Date(date);
+    console.log(date.getMonth());
+
+    if (!date) return;
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    return `${
+      monthNames[date.getMonth()]
+    } ${date.getDate()}, ${date.getFullYear()}`;
+  };
+
   return (
     <>
-      <section className="newssec1 wow fadeIn">
-        <Breadcrumb history={props.history} t2="Careers" />
+      <section className="newspage1 wow fadeIn">
+        <Breadcrumb history={props.history} t2={`In the News > ${newsTitle}`} />
         <div className="main-head">
-          <div className="title">In the News {id}</div>
-          <div className="title">
-            Flexmoney welcomes ICICI Bank to its Merchant Partners
-          </div>
+          <div className="title">{newsTitle}</div>
 
-          <div className="date">FEBRUARY 21, 2021</div>
+          <div className="date">{formatDate(newsDate)}</div>
         </div>
       </section>
+      <section className="newsContent">
+        {/* <p>
+          Payroll and compliance are among the most challenging tasks for a
+          business.P
+        </p>
+        <p>
+          Can you believe 57% of businesses in India still rely on paper or
+          spreadsheet-based payroll management? No, Right? We couldn’t believe
+          either!{" "}
+        </p>
+        <p>
+          We organised a webinar, ‘Payroll in India – Why Compliance is
+          Important and How to Get it Right’ on the 18th of July.{" "}
+        </p>
+        Anuj Jain, Director of Engineering at Razorpay along with Samarth
+        Masson, Cofounder of Dockabl and Rohit Venugopal, Senior Business
+        Manager at Razorpay, teamed up to put on a show. They discussed the
+        flaws of the current payroll processing and management in India, and the
+        complex compliance requirements. Further, they talked about how to
+        tackle these problems too!
+        <p>Here are some highlights from the webinar.</p>
+        <p>Problems with payroll processing in India</p>
+        <p>
+          Businesses need to process payroll effectively with minimal human
+          intervention. But, payroll processing with the help of spreadsheets
+          and other paper-based calculations are causes of concerns in more ways
+          than one.
+        </p>
+        <p>Human error </p>
+        <p>
+          Payroll calculations involving spreadsheets and other manual methods
+          are prone to human error since there is manual keying in of data
+        </p>
+        <p>
+          Payroll teams require several components to calculate employee salary.
+          The difficulty level rises when an employee joins or leaves the
+          organisation
+        </p>
+        <p>Being compliant with changing regulations</p>
+        <p>
+          Employers need to consider various laws and regulations like PF, ESI,
+          PT, and TDS. Any delay in tax remittance to the government or
+          miscalculation can leave businesses with serious repercussions{" "}
+        </p>
+        <p>
+          Also, laws often change. The best example to support this is the Dual
+          Tax regime and the changes to the PF deduction under Atmanirbhar
+          Bharat Abhiyaan
+        </p>
+        <p>Data security</p>
+        <p>
+          Employees provide sensitive information like their Aadhaar, PAN,
+          rental agreement, and more, to their employers for payroll processing.
+          Maintaining such information on spreadsheets can be very risky
+        </p>
+        <p>Lack of flexibility for employees</p>
+        <p>
+          Employees cannot access their payslips instantly or update their
+          particulars when payroll is processed manually
+        </p>
+        <p>
+          Learn how you can tackle Payroll troubles! Get your free Payroll and
+          Compliance Ebook
+        </p> */}
+        {parse(newsContent)}
+      </section>
+      <section className="news-footer">{newsList}</section>
     </>
   );
 };

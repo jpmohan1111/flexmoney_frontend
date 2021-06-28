@@ -55,8 +55,6 @@ import feederal from "../../images/merchants/feederal.png";
 import homecredit from "../../images/merchants/homecredit.png";
 import idfc from "../../images/merchants/idfc.png";
 
-
-
 import people2 from "../../images/merchants/merchant_s5_people.svg";
 import cityscape from "../../images/merchants/merchant_s5_city.svg";
 
@@ -259,8 +257,7 @@ const sectionFourImgArr = [
   },
   {
     img: idfc,
-  }
-  
+  },
 ];
 const sectionFiveLendersDataArr = [
   {
@@ -320,7 +317,6 @@ var mbnewsec1_swiper = new Swiper(".mbnewsec1_swiper.swiper-container", {
   },
 });
 
-
 const Lenders = (props) => {
   const { height, width } = useWindowDimensions();
   const [index, setIndex] = useState(0);
@@ -354,7 +350,7 @@ const Lenders = (props) => {
         clickable: true,
       },
     });
-  
+
     // var lenderssec1_swiper = new Swiper(".banner_right_img.swiper-container", {
     //   slidesPerView: 1,
     //   spaceBetween: 0,
@@ -558,12 +554,15 @@ const Lenders = (props) => {
             <div className="text_content">
               <div className="text_wrapper">
                 <div className="title">Merchants</div>
-                <div className="desc">Grow your business with Instant EMI from a network of reputed Lenders</div>
-                <div className='lenders_btn'>
-                <Button
-                  onClick={() => props.history.push("contactus")}
-                  title="Contact Us"
-                />
+                <div className="desc">
+                  Grow your business with Instant EMI from a network of reputed
+                  Lenders
+                </div>
+                <div className="lenders_btn">
+                  <Button
+                    onClick={() => props.history.push("contactus")}
+                    title="Contact Us"
+                  />
                 </div>
               </div>
               <img src={bgdesk} className="greenbgcut" />
@@ -590,7 +589,10 @@ const Lenders = (props) => {
               <img src={bgmobile} className="bgmobile" />
               <div className="mb_text_container">
                 <div className="title">Merchants</div>
-                <div className="desc">Grow your business with Instant EMI from a network of reputed Lenders</div>
+                <div className="desc">
+                  Grow your business with Instant EMI from a network of reputed
+                  Lenders
+                </div>
               </div>
             </div>
           </div>
@@ -633,16 +635,13 @@ const Lenders = (props) => {
         </div>
       </div>
 
-
       <div className="merchant_section_4 wow fadeInUp">
         <div className="ms4_content">
           <div className="ms4_heading">
             <div className="title">Consumers on our Network</div>
           </div>
-          
-          
-          <div className="ms4_counting_num">
 
+          <div className="ms4_counting_num">
             <div className="ms4_cn_left">
               <img className="ms4_img_left" src={people2} alt="" />
               <CounterContainerItem colorClass="cw" span="M+" count="28" />
@@ -666,12 +665,9 @@ const Lenders = (props) => {
               <p>Cities</p>
             </div>
           </div>
-
-
         </div>
       </div>
 
-      
       <div className="lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>

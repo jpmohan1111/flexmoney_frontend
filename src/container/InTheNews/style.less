@@ -2,9 +2,9 @@
 
 .newssec1 {
   min-height: 35vh;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
-  z-index: 9;
+  padding-left: 6.25em;
+  padding-right: 6.25em;
+
   position: relative;
 
   //   height: 46.875em;
@@ -63,7 +63,6 @@
     background-position: center;
     background-size: cover;
     .main-head {
-      z-index: 999999;
       position: absolute;
       top: 20%;
       left: 100px;
@@ -75,10 +74,10 @@
   .newssec1 {
     height: 70vh;
     .main-head {
-      z-index: 999999;
-      position: absolute;
-      top: 40%;
-      left: 100px;
+      position: relative;
+      top: 10%;
+      text-align: center;
+      //   left: 100px;
     }
   }
   .main-news {
@@ -93,7 +92,7 @@
     overflow: hidden;
     position: relative;
     bottom: 150px;
-    z-index: 9;
+
     background: #fff;
 
     .details {
@@ -185,7 +184,7 @@
     overflow: hidden;
     position: relative;
     bottom: 150px;
-    z-index: 9;
+
     background: #fff;
 
     .details {
@@ -269,6 +268,17 @@
       margin-right: -1.5em;
     }
   }
+  .newssec2 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 10px 80px 10px;
+    background-color: #eeeeee;
+    > a,
+    a:hover {
+      display: contents;
+      text-decoration: none;
+    }
+  }
   .main-news {
     display: flex;
 
@@ -284,7 +294,6 @@
     overflow: hidden;
     position: relative;
 
-    z-index: 9;
     background: #fff;
 
     .details {
@@ -347,6 +356,11 @@
     flex-wrap: wrap;
     padding: 80px 100px;
     background-color: #eeeeee;
+    > a,
+    a:hover {
+      display: contents;
+      text-decoration: none;
+    }
   }
 }
 

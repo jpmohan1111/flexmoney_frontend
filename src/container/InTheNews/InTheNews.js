@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import parse from "html-react-parser";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -369,6 +370,39 @@ const AboutUs = (props) => {
   const [message, setMessage] = useState("");
   const [messageerr, setMessageerr] = useState("");
 
+  const [news, setnews] = useState([]);
+  const [currNewsPage, setCurrNewsPage] = useState(1);
+  const [totalNewsCount, setTotalNewsCount] = useState(0);
+
+  const fetchNews = (pageNum) => {
+    fetch(
+      `${process.env.REACT_APP_API_ENDPOINT}/news?count=9&page=${pageNum}`,
+      {
+        headers: {
+          accept: "*/*",
+          "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+          "sec-ch-ua":
+            '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+          "sec-ch-ua-mobile": "?0",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "cross-site",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setnews(data.items);
+        setTotalNewsCount(data.totalCount);
+        setCurrNewsPage(pageNum);
+      });
+  };
+  const newsListPageClick = (pageNum) => {
+    if (pageNum < 1 || pageNum > totalNewsCount) return;
+    fetchNews(pageNum);
+  };
+
   const dropCvFileChosen = (e) => {
     console.log(e);
     console.log(e.target.files[0].name);
@@ -406,23 +440,7 @@ const AboutUs = (props) => {
       .catch((error) => console.log("error", error));
   };
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/job-descriptions`, {
-      headers: {
-        accept: "*/*",
-        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
-        "sec-ch-ua":
-          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
-        "sec-ch-ua-mobile": "?0",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "cross-site",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setJobDescriptions(data.items);
-      });
+    fetchNews(currNewsPage);
   }, []);
 
   useEffect(() => {
@@ -441,15 +459,17 @@ const AboutUs = (props) => {
     }).init();
   }, []);
 
-  const newsList = newsArray.map((item, i) => {
+  const newsList = news.map((item, i) => {
     return (
-      <NewsItem
-        title={item.title}
-        date={item.date}
-        description={item.description}
-        link={item.link}
-        key={i}
-      />
+      <NavLink to={`/in-the-news/${item._id}`}>
+        <NewsItem
+          title={item.title}
+          date={item.date}
+          description={item.summary}
+          link={item.link}
+          key={i}
+        />
+      </NavLink>
     );
   });
   const advisorList = advisorArr.map((item, i) => {
@@ -521,7 +541,7 @@ const AboutUs = (props) => {
   return (
     <>
       <section className="newssec1 wow fadeIn">
-        <Breadcrumb history={props.history} t2="Careers" />
+        <Breadcrumb history={props.history} t2="In the news" />
         <div className="main-head">
           <div className="title">In the News</div>
           <div className="desc">
@@ -588,8 +608,8 @@ const AboutUs = (props) => {
             width="8.86"
             height="14.6"
             viewBox="0 0 8.86 14.6"
-            // className={1 == currJobDescPage ? "disabled" : ""}
-            // onClick={() => jobDescListPageClick(currJobDescPage - 1)}
+            className={1 == currNewsPage ? "disabled" : ""}
+            onClick={() => newsListPageClick(currNewsPage - 1)}
           >
             <path
               id="Icon_awesome-chevron-right"
@@ -599,27 +619,27 @@ const AboutUs = (props) => {
               fill="#4c4c4c"
             />
           </svg>
-          {Array.from(Array(Math.ceil(30 / 5)).keys()).map((page) => {
-            return (
-              <button
-              //   className={page + 1 == currJobDescPage ? "active" : ""}
-              //   onClick={() => jobDescListPageClick(page + 1)}
-              >
-                {page + 1}
-              </button>
-            );
-          })}
+          {Array.from(Array(Math.ceil(totalNewsCount / 9)).keys()).map(
+            (page) => {
+              return (
+                <button
+                  className={page + 1 == currNewsPage ? "active" : ""}
+                  onClick={() => newsListPageClick(page + 1)}
+                >
+                  {page + 1}
+                </button>
+              );
+            }
+          )}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="8.86"
             height="14.6"
             viewBox="0 0 8.86 14.6"
-            // className={
-            //   Math.ceil(totalJobDescCount / 5) == currJobDescPage
-            //     ? "disabled"
-            //     : ""
-            // }
-            // onClick={() => jobDescListPageClick(currJobDescPage + 1)}
+            className={
+              Math.ceil(totalNewsCount / 9) == currNewsPage ? "disabled" : ""
+            }
+            onClick={() => newsListPageClick(currNewsPage + 1)}
           >
             <path
               id="Icon_awesome-chevron-right"
