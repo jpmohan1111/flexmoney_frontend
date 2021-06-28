@@ -339,7 +339,6 @@ const Careers = (props) => {
     setDropCvFileName(e.target.files[0].name);
   };
   const handleJobApplyFileChosen = (e) => {
-    setFileerr("");
     console.log(e);
     console.log(e.target.files[0].name);
     console.log(e.target.files[0].size);
@@ -347,6 +346,7 @@ const Careers = (props) => {
     if (e.target.files[0].size > 1000000) {
       setFileSizealert("file size more than 1 MB!");
       setFileerr("");
+      setNofileErr("");
     } else setFileSizealert("");
   };
 
@@ -475,6 +475,9 @@ const Careers = (props) => {
     if (fileSizealert != "") {
       formIsValid = false;
       setFileerr("*Please upload cv");
+    }
+    if (document.querySelector("#upload").files.length == 0) {
+      setNofileErr("*Choose a file");
     }
 
     if (formIsValid) {
@@ -953,7 +956,7 @@ const Careers = (props) => {
                 <input
                   type="file"
                   className="cv-file-input"
-                  accept="application/pdf,.doc,.docx"
+                  accept=".pdf,.doc,.docx"
                   id="cv-upload"
                   onChange={dropCvFileChosen}
                   hidden
@@ -1115,7 +1118,7 @@ const Careers = (props) => {
                     id="upload"
                     hidden
                     name="resume"
-                    accept="application/pdf,.doc,.docx,"
+                    accept=".pdf,.doc,.docx"
                     onChange={handleJobApplyFileChosen}
                   />
                   <label for="upload">
@@ -1141,6 +1144,9 @@ const Careers = (props) => {
                 </div>
                 <span className="size-alert" style={{ color: "red" }}>
                   {fileSizealert}
+                </span>
+                <span className="size-alert" style={{ color: "red" }}>
+                  {nofileErr}
                 </span>
               </Col>
               <Col lg={12}>
