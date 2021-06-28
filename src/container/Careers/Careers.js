@@ -336,6 +336,7 @@ const Careers = (props) => {
   const dropCvFileChosen = (e) => {
     setFileerr("");
     console.log(e);
+    console.log("setDropCvFileName");
     console.log(e.target.files[0].name);
     let fileName = e.target.files[0].name;
     let dot = fileName.lastIndexOf(".") + 1;
@@ -355,6 +356,7 @@ const Careers = (props) => {
   const handleJobApplyFileChosen = (e) => {
     setFileerr("");
     console.log(e);
+    console.log("setDropCvFileName");
     console.log(e.target.files[0].name);
     console.log(e.target.files[0].size);
     let fileName = e.target.files[0].name;
