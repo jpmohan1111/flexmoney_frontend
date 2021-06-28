@@ -11,11 +11,14 @@
   color: #ffffff;
   .f14();
   .fontreg();
+  letter-spacing: 1.6px;
 }
 .home_crumb {
   // font-size: ;
   cursor: pointer;
 }
+
+
 
 .newsec1_wrapper
   .swiper-container-horizontal
@@ -61,6 +64,9 @@
   margin-bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
+}
+.newsec1_wrapper .swiper-pagination{
+  z-index: 23;
 }
 // --------------------------------section 1--------------------------------//
 
@@ -119,10 +125,7 @@
   }
   .lenders_btn{
     margin-top: 2em;
-  }
-
-
-  
+  }  
 }
 // --------------------------------section 2--------------------------------//
 .lenderssec2 {
@@ -307,7 +310,15 @@
 }
 .ms4_counting_num .ms4_cn_left p,
 .ms4_counting_num .ms4_cn_right p{
-display: none
+display: none;
+font-family: "Merriweather Sans";
+  font-weight: bold;
+  font-size: 1.563em;
+  letter-spacing: 0.5px;
+  line-height: 2em;
+  color: #ffffff;
+  text-align: center;
+  padding-bottom: 2.319em;
 }
 
 
@@ -325,9 +336,11 @@ display: none
   color: #ffffff;
   text-align: center;
   padding-bottom: 2.319em;
+  display: block;
 }
 
 .ms4_counting_num1 .ms4_cn_right p{
+  display: block;
   font-family: "Merriweather Sans";
   font-weight: bold;
   font-size: 1.563em;
