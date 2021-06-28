@@ -71,6 +71,7 @@ import mbfooterbg from "../../images/merchants/mbfooterbg.png";
 import slider1desk from "../../images/merchants/merchants_banner1.jpg";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
+import bg_ipad from "../../images/careers/bg_ipad.png";
 import slider1mob from "../../images/merchants/merchants_banner1_mob.jpg";
 
 import sec2logo1 from "../../images/careers/sec2logo1.png";
@@ -587,7 +588,13 @@ const Lenders = (props) => {
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
-              <img src={bgmobile} className="bgmobile" />
+            {
+                width < 500 ? (
+                    <img src={bgmobile} className="bgmobile" />
+                  ): (
+                    <img src={bg_ipad} className="bgmobile" />
+                  )
+              }
               <div className="mb_text_container">
                 <div className="title">Merchants</div>
                 <div className="m1_desc">

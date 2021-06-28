@@ -96,11 +96,13 @@ import AdvisorItem from "../../component/AdvisorItem/AdvisorItem";
 import slider1desk from "../../images/careers/slider1desk.png";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
+import bg_ipad from "../../images/careers/bg_ipad.png";
 import slider1mob from "../../images/careers/slider1mob.png";
 
 import sec2logo1 from "../../images/careers/sec2logo1.png";
 import sec2logo2 from "../../images/careers/sec2logo2.png";
 import sec2logo3 from "../../images/careers/sec2logo3.png";
+import mbleftimgcv from "../../images/careers/mbleftimgcv.png";
 
 // -----------------------vijay image imports end ----------------
 
@@ -805,7 +807,13 @@ const Careers = (props) => {
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
-              <img src={bgmobile} className="bgmobile" />
+              {
+                width < 500 ? (
+                    <img src={bgmobile} className="bgmobile" />
+                  ): (
+                    <img src={bg_ipad} className="bgmobile" />
+                  )
+              }
               <div className="mb_text_container">
                 <div className="title">Careers</div>
                 <div className="career_desc">We are recruiting!</div>
@@ -833,7 +841,7 @@ const Careers = (props) => {
               <div className="text_title">Build the future</div>
               <div className="text_desc">
                 Be a part of the team that is revolutionizing the Buy Now Pay
-                Later landscape in the county
+                Later landscape in the country
               </div>
             </div>
           </div>
@@ -870,7 +878,7 @@ const Careers = (props) => {
       <section
         className="careersec6 wow fadeInUp"
         data-wow-duration="1s"
-        data-wow-delay="1.7s"
+        data-wow-delay="0.8s"
       >
         <Row className="m-0 opening-head openings-container wow fadeInUp">
           <Col className="p-0 firstcol" lg={12}>
@@ -1016,7 +1024,13 @@ const Careers = (props) => {
       >
         <Row className="drop-cv-container wow fadeInUp m-0">
           <div>
-            <img src={cvImage} className="img-fluid" />
+            {
+              width > 1023 ? (
+                <img src={cvImage} className="img-fluid" />
+              ): (
+                <img src={ mbleftimgcv} className="img-fluid" />
+              )
+            }
             <div>
               <h2 className="head">Drop your CV here</h2>
               <h4 className="desc">
