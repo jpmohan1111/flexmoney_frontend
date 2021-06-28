@@ -279,6 +279,7 @@ const Careers = (props) => {
   const [jobApplyInView, setJobApplyInView] = useState("");
   const [loading, setloading] = useState(false);
   const [dropCvFileName, setDropCvFileName] = useState("");
+  const [dropApplyFileName, setDropApplyFileName] = useState("");
 
   const [name, setname] = useState("");
   const [nameerr, setnameerr] = useState("");
@@ -335,8 +336,6 @@ const Careers = (props) => {
   };
   const dropCvFileChosen = (e) => {
     setFileerr("");
-    console.log(e);
-    console.log("setDropCvFileName");
     console.log(e.target.files[0].name);
     let fileName = e.target.files[0].name;
     let dot = fileName.lastIndexOf(".") + 1;
@@ -356,14 +355,12 @@ const Careers = (props) => {
   };
   const handleJobApplyFileChosen = (e) => {
     setFileerr("");
-    console.log(e);
-    console.log("setDropCvFileName");
     console.log(e.target.files[0].name);
     console.log(e.target.files[0].size);
     let fileName = e.target.files[0].name;
     let dot = fileName.lastIndexOf(".") + 1;
     var extFile = fileName.substr(dot, fileName.length).toLowerCase();
-    setDropCvFileName(e.target.files[0].name);
+    setDropApplyFileName(e.target.files[0].name);
     setNofileErr("");
     if (!["pdf", "doc", "docx"].includes(extFile)) {
       setFileSizealert("File format not valid");
@@ -375,13 +372,6 @@ const Careers = (props) => {
       setFileerr("");
       setNofileErr("");
     } else setFileSizealert("");
-  };
-
-  const handleCvFileChosen = (e) => {
-    console.log(e);
-    console.log(e.target.files[0].name);
-    console.log(e.target.files[0].size);
-    setDropCvFileName(e.target.files[0].name);
   };
 
   const handleDescClose = () => setDescShow(false);
@@ -1171,8 +1161,10 @@ const Careers = (props) => {
                     </span>
                   </label>
                   <p>
-                    {dropCvFileName ? (
-                      <div className="dropcvfilenamediv">{dropCvFileName}</div>
+                    {dropApplyFileName ? (
+                      <div className="dropcvfilenamediv">
+                        {dropApplyFileName}
+                      </div>
                     ) : (
                       <span className="outerSpan">
                         <span className="innerSpan">Resume*</span> (Upload docx
