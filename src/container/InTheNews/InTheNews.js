@@ -575,21 +575,15 @@ const AboutUs = (props) => {
       </section>
 
       <section className="newssec2 wow fadeIn">
-        <div>
+        <div className="dropdowns">
           <select>
-            <option value="0">Select car:</option>
-            <option value="1">Audi</option>
-            <option value="2">BMW</option>
-            <option value="3">Citroen</option>
-            <option value="4">Ford</option>
-            <option value="5">Honda</option>
-            <option value="6">Jaguar</option>
-            <option value="7">Land Rover</option>
-            <option value="8">Mercedes</option>
-            <option value="9">Mini</option>
-            <option value="10">Nissan</option>
-            <option value="11">Toyota</option>
-            <option value="12">Volvo</option>
+            <option value="0">Select category:</option>
+            <option value="1">All posts</option>
+            <option value="2">achievements</option>
+            <option value="3">aclaimant</option>
+            <option value="4">blog</option>
+            <option value="5">fun</option>
+            <option value="6">news</option>
           </select>
           <select>
             <option value="0">Select year</option>
