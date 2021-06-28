@@ -357,6 +357,7 @@ const Lenders = (props) => {
     var lendersec5_swiper = new Swiper(".lendersec5_swiper.swiper-container", {
       slidesPerView: 1,
       spaceBetween: 10,
+      grabCursor: true,
       loop: true,
       autoHeight: false,
       autoplay: {

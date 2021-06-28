@@ -419,6 +419,7 @@ const Lenders = (props) => {
       slidesPerView: 1,
       spaceBetween: 10,
       loop: true,
+      grabCursor: true,
       autoHeight: false,
       autoplay: {
         delay: 5000,
@@ -554,7 +555,7 @@ const Lenders = (props) => {
             <div className="text_content">
               <div className="text_wrapper">
                 <div className="title">Merchants</div>
-                <div className="desc">
+                <div className="m1_desc">
                   Grow your business with Instant EMI from a network of reputed
                   Lenders
                 </div>
@@ -589,7 +590,7 @@ const Lenders = (props) => {
               <img src={bgmobile} className="bgmobile" />
               <div className="mb_text_container">
                 <div className="title">Merchants</div>
-                <div className="desc">
+                <div className="m1_desc">
                   Grow your business with Instant EMI from a network of reputed
                   Lenders
                 </div>
