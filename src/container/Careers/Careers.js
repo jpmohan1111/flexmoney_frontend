@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 import parse from "html-react-parser";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -298,6 +299,8 @@ const Careers = (props) => {
 
   const [fileSizealert, setFileSizealert] = useState("");
   const [showApplySuccesstxt, setShowApplySuccesstxt] = useState(false);
+
+  const [nojobsFoundErr, setNojobsFoundErr] = useState(false);
   const fetchJobDesc = (pageNum) => {
     fetch(
       `${process.env.REACT_APP_API_ENDPOINT}/job-descriptions?count=5&page=${pageNum}`,
@@ -318,11 +321,14 @@ const Careers = (props) => {
       .then((data) => {
         console.log(data);
         setJobDescriptions(data.items);
+
         setTotalJobDescCount(data.totalCount);
         setCurrJobDescPage(pageNum);
       });
   };
-  const jobDescListPageClick = (pageNum) => {
+  const jobDescListPageClick = (e) => {
+    const pageNum = e.selected + 1;
+    console.log(pageNum);
     if (pageNum < 1 || pageNum > totalJobDescCount) return;
     console.log(pageNum);
     fetchJobDesc(pageNum);
@@ -377,6 +383,7 @@ const Careers = (props) => {
       .then((result) => {
         console.log(result);
         setJobDescriptions(result.items);
+        if (result.items.length == 0) setNojobsFoundErr(true);
       })
       .catch((error) => console.log("error", error));
   };
@@ -855,6 +862,7 @@ const Careers = (props) => {
 			  <button>Apply now</button>
 			</div> */}
             {openingsList}
+            {nojobsFoundErr && <div className="no-jobs">No jobs found</div>}
           </div>
 
           {jobSearchVal == "" && (
@@ -875,7 +883,7 @@ const Careers = (props) => {
                   fill="#4c4c4c"
                 />
               </svg>
-              {Array.from(Array(Math.ceil(totalJobDescCount / 5)).keys()).map(
+              {/* {Array.from(Array(Math.ceil(totalJobDescCount / 5)).keys()).map(
                 (page) => {
                   return (
                     <button
@@ -886,7 +894,22 @@ const Careers = (props) => {
                     </button>
                   );
                 }
-              )}
+              )} */}
+
+              <ReactPaginate
+                previousLabel={"prev"}
+                nextLabel={"next"}
+                breakLabel={"..."}
+                breakClassName={"break-me"}
+                pageCount={Math.ceil(totalJobDescCount / 5)}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={2}
+                onPageChange={jobDescListPageClick}
+                containerClassName={"pagination"}
+                subContainerClassName={"pages pagination"}
+                activeClassName={"active"}
+              />
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8.86"
