@@ -11,6 +11,7 @@
   color: #ffffff;
   .f14();
   .fontreg();
+  letter-spacing: 1.6px;
 }
 .home_crumb {
   // font-size: ;
@@ -62,7 +63,9 @@
   left: 50%;
   transform: translateX(-50%);
 }
-
+.newsec1_wrapper .swiper-pagination{
+  z-index: 23;
+}
 // --------------------------------section 1--------------------------------//
 // .lenderssec1 {
 //   position: relative;
@@ -240,8 +243,15 @@
   }
   .flex_right{
     margin: auto 0;
+    max-width: 100%;
+    width: 100%;
   }
-
+  .flex_right img{
+    width: 100%;
+    max-width: 91.5%;
+    display: block;
+    margin: 0 auto;
+  }
   .verticalline {
     position: absolute;
     width: 1px;
@@ -350,6 +360,7 @@
   }
 }
 // --------------------------------section 4--------------------------------//
+
 .lenderssec4 {
   background: url("../../images/lenders/partners_desktop.png") center no-repeat;
   background-size: cover;
@@ -467,7 +478,7 @@
   .second_col {
     .arrows_wrapper {
       width: 3.313em;
-      height: 9.5em; 
+      height: 9.5em;
       justify-content: space-between;
       user-select: none;
     }
@@ -603,6 +614,24 @@
   //   background-color: #0dad46;
   //   border: 1px solid #ffffff;
   // }
+}
+@media (min-width: 1930px){
+  .lenderssec2 .flex_right img {
+    width: 100%;
+    max-width: 78.5%;
+    display: block;
+    margin: 0 auto;
+  }
+  .lenderssec4{    
+    height: 43.563em;
+    padding: 12em 0 6em 0;
+  }
+}
+@media (width: 1600px){
+  .lenderssec4{    
+    height: 45.563em;
+    padding: 12em 0 6em 0;
+  }
 }
 @media (max-width: 1910px) {
   .lenderssec1 {
@@ -929,6 +958,7 @@
       line-height:1.643em;
       color: #333333;
       margin-bottom: 2em;
+      // min-height: 3.286em;
     }
     .card_flex {
       justify-content: space-around;
@@ -970,6 +1000,7 @@
       margin: 0 7px;
     }
   }
+  
   //<------------------------ section 5----------------------------->
   .lendersec5 {
     padding-top: 5em;
@@ -978,7 +1009,8 @@
       img {
         width: 2.4em;
         height: 2.2em;
-        transform: translateX(4em);
+        // transform: translateX(4em);
+        transform: translate(0.8em, 1.2em);
       }
       .quote_content {
         padding-top: 0;
@@ -1068,6 +1100,16 @@
     }
     .mbfooter_bg {
       height: auto;
+    }
+  }
+}
+@media (max-width: 400px){
+  .lendersec5{
+    .first_col{
+      img{
+      transform: translate(3.8em, 1.2em);
+        
+      }
     }
   }
 }

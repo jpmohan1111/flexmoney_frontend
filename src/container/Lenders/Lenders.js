@@ -320,7 +320,7 @@ const Lenders = (props) => {
         delay: 2000,
       },
       pagination: {
-        el: ".newsec1_swiper .swiper-pagination",
+        el: ".newsec1_wrapper .swiper-pagination",
         clickable: true,
       },
     });
@@ -357,8 +357,8 @@ const Lenders = (props) => {
     var lendersec5_swiper = new Swiper(".lendersec5_swiper.swiper-container", {
       slidesPerView: 1,
       spaceBetween: 10,
-      loop: true,
       grabCursor: true,
+      loop: true,
       autoHeight: false,
       autoplay: {
         delay: 5000,
@@ -391,7 +391,6 @@ const Lenders = (props) => {
       },
     });
   }, []);
-  // window.location.reload();
 
   const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
     <div className="swiper-slide" key={i}>
@@ -491,7 +490,6 @@ const Lenders = (props) => {
                   <img src={lenders_banner1} className="slider_img" />
                 </div>
               </div>
-              <div className="swiper-pagination"></div>
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -506,6 +504,7 @@ const Lenders = (props) => {
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
+            <div className="swiper-pagination"></div>
           </div>
         ) : (
           <div className="mb_newsec1_wrapper">

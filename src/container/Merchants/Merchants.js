@@ -330,11 +330,11 @@ const Lenders = (props) => {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
-      // autoplay: {
-      //   delay: 2000,
-      // },
+      autoplay: {
+        delay: 2000,
+      },
       pagination: {
-        el: ".newsec1_swiper .swiper-pagination",
+        el: ".newsec1_wrapper .swiper-pagination",
         clickable: true,
       },
     });
@@ -342,9 +342,9 @@ const Lenders = (props) => {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
-      // autoplay: {
-      //   delay: 2000,
-      // },
+      autoplay: {
+        delay: 2000,
+      },
       pagination: {
         el: ".mbnewsec1_swiper .swiper-pagination",
         clickable: true,
@@ -419,6 +419,7 @@ const Lenders = (props) => {
       slidesPerView: 1,
       spaceBetween: 10,
       loop: true,
+      grabCursor: true,
       autoHeight: false,
       autoplay: {
         delay: 5000,
@@ -550,12 +551,11 @@ const Lenders = (props) => {
                   <img src={slider1desk} className="slider_img" />
                 </div>
               </div>
-              <div className="swiper-pagination"></div>
             </div>
             <div className="text_content">
               <div className="text_wrapper">
                 <div className="title">Merchants</div>
-                <div className="desc">
+                <div className="m1_desc">
                   Grow your business with Instant EMI from a network of reputed
                   Lenders
                 </div>
@@ -568,6 +568,7 @@ const Lenders = (props) => {
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
+            <div className="swiper-pagination"></div>
           </div>
         ) : (
           <div className="mb_newsec1_wrapper wow fadeInUp">
@@ -589,7 +590,7 @@ const Lenders = (props) => {
               <img src={bgmobile} className="bgmobile" />
               <div className="mb_text_container">
                 <div className="title">Merchants</div>
-                <div className="desc">
+                <div className="m1_desc">
                   Grow your business with Instant EMI from a network of reputed
                   Lenders
                 </div>
@@ -623,7 +624,9 @@ const Lenders = (props) => {
         )}
       </div>
 
-      <div className="lenderssec4 wow fadeInUp">
+    
+
+      <div className="m_lenderssec4 wow fadeInUp">
         <div className="heading_wrapper">
           <div className="title">Our Lending Partners</div>
         </div>
