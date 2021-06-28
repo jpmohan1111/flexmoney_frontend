@@ -327,8 +327,8 @@ const Careers = (props) => {
         setCurrJobDescPage(pageNum);
       });
   };
-  const jobDescListPageClick = (e) => {
-    const pageNum = e.selected + 1;
+  const jobDescListPageClick = (e, num) => {
+    const pageNum = num || e.selected + 1;
     console.log(pageNum);
     if (pageNum < 1 || pageNum > totalJobDescCount) return;
     console.log(pageNum);
@@ -900,13 +900,15 @@ const Careers = (props) => {
 
           {jobSearchVal == "" && (
             <div className="pagination_container">
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8.86"
                 height="14.6"
                 viewBox="0 0 8.86 14.6"
                 className={1 == currJobDescPage ? "disabled" : ""}
-                onClick={() => jobDescListPageClick(currJobDescPage - 1)}
+                onClick={() =>
+                  jobDescListPageClick(undefined, currJobDescPage - 1)
+                }
               >
                 <path
                   id="Icon_awesome-chevron-right"
@@ -915,7 +917,7 @@ const Careers = (props) => {
                   transform="translate(-1.933 -2.648)"
                   fill="#4c4c4c"
                 />
-              </svg>
+              </svg> */}
               {/* {Array.from(Array(Math.ceil(totalJobDescCount / 5)).keys()).map(
                 (page) => {
                   return (
@@ -930,8 +932,44 @@ const Careers = (props) => {
               )} */}
 
               <ReactPaginate
-                previousLabel={"prev"}
-                nextLabel={"next"}
+                previousLabel={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8.86"
+                    height="14.6"
+                    viewBox="0 0 8.86 14.6"
+                    className={1 == currJobDescPage ? "disabled" : ""}
+                  >
+                    <path
+                      id="Icon_awesome-chevron-right"
+                      data-name="Icon awesome-chevron-right"
+                      d="M2.168,10.515l6.5,6.5a.8.8,0,0,0,1.135,0l.758-.758a.8.8,0,0,0,0-1.133L5.41,9.948l5.15-5.174a.8.8,0,0,0,0-1.133L9.8,2.883a.8.8,0,0,0-1.135,0l-6.5,6.5A.8.8,0,0,0,2.168,10.515Z"
+                      transform="translate(-1.933 -2.648)"
+                      fill="#4c4c4c"
+                    />
+                  </svg>
+                }
+                nextLabel={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8.86"
+                    height="14.6"
+                    viewBox="0 0 8.86 14.6"
+                    className={
+                      Math.ceil(totalJobDescCount / 5) == currJobDescPage
+                        ? "disabled"
+                        : ""
+                    }
+                  >
+                    <path
+                      id="Icon_awesome-chevron-right"
+                      data-name="Icon awesome-chevron-right"
+                      d="M10.558,10.515l-6.5,6.5a.8.8,0,0,1-1.135,0l-.758-.758a.8.8,0,0,1,0-1.133L7.316,9.948,2.167,4.774a.8.8,0,0,1,0-1.133l.758-.758a.8.8,0,0,1,1.135,0l6.5,6.5A.8.8,0,0,1,10.558,10.515Z"
+                      transform="translate(-1.933 -2.648)"
+                      fill="#4c4c4c"
+                    />
+                  </svg>
+                }
                 breakLabel={"..."}
                 breakClassName={"break-me"}
                 pageCount={Math.ceil(totalJobDescCount / 5)}
@@ -943,7 +981,7 @@ const Careers = (props) => {
                 activeClassName={"active"}
               />
 
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8.86"
                 height="14.6"
@@ -953,7 +991,9 @@ const Careers = (props) => {
                     ? "disabled"
                     : ""
                 }
-                onClick={() => jobDescListPageClick(currJobDescPage + 1)}
+                onClick={() =>
+                  jobDescListPageClick(undefined, currJobDescPage + 1)
+                }
               >
                 <path
                   id="Icon_awesome-chevron-right"
@@ -962,7 +1002,7 @@ const Careers = (props) => {
                   transform="translate(-1.933 -2.648)"
                   fill="#4c4c4c"
                 />
-              </svg>
+              </svg> */}
             </div>
           )}
         </Row>

@@ -573,35 +573,34 @@ const AboutUs = (props) => {
           <img src={icici} alt="" />
         </div>
       </section>
+
       <section className="newssec2 wow fadeIn">
-        {/* <div className="dropdown-cont">
-          <InputText
-            dropdown
-            list={[
-              {
-                name: "",
-                value: "",
-                notselected: true,
-              },
-              {
-                name: "Merchant",
-                value: "Merchant",
-              },
-              {
-                name: "Lender",
-                value: "Lender",
-              },
-              {
-                name: "Others",
-                value: "Others",
-              },
-            ]}
-            onChange={(e) => setwhoareyou(e.target.value)}
-            title="Who are you?*"
-            id="Who are you?"
-          />
-        </div> */}
-        {newsList}
+        <div>
+          <select>
+            <option value="0">Select car:</option>
+            <option value="1">Audi</option>
+            <option value="2">BMW</option>
+            <option value="3">Citroen</option>
+            <option value="4">Ford</option>
+            <option value="5">Honda</option>
+            <option value="6">Jaguar</option>
+            <option value="7">Land Rover</option>
+            <option value="8">Mercedes</option>
+            <option value="9">Mini</option>
+            <option value="10">Nissan</option>
+            <option value="11">Toyota</option>
+            <option value="12">Volvo</option>
+          </select>
+          <select>
+            <option value="0">Select year</option>
+            <option value="1">2016</option>
+            <option value="1">2017</option>
+            <option value="1">2018</option>
+            <option value="1">2019</option>
+            <option value="2">2020</option>
+          </select>
+        </div>
+        <div className="list">{newsList}</div>
         <div className="pagination_container">
           <svg
             xmlns="http://www.w3.org/2000/svg"
