@@ -548,13 +548,21 @@ const AboutUs = (props) => {
   }, []);
 
   const newsList = news.map((item, i) => {
-    return (
+    return item.external_link ? (
+      <NewsItem
+        title={item.title}
+        date={item.date}
+        description={item.summary}
+        external_link={item.external_link}
+        key={i}
+      />
+    ) : (
       <NavLink to={`/in-the-news/${item._id}`}>
         <NewsItem
           title={item.title}
           date={item.date}
           description={item.summary}
-          link={item.link}
+          external_link={item.external_link}
           key={i}
         />
       </NavLink>

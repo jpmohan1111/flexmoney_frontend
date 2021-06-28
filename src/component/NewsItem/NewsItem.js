@@ -19,8 +19,13 @@ const LenderItem = (props) => {
     "November",
     "December",
   ];
+  const externalLinkClick = (e) => {
+    if (!props.external_link) return;
+    e.stopPropagation();
+    window.open(props.external_link, "_blank");
+  };
   return (
-    <div className="c-p newsItemContainer">
+    <div className="c-p newsItemContainer" onClick={externalLinkClick}>
       <div className="lenderItem d-f f-c p-r">
         <img src={props.img} className="hexagone" />
 
