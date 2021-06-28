@@ -698,7 +698,7 @@ const Careers = (props) => {
             <span className="desc_span">Job Description</span>{" "}
             <span>
               <i
-                class="fa fa-angle-right"
+                className="fa fa-angle-right"
                 style={{ paddingLeft: "0.2em", fontWeight: "bold" }}
               ></i>
             </span>
