@@ -375,6 +375,10 @@ const AboutUs = (props) => {
   const [totalNewsCount, setTotalNewsCount] = useState(0);
 
   const [newsCategories, setNewsCategories] = useState([]);
+  const [newsYears, setNewsYears] = useState([]);
+
+  const [yearselected, setyearselected] = useState("all");
+  const [categorySelected, setcategorySelected] = useState("all");
 
   const fetchNews = (pageNum) => {
     fetch(
@@ -401,6 +405,31 @@ const AboutUs = (props) => {
       });
   };
 
+  const fetchNews2 = (pageNum, category, year) => {
+    fetch(
+      `${process.env.REACT_APP_API_ENDPOINT}/news2?count=9&page=${pageNum}&category=${category}&year=${year}`,
+      {
+        headers: {
+          accept: "*/*",
+          "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+          "sec-ch-ua":
+            '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+          "sec-ch-ua-mobile": "?0",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "cross-site",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setnews(data.items);
+        setTotalNewsCount(data.totalCount);
+        setCurrNewsPage(1);
+      });
+  };
+
   const fetchNewsCategories = () => {
     fetch(`${process.env.REACT_APP_API_ENDPOINT}/news-categories`, {
       headers: {
@@ -419,6 +448,38 @@ const AboutUs = (props) => {
         console.log(data);
         setNewsCategories(data.items);
       });
+  };
+
+  const fetchNewsYears = () => {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/news-years`, {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+        "sec-ch-ua":
+          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setNewsYears(data.items);
+      });
+  };
+
+  const categoryChange = (e) => {
+    console.log(e.target.value);
+    setcategorySelected(e.target.value);
+    fetchNews2(1, e.target.value, yearselected);
+  };
+  const yearChange = (e) => {
+    console.log(e.target.value);
+    setyearselected(e.target.value);
+    console.log(yearselected);
+    fetchNews2(1, categorySelected, e.target.value);
   };
 
   const newsListPageClick = (pageNum) => {
@@ -465,6 +526,7 @@ const AboutUs = (props) => {
   useEffect(() => {
     fetchNews(currNewsPage);
     fetchNewsCategories();
+    fetchNewsYears();
   }, []);
 
   useEffect(() => {
@@ -600,20 +662,17 @@ const AboutUs = (props) => {
 
       <section className="newssec2 wow fadeIn">
         <div className="dropdowns">
-          <select>
-            <option value="0">Select category:</option>
+          <select onChange={categoryChange}>
             <option value="all">All posts</option>
             {newsCategories.map((cat) => {
               return <option value={cat}>{cat}</option>;
             })}
           </select>
-          <select>
-            <option value="0">Select year</option>
-            <option value="1">2016</option>
-            <option value="1">2017</option>
-            <option value="1">2018</option>
-            <option value="1">2019</option>
-            <option value="2">2020</option>
+          <select onChange={yearChange}>
+            <option value="all">All</option>
+            {newsYears.map((year) => {
+              return <option value={year}>{year}</option>;
+            })}
           </select>
         </div>
         <div className="list">{newsList}</div>
