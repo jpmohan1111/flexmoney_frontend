@@ -381,9 +381,10 @@ const AboutUs = (props) => {
   const [yearselected, setyearselected] = useState("all");
   const [categorySelected, setcategorySelected] = useState("all");
 
-  const [featuredNewsTitle, setFeaturedNewsTitle] = useState("all");
-  const [featuredNewsDate, setFeaturedNewsDate] = useState("all");
-  const [featuredNewsSummary, setFeaturedNewsSummary] = useState("all");
+  const [featuredNewsTitle, setFeaturedNewsTitle] = useState("");
+  const [featuredNewsDate, setFeaturedNewsDate] = useState("");
+  const [featuredNewsSummary, setFeaturedNewsSummary] = useState("");
+  const [featuredNewsImageUrl, setFeaturedNewsImageUrl] = useState("");
 
   const fetchNews = (pageNum) => {
     fetch(
@@ -515,6 +516,9 @@ const AboutUs = (props) => {
             } ${featuredNews.date.getDate()}, ${featuredNews.date.getFullYear()}`
           );
           setFeaturedNewsSummary(featuredNews.summary);
+          setFeaturedNewsImageUrl(
+            `${data.url_origin}/${featuredNews.uploadedFile.key}`
+          );
         }
       });
   };
@@ -695,7 +699,7 @@ const AboutUs = (props) => {
           <div className="read-more">Read more</div>
         </div>
         <div className="image">
-          <img src={icici} alt="" />
+          <img src={featuredNewsImageUrl} alt="" />
         </div>
       </section>
 
