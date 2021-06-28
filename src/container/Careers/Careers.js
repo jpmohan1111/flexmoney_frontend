@@ -342,6 +342,7 @@ const Careers = (props) => {
     let dot = fileName.lastIndexOf(".") + 1;
     var extFile = fileName.substr(dot, fileName.length).toLowerCase();
     setDropCvFileName(e.target.files[0].name);
+    setNofileErr("");
     if (!["pdf", "doc", "docx"].includes(extFile)) {
       setFileSizealert("File format not valid");
       return;
@@ -363,6 +364,7 @@ const Careers = (props) => {
     let dot = fileName.lastIndexOf(".") + 1;
     var extFile = fileName.substr(dot, fileName.length).toLowerCase();
     setDropCvFileName(e.target.files[0].name);
+    setNofileErr("");
     if (!["pdf", "doc", "docx"].includes(extFile)) {
       setFileSizealert("File format not valid");
       return;
@@ -992,7 +994,6 @@ const Careers = (props) => {
                 <input
                   type="file"
                   className="cv-file-input"
-                  accept=".pdf,.doc,.docx"
                   id="cv-upload"
                   onChange={dropCvFileChosen}
                   hidden
