@@ -390,6 +390,10 @@ const Careers = (props) => {
     if (!applyShow) {
       setDropApplyFileName("");
       setFileSizealert("");
+      setnameerr("");
+      setemailIderr("");
+      setPhoneNumbererr("");
+      setNofileErr("");
     }
   }, [applyShow]);
 
