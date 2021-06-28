@@ -385,6 +385,14 @@ const Careers = (props) => {
 
     setDescShow(true);
   };
+  useEffect(() => {
+    console.log(applyShow);
+    if (!applyShow) {
+      setDropApplyFileName("");
+      setFileSizealert("");
+    }
+  }, [applyShow]);
+
   const handleApplyShow = (title) => {
     setJobApplyInView(title);
     setApplyShow(true);
