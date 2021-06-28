@@ -60,6 +60,7 @@ import slider1desk from "../../images/careers/slider1desk.png";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
 import bg_ipad from "../../images/careers/bg_ipad.png";
+// import bg_ipad from "../../images/careers/bg_ipad_1.png";
 import slider1mob from "../../images/careers/slider1mob.png";
 
 //-----------------------end of images imports ------------------------//

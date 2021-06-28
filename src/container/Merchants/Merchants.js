@@ -72,6 +72,8 @@ import slider1desk from "../../images/merchants/merchants_banner1.jpg";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
 import bg_ipad from "../../images/careers/bg_ipad.png";
+// import bg_ipad from "../../images/careers/bg_ipad_1.png";
+
 import slider1mob from "../../images/merchants/merchants_banner1_mob.jpg";
 
 import sec2logo1 from "../../images/careers/sec2logo1.png";
