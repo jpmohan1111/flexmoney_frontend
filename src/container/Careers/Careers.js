@@ -815,7 +815,7 @@ const Careers = (props) => {
 
       <section
         className="careersec6 wow fadeInUp"
-        data-wow-duration="1.3s"
+        data-wow-duration="1s"
         data-wow-delay="1.7s"
       >
         <Row className="m-0 opening-head openings-container wow fadeInUp">
