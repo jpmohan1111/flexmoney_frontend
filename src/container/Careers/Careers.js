@@ -334,8 +334,16 @@ const Careers = (props) => {
     fetchJobDesc(pageNum);
   };
   const dropCvFileChosen = (e) => {
+    setFileerr("");
     console.log(e);
     console.log(e.target.files[0].name);
+    let fileName = e.target.files[0].name;
+    let dot = fileName.lastIndexOf(".") + 1;
+    var extFile = fileName.substr(dot, fileName.length).toLowerCase();
+    if (!["pdf", "doc", "docx"].includes(extFile)) {
+      setFileSizealert("File format not valid");
+      return;
+    }
     setDropCvFileName(e.target.files[0].name);
     setNofileErr("");
     if (e.target.files[0].size > 1000000) {
@@ -344,9 +352,17 @@ const Careers = (props) => {
     } else setFileSizealert("");
   };
   const handleJobApplyFileChosen = (e) => {
+    setFileerr("");
     console.log(e);
     console.log(e.target.files[0].name);
     console.log(e.target.files[0].size);
+    let fileName = e.target.files[0].name;
+    let dot = fileName.lastIndexOf(".") + 1;
+    var extFile = fileName.substr(dot, fileName.length).toLowerCase();
+    if (!["pdf", "doc", "docx"].includes(extFile)) {
+      setFileSizealert("File format not valid");
+      return;
+    }
     setDropCvFileName(e.target.files[0].name);
     if (e.target.files[0].size > 1000000) {
       setFileSizealert("file size more than 1 MB!");
@@ -1135,7 +1151,6 @@ const Careers = (props) => {
                     id="upload"
                     hidden
                     name="resume"
-                    accept=".pdf,.doc,.docx"
                     onChange={handleJobApplyFileChosen}
                   />
                   <label for="upload">
