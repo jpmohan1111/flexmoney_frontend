@@ -335,6 +335,7 @@ const Careers = (props) => {
     fetchJobDesc(pageNum);
   };
   const dropCvFileChosen = (e) => {
+    if (!e.target.files[0]) return;
     setFileerr("");
     console.log(e.target.files[0].name);
     let fileName = e.target.files[0].name;
@@ -354,6 +355,7 @@ const Careers = (props) => {
     } else setFileSizealert("");
   };
   const handleJobApplyFileChosen = (e) => {
+    if (!e.target.files[0]) return;
     setFileerr("");
     console.log(e.target.files[0].name);
     console.log(e.target.files[0].size);
@@ -850,7 +852,7 @@ const Careers = (props) => {
           </div>
           <div className="boxx">
             <div className="card_logo">
-              <img src={sec2logo1} className="card_img" />
+              <img src={sec2logo3} className="card_img" />
             </div>
 
             <div className="card_text_wrapper">
