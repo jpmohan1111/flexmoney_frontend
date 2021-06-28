@@ -623,7 +623,7 @@ const Lenders = (props) => {
 
     
 
-      <div className="lenderssec4 wow fadeInUp">
+      <div className="m_lenderssec4 wow fadeInUp">
         <div className="heading_wrapper">
           <div className="title">Our Lending Partners</div>
         </div>
