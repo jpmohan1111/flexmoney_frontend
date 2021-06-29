@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useHistory, useParams } from "react-router-dom";
 
 import parse from "html-react-parser";
@@ -310,6 +311,7 @@ const openingsArr = [
     name: "VP - Head of Product",
   },
 ];
+
 const AboutUs = (props) => {
   const { id } = useParams();
   const { height, width } = useWindowDimensions();
@@ -338,6 +340,37 @@ const AboutUs = (props) => {
   const [newsDate, setNewsDate] = useState(undefined);
   const [newsContent, setNewsContent] = useState("");
 
+  const [news, setNews] = useState([]);
+  const [TotalNewsCount, setTotalNewsCount] = useState();
+  const [CurrNewsPage, setCurrNewsPage] = useState();
+  let location = useLocation();
+  const history = useHistory();
+
+  const fetchNews = (pageNum, count) => {
+    fetch(
+      `${process.env.REACT_APP_API_ENDPOINT}/news?count=${count}&page=${pageNum}`,
+      {
+        headers: {
+          accept: "*/*",
+          "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+          "sec-ch-ua":
+            '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+          "sec-ch-ua-mobile": "?0",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "cross-site",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setNews(data.items);
+        setTotalNewsCount(data.totalCount);
+        setCurrNewsPage(pageNum);
+      });
+  };
+
   const dropCvFileChosen = (e) => {
     console.log(e);
     console.log(e.target.files[0].name);
@@ -354,6 +387,30 @@ const AboutUs = (props) => {
   const handleApplyShow = (title) => {
     setJobApplyInView(title);
     setApplyShow(true);
+  };
+  const fetchNewsById = (newsId) => {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/news/${newsId}`, {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+        "sec-ch-ua":
+          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (!data.news) history.push("/404");
+        else {
+          setNewsTitle(data.news.title);
+          setNewsDate(data.news.date);
+          setNewsContent(data.news.content);
+        }
+      });
   };
   const handleJobSearch = (evt) => {
     console.log(evt);
@@ -375,27 +432,35 @@ const AboutUs = (props) => {
       .catch((error) => console.log("error", error));
   };
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/news/${id}`, {
-      headers: {
-        accept: "*/*",
-        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
-        "sec-ch-ua":
-          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
-        "sec-ch-ua-mobile": "?0",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "cross-site",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setNewsTitle(data.news.title);
-        setNewsDate(data.news.date);
-        setNewsContent(data.news.content);
-      });
+    fetchNews(1, 3);
+    // fetchNewsById(id);
   }, []);
 
+  const newsList = news.map((item, i) => {
+    return item.external_link ? (
+      <NewsItem
+        title={item.title}
+        date={item.date}
+        description={item.summary}
+        external_link={item.external_link}
+        link={item.link}
+      />
+    ) : (
+      <NavLink to={`/in-the-news/${item._id}`} key={i}>
+        <NewsItem
+          title={item.title}
+          date={item.date}
+          description={item.summary}
+          external_link={item.external_link}
+          link={item.link}
+        />
+      </NavLink>
+    );
+  });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    fetchNewsById(id);
+  }, [location]);
   useEffect(() => {
     document.title = "Flexmoney: Careers";
     document.getElementsByTagName("META")[3].content =
@@ -412,17 +477,6 @@ const AboutUs = (props) => {
     }).init();
   }, []);
 
-  const newsList = newsArray.map((item, i) => {
-    return (
-      <NewsItem
-        title={item.title}
-        date={item.date}
-        description={item.description}
-        link={item.link}
-        key={i}
-      />
-    );
-  });
   const advisorList = advisorArr.map((item, i) => {
     return (
       <div key={i} className="swiper-slide">
@@ -516,12 +570,9 @@ const AboutUs = (props) => {
   return (
     <>
       <section className="newspage1 wow fadeIn">
-        <Breadcrumb history={props.history} t2="Careers" />
+        <Breadcrumb history={props.history} t2={`In the News > ${newsTitle}`} />
         <div className="main-head">
           <div className="title">{newsTitle}</div>
-          <div className="title">
-            Flexmoney welcomes ICICI Bank to its Merchant Partners
-          </div>
 
           <div className="date">{formatDate(newsDate)}</div>
         </div>
@@ -592,7 +643,10 @@ const AboutUs = (props) => {
         </p> */}
         {parse(newsContent)}
       </section>
-      <section className="news-footer">{newsList}</section>
+      <section className="news-footer">
+        <div className="more-articles">More Articles</div>
+        <div className="articles">{newsList}</div>
+      </section>
     </>
   );
 };

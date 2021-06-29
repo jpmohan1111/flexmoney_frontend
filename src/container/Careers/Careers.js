@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 import parse from "html-react-parser";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -95,11 +96,14 @@ import AdvisorItem from "../../component/AdvisorItem/AdvisorItem";
 import slider1desk from "../../images/careers/slider1desk.png";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
+import bg_ipad from "../../images/careers/bg_ipad_1.png";
 import slider1mob from "../../images/careers/slider1mob.png";
+import ipadbanner from "../../images/careers/ipadbanner.jpg";
 
 import sec2logo1 from "../../images/careers/sec2logo1.png";
 import sec2logo2 from "../../images/careers/sec2logo2.png";
 import sec2logo3 from "../../images/careers/sec2logo3.png";
+import mbleftimgcv from "../../images/careers/mbleftimgcv.png";
 
 // -----------------------vijay image imports end ----------------
 
@@ -278,6 +282,7 @@ const Careers = (props) => {
   const [jobApplyInView, setJobApplyInView] = useState("");
   const [loading, setloading] = useState(false);
   const [dropCvFileName, setDropCvFileName] = useState("");
+  const [dropApplyFileName, setDropApplyFileName] = useState("");
 
   const [name, setname] = useState("");
   const [nameerr, setnameerr] = useState("");
@@ -286,6 +291,7 @@ const Careers = (props) => {
 
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumbererr, setPhoneNumbererr] = useState("");
+  const [fileerr, setFileerr] = useState("");
   const [companyName, setcompanyName] = useState("");
   const [subject, setsubject] = useState("");
   const [cvapplyFile, setCvapplyFile] = useState([]);
@@ -297,6 +303,8 @@ const Careers = (props) => {
 
   const [fileSizealert, setFileSizealert] = useState("");
   const [showApplySuccesstxt, setShowApplySuccesstxt] = useState(false);
+
+  const [nojobsFoundErr, setNojobsFoundErr] = useState(false);
   const fetchJobDesc = (pageNum) => {
     fetch(
       `${process.env.REACT_APP_API_ENDPOINT}/job-descriptions?count=5&page=${pageNum}`,
@@ -317,28 +325,58 @@ const Careers = (props) => {
       .then((data) => {
         console.log(data);
         setJobDescriptions(data.items);
+
         setTotalJobDescCount(data.totalCount);
         setCurrJobDescPage(pageNum);
       });
   };
-  const jobDescListPageClick = (pageNum) => {
+  const jobDescListPageClick = (e, num) => {
+    const pageNum = num || e.selected + 1;
+
     if (pageNum < 1 || pageNum > totalJobDescCount) return;
-    console.log(pageNum);
+
     fetchJobDesc(pageNum);
   };
   const dropCvFileChosen = (e) => {
-    console.log(e);
+    if (!e.target.files[0]) return;
+    setFileerr("");
     console.log(e.target.files[0].name);
+    let fileName = e.target.files[0].name;
+    let dot = fileName.lastIndexOf(".") + 1;
+    var extFile = fileName.substr(dot, fileName.length).toLowerCase();
     setDropCvFileName(e.target.files[0].name);
+    setNofileErr("");
+    if (!["pdf", "doc", "docx"].includes(extFile)) {
+      setFileSizealert("File format not valid");
+      return;
+    }
+
+    setNofileErr("");
+    if (e.target.files[0].size > 1000000) {
+      setFileSizealert("file size more than 1 MB!");
+      setFileerr("");
+    } else setFileSizealert("");
   };
   const handleJobApplyFileChosen = (e) => {
-    console.log(e);
+    if (!e.target.files[0]) return;
+    setFileerr("");
     console.log(e.target.files[0].name);
     console.log(e.target.files[0].size);
-    setDropCvFileName(e.target.files[0].name);
-    if (e.target.files[0].size > 1000000)
+    let fileName = e.target.files[0].name;
+    let dot = fileName.lastIndexOf(".") + 1;
+    var extFile = fileName.substr(dot, fileName.length).toLowerCase();
+    setDropApplyFileName(e.target.files[0].name);
+    setNofileErr("");
+    if (!["pdf", "doc", "docx"].includes(extFile)) {
+      setFileSizealert("File format not valid");
+      return;
+    }
+
+    if (e.target.files[0].size > 1000000) {
       setFileSizealert("file size more than 1 MB!");
-    else setFileSizealert("");
+      setFileerr("");
+      setNofileErr("");
+    } else setFileSizealert("");
   };
 
   const handleDescClose = () => setDescShow(false);
@@ -348,13 +386,22 @@ const Careers = (props) => {
 
     setDescShow(true);
   };
+  useEffect(() => {
+    if (!applyShow) {
+      setDropApplyFileName("");
+      setFileSizealert("");
+      setnameerr("");
+      setemailIderr("");
+      setPhoneNumbererr("");
+      setNofileErr("");
+    }
+  }, [applyShow]);
+
   const handleApplyShow = (title) => {
     setJobApplyInView(title);
     setApplyShow(true);
   };
   const handleJobSearch = (evt) => {
-    console.log(evt);
-    console.log(evt.target.value);
     setJobSearchVal(evt.target.value);
     if (evt.target.value == "") {
       fetchJobDesc(1);
@@ -372,8 +419,8 @@ const Careers = (props) => {
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
         setJobDescriptions(result.items);
+        if (result.items.length == 0) setNojobsFoundErr(true);
       })
       .catch((error) => console.log("error", error));
   };
@@ -402,6 +449,10 @@ const Careers = (props) => {
     console.log(reqData);
     let formData = new FormData();
     formData.append("name", getVal('.job-apply-body-cont input[name="name"]'));
+    formData.append(
+      "job_title",
+      getVal('.job-apply-body-cont input[name="job_title"]')
+    );
     formData.append(
       "email",
       getVal('.job-apply-body-cont input[name="email"]')
@@ -457,8 +508,13 @@ const Careers = (props) => {
         setPhoneNumbererr("");
       }
     }
+
     if (fileSizealert != "") {
       formIsValid = false;
+      setFileerr("*Please upload cv");
+    }
+    if (document.querySelector("#upload").files.length == 0) {
+      setNofileErr("*Choose a file");
     }
 
     if (formIsValid) {
@@ -470,7 +526,6 @@ const Careers = (props) => {
         //   withCredentials: true,
       })
         .then((response) => {
-          console.log(response);
           if (response.status == 200) {
             setname("");
             setemailId("");
@@ -494,9 +549,13 @@ const Careers = (props) => {
     }
   };
   const handleDropCvSubmit = (evt) => {
-    if (document.querySelector("#cv-upload").files.length == 0) {
-      setNofileErr("choose file");
-    }else{
+    if (
+      document.querySelector("#cv-upload").files.length == 0 ||
+      fileSizealert
+    ) {
+      if (document.querySelector("#cv-upload").files.length == 0)
+        setNofileErr("choose file");
+    } else {
       let formData = new FormData();
       formData.append(
         "resume_file",
@@ -517,7 +576,7 @@ const Careers = (props) => {
             document.querySelector("#cv-upload").value = null;
             setDropCvFileName("");
             setShowApplySuccesstxt(true);
-            setNofileErr('')
+            setNofileErr("");
             setTimeout(() => {
               setShowApplySuccesstxt(false);
             }, 2000);
@@ -649,7 +708,12 @@ const Careers = (props) => {
             onClick={() => handleDescShow(item.description)}
           >
             <span className="desc_span">Job Description</span>{" "}
-            <span><i class="fa fa-angle-right" style={{paddingLeft: '0.2em', fontWeight:'bold'}}></i></span>
+            <span>
+              <i
+                className="fa fa-angle-right"
+                style={{ paddingLeft: "0.2em", fontWeight: "bold" }}
+              ></i>
+            </span>
           </div>
         </div>
 
@@ -739,19 +803,23 @@ const Careers = (props) => {
             <div className="mbnewsec1_swiper swiper-container">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
+                  <img src={ipadbanner} className="mb_slider_img" />
                 </div>
                 <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
+                  <img src={ipadbanner} className="mb_slider_img" />
                 </div>
                 <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
+                  <img src={ipadbanner} className="mb_slider_img" />
                 </div>
               </div>
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
-              <img src={bgmobile} className="bgmobile" />
+              {width < 500 ? (
+                <img src={bgmobile} className="bgmobile" />
+              ) : (
+                <img src={bg_ipad} className="bgmobile" />
+              )}
               <div className="mb_text_container">
                 <div className="title">Careers</div>
                 <div className="career_desc">We are recruiting!</div>
@@ -779,7 +847,7 @@ const Careers = (props) => {
               <div className="text_title">Build the future</div>
               <div className="text_desc">
                 Be a part of the team that is revolutionizing the Buy Now Pay
-                Later landscape in the county
+                Later landscape in the country
               </div>
             </div>
           </div>
@@ -798,7 +866,7 @@ const Careers = (props) => {
           </div>
           <div className="boxx">
             <div className="card_logo">
-              <img src={sec2logo1} className="card_img" />
+              <img src={sec2logo3} className="card_img" />
             </div>
 
             <div className="card_text_wrapper">
@@ -816,7 +884,7 @@ const Careers = (props) => {
       <section
         className="careersec6 wow fadeInUp"
         data-wow-duration="1s"
-        data-wow-delay="1.7s"
+        data-wow-delay="0.8s"
       >
         <Row className="m-0 opening-head openings-container wow fadeInUp">
           <Col className="p-0 firstcol" lg={12}>
@@ -841,17 +909,22 @@ const Careers = (props) => {
 			  <button>Apply now</button>
 			</div> */}
             {openingsList}
+            {jobDescriptions.length == 0 && (
+              <div className="no-jobs">No jobs found</div>
+            )}
           </div>
 
           {jobSearchVal == "" && (
             <div className="pagination_container">
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8.86"
                 height="14.6"
                 viewBox="0 0 8.86 14.6"
                 className={1 == currJobDescPage ? "disabled" : ""}
-                onClick={() => jobDescListPageClick(currJobDescPage - 1)}
+                onClick={() =>
+                  jobDescListPageClick(undefined, currJobDescPage - 1)
+                }
               >
                 <path
                   id="Icon_awesome-chevron-right"
@@ -860,8 +933,8 @@ const Careers = (props) => {
                   transform="translate(-1.933 -2.648)"
                   fill="#4c4c4c"
                 />
-              </svg>
-              {Array.from(Array(Math.ceil(totalJobDescCount / 5)).keys()).map(
+              </svg> */}
+              {/* {Array.from(Array(Math.ceil(totalJobDescCount / 5)).keys()).map(
                 (page) => {
                   return (
                     <button
@@ -872,8 +945,59 @@ const Careers = (props) => {
                     </button>
                   );
                 }
-              )}
-              <svg
+              )} */}
+
+              <ReactPaginate
+                previousLabel={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8.86"
+                    height="14.6"
+                    viewBox="0 0 8.86 14.6"
+                    className={1 == currJobDescPage ? "disabled" : ""}
+                  >
+                    <path
+                      id="Icon_awesome-chevron-right"
+                      data-name="Icon awesome-chevron-right"
+                      d="M2.168,10.515l6.5,6.5a.8.8,0,0,0,1.135,0l.758-.758a.8.8,0,0,0,0-1.133L5.41,9.948l5.15-5.174a.8.8,0,0,0,0-1.133L9.8,2.883a.8.8,0,0,0-1.135,0l-6.5,6.5A.8.8,0,0,0,2.168,10.515Z"
+                      transform="translate(-1.933 -2.648)"
+                      fill="#4c4c4c"
+                    />
+                  </svg>
+                }
+                nextLabel={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8.86"
+                    height="14.6"
+                    viewBox="0 0 8.86 14.6"
+                    className={
+                      Math.ceil(totalJobDescCount / 5) == currJobDescPage
+                        ? "disabled"
+                        : ""
+                    }
+                  >
+                    <path
+                      id="Icon_awesome-chevron-right"
+                      data-name="Icon awesome-chevron-right"
+                      d="M10.558,10.515l-6.5,6.5a.8.8,0,0,1-1.135,0l-.758-.758a.8.8,0,0,1,0-1.133L7.316,9.948,2.167,4.774a.8.8,0,0,1,0-1.133l.758-.758a.8.8,0,0,1,1.135,0l6.5,6.5A.8.8,0,0,1,10.558,10.515Z"
+                      transform="translate(-1.933 -2.648)"
+                      fill="#4c4c4c"
+                    />
+                  </svg>
+                }
+                breakLabel={"..."}
+                breakClassName={"break-me"}
+                pageCount={Math.ceil(totalJobDescCount / 5)}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={2}
+                onPageChange={jobDescListPageClick}
+                containerClassName={"pagination"}
+                subContainerClassName={"pages pagination"}
+                activeClassName={"active"}
+              />
+
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8.86"
                 height="14.6"
@@ -883,7 +1007,9 @@ const Careers = (props) => {
                     ? "disabled"
                     : ""
                 }
-                onClick={() => jobDescListPageClick(currJobDescPage + 1)}
+                onClick={() =>
+                  jobDescListPageClick(undefined, currJobDescPage + 1)
+                }
               >
                 <path
                   id="Icon_awesome-chevron-right"
@@ -892,7 +1018,7 @@ const Careers = (props) => {
                   transform="translate(-1.933 -2.648)"
                   fill="#4c4c4c"
                 />
-              </svg>
+              </svg> */}
             </div>
           )}
         </Row>
@@ -904,7 +1030,11 @@ const Careers = (props) => {
       >
         <Row className="drop-cv-container wow fadeInUp m-0">
           <div>
-            <img src={cvImage} className="img-fluid" />
+            {width > 1023 ? (
+              <img src={cvImage} className="img-fluid" />
+            ) : (
+              <img src={mbleftimgcv} className="img-fluid" />
+            )}
             <div>
               <h2 className="head">Drop your CV here</h2>
               <h4 className="desc">
@@ -916,6 +1046,7 @@ const Careers = (props) => {
                 <input
                   type="file"
                   className="cv-file-input"
+                  accept=".pdf,.doc,.docx"
                   id="cv-upload"
                   onChange={dropCvFileChosen}
                   hidden
@@ -968,13 +1099,11 @@ const Careers = (props) => {
                 <p>
                   Upload docx file, pdf upto 1 mb only{" "}
                   <div style={{ color: "#3AB658" }}>{dropCvFileName}</div>
-                  <span className="err">
-                    {nofileErr}
-                  </span>
+                  <span className="err">{nofileErr}</span>
+                  <span className="err">{fileSizealert}</span>
                 </p>
-                <div className='cv-btn'>
-                <Button title='Submit' onClick={handleDropCvSubmit}/>
-
+                <div className="cv-btn">
+                  <Button title="Submit" onClick={handleDropCvSubmit} />
                 </div>
                 {/* <button type="submit" onClick={handleDropCvSubmit}>
                   Submit
@@ -1002,7 +1131,7 @@ const Careers = (props) => {
           <Modal.Title className="job-desc-head">Job Description</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className='scrollbar scrollbar-primary'>
+          <div className="scrollbar scrollbar-primary">
             <h5 className="job-desc-resp-head">Job Role & Responsibilities</h5>
             <div>
               <p className="job-desc-sub-desc">{parse(jobDescInView)}</p>
@@ -1077,10 +1206,10 @@ const Careers = (props) => {
                   <input
                     type="file"
                     className="cv-file-input"
+                    accept=".pdf,.doc,.docx"
                     id="upload"
                     hidden
                     name="resume"
-                    accept="application/pdf"
                     onChange={handleJobApplyFileChosen}
                   />
                   <label for="upload">
@@ -1094,19 +1223,20 @@ const Careers = (props) => {
                     </span>
                   </label>
                   <p>
-                    {dropCvFileName ? (
-                      <div className="dropcvfilenamediv">{dropCvFileName}</div>
+                    {dropApplyFileName ? (
+                      <div className="dropcvfilenamediv">
+                        {dropApplyFileName}
+                      </div>
                     ) : (
-                      <span className='outerSpan'>
+                      <span className="outerSpan">
                         <span className="innerSpan">Resume*</span> (Upload docx
                         file, pdf upto 1 mb only){" "}
                       </span>
                     )}
                   </p>
                 </div>
-                <span className="size-alert" style={{ color: "red" }}>
-                  {fileSizealert}
-                </span>
+                <span className="err">{fileSizealert}</span>
+                <span className="err">{nofileErr}</span>
               </Col>
               <Col lg={12}>
                 <div className="submit jobSubmitDiv">

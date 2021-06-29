@@ -59,6 +59,8 @@ import mbfooterbg from "../../images/lenders/mbfooterbg.png";
 import slider1desk from "../../images/careers/slider1desk.png";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
+import bg_ipad from "../../images/careers/bg_ipad.png";
+// import bg_ipad from "../../images/careers/bg_ipad_1.png";
 import slider1mob from "../../images/careers/slider1mob.png";
 
 //-----------------------end of images imports ------------------------//
@@ -73,43 +75,40 @@ Swiper.use([
 ]);
 
 const sectionOnebannerDataArr = [
-  
   {
     img: lenders_banner1,
     mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
- 
+
   {
     img: lenders_banner1,
     mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
- 
+
   {
     img: lenders_banner1,
     mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
- 
+
   {
     img: lenders_banner1,
     mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
- 
+
   {
     img: lenders_banner1,
     mbimg: lenders_banner1_mob,
     title: "Lenders",
     desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
   },
- 
-  
 ];
 const sectionTwoDataArr = [
   {
@@ -299,7 +298,6 @@ const Lenders = (props) => {
       live: false,
     }).init();
 
-   
     // setInterval for section 2
     setInterval(() => {
       if (indexCount.current <= 2) {
@@ -357,6 +355,7 @@ const Lenders = (props) => {
     var lendersec5_swiper = new Swiper(".lendersec5_swiper.swiper-container", {
       slidesPerView: 1,
       spaceBetween: 10,
+      grabCursor: true,
       loop: true,
       autoHeight: false,
       autoplay: {
@@ -408,7 +407,7 @@ const Lenders = (props) => {
       className="desc_wrapper"
       style={
         index === i
-          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC" }
+          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC", fontWeight: 'bold' }
           : null
       }
       key={i}
@@ -474,7 +473,7 @@ const Lenders = (props) => {
         &nbsp; {">"} &nbsp;Lenders
       </div>
 
-      <section className="newsec1 wow fadeIn">
+      <section className="l_newsec1 wow fadeIn">
         {width > 1023 ? (
           <div className="newsec1_wrapper">
             <div className="newsec1_swiper swiper-container">
@@ -493,12 +492,15 @@ const Lenders = (props) => {
             <div className="text_content">
               <div className="text_wrapper">
                 <div className="title">Lenders</div>
-                <div className="desc">Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network</div>
-                <div className='lenders_btn'>
-                <Button
-                  onClick={() => props.history.push("contactus")}
-                  title="Contact Us"
-                />
+                <div className="desc">
+                  Offer branded Cardless EMI & Pay Later across our omni-channel
+                  Merchant Network
+                </div>
+                <div className="lenders_btn">
+                  <Button
+                    onClick={() => props.history.push("contactus")}
+                    title="Contact Us"
+                  />
                 </div>
               </div>
               <img src={bgdesk} className="greenbgcut" />
@@ -522,10 +524,17 @@ const Lenders = (props) => {
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
-              <img src={bgmobile} className="bgmobile" />
+              {width < 500 ? (
+                <img src={bgmobile} className="bgmobile" />
+              ) : (
+                <img src={bg_ipad} className="bgmobile" />
+              )}
               <div className="mb_text_container">
                 <div className="title">Lenders</div>
-                <div className="desc">Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network</div>
+                <div className="desc">
+                  Offer branded Cardless EMI & Pay Later across our omni-channel
+                  Merchant Network
+                </div>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React, { useState, Suspense } from "react";
+import { useHistory, useParams } from "react-router-dom";
 import {
   BrowserRouter as Router,
   Switch,
@@ -62,7 +63,7 @@ const NewsPage = React.lazy(() =>
 
 const DefaultLayout = (props) => {
   const [show, setShow] = useState(true);
-
+  const { idd } = useParams();
   return (
     <>
       <Suspense
@@ -87,7 +88,9 @@ const DefaultLayout = (props) => {
               <Route exact path="/lenders" component={Lenders} />
               <Route exact path="/merchants" component={Merchants} />
               <Route exact path="/in-the-news" component={InTheNews} />
-              <Route exact path="/in-the-news/:id" component={NewsPage} />
+              <Route exact path="/in-the-news/:id">
+                <NewsPage key="idd" />
+              </Route>
               <Route exact path="/contactus" component={ContactUs} />
               <Route exact path="/404" component={PageNotFound} />
               <Route exact path="/500" component={InternalServerError} />

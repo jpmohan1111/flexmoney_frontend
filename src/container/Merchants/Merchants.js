@@ -55,8 +55,6 @@ import feederal from "../../images/merchants/feederal.png";
 import homecredit from "../../images/merchants/homecredit.png";
 import idfc from "../../images/merchants/idfc.png";
 
-
-
 import people2 from "../../images/merchants/merchant_s5_people.svg";
 import cityscape from "../../images/merchants/merchant_s5_city.svg";
 
@@ -73,6 +71,9 @@ import mbfooterbg from "../../images/merchants/mbfooterbg.png";
 import slider1desk from "../../images/merchants/merchants_banner1.jpg";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
+import bg_ipad from "../../images/careers/bg_ipad.png";
+// import bg_ipad from "../../images/careers/bg_ipad_1.png";
+
 import slider1mob from "../../images/merchants/merchants_banner1_mob.jpg";
 
 import sec2logo1 from "../../images/careers/sec2logo1.png";
@@ -259,8 +260,7 @@ const sectionFourImgArr = [
   },
   {
     img: idfc,
-  }
-  
+  },
 ];
 const sectionFiveLendersDataArr = [
   {
@@ -299,9 +299,9 @@ var newcareersec1_swiper = new Swiper(".newsec1_swiper.swiper-container", {
   slidesPerView: 1,
   spaceBetween: 0,
   loop: true,
-  // autoplay: {
-  //   delay: 2000,
-  // },
+  autoplay: {
+    delay: 2000,
+  },
   pagination: {
     el: ".newsec1_swiper .swiper-pagination",
     clickable: true,
@@ -311,15 +311,14 @@ var mbnewsec1_swiper = new Swiper(".mbnewsec1_swiper.swiper-container", {
   slidesPerView: 1,
   spaceBetween: 0,
   loop: true,
-  // autoplay: {
-  //   delay: 2000,
-  // },
+  autoplay: {
+    delay: 2000,
+  },
   pagination: {
     el: ".mbnewsec1_swiper .swiper-pagination",
     clickable: true,
   },
 });
-
 
 const Lenders = (props) => {
   const { height, width } = useWindowDimensions();
@@ -354,7 +353,7 @@ const Lenders = (props) => {
         clickable: true,
       },
     });
-  
+
     // var lenderssec1_swiper = new Swiper(".banner_right_img.swiper-container", {
     //   slidesPerView: 1,
     //   spaceBetween: 0,
@@ -423,6 +422,7 @@ const Lenders = (props) => {
       slidesPerView: 1,
       spaceBetween: 10,
       loop: true,
+      grabCursor: true,
       autoHeight: false,
       autoplay: {
         delay: 5000,
@@ -446,12 +446,12 @@ const Lenders = (props) => {
         },
       },
       pagination: {
-        el: ".lendersec5 .swiper-pagination",
+        el: ".m_lendersec5 .swiper-pagination",
         clickable: true,
       },
       navigation: {
-        nextEl: ".lendersec5 .right_arrow",
-        prevEl: ".lendersec5 .left_arrow",
+        nextEl: ".m_lendersec5 .right_arrow",
+        prevEl: ".m_lendersec5 .left_arrow",
       },
     });
   }, []);
@@ -473,7 +473,7 @@ const Lenders = (props) => {
       className="desc_wrapper"
       style={
         index === i
-          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC" }
+          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC", fontWeight: 'bold' }
           : null
       }
       key={i}
@@ -539,7 +539,7 @@ const Lenders = (props) => {
         &nbsp; {">"} &nbsp;Merchants
       </div>
 
-      <section className="newsec1 wow fadeIn">
+      <section className="m_newsec1 wow fadeIn">
         {width > 1023 ? (
           <div className="newsec1_wrapper">
             <div className="newsec1_swiper swiper-container">
@@ -558,12 +558,15 @@ const Lenders = (props) => {
             <div className="text_content">
               <div className="text_wrapper">
                 <div className="title">Merchants</div>
-                <div className="desc">Grow your business with Instant EMI from a network of reputed Lenders</div>
-                <div className='lenders_btn'>
-                <Button
-                  onClick={() => props.history.push("contactus")}
-                  title="Contact Us"
-                />
+                <div className="m1_desc">
+                  Grow your business with Instant EMI from a network of reputed
+                  Lenders
+                </div>
+                <div className="lenders_btn">
+                  <Button
+                    onClick={() => props.history.push("contactus")}
+                    title="Contact Us"
+                  />
                 </div>
               </div>
               <img src={bgdesk} className="greenbgcut" />
@@ -587,17 +590,26 @@ const Lenders = (props) => {
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
-              <img src={bgmobile} className="bgmobile" />
+            {
+                width < 500 ? (
+                    <img src={bgmobile} className="bgmobile" />
+                  ): (
+                    <img src={bg_ipad} className="bgmobile" />
+                  )
+              }
               <div className="mb_text_container">
                 <div className="title">Merchants</div>
-                <div className="desc">Grow your business with Instant EMI from a network of reputed Lenders</div>
+                <div className="m1_desc">
+                  Grow your business with Instant EMI from a network of reputed
+                  Lenders
+                </div>
               </div>
             </div>
           </div>
         )}
       </section>
 
-      <div className="lenderssec2 wow fadeInUp">
+      <div className="m_lenderssec2 wow fadeInUp">
         {width > 1023 ? (
           <div className="lendersec2_flex">
             <div className="flex_left">
@@ -623,7 +635,7 @@ const Lenders = (props) => {
 
     
 
-      <div className="lenderssec41 wow fadeInUp">
+      <div className="m_lenderssec4 wow fadeInUp">
         <div className="heading_wrapper">
           <div className="title">Our Lending Partners</div>
         </div>
@@ -633,16 +645,13 @@ const Lenders = (props) => {
         </div>
       </div>
 
-
       <div className="merchant_section_4 wow fadeInUp">
         <div className="ms4_content">
           <div className="ms4_heading">
             <div className="title">Consumers on our Network</div>
           </div>
-          
-          
-          <div className="ms4_counting_num">
 
+          <div className="ms4_counting_num">
             <div className="ms4_cn_left">
               <img className="ms4_img_left" src={people2} alt="" />
               <CounterContainerItem colorClass="cw" span="M+" count="28" />
@@ -666,13 +675,10 @@ const Lenders = (props) => {
               <p>Cities</p>
             </div>
           </div>
-
-
         </div>
       </div>
 
-      
-      <div className="lendersec5 wow fadeInUp">
+      <div className="m_lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             
@@ -708,7 +714,7 @@ const Lenders = (props) => {
         </Row>
       </div>
 
-      <div className="lenderssec6 wow fadeInUp">
+      <div className="m_lenderssec6 wow fadeInUp">
         <div className="lenderssec6_wrapper">
           {width > 1023 ? (
             <img src={footerbg} className="footerbg fluid" />
