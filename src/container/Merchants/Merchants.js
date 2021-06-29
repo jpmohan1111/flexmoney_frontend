@@ -713,7 +713,7 @@ const Lenders = (props) => {
         </Row>
       </div>
 
-      <div className="lenderssec6 wow fadeInUp">
+      <div className="m_lenderssec6 wow fadeInUp">
         <div className="lenderssec6_wrapper">
           {width > 1023 ? (
             <img src={footerbg} className="footerbg fluid" />
