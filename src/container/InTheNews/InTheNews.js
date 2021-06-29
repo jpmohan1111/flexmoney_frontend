@@ -691,26 +691,28 @@ const AboutUs = (props) => {
           </div>
         </div>
       </section>
-      <section className="main-news" onClick={featuredNewsClick}>
-        <div className="details">
-          {width > 480 ? (
-            <div className="title">
-              {/* Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners */}
-              {featuredNewsTitle}
-            </div>
-          ) : (
-            <div className="title">
-              {/* Flexmoney welcomes ICICI Bank to its Merchant Partners */}
-              {featuredNewsTitle}
-            </div>
-          )}
+      <section onClick={featuredNewsClick} className="main-news-section">
+        <div className="main-news">
+          <div className="details">
+            {width > 480 ? (
+              <div className="title">
+                {/* Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners */}
+                {featuredNewsTitle}
+              </div>
+            ) : (
+              <div className="title">
+                {/* Flexmoney welcomes ICICI Bank to its Merchant Partners */}
+                {featuredNewsTitle}
+              </div>
+            )}
 
-          <div className="date">{featuredNewsDate}</div>
-          <div className="desc">{featuredNewsSummary}</div>
-          <div className="read-more">Read more</div>
-        </div>
-        <div className="image">
-          <img src={featuredNewsImageUrl} alt="" />
+            <div className="date">{featuredNewsDate}</div>
+            <div className="desc">{featuredNewsSummary}</div>
+            <div className="read-more">Read more</div>
+          </div>
+          <div className="image">
+            <img src={featuredNewsImageUrl} alt="" />
+          </div>
         </div>
       </section>
 

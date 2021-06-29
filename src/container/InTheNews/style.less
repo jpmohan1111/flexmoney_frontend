@@ -27,6 +27,7 @@
     .color(#FFFFFF);
     width: 50%;
     margin: auto;
+    font-weight: 300;
   }
 }
 .newssec2 {
@@ -34,10 +35,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    // margin-top: 40px;
     align-items: center;
     position: relative;
-    top: -100px;
+    padding: 30px 0px;
+    // top: -100px;
     > ul {
       display: flex;
       width: 40%;
@@ -96,19 +98,22 @@
       //   left: 100px;
     }
   }
+  .main-news-section {
+    height: 150px;
+  }
   .main-news {
     cursor: pointer;
     display: flex;
     width: 55%;
     position: relative;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-70%);
 
     box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.16);
     border-radius: 20px;
     overflow: hidden;
-    position: relative;
-    bottom: 150px;
+    // position: relative;
+    // bottom: 150px;
 
     background: #fff;
 
@@ -144,6 +149,7 @@
       }
       .desc {
         font-size: 1.5em;
+        font-weight: 300;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -168,7 +174,7 @@
       justify-content: center;
       padding: 60px 120px;
       position: relative;
-      top: -100px;
+      //   top: -200px;
       background-color: #eeeeee;
       > select {
         -webkit-appearance: none;
@@ -183,7 +189,7 @@
         border: none;
 
         background-color: #ffffff;
-        margin: 0px 40px;
+        margin: 0px 10px;
         font-size: 25px;
         font-weight: normal;
         font-stretch: normal;
@@ -224,6 +230,7 @@
     }
 
     .desc {
+      font-weight: 300;
       font-size: 1em;
       width: 100%;
       max-width: 70.1%;
@@ -286,7 +293,8 @@
       }
       .desc {
         font-size: 1.5em;
-        font-weight: normal;
+        font-weight: 300;
+        font-weight: 300;
         font-stretch: normal;
         font-style: normal;
         line-height: 1.8;
@@ -322,6 +330,10 @@
     // .mbPadding();
     min-height: 50vh;
     padding: 0px 20px;
+    .main-head {
+      top: 50px;
+      position: relative;
+    }
 
     .title {
       .mf50();
@@ -334,6 +346,7 @@
 
     .desc {
       font-size: 1.5em;
+      font-weight: 300;
       width: 100%;
       max-width: 70.1%;
       margin: auto;
@@ -423,7 +436,7 @@
     background: #fff;
 
     .details {
-      padding: 30px;
+      padding: 15px 30px;
       max-width: 55%;
       min-width: 55%;
       order: 2;
@@ -431,7 +444,7 @@
       max-width: unset;
 
       .title {
-        font-size: 2em;
+        font-size: 2.5em;
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
@@ -442,7 +455,7 @@
       }
       .date,
       .read-more {
-        font-size: 1.2em;
+        font-size: 1.5em;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -452,12 +465,15 @@
         color: #3bb859;
         padding: 1em 0px;
       }
+      .date {
+        font-weight: bold;
+      }
       .read-more {
         text-decoration: underline;
       }
       .desc {
         font-size: 1.5em;
-        font-weight: normal;
+        font-weight: 300;
         font-stretch: normal;
         font-style: normal;
         line-height: 1.8;
@@ -483,11 +499,11 @@
     .list {
       display: flex;
       flex-wrap: wrap;
-      padding: 0px 100px 80px 100px;
+      padding: 0px 100px 0px 100px;
       justify-content: space-around;
       background-color: #eeeeee;
       position: relative;
-      top: -100px;
+      //   top: -200px;
       > a,
       a:hover {
         display: contents;
