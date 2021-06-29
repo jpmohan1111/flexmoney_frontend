@@ -1,7 +1,7 @@
 @import url("../../common.less");
 * {
   // outline: 1px solid orangered;
-  transition: 0.2s all ease;
+  // transition: 0.2s all ease;
 }
 .lender_breadcrumb {
   position: absolute;
@@ -70,7 +70,7 @@
 }
 // --------------------------------section 1--------------------------------//
 
-.newsec1 {
+.m_newsec1 {
   position: relative;
   .newsec1_wrapper {
     height: 100vh;
@@ -127,7 +127,7 @@
   }  
 }
 // --------------------------------section 2--------------------------------//
-.lenderssec2 {
+.m_lenderssec2 {
   background-image: linear-gradient(45deg, #f1fff7, #ffffff);
   padding: 7.25em 5.293em 6.625em 6.25em;
 
@@ -151,7 +151,7 @@
     z-index: 55;
   }
   .desc_wrapper {
-    width: 60em;
+    width: 64em;
     height: 11.125em;
     display: flex;
     justify-content: center;
@@ -165,10 +165,13 @@
   }
   .desc {
     font-family: "Merriweather Sans";
-    font-weight: bold;
-    font-size: 1.563em;
-    letter-spacing: 0px;
-    line-height: 1.8em;
+    // font-weight: bold;
+    // font-size: 1.563em;
+    // line-height: 1.8em;
+    // letter-spacing: 0px;
+    font-size: 2.188em;
+    line-height: 1.571em;
+    letter-spacing: 0.7px;
     color: #333333;
   }
   .dot_circle {
@@ -293,7 +296,7 @@
 .ms4_counting_num {
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
 }
 
 .ms4_counting_num .ms4_cn_middle {
@@ -303,11 +306,20 @@
   letter-spacing: 0.5px;
   line-height: 2em;
   color: #ffffff;
-  margin: 0 5.4em;
+  margin: auto 5.4em;
+  margin-top: 3em;
 }
 .ms4_counting_num .ms4_cn_left p,
 .ms4_counting_num .ms4_cn_right p {
-  display: none;
+  display: block;
+  font-family: "Merriweather Sans";
+  font-weight: bold;
+  font-size: 1.563em;
+  letter-spacing: 0.5px;
+  line-height: 2em;
+  color: #ffffff;
+  text-align: center;
+  padding-bottom: 2.319em;
 }
 
 .ms4_counting_num1 {
@@ -324,7 +336,7 @@
   color: #ffffff;
   text-align: center;
   padding-bottom: 2.319em;
-  display: block;
+  display: none;
 }
 
 .ms4_counting_num1 .ms4_cn_right p {
@@ -336,10 +348,11 @@
   color: #ffffff;
   text-align: center;
   padding-bottom: 2.319em;
+  display: none;
 }
 
 // --------------------------------section 5--------------------------------//
-.lendersec5 {
+.m_lendersec5 {
   padding-top: 7.715em;
   padding-left: 5.25em;
   padding-bottom: 5.625em;
@@ -377,7 +390,7 @@
   .second_col {
     .arrows_wrapper {
       width: 3.313em;
-      height: 7.963em; //
+      height: 8.7em;
       justify-content: space-between;
       user-select: none;
     }
@@ -509,7 +522,7 @@
   }
 }
 @media (max-width: 1910px) {
-  .newsec1 {
+  .m_newsec1 {
     .newsec1_wrapper {
       height: initial;
     }
@@ -535,7 +548,7 @@
 }
 
 @media (max-width: 1600px) {
-  .lendersec5 {
+  .m_lendersec5 {
     .first_col {
       .desc {
         .f25();
@@ -549,7 +562,7 @@
 }
 
 @media (max-width: 1536px) and (min-width: 1281px) {
-  .lenderssec2 {
+  .m_lenderssec2 {
     .rightimg {
       width: 85%;
       display: block;
@@ -565,7 +578,7 @@
     }
   }
 
-  .lendersec5 .first_col .title {
+  .m_lendersec5 .first_col .title {
     width: 100%;
   }
 
@@ -583,7 +596,7 @@
     top: 4.8em;
   }
 
-  .newsec1 {
+  .m_newsec1 {
     position: relative;
 
     .mb_container {
@@ -632,7 +645,7 @@
     }
   }
 
-  .lenderssec2 {
+  .m_lenderssec2 {
     padding: 4.5em 1.5em 3.22em 1.5em;
     .mbdesc {
       font-family: "Merriweather Sans";
@@ -731,12 +744,13 @@
     justify-content: space-around;
   }
   // merchants section 4
-
+  
   .ms4_counting_num {
     flex-direction: column;
     position: relative;
+    align-items: center;
   }
-
+  
   .ms4_counting_num .ms4_cn_left p,
   .ms4_counting_num .ms4_cn_right p {
     display: block;
@@ -771,6 +785,8 @@
     letter-spacing: 0px;
     line-height: 1.286em;
     font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 1.5em;
   }
   .ms4_counting_num1 .ms4_cn_left p {
     display: none;
@@ -780,7 +796,7 @@
     display: none;
   }
 
-  .lendersec5 {
+  .m_lendersec5 {
     padding-left: 1.5em;
     padding-right: 1.5em;
     .first_col {
@@ -841,7 +857,7 @@
 @media (max-width: 480px) {
   //<------------------------ section 1----------------------------->
 
-  .newsec1 {
+  .m_newsec1 {
     padding-top: 15em;
     .mb_container {
       height: 23em;
@@ -863,7 +879,7 @@
     }
   }
   //<------------------------ section 2----------------------------->
-  .lenderssec2 .mbrightimg {
+  .m_lenderssec2 .mbrightimg {
     margin: 0 auto;
     width: 100%;
     max-width: 100%;
@@ -932,7 +948,7 @@
   }
 
   //<------------------------ section 5----------------------------->
-  .lendersec5 {
+  .m_lendersec5 {
     padding-top: 5em;
     padding-bottom: 4em;
     .first_col {

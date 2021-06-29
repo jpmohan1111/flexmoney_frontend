@@ -407,7 +407,7 @@ const Lenders = (props) => {
       className="desc_wrapper"
       style={
         index === i
-          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC" }
+          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC", fontWeight: 'bold' }
           : null
       }
       key={i}
@@ -473,7 +473,7 @@ const Lenders = (props) => {
         &nbsp; {">"} &nbsp;Lenders
       </div>
 
-      <section className="newsec1 wow fadeIn">
+      <section className="l_newsec1 wow fadeIn">
         {width > 1023 ? (
           <div className="newsec1_wrapper">
             <div className="newsec1_swiper swiper-container">
