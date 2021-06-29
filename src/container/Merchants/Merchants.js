@@ -22,7 +22,7 @@ import Swiper, {
 import bannerimg from "../../images/merchants/bannerimg.png";
 import tabbannerimg from "../../images/merchants/tabbannerimg.png";
 
-import rightimg from "../../images/merchants/rightimg.svg";
+import rightimg from "../../images/merchants/rightimg.png";
 import mbrightimg from "../../images/merchants/mbrightimg.svg";
 import graydot from "../../images/merchants/graydot.png";
 import greendot from "../../images/merchants/greendot.png";
@@ -334,11 +334,11 @@ const Lenders = (props) => {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
-      // autoplay: {
-      //   delay: 2000,
-      // },
+      autoplay: {
+        delay: 2000,
+      },
       pagination: {
-        el: ".newsec1_swiper .swiper-pagination",
+        el: ".newsec1_wrapper .swiper-pagination",
         clickable: true,
       },
     });
@@ -346,9 +346,9 @@ const Lenders = (props) => {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
-      // autoplay: {
-      //   delay: 2000,
-      // },
+      autoplay: {
+        delay: 2000,
+      },
       pagination: {
         el: ".mbnewsec1_swiper .swiper-pagination",
         clickable: true,
@@ -554,7 +554,6 @@ const Lenders = (props) => {
                   <img src={slider1desk} className="slider_img" />
                 </div>
               </div>
-              <div className="swiper-pagination"></div>
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -569,6 +568,7 @@ const Lenders = (props) => {
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
+            <div className="swiper-pagination"></div>
           </div>
         ) : (
           <div className="mb_newsec1_wrapper wow fadeInUp">
@@ -623,7 +623,7 @@ const Lenders = (props) => {
 
     
 
-      <div className="lenderssec4 wow fadeInUp">
+      <div className="lenderssec41 wow fadeInUp">
         <div className="heading_wrapper">
           <div className="title">Our Lending Partners</div>
         </div>
@@ -675,10 +675,11 @@ const Lenders = (props) => {
       <div className="lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
-            <img src={leftquote} alt="leftquote" className="leftquote" />
+            
             {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
 
             <div className="quote_content">
+              <img src={leftquote} alt="leftquote" className="leftquote" />
               <div className="title">What our Merchant Partners say</div>
               <div className="desc">
                 Hear from those who have been with us in our journey

@@ -689,7 +689,7 @@ const AboutUs = (props) => {
       <div key={i} className="opening">
         <div className="title">{item.title}</div>
         <div className="desc" onClick={() => handleDescShow(item.description)}>
-          Job description >
+          Job description {'>'}
         </div>
         <button onClick={() => handleApplyShow(item.title)}>Apply now</button>
       </div>

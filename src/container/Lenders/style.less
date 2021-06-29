@@ -11,10 +11,60 @@
   color: #ffffff;
   .f14();
   .fontreg();
+  letter-spacing: 1.6px;
 }
 .home_crumb {
   // font-size: ;
   cursor: pointer;
+}
+
+.newsec1_wrapper
+  .swiper-container-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 5px;
+}
+
+.newsec1_wrapper .swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsec1_wrapper .swiper-pagination-bullet {
+  width: 0.625em;
+  height: 0.313em;
+  display: inline-block;
+  margin: 0 3.5px;
+  border-radius: 100%;
+  opacity: 1;
+  transition: 0.3s ease;
+  background: #FFFFFF;
+  z-index: 9;
+}
+
+.newsec1_wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+  height: 0.313em;
+  width: 4.375em;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  background: #FFFFFF;
+}
+
+.newsec1_wrapper
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 20px;
+  margin: 0 10px;
+  margin-bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.newsec1_wrapper .swiper-pagination{
+  z-index: 23;
 }
 // --------------------------------section 1--------------------------------//
 // .lenderssec1 {
@@ -420,7 +470,7 @@
   .second_col {
     .arrows_wrapper {
       width: 3.313em;
-      height: 7.963em; //
+      height: 9.5em;
       justify-content: space-between;
       user-select: none;
     }

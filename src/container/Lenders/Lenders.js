@@ -320,7 +320,7 @@ const Lenders = (props) => {
         delay: 2000,
       },
       pagination: {
-        el: ".newsec1_swiper .swiper-pagination",
+        el: ".newsec1_wrapper .swiper-pagination",
         clickable: true,
       },
     });
@@ -471,7 +471,7 @@ const Lenders = (props) => {
         <span className="home_crumb" onClick={() => props.history.push("/")}>
           Home
         </span>
-        &nbsp; {">"} &nbsp;Lender
+        &nbsp; {">"} &nbsp;Lenders
       </div>
 
       <section className="newsec1 wow fadeIn">
@@ -489,7 +489,6 @@ const Lenders = (props) => {
                   <img src={lenders_banner1} className="slider_img" />
                 </div>
               </div>
-              {/* <div className="swiper-pagination"></div> */}
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -504,6 +503,7 @@ const Lenders = (props) => {
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
+            <div className="swiper-pagination"></div>
           </div>
         ) : (
           <div className="mb_newsec1_wrapper">

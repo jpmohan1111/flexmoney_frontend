@@ -112,42 +112,9 @@ Swiper.use([
   EffectCoverflow,
 ]);
 
-const arry2 = [
-  banner,
-  banner,
-  banner,
-  banner,
-  banner,
-  //   img1,
-  //   img2,
-  //   img3,
-  //   img4,
-  //   img5,
-  //   img6,
-  //   img7,
-  //   img8,
-  //   img9,
-  //   img10,
-  //   img11,
-  //   img12,
-];
+const arry2 = [banner, banner, banner, banner, banner];
 
 const arry3 = [bannermobile, bannermobile, bannermobile, bannermobile];
-
-// const arry3 = [
-//   mbimg1,
-//   mbimg2,
-//   mbimg3,
-//   mbimg4,
-//   mbimg5,
-//   mbimg6,
-//   mbimg7,
-//   mbimg8,
-//   mbimg9,
-//   mbimg10,
-//   mbimg11,
-//   mbimg12,
-// ];
 
 const teamArr = [
   {
@@ -302,7 +269,7 @@ const openingsArr = [
     name: "VP - Head of Product",
   },
 ];
-const AboutUs = (props) => {
+const Careers = (props) => {
   const { height, width } = useWindowDimensions();
   const [applyShow, setApplyShow] = useState(false);
   const [descShow, setDescShow] = useState(false);
@@ -412,27 +379,6 @@ const AboutUs = (props) => {
   };
   useEffect(() => {
     fetchJobDesc(currJobDescPage);
-    // fetch(
-    //   `${process.env.REACT_APP_API_ENDPOINT}/job-descriptions?count=5&page=${currJobDescPage}`,
-    //   {
-    //     headers: {
-    //       accept: "*/*",
-    //       "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
-    //       "sec-ch-ua":
-    //         '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
-    //       "sec-ch-ua-mobile": "?0",
-    //       "sec-fetch-dest": "empty",
-    //       "sec-fetch-mode": "cors",
-    //       "sec-fetch-site": "cross-site",
-    //     },
-    //   }
-    // )
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     setJobDescriptions(data.items);
-    //     setTotalJobDescCount(data.totalCount);
-    //   });
   }, []);
 
   const getVal = (selector) => {
@@ -441,9 +387,6 @@ const AboutUs = (props) => {
   };
   const handleApplySubmit = (evt) => {
     var formIsValid = true;
-    // console.log(evt);
-    // evt.preventDefault();
-    // return;
     let reqData = {
       name: getVal('.job-apply-body-cont input[name="name"]'),
       email: getVal('.job-apply-body-cont input[name="email"]'),
@@ -549,23 +492,11 @@ const AboutUs = (props) => {
           //showToast("danger");
         });
     }
-    // fetch(`${process.env.REACT_APP_API_ENDPOINT}/job-apply2`, {
-    //   method: "post",
-    //   headers: {
-    //     // "Content-Type": "application/json",
-    //     // "Content-Type": "application/x-www-form-urlencoded",
-    //     "Content-Type": "multipart/form-data",
-    //   },
-    //   body: JSON.stringify(reqData),
-    //   //   body: formData,
-    // }).then((res) => {
-    //   console.log(res);
-    // });
   };
   const handleDropCvSubmit = (evt) => {
     if (document.querySelector("#cv-upload").files.length == 0) {
-      setNofileErr("Choose a file");
-    } else {
+      setNofileErr("choose file");
+    }else{
       let formData = new FormData();
       formData.append(
         "resume_file",
@@ -586,6 +517,7 @@ const AboutUs = (props) => {
             document.querySelector("#cv-upload").value = null;
             setDropCvFileName("");
             setShowApplySuccesstxt(true);
+            setNofileErr('')
             setTimeout(() => {
               setShowApplySuccesstxt(false);
             }, 2000);
@@ -638,93 +570,9 @@ const AboutUs = (props) => {
     });
 
     var pastexp_swiper2 = new Swiper(".careersec3_swiper.swiper-container", {
-      //   effect: "coverflow",
       grabCursor: true,
       centeredSlides: true,
       loop: true,
-
-      //   autoplay: {
-      //     delay: 5000,
-      //   },
-
-      //   breakpoints: {
-      //     1921: {
-      //       slidesPerView: "2",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 510,
-      //         depth: 320,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //     1680: {
-      //       slidesPerView: "1.5",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 698,
-      //         depth: 300,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //     1520: {
-      //       slidesPerView: "1.5",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 490,
-      //         depth: 450,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //     1440: {
-      //       slidesPerView: "1.55",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 450,
-      //         depth: 420,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-
-      //     1366: {
-      //       slidesPerView: "1.55",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 448,
-      //         depth: 368,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //     1280: {
-      //       slidesPerView: "1.55",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 450,
-      //         depth: 290,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //     1024: {
-      //       slidesPerView: "1.7",
-      //       coverflowEffect: {
-      //         rotate: 0,
-      //         stretch: 270,
-      //         depth: 370,
-      //         modifier: 1,
-      //         slideShadows: true,
-      //       },
-      //     },
-      //   },
-
-      //   navigation: {
-      //     nextEl: ".careersec2 .right_arrow",
-      //     prevEl: ".careersec2 .left_arrow",
-      //   },
       pagination: {
         el: ".careersec2 .swiper-pagination",
         clickable: true,
@@ -794,22 +642,21 @@ const AboutUs = (props) => {
   const openingsList = jobDescriptions.map((item, i) => {
     return (
       <div key={i} className="opening">
-        <div className="title">{item.title}</div>
-        <div className="desc" onClick={() => handleDescShow(item.description)}>
-          <span
-            className="desc_span"
-            style={{ cursor: "pointer", borderBottom: "1px solid black" }}
+        <div className="opening-left">
+          <div className="title">{item.title}</div>
+          <div
+            className="desc"
+            onClick={() => handleDescShow(item.description)}
           >
-            Job Description
-          </span>{" "}
-          <span>&nbsp; {">"}</span>
+            <span className="desc_span">Job Description</span>{" "}
+            <span><i class="fa fa-angle-right" style={{paddingLeft: '0.2em', fontWeight:'bold'}}></i></span>
+          </div>
         </div>
-        {/* <button onClick={() => handleApplyShow(item.title)}>Apply now</button> */}
+
         <div
-          className="btnContainer"
+          className="opening-right btnContainer"
           onClick={() => handleApplyShow(item.title)}
         >
-          {/* <Button loading="false" title="Apply now" /> */}
           {width > 480 ? (
             <Button loading={loading} title="Apply now" />
           ) : (
@@ -881,7 +728,7 @@ const AboutUs = (props) => {
             <div className="text_content">
               <div className="text_wrapper">
                 <div className="title">Careers</div>
-                <div className="desc">We are recruiting!</div>
+                <div className="career_desc">We are recruiting!</div>
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
@@ -907,7 +754,7 @@ const AboutUs = (props) => {
               <img src={bgmobile} className="bgmobile" />
               <div className="mb_text_container">
                 <div className="title">Careers</div>
-                <div className="desc">We are recruiting!</div>
+                <div className="career_desc">We are recruiting!</div>
               </div>
             </div>
           </div>
@@ -966,194 +813,16 @@ const AboutUs = (props) => {
         </div>
       </section>
 
-      {/* <section className="careersec1 wow fadeIn">
-        <Breadcrumb history={props.history} t2="Careers" />
-        <div className="main-head">
-          <div className="title">Careers</div>
-          <div className="desc">We are recruiting</div>
-        </div>
-      </section> */}
-      {/* <section className="careersec2 wow fadeInUp" data-wow-duration="2s">
-        <Row className="m-0">
-          <Col lg={12} className="p-0">
-            <div className="d-f j-c "> */}
-      {/* {width <= 834 ? null : (
-				<div className="d-f a-c">
-				  <div>
-					<img className="left_arrow" src={leftArr} />
-				  </div>
-				</div>
-			  )} */}
-      {/* <div className="careersec3_swiper swiper-container">
-                <div className="swiper-wrapper">
-                  {width > 480 ? list2 : list3}
-                </div>
-              </div> */}
-      {/* {width <= 834 ? null : (
-				<div className="d-f a-c">
-				  <div>
-					<img className="right_arrow" src={rightArr} />
-				  </div>
-				</div>
-			  )} */}
-      {/* </div>
-            <div className="swiper-pagination"></div>
-          </Col>
-        </Row>
-      </section> */}
-
-      {/* <section
-		className="careersec3 wow fadeInUp"
-		data-wow-duration="2s"
-		data-wow-delay="0.5s"
-	  >
-		<div className="ourTeamContainer">
-		  <div className="title">Team</div>
-		  <div className="swiper-container ourteam_swiper">
-			<div className="swiper-wrapper">{teamArrList}</div>
-			<div className="swiper-pagination"></div>
-		  </div>
-		</div>
-	  </section> */}
-      {/* <section
-		className="careersec4 wow fadeInUp"
-		data-wow-duration="2s"
-		data-wow-delay="0.5s"
-	  >
-		<TitleItem black title="Institutional Investors" />
-
-		<div className="investorContainer d-f">
-		  <div className="inverstorItem">
-			<div className="imgcontainer d-f  j-c a-c">
-			  <div>
-				{" "}
-				<img
-				  onClick={() =>
-					window.open("https://www.pravegavc.com/", "_blank")
-				  }
-				  src={pravega}
-				  className="fluid c-p"
-				/>
-			  </div>
-			</div>
-			<div className="desc">
-			  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-			  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-			  erat.
-			</div>
-		  </div>
-		  <div className="line"></div>
-		  <div className="inverstorItem">
-			<div className="imgcontainer d-f  j-c a-c">
-			  <div>
-				<img
-				  onClick={() =>
-					window.open("https://z5capital.com/", "_blank")
-				  }
-				  src={z5}
-				  className="fluid c-p"
-				/>
-			  </div>
-			</div>
-			<div className="desc">
-			  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-			  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-			  erat.
-			</div>
-		  </div>
-		</div>
-	  </section> */}
-      {/* 
-      <section className="careersec5 wow fadeIn">
-        <Row className="m-0 opening-head">
-          <Col className="p-0 firstcol" lg={12}>
-            <div className="working-title">Working with Flexmoney </div>
-            {width <= 834 ? (
-              <div className="working-desc">
-                Looking for talented and passionate <br />
-                individuals to join our team
-              </div>
-            ) : (
-              <div className="working-desc">
-                Looking for talented and passionate individuals to join our team
-              </div>
-            )}
-          </Col>
-        </Row>
-        <Row className=" bullets">
-          <div className="bullet_div">
-            <div className="working-img-cont">
-              <img src={lamp} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Build the future</div>
-
-              {width <= 834 ? (
-                <div className="working-desc">
-                  Be a part of the team that is revolutionizing the Buy Now Pay
-                  Later landscape in the county
-                </div>
-              ) : (
-                <div className="working-desc">
-                  Be a part of the team that is revolutionizing the Buy Now Pay
-                  Later landscape in the county
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="bullet_div">
-            <div className="working-img-cont">
-              <img src={heart} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Open Work culture</div>
-              {width <= 834 ? (
-                <div className="working-desc">
-                  Work in a transparent and open culture where All Hands are on
-                  Deck
-                </div>
-              ) : (
-                <div className="working-desc">
-                  Work in a transparent and open culture where All Hands are on
-                  Deck
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="bullet_div">
-            <div className="working-img-cont">
-              <img src={hands} alt="" />
-            </div>
-            <div>
-              <div className="working-title">Diverse team</div>
-              {width <= 834 ? (
-                <div className="working-desc">
-                  Work alongside colleagues with diverse backgrounds and
-                  experiences ranging from Technology to Finance, from Silicon
-                  Valley to Singapore
-                </div>
-              ) : (
-                <div className="working-desc">
-                  Work alongside colleagues with diverse backgrounds and
-                  experiences ranging from Technology to Finance, from Silicon
-                  Valley to Singapore
-                </div>
-              )}
-            </div>
-          </div>
-        </Row>
-      </section> */}
-
       <section
         className="careersec6 wow fadeInUp"
-        // data-wow-duration="1.3s"
-        // data-wow-delay="1.7s"
+        data-wow-duration="1s"
+        data-wow-delay="1.7s"
       >
         <Row className="m-0 opening-head openings-container wow fadeInUp">
           <Col className="p-0 firstcol" lg={12}>
             <div className="working-title">Current Openings </div>
             <div className="working-desc">
-              <div className='working-desc-div'>
+              <div className="working-desc-div">
                 <img src={search} alt="" />
                 <input
                   onChange={handleJobSearch}
@@ -1164,7 +833,7 @@ const AboutUs = (props) => {
             </div>
           </Col>
         </Row>
-        <Row className="">
+        <Row className="row_opening">
           <div className="openings-cont">
             {/* <div className="opening">
 			  <h2>Project manager</h2>
@@ -1226,43 +895,6 @@ const AboutUs = (props) => {
               </svg>
             </div>
           )}
-          {/* <div>
-			<div className="working-img-cont">
-			  <img src={lamp} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Build the future</div>
-			  <div className="working-desc">
-				Be a part of the team that is revolutionizing the Buy Now Pay
-				Later landscape in the county
-			  </div>
-			</div>
-		  </div>
-		  <div>
-			<div className="working-img-cont">
-			  <img src={heart} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Open Work culture</div>
-			  <div className="working-desc">
-				Work in a transparent and open culture where All Hands are on
-				Deck
-			  </div>
-			</div>
-		  </div>
-		  <div>
-			<div className="working-img-cont">
-			  <img src={hands} alt="" />
-			</div>
-			<div>
-			  <div className="working-title">Diverse team</div>
-			  <div className="working-desc">
-				Work alongside colleagues with diverse backgrounds and
-				experiences ranging from Technology to Finance, from Silicon
-				Valley to Singapore
-			  </div>
-			</div>
-		  </div> */}
         </Row>
       </section>
       <section
@@ -1270,7 +902,7 @@ const AboutUs = (props) => {
         data-wow-duration="1.5s"
         data-wow-delay="1.5s"
       >
-        <Row className=" drop-cv-container wow fadeInUp">
+        <Row className="drop-cv-container wow fadeInUp m-0">
           <div>
             <img src={cvImage} className="img-fluid" />
             <div>
@@ -1279,13 +911,7 @@ const AboutUs = (props) => {
                 Didn't find what you were looking for? Drop your CV here, we
                 will consider your profile for future job postings
               </h4>
-              {/* <input type="file" className="cv-file-input"></input> */}
-              {/* <form
-                id="drop-cv-form"
-                action={`${process.env.REACT_APP_API_ENDPOINT}/drop-cv`}
-                encType="multipart/form-data"
-                method="post"
-              > */}
+
               <div id="drop-cv-form">
                 <input
                   type="file"
@@ -1296,7 +922,6 @@ const AboutUs = (props) => {
                   name="resume"
                 />
                 <label for="cv-upload">
-                  {/* <img src={upload} alt="" /> */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -1342,16 +967,18 @@ const AboutUs = (props) => {
                 </label>
                 <p>
                   Upload docx file, pdf upto 1 mb only{" "}
+                  <div style={{ color: "#3AB658" }}>{dropCvFileName}</div>
                   <span className="err">
-                    <br /> {nofileErr}
+                    {nofileErr}
                   </span>
-                  <span style={{ color: "#3AB658" }}>{dropCvFileName}</span>
                 </p>
+                <div className='cv-btn'>
+                <Button title='Submit' onClick={handleDropCvSubmit}/>
 
-                {/* <Button type="submit" loading={loading} title="Submit" /> */}
-                <button type="submit" onClick={handleDropCvSubmit}>
+                </div>
+                {/* <button type="submit" onClick={handleDropCvSubmit}>
                   Submit
-                </button>
+                </button> */}
                 {showApplySuccesstxt && (
                   <div className="thankyouTxt">
                     Thank you! We'll get back to you soon
@@ -1363,43 +990,25 @@ const AboutUs = (props) => {
           </div>
         </Row>
       </section>
-      {/* <Button variant="primary" onClick={handleShow}>
-		Launch demo modal
-	  </Button> */}
 
       <Modal
         show={descShow}
         onHide={handleDescClose}
         className="job-desc-modal"
         centered
+        scrollable="true"
       >
         <Modal.Header closeButton>
           <Modal.Title className="job-desc-head">Job Description</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>
+          <div className='scrollbar scrollbar-primary'>
             <h5 className="job-desc-resp-head">Job Role & Responsibilities</h5>
             <div>
-              {/* <p className="job-desc-sub-head">Core Responsibilities:</p> */}
               <p className="job-desc-sub-desc">{parse(jobDescInView)}</p>
-              {/*<p className="job-desc-sub-head">Additional Responsibilities:</p>
-               <p className="job-desc-sub-desc">
-                Analyze data to identify key leverage points to increase
-                conversion, engagement and retention of the product Develop a
-                product roadmap, design wireframes, write requirements, and work
-                in
-              </p> */}
             </div>
           </div>
         </Modal.Body>
-        {/* <Modal.Footer>
-		  <Button variant="secondary" onClick={handleClose}>
-			Close
-		  </Button>
-		  <Button variant="primary" onClick={handleClose}>
-			Save Changes
-		  </Button>
-		</Modal.Footer> */}
       </Modal>
 
       <Modal
@@ -1413,65 +1022,6 @@ const AboutUs = (props) => {
         </Modal.Header>
         <Modal.Body className="job-apply-body">
           <div className="job-apply-body-cont">
-            {/* <form
-              id="apply-form"
-              action="http://13.233.110.14:8080/job-apply"
-              enctype="multipart/form-data"
-              method="post"
-            > */}
-            {/* <input type="hidden" name="job_title" value={jobApplyInView} />
-            <div className="name">
-              <input name="name" placeholder="Name" type="text" />
-            </div>
-            <div className="email">
-              <input name="email" placeholder="Email" type="text" />
-            </div>
-            <div className="contact">
-              <input
-                name="contact_number"
-                placeholder="Contact number"
-                type="text"
-              />
-            </div>
-            <div className="company">
-              <input
-                name="company_name"
-                placeholder="Company Name"
-                type="text"
-              />
-            </div>
-            <div className="career">
-              <input
-                name="career_summary"
-                placeholder="Career Summary/message"
-                type="text"
-              />
-            </div>
-            <div className="resume">
-              <p>Resume* (Upload docx file, pdf upto 1 mb only)</p>
-              <label className="file">
-                <input
-                  type="file"
-                  id="file"
-                  aria-label="File browser example"
-                  name="resume"
-                />
-                <span className="file-custom"></span>
-              </label>
-            </div>
-            <div className="submit">
-              <button type="submit" onClick={handleApplySubmit}>
-                Submit
-              </button>
-            </div> */}
-            {/* </form> */}
-
-            {/* <form
-              id="apply-form"
-              action={`${process.env.REACT_APP_API_ENDPOINT}/job-apply`}
-              encType="multipart/form-data"
-              method="post"
-            > */}
             <Row>
               <input type="hidden" name="job_title" value={jobApplyInView} />
               <Col lg={6}>
@@ -1499,7 +1049,7 @@ const AboutUs = (props) => {
                   type="tel"
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   name="contact_number"
-                  title="contact Number*"
+                  title="Contact Number*"
                 />
                 <div className="err">{phoneNumbererr}</div>
               </Col>
@@ -1534,7 +1084,7 @@ const AboutUs = (props) => {
                     onChange={handleJobApplyFileChosen}
                   />
                   <label for="upload">
-                    <span>
+                    <span className="addFileSpan">
                       {" "}
                       <img
                         src={upload}
@@ -1544,19 +1094,26 @@ const AboutUs = (props) => {
                     </span>
                   </label>
                   <p>
-                    <span style={{ color: "#595959" }}>
-                      Resume* (Upload docx file, pdf upto 1 mb only){" "}
-                      <span className="size-alert">{fileSizealert}</span>
-                    </span>
-                    {dropCvFileName}
+                    {dropCvFileName ? (
+                      <div className="dropcvfilenamediv">{dropCvFileName}</div>
+                    ) : (
+                      <span className='outerSpan'>
+                        <span className="innerSpan">Resume*</span> (Upload docx
+                        file, pdf upto 1 mb only){" "}
+                      </span>
+                    )}
                   </p>
                 </div>
+                <span className="size-alert" style={{ color: "red" }}>
+                  {fileSizealert}
+                </span>
               </Col>
               <Col lg={12}>
-                <div className="submit">
-                  <button type="submit" onClick={handleApplySubmit}>
+                <div className="submit jobSubmitDiv">
+                  {/* <button type="submit" onClick={handleApplySubmit} className='btnSubmitHover'>
                     Submit
-                  </button>
+                  </button> */}
+                  <Button title="Submit" onClick={handleApplySubmit} />
                 </div>
                 {showApplySuccesstxt && (
                   <div className="thankyouTxt">
@@ -1565,17 +1122,8 @@ const AboutUs = (props) => {
                 )}
               </Col>
             </Row>
-            {/* </form> */}
           </div>
         </Modal.Body>
-        {/* <Modal.Footer>
-		  <Button variant="secondary" onClick={handleClose}>
-			Close
-		  </Button>
-		  <Button variant="primary" onClick={handleClose}>
-			Save Changes
-		  </Button>
-		</Modal.Footer> */}
       </Modal>
       <svg width="0" height="0">
         <defs>
@@ -1611,4 +1159,4 @@ const AboutUs = (props) => {
   );
 };
 
-export default AboutUs;
+export default Careers;

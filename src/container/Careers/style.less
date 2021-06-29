@@ -2,6 +2,39 @@
 * {
   // outline: 1px solid orangered;
 }
+::marker {
+  color: #0bb443 !important;
+}
+
+.scrollbar {
+  overflow: scroll;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 0;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* custom colors  */
+.scrollbar-primary::-webkit-scrollbar {
+  background-color: #E9E9E9;
+}
+.scrollbar-primary {
+  scrollbar-color: #D5D5D5 #f5f5f5;
+}
+.scrollbar-primary::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #D5D5D5;
+}
+
+
 
 .newsec1_wrapper
   .swiper-container-horizontal
@@ -18,22 +51,23 @@
 
 .newsec1_wrapper .swiper-pagination-bullet {
   width: 0.625em;
-  height: 0.625em;
+  height: 0.313em;
   display: inline-block;
+  margin: 0 3.5px;
   border-radius: 100%;
   opacity: 1;
   transition: 0.3s ease;
-  background: #818181;
+  background: #FFFFFF;
   z-index: 9;
 }
 
 .newsec1_wrapper .swiper-pagination-bullet-active {
   opacity: 1;
-  height: 4px;
-  width: 28px;
+  height: 0.313em;
+  width: 4.375em;
   border-radius: 15px;
   transition: 0.3s ease;
-  background: #818181;
+  background: #FFFFFF;
 }
 
 .newsec1_wrapper
@@ -73,6 +107,7 @@ ul {
   color: #ffffff;
   .f14();
   .fontreg();
+  letter-spacing: 1.6px;
 }
 .home_crumb {
   // font-size: ;
@@ -118,7 +153,7 @@ ul {
     color: #ffffff;
     z-index: 32;
   }
-  .desc {
+  .career_desc {
     .f25();
     .fontreg();
     margin-top: 1em;
@@ -177,7 +212,7 @@ ul {
   .card_img {
     width: 6.625em;
     height: 6.625em;
-    transform: translateY(-1.4em);
+    transform: translateY(-0.7em);
   }
 }
 //end of vijay start
@@ -236,9 +271,15 @@ ul {
   }
 
   .newsec2 {
+    .flex_wrapper{
+      flex-direction: column;
+    }
+
     .boxx {
-      width: 25em;
       margin: 1em;
+      justify-content: flex-start;
+      width: 100%;
+      max-width: 100%;
     }
   }
 }
@@ -251,7 +292,7 @@ ul {
         .mf50();
         padding-top: initial;
       }
-      .desc {
+      .career_desc {
         .mf16();
       }
     }
@@ -282,6 +323,9 @@ ul {
       border-bottom: 1px solid #dbdbdb;
       margin: 0;
     }
+    .boxx:nth-child(3){
+      border-bottom: none;
+    }
     .text_title {
       margin-bottom: 0.75em;
       .mf16();
@@ -291,6 +335,9 @@ ul {
       width: 100%;
       max-width: 94%;
       .mf16();
+    }
+    .card_img{
+      transform: translateY(-1em);
     }
   }
 }
@@ -302,9 +349,6 @@ ul {
   padding-right: 1.25em;
   z-index: 9;
   position: relative;
-
-  //   height: 46.875em;
-  //   background-image: url("../../images/aboutus/bannerbg2560.png");
   background-image: url("../../images/careers/banner_bg.png");
   background-position: center;
   background-size: cover;
@@ -318,7 +362,6 @@ ul {
 
   .desc {
     .f30();
-    // .t-c();
     .fontreg();
     padding-top: 0.7em;
     .color(#FFFFFF);
@@ -538,27 +581,12 @@ ul {
     margin-top: 65px;
     justify-content: space-around;
     .working-title {
-      // font-size: 1rem;
-      // font-weight: 700;
-      // font-stretch: normal;
-      // font-style: normal;
-      // line-height: 1.5;
-      // letter-spacing: normal;
       .f25();
       line-height: 1em;
       text-align: left;
       color: #494949;
     }
     // change-----------------
-    .bullets_flex {
-      // display: flex;
-      // justify-content: space-between;
-      // flex-wrap: nowrap !important;
-    }
-    .third_desc {
-      // max-width: 77%;
-      // width: 100%;
-    }
     // end of change-----------------
     > div {
       display: flex;
@@ -578,13 +606,8 @@ ul {
       display: flex;
       justify-content: center;
       align-items: center;
-      // box-shadow: 5px 5px 14px -4px #000000;
 
       img {
-        // width: 50%;
-        // height: auto;
-        // top: 20%;
-        // position: relative;
         width: 2.3em;
       }
       &:after {
@@ -653,52 +676,14 @@ ul {
     background: #333333;
     width: 50px;
     border-radius: 7px;
-    // transition: 0.6s ease;
   }
   .swiper-pagination-bullet {
     background: #333333;
     width: 5px;
     opacity: 1;
-    //transition: 0.6s ease;
     margin-right: 6px;
     height: 5px;
   }
-
-  // .topimg {
-  //   max-width: 19.5em;
-  // }
-
-  // .advisorItem {
-  //   width: 38.938em;
-  //   background-color: #0dad46;
-  //   border-radius: 1.25em;
-  //   border-top-left-radius: 0;
-  //   margin-top: -3px;
-  //   padding-left: 2.188em;
-  //   padding-right: 2.188em;
-
-  //   .itemTitle {
-  //     .f25();
-  //     color: #ffffff;
-  //     .fontbold();
-  //     padding-top: 2.56em;
-  //   }
-
-  //   .itemDesc {
-  //     .f25();
-  //     color: #ffffff;
-  //     .fontreg();
-  //     padding-top: 1.2em;
-  //     padding-bottom: 1.208em;
-  //   }
-
-  //   .hexagone {
-  //     position: absolute;
-  //     top: -4.781em;
-  //     right: 3.125em;
-  //     width: 11.063em;
-  //   }
-  // }
 }
 
 .careersec6 {
@@ -724,17 +709,16 @@ ul {
   }
 }
 .careersec7 {
-  padding: 5.2625em 6.25em 2.9375em;
+  padding: 5.2625em 6.25em 5.938em;
   .drop-cv-container {
     border-radius: 20px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
-    margin-bottom: 60px;
     > div {
       display: flex;
       justify-content: space-between;
       > div {
-        padding: 60px 130px;
+        padding: 2.75em 7.875em;
       }
       img {
         width: 53.75em;
@@ -746,43 +730,12 @@ ul {
         color: #333333;
       }
       .desc {
-        // font-size: 2em;
-        // font-weight: normal;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 1.6;
-        // letter-spacing: normal;
-        // margin: 1em 0px;
-        // text-align: left;
         .f25();
         .fontreg();
         margin-top: 0.8em;
         margin-bottom: 1.2em;
         color: #494949;
       }
-      //   .cv-file-input {
-      //     border-radius: 10px;
-      //     color: transparent;
-      //     background-color: #ffffff;
-      //     &:-webkit-file-upload-button {
-      //       visibility: hidden;
-      //     }
-      //     &:before {
-      //       content: "Select some files";
-      //       display: inline-block;
-      //       background: linear-gradient(top, #f9f9f9, #e3e3e3);
-      //       border: 1px solid #999;
-      //       border-radius: 3px;
-      //       padding: 5px 8px;
-      //       outline: none;
-      //       white-space: nowrap;
-      //       -webkit-user-select: none;
-      //       cursor: pointer;
-      //       text-shadow: 1px 1px #fff;
-      //       font-weight: 700;
-      //       font-size: 10pt;
-      //     }
-      //   }
       #drop-cv-form {
         .cv-file-input {
           color: transparent;
@@ -791,11 +744,10 @@ ul {
           display: block;
 
           + label {
-            width: 100%;
+            max-width: 36.250em;
+            max-height: 4.688em;
             border: 1px solid #999;
             border-radius: 0.625em;
-            // padding-top: 1.75em;
-            // padding-bottom: 1.75em;
             padding-left: 2em;
             outline: none;
             white-space: nowrap;
@@ -803,7 +755,6 @@ ul {
             cursor: pointer;
             text-shadow: 1px 1px #fff;
             font-weight: 700;
-            // font-size: 10pt;
             color: #3ab658;
             height: 60px;
             justify-content: flex-start;
@@ -819,15 +770,12 @@ ul {
               .fontreg();
               margin-left: 0.88em;
               padding-top: 0em;
-              // font-size: 1.2em;
-              // font-weight: normal;
             }
             > span:last-child {
               color: #3ab658;
               font-weight: normal;
               float: right;
               position: relative;
-              // margin-left: auto;
             }
           }
         }
@@ -843,7 +791,6 @@ ul {
           content: "Choose File";
           color: #3ab658;
           display: block;
-          // background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
           border: 1px solid #999;
           border-radius: 3px;
           padding: 10px 8px;
@@ -868,13 +815,10 @@ ul {
         }
       }
       .btn {
-        margin-top: 45px;
+        // margin-top: 45px;
       }
       button {
-        // width: 200px;
-        // height: 65px;
-        // padding: 10px 67px;
-        margin-top: 5.22em;
+        // margin-top: 5.22em;
         .f18();
         .fontreg();
         padding: 1.33em 4em;
@@ -883,15 +827,12 @@ ul {
         color: #ffffff;
         border-radius: 100px;
         box-shadow: 0 9px 12px 0 rgb(59 184 2.96666667%);
-        // font-size: 18px;
-        // font-weight: normal;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 2.44;
-        // letter-spacing: normal;
         text-align: left;
         color: #ffffff;
       }
+    }
+    .cv-btn{
+      margin-top: 2.8em;
     }
   }
 }
@@ -902,13 +843,14 @@ ul {
     color: #333333;
     .f60();
     .fontbold();
-    margin-top: 0.3em;
+    margin-top: 0.7em;
   }
   .job-desc-resp-head {
     text-align: left;
     color: #0bb443;
     .f25();
     .fontreg();
+    padding-left: 0.7em;
   }
 }
 
@@ -1019,47 +961,25 @@ ul {
       }
     }
   }
-
+  .row_opening{
+    justify-content: center;
+  }
   .openings-cont {
     width: 100%;
     max-width: 91.875em;
     margin-top: 2.625em;
-
-    padding: 2em 5.656em 4em 5.656em;
+    padding: 3.750em 5.656em 5.375em 5.656em;
     border-radius: 1.25em;
     box-shadow: 0 3px 6px 0 #00000029;
     background-color: #ffffff;
-    .openings-cont:nth-child(5) {
-      border-bottom: 0;
-    }
+    
     .opening {
       position: relative;
-      // padding: 2.625em 0px;
       border-bottom: solid 1px #c2c2c2;
-      margin-bottom: 2em;
-      padding-bottom: 3.5em;
-      margin-top: 3.5em;
-      // margin-bottom: 3.5em;
-
-      .btn {
-        position: absolute;
-        top: 20px;
-        right: 0px;
-
-        // width: 200px;
-        // height: 65px;
-        // border-radius: 100px;
-        // background-color: #333333;
-        // font-size: 18px;
-        // font-weight: normal;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 2.44;
-        // letter-spacing: normal;
-        // text-align: center;
-        // color: #ffffff;
-      }
-
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2.5em 0;
       .title {
         font-size: 2.188em;
         letter-spacing: 0.018em;
@@ -1069,25 +989,21 @@ ul {
         .fontreg();
       }
       .desc {
-        // font-size: 1rem;
-        // font-weight: normal;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 1;
-        // letter-spacing: 0.45px;
-        // font-family: sans-serif;
-        // margin-top: 15px;
-        // border-bottom: 1px solid #000;
-        text-align: left;
         color: #333333;
-        width: fit-content;
         .f25();
         .fontreg();
-        margin-top: 0.5em;
       }
-      .desc_span {
-        // border-bottom: 1px solid #333333;
+      .desc_span{
+        cursor: pointer;
+        border-bottom: 1px solid #000;
       }
+    }
+    .opening:nth-child(1){
+     padding-top: 0; 
+    }
+    .opening:nth-child(5){
+      padding-bottom: 0;
+      border-bottom: none;
     }
   }
   .thankyouTxt {
@@ -1109,7 +1025,7 @@ ul {
         padding-top: 2em;
       }
       > .modal-content {
-        // min-height: 55.3125em;
+        min-height: 55.313em;
         // height: 100%;
         width: 100%;
         max-width: 73.3125em;
@@ -1142,14 +1058,37 @@ ul {
       .submit {
         width: 100%;
       }
+      span.rightjobarrow{
+        visibility: hidden;
+        padding-left: 0.3em;
+      }
+      .btnSubmitHover:hover span.rightjobarrow{
+        visibility: visible;
+        padding-left: 0.3em;
+      }
+      .submit.jobSubmitDiv{
+        margin-top: 5em;
+      }
       .resume {
-        width: 95%;
+        width: 100%;
         height: auto;
-        border-bottom: solid 2px #3bb859;
+        border-bottom: solid 2px #dddddd;
 
-        min-height: 95px;
+        min-height: 110px;
         position: relative;
-
+        
+        span{
+          font-size: 0.5em;
+        }
+        .outerSpan{
+          color: #595959;
+          .fontbold();
+          // font-size: 0.6em;
+        }
+        .innerSpan{
+          font-size: 1em;
+          // color: #595959;
+        }
         > input {
           color: transparent;
           width: 100%;
@@ -1230,34 +1169,24 @@ ul {
           width: 80%;
           position: absolute;
           bottom: 5px;
+          padding-bottom: 0.15em;
           .size-alert {
             color: red;
             display: block;
             margin: 10px 0px;
           }
           span {
-            font-size: 0.7em;
+            font-size: 0.6em;
             color: #595959;
           }
         }
       }
       button {
-        // width: 150px;
-        // margin: 35px 0px;
-        // height: 40px;
-        // border-radius: 100px;
         background-color: #333333;
         margin-right: auto;
         box-shadow: 0 9px 12px 0 rgba(59, 184, 89, 0.3);
-        // font-size: 14px;
-        // font-weight: normal;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 2.44;
-        // letter-spacing: normal;
         text-align: left;
         color: #ffffff;
-        // padding: 3px 50px;
         .f18();
         .fontreg();
         margin-top: 5em;
@@ -1271,31 +1200,25 @@ ul {
       }
     }
     .job-apply-head {
-      // font-size: 40px;
-      // font-weight: bold;
-      // font-stretch: normal;
-      // font-style: normal;
-      // line-height: 1.5;
-      // letter-spacing: normal;
       text-align: center;
       width: 100%;
       color: #333333;
       .f60();
       .fontbold();
-      margin-top: 1.033em;
+      margin-top: 0.8em;
     }
     .job-apply-body {
       input {
-        font-size: 1.7em;
+        font-size: 1.125em;
         display: block;
         height: 38px;
-        width: 90%;
+        // width: 90%;
         margin: 0;
         border: none;
         border-bottom: solid 2px #3bb859;
         padding-bottom: 0.7em;
         &[name="career_summary"] {
-          width: 95%;
+          width: 100%;
         }
         &::placeholder {
           -webkit-transform: translateY(0px);
@@ -1369,9 +1292,6 @@ ul {
         }
       }
     }
-    .job-desc-sub-head {
-    }
-
     #apply-form {
       width: 100%;
       display: flex;
@@ -1382,14 +1302,12 @@ ul {
   }
   .job-desc-modal {
     .modal-dialog {
-      min-width: 70vw;
-      // height: 90vh;
-      // min-height: 90vh;
+      max-width: 73.313em;
+
       > .modal-content {
-        min-height: 100%;
-        max-height: 100%;
+        min-height: 55.313em;
         width: 100%;
-        max-width: 89%;
+        max-width: 73.313em;
         margin: auto;
         .modal-header {
           border: none;
@@ -1398,7 +1316,8 @@ ul {
           height: 43.6125em;
           max-height: 43.6125em;
           overflow: hidden;
-          padding-bottom: 4em;
+          padding-left: 1.875em;
+          // padding-right: 2.875em;
           > div {
             max-height: 100%;
             overflow-y: scroll;
@@ -1420,6 +1339,11 @@ ul {
     ul {
     }
   }
+  .dropcvfilenamediv {
+    font-size: 0.85em;
+    color: #595959;
+  }
+
 }
 @media (min-width: 765px) {
   .pagination_container {
@@ -1659,14 +1583,18 @@ ul {
 
   .careersec6 {
     background: #f6f6f6;
-    // background-image: url("../../images/careers/ad.png");
     background-image: url("../../images/careers/bg_mask_mob.png");
+    background-size: cover;
+    background-position: center;
     padding: 0 1.5em;
-    clip-path: polygon(0 0, 100% 40px, 100% 100%, 0 99%);
+    margin-bottom: -1em;
+    padding-bottom: 7em;
+    clip-path: polygon(0 0, 100% 40px, 100% 100%, 0 96%);
     .working-title {
       font-size: 2.4em;
       .fontbold();
       margin-top: 2.625em;
+      color: #333333;
     }
     .opening-head {
       text-align: center;
@@ -1676,53 +1604,63 @@ ul {
     }
     .openings-cont {
       width: 100%;
-      margin-top: 4em;
-
-      border-radius: 5px;
+      max-width: 91.875em;
+      margin-top: 2.5em;
+      padding: 3em 0;
+      border-radius: 0.5em;
       box-shadow: 0 3px 6px 0 #00000029;
-      background-color: #fff;
-
+      background-color: #ffffff;
+      
       .opening {
-        padding: 4%;
         position: relative;
-        padding-bottom: 40px;
-        padding-bottom: 20px;
         border-bottom: solid 1px #c2c2c2;
-        .btn {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          right: 0.5em;
-          width: 8.5em;
-          height: 3.5em;
-          border: 2px solid #3bb859;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 2em 0;
+        .opening-left{
+          padding-left: 1.5em;
         }
-
+        .opening-right{
+          padding-right: 1.5em;
+        }
         .title {
-          // font-size: 1.6em;
-          // font-weight: normal;
-          // font-stretch: normal;
-          // font-style: normal;
-          // line-height: 1.75;
-          // letter-spacing: 0.29px;
-          .mf16();
-          .fontreg();
-          text-align: left;
+          font-size: 1.6em;
+          letter-spacing: 0.29px;
+          line-height: 1.5em;
+          // text-align: left;
           color: #0bb443;
-          width: 100%;
-          max-width: 62%;
+          .fontreg();
         }
         .desc {
-          font-size: 14px;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 2.21;
-          letter-spacing: 0.25px;
-          text-align: left;
           color: #333333;
-          // text-decoration: underline;
+          font-size: 1.4em;
+          letter-spacing: 0.25px;
+          line-height: 3.214em;
+          .fontreg();
         }
+        .desc_span{
+          cursor: pointer;
+          border-bottom: 1px solid #000;
+        }
+      }
+      .opening:nth-child(1){
+       padding-top: 0; 
+      }
+      .opening:nth-child(5){
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4em;
+        letter-spacing: 0.42px;
+        line-height: 1.571em;
+        padding: 0.857em 0;
+        max-width: 9.571em;
+        max-height: 3.000em;
       }
     }
     .working-desc {
@@ -1737,28 +1675,29 @@ ul {
         height: 100%;
       }
       img {
-        width: 1em;
-        height: 1em;
+        width: 1.286em;
+        height: 1.286em;
         position: absolute;
         left: 1.2em;
-        top: 1em;
+        top: 0.85em;
       }
       input {
         width: 100%;
-        padding-left: 3em;
+        padding-left: 3.5em;
         border: none;
-        border-radius: 0.4em;
+        border-radius: 0.357em;
         .bShadow3616();
         background-color: #ffffff;
         height: 100%;
       }
       input::placeholder {
         color: #b3b3b3;
+        font-size: 1.2em;
       }
     }
   }
   .careersec7 {
-    padding: 0px 2em;
+    // padding: 0px 2em;
     .drop-cv-container > div {
       flex-direction: column;
       width: 100%;
@@ -1771,6 +1710,7 @@ ul {
         letter-spacing: normal;
         text-align: center;
         color: #333333;
+        margin-top: 1.1em;
       }
       .desc {
         font-size: 16px;
@@ -1783,7 +1723,8 @@ ul {
         color: #333333;
       }
       p {
-        font-size: 14px;
+        font-size: 1.6em !important;
+        margin-top: 0.688em !important;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -1791,6 +1732,9 @@ ul {
         letter-spacing: 0.25px;
         text-align: left;
         color: #494949;
+      }
+      .cv-btn{
+        margin-bottom: 3.2em;
       }
       button {
         font-size: 1.4em;
@@ -1810,6 +1754,11 @@ ul {
         padding: 10px 20px;
       }
     }
+     .drop-cv-container > div #drop-cv-form .cv-file-input + label{
+      max-width: 100%;
+      max-height: 5.5em;
+    }
+
   }
   .thankyouTxt {
     .f18();
@@ -1836,9 +1785,8 @@ ul {
       display: flex;
       flex-wrap: wrap;
       padding: 0px 15px 0px 15px;
-      .floating-label {
-        // top: 1.7em;
-      }
+      padding-bottom: 3.2em;
+     
       input {
         font-size: 16px;
         font-weight: normal;
@@ -1850,17 +1798,6 @@ ul {
         color: #595959;
       }
       button {
-        // width: 117px;
-        // height: 38px;
-        // padding: 7px 30px;
-        // border-radius: 100px;
-        // font-size: 14px;
-        // font-weight: normal;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 1.57;
-        // letter-spacing: 0.42px;
-        // yoo
         background-color: #333333;
         margin-right: auto;
         box-shadow: 0 9px 12px 0 rgb(59 184 89 / 30%);
@@ -1999,6 +1936,7 @@ ul {
       letter-spacing: normal;
       text-align: center;
       color: #333333;
+      .fontbold();
     }
     .job-apply-body {
       input {
@@ -2029,10 +1967,7 @@ ul {
         }
       }
     }
-    .job-desc-sub-head {
-    }
-    .job-desc-sub-desc {
-    }
+  
   }
   .job-desc-modal {
     .job-desc-head {
@@ -2049,10 +1984,11 @@ ul {
       .fontbold();
     }
     .modal-header .close {
-      font-size: 3em;
+      font-size: 4em;
+      right: 0.2em;
     }
     .job-desc-resp-head {
-      font-size: 15px;
+      font-size: 1.6em;
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
@@ -2060,6 +1996,7 @@ ul {
       letter-spacing: 0.45px;
       text-align: left;
       color: #0bb443;
+      // padding-left: 0.3em;
     }
     .job-desc-sub-head {
       font-size: 12px;
@@ -2085,8 +2022,78 @@ ul {
     font-size: 1.8em !important;
   }
   .job-desc-modal .job-desc-resp-head {
-    padding-left: 0.5em;
+    padding-left: 1.1em;
   }
+  .job-apply-modal .job-apply-body-cont .resume > p span{
+    font-size: 1.7em;
+    color: #595959;
+  }
+  .job-apply-modal .job-apply-body-cont {
+
+    .resume{
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 3.5em;
+      
+      .addFileSpan{
+        border: 1px dashed #DDDDDD;
+        padding: 0.2em 0.7em;
+        border-radius: 0.5em;
+        max-width: 10.8em;
+        margin-top: 0.7em;
+        display: inline-block;
+        font-size: 0.7em;
+      }
+      p{
+    border-bottom: 2px solid #DDDDDD;
+
+        padding-bottom: 1em;
+        color: #525252;
+        font-family: Merriweather Sans;
+        span{
+          font-size: 0.8em;
+        }
+        .outerSpan{
+          color: #595959;
+          .fontbold();
+        }
+        .innerSpan{
+          font-size: 1.6em;
+          // color: #595959;
+        }
+      }
+    }
+    .dropcvfilenamediv{
+      font-size: 1.3em;
+    }
+    .size-alert{
+      font-size: 1.4em;
+    }
+  }
+  .job-apply-modal .job-apply-body input{
+    border-bottom: 2px solid #DDDDDD;
+  }
+  .user-input-wrp {
+    margin-top: 3em;
+}
+.submit.jobSubmitDiv{
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+}
+.modal-dialog-centered.modal-dialog-scrollable .modal-content {
+  max-height: 72.5em;
+  max-width: 98%;
+}
+.modal-header{
+  border-bottom: none;
+}
+// .addFileSpan{
+//   img{
+//     max-width: 18px;
+//     height: 15px;
+//   }
+// }
 }
 
 @media (max-width: 480px) {
@@ -2213,6 +2220,7 @@ ul {
       letter-spacing: normal;
       text-align: center;
       color: #333333;
+      // .fontbold();
     }
     .row {
       width: 100%;
@@ -2299,6 +2307,7 @@ ul {
     max-width: 100%;
   }
   .careersec7 {
+    padding: 5.2em 1.5em 5.2em 1.5em;
     .desc {
       margin-top: 3em;
     }
@@ -2314,7 +2323,7 @@ ul {
     font-size: 2em !important;
   }
   .modal-body {
-    padding: 1rem 0.3rem;
+    padding: 0 0.3rem;
   }
   .job-desc-modal .job-desc-sub-desc {
     padding: 0.5em 1em;
