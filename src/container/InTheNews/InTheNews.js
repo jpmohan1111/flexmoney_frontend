@@ -385,6 +385,7 @@ const AboutUs = (props) => {
   const [featuredNewsDate, setFeaturedNewsDate] = useState("");
   const [featuredNewsSummary, setFeaturedNewsSummary] = useState("");
   const [featuredNewsImageUrl, setFeaturedNewsImageUrl] = useState("");
+  const [featuredNewsId, setFeaturedNewsId] = useState("");
 
   const fetchNews = (pageNum) => {
     fetch(
@@ -475,6 +476,10 @@ const AboutUs = (props) => {
         setNewsYears(data.items);
       });
   };
+
+  const featuredNewsClick = () => {
+    window.open(`/in-the-news/${featuredNewsId}`, "_self");
+  };
   const monthNames = [
     "January",
     "February",
@@ -507,6 +512,7 @@ const AboutUs = (props) => {
       .then((data) => {
         console.log(data);
         let featuredNews = data.items[0];
+        if (!featuredNews) return;
         featuredNews.date = new Date(featuredNews.date);
         if (featuredNews) {
           setFeaturedNewsTitle(featuredNews.title);
@@ -519,6 +525,7 @@ const AboutUs = (props) => {
           setFeaturedNewsImageUrl(
             `${data.url_origin}/${featuredNews.uploadedFile.key}`
           );
+          setFeaturedNewsId(featuredNews._id);
         }
       });
   };
@@ -680,7 +687,7 @@ const AboutUs = (props) => {
           </div>
         </div>
       </section>
-      <section className="main-news">
+      <section className="main-news" onClick={featuredNewsClick}>
         <div className="details">
           {width > 480 ? (
             <div className="title">
