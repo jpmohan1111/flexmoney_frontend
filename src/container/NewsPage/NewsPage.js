@@ -643,7 +643,10 @@ const AboutUs = (props) => {
         </p> */}
         {parse(newsContent)}
       </section>
-      <section className="news-footer">{newsList}</section>
+      <section className="news-footer">
+        <div className="more-articles">More Articles</div>
+        <div className="articles">{newsList}</div>
+      </section>
     </>
   );
 };
