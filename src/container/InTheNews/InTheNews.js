@@ -719,7 +719,7 @@ const AboutUs = (props) => {
           <select onChange={categoryChange}>
             <option value="all">All posts</option>
             {newsCategories.map((cat) => {
-              return <option value={cat}>{cat}</option>;
+              return <option value={cat.name}>{cat.name}</option>;
             })}
           </select>
           <select onChange={yearChange}>
