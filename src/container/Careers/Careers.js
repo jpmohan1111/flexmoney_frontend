@@ -282,6 +282,7 @@ const Careers = (props) => {
   const [jobApplyInView, setJobApplyInView] = useState("");
   const [loading, setloading] = useState(false);
   const [dropCvFileName, setDropCvFileName] = useState("");
+  const [dropApplyFileName, setDropApplyFileName] = useState("");
 
   const [name, setname] = useState("");
   const [nameerr, setnameerr] = useState("");
@@ -329,25 +330,27 @@ const Careers = (props) => {
         setCurrJobDescPage(pageNum);
       });
   };
-  const jobDescListPageClick = (e) => {
-    const pageNum = e.selected + 1;
-    console.log(pageNum);
+  const jobDescListPageClick = (e, num) => {
+    const pageNum = num || e.selected + 1;
+
     if (pageNum < 1 || pageNum > totalJobDescCount) return;
-    console.log(pageNum);
+
     fetchJobDesc(pageNum);
   };
   const dropCvFileChosen = (e) => {
+    if (!e.target.files[0]) return;
     setFileerr("");
-    console.log(e);
     console.log(e.target.files[0].name);
     let fileName = e.target.files[0].name;
     let dot = fileName.lastIndexOf(".") + 1;
     var extFile = fileName.substr(dot, fileName.length).toLowerCase();
+    setDropCvFileName(e.target.files[0].name);
+    setNofileErr("");
     if (!["pdf", "doc", "docx"].includes(extFile)) {
       setFileSizealert("File format not valid");
       return;
     }
-    setDropCvFileName(e.target.files[0].name);
+
     setNofileErr("");
     if (e.target.files[0].size > 1000000) {
       setFileSizealert("file size more than 1 MB!");
@@ -355,30 +358,25 @@ const Careers = (props) => {
     } else setFileSizealert("");
   };
   const handleJobApplyFileChosen = (e) => {
+    if (!e.target.files[0]) return;
     setFileerr("");
-    console.log(e);
     console.log(e.target.files[0].name);
     console.log(e.target.files[0].size);
     let fileName = e.target.files[0].name;
     let dot = fileName.lastIndexOf(".") + 1;
     var extFile = fileName.substr(dot, fileName.length).toLowerCase();
+    setDropApplyFileName(e.target.files[0].name);
+    setNofileErr("");
     if (!["pdf", "doc", "docx"].includes(extFile)) {
       setFileSizealert("File format not valid");
       return;
     }
-    setDropCvFileName(e.target.files[0].name);
+
     if (e.target.files[0].size > 1000000) {
       setFileSizealert("file size more than 1 MB!");
       setFileerr("");
       setNofileErr("");
     } else setFileSizealert("");
-  };
-
-  const handleCvFileChosen = (e) => {
-    console.log(e);
-    console.log(e.target.files[0].name);
-    console.log(e.target.files[0].size);
-    setDropCvFileName(e.target.files[0].name);
   };
 
   const handleDescClose = () => setDescShow(false);
@@ -388,13 +386,22 @@ const Careers = (props) => {
 
     setDescShow(true);
   };
+  useEffect(() => {
+    if (!applyShow) {
+      setDropApplyFileName("");
+      setFileSizealert("");
+      setnameerr("");
+      setemailIderr("");
+      setPhoneNumbererr("");
+      setNofileErr("");
+    }
+  }, [applyShow]);
+
   const handleApplyShow = (title) => {
     setJobApplyInView(title);
     setApplyShow(true);
   };
   const handleJobSearch = (evt) => {
-    console.log(evt);
-    console.log(evt.target.value);
     setJobSearchVal(evt.target.value);
     if (evt.target.value == "") {
       fetchJobDesc(1);
@@ -412,7 +419,6 @@ const Careers = (props) => {
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
         setJobDescriptions(result.items);
         if (result.items.length == 0) setNojobsFoundErr(true);
       })
@@ -502,7 +508,7 @@ const Careers = (props) => {
         setPhoneNumbererr("");
       }
     }
-    console.log(fileSizealert);
+
     if (fileSizealert != "") {
       formIsValid = false;
       setFileerr("*Please upload cv");
@@ -520,7 +526,6 @@ const Careers = (props) => {
         //   withCredentials: true,
       })
         .then((response) => {
-          console.log(response);
           if (response.status == 200) {
             setname("");
             setemailId("");
@@ -705,7 +710,7 @@ const Careers = (props) => {
             <span className="desc_span">Job Description</span>{" "}
             <span>
               <i
-                class="fa fa-angle-right"
+                className="fa fa-angle-right"
                 style={{ paddingLeft: "0.2em", fontWeight: "bold" }}
               ></i>
             </span>
@@ -810,13 +815,11 @@ const Careers = (props) => {
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
-              {
-                width > 500 ? (
-                    <img src={bg_ipad} className="bgmobile" />
-                  ): (
-                    <img src={bgmobile} className="bgmobile" />
-                  )
-              }
+              {width < 500 ? (
+                <img src={bgmobile} className="bgmobile" />
+              ) : (
+                <img src={bg_ipad} className="bgmobile" />
+              )}
               <div className="mb_text_container">
                 <div className="title">Careers</div>
                 <div className="career_desc">We are recruiting!</div>
@@ -906,18 +909,22 @@ const Careers = (props) => {
 			  <button>Apply now</button>
 			</div> */}
             {openingsList}
-            {nojobsFoundErr && <div className="no-jobs">No jobs found</div>}
+            {jobDescriptions.length == 0 && (
+              <div className="no-jobs">No jobs found</div>
+            )}
           </div>
 
           {jobSearchVal == "" && (
             <div className="pagination_container">
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8.86"
                 height="14.6"
                 viewBox="0 0 8.86 14.6"
                 className={1 == currJobDescPage ? "disabled" : ""}
-                onClick={() => jobDescListPageClick(currJobDescPage - 1)}
+                onClick={() =>
+                  jobDescListPageClick(undefined, currJobDescPage - 1)
+                }
               >
                 <path
                   id="Icon_awesome-chevron-right"
@@ -926,7 +933,7 @@ const Careers = (props) => {
                   transform="translate(-1.933 -2.648)"
                   fill="#4c4c4c"
                 />
-              </svg>
+              </svg> */}
               {/* {Array.from(Array(Math.ceil(totalJobDescCount / 5)).keys()).map(
                 (page) => {
                   return (
@@ -941,8 +948,44 @@ const Careers = (props) => {
               )} */}
 
               <ReactPaginate
-                previousLabel={"prev"}
-                nextLabel={"next"}
+                previousLabel={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8.86"
+                    height="14.6"
+                    viewBox="0 0 8.86 14.6"
+                    className={1 == currJobDescPage ? "disabled" : ""}
+                  >
+                    <path
+                      id="Icon_awesome-chevron-right"
+                      data-name="Icon awesome-chevron-right"
+                      d="M2.168,10.515l6.5,6.5a.8.8,0,0,0,1.135,0l.758-.758a.8.8,0,0,0,0-1.133L5.41,9.948l5.15-5.174a.8.8,0,0,0,0-1.133L9.8,2.883a.8.8,0,0,0-1.135,0l-6.5,6.5A.8.8,0,0,0,2.168,10.515Z"
+                      transform="translate(-1.933 -2.648)"
+                      fill="#4c4c4c"
+                    />
+                  </svg>
+                }
+                nextLabel={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8.86"
+                    height="14.6"
+                    viewBox="0 0 8.86 14.6"
+                    className={
+                      Math.ceil(totalJobDescCount / 5) == currJobDescPage
+                        ? "disabled"
+                        : ""
+                    }
+                  >
+                    <path
+                      id="Icon_awesome-chevron-right"
+                      data-name="Icon awesome-chevron-right"
+                      d="M10.558,10.515l-6.5,6.5a.8.8,0,0,1-1.135,0l-.758-.758a.8.8,0,0,1,0-1.133L7.316,9.948,2.167,4.774a.8.8,0,0,1,0-1.133l.758-.758a.8.8,0,0,1,1.135,0l6.5,6.5A.8.8,0,0,1,10.558,10.515Z"
+                      transform="translate(-1.933 -2.648)"
+                      fill="#4c4c4c"
+                    />
+                  </svg>
+                }
                 breakLabel={"..."}
                 breakClassName={"break-me"}
                 pageCount={Math.ceil(totalJobDescCount / 5)}
@@ -954,7 +997,7 @@ const Careers = (props) => {
                 activeClassName={"active"}
               />
 
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8.86"
                 height="14.6"
@@ -964,7 +1007,9 @@ const Careers = (props) => {
                     ? "disabled"
                     : ""
                 }
-                onClick={() => jobDescListPageClick(currJobDescPage + 1)}
+                onClick={() =>
+                  jobDescListPageClick(undefined, currJobDescPage + 1)
+                }
               >
                 <path
                   id="Icon_awesome-chevron-right"
@@ -973,7 +1018,7 @@ const Careers = (props) => {
                   transform="translate(-1.933 -2.648)"
                   fill="#4c4c4c"
                 />
-              </svg>
+              </svg> */}
             </div>
           )}
         </Row>
@@ -985,13 +1030,11 @@ const Careers = (props) => {
       >
         <Row className="drop-cv-container wow fadeInUp m-0">
           <div>
-            {
-              width > 1023 ? (
-                <img src={cvImage} className="img-fluid" />
-              ): (
-                <img src={ mbleftimgcv} className="img-fluid" />
-              )
-            }
+            {width > 1023 ? (
+              <img src={cvImage} className="img-fluid" />
+            ) : (
+              <img src={mbleftimgcv} className="img-fluid" />
+            )}
             <div>
               <h2 className="head">Drop your CV here</h2>
               <h4 className="desc">
@@ -1163,6 +1206,7 @@ const Careers = (props) => {
                   <input
                     type="file"
                     className="cv-file-input"
+                    accept=".pdf,.doc,.docx"
                     id="upload"
                     hidden
                     name="resume"
@@ -1179,8 +1223,10 @@ const Careers = (props) => {
                     </span>
                   </label>
                   <p>
-                    {dropCvFileName ? (
-                      <div className="dropcvfilenamediv">{dropCvFileName}</div>
+                    {dropApplyFileName ? (
+                      <div className="dropcvfilenamediv">
+                        {dropApplyFileName}
+                      </div>
                     ) : (
                       <span className="outerSpan">
                         <span className="innerSpan">Resume*</span> (Upload docx
@@ -1189,12 +1235,8 @@ const Careers = (props) => {
                     )}
                   </p>
                 </div>
-                <span className="size-alert" style={{ color: "red" }}>
-                  {fileSizealert}
-                </span>
-                <span className="size-alert" style={{ color: "red" }}>
-                  {nofileErr}
-                </span>
+                <span className="err">{fileSizealert}</span>
+                <span className="err">{nofileErr}</span>
               </Col>
               <Col lg={12}>
                 <div className="submit jobSubmitDiv">

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
 import { Link, NavLink } from "react-router-dom";
 import parse from "html-react-parser";
 import Col from "react-bootstrap/Col";
@@ -374,6 +375,18 @@ const AboutUs = (props) => {
   const [currNewsPage, setCurrNewsPage] = useState(1);
   const [totalNewsCount, setTotalNewsCount] = useState(0);
 
+  const [newsCategories, setNewsCategories] = useState([]);
+  const [newsYears, setNewsYears] = useState([]);
+
+  const [yearselected, setyearselected] = useState("all");
+  const [categorySelected, setcategorySelected] = useState("all");
+
+  const [featuredNewsTitle, setFeaturedNewsTitle] = useState("");
+  const [featuredNewsDate, setFeaturedNewsDate] = useState("");
+  const [featuredNewsSummary, setFeaturedNewsSummary] = useState("");
+  const [featuredNewsImageUrl, setFeaturedNewsImageUrl] = useState("");
+  const [featuredNewsId, setFeaturedNewsId] = useState("");
+
   const fetchNews = (pageNum) => {
     fetch(
       `${process.env.REACT_APP_API_ENDPOINT}/news?count=9&page=${pageNum}`,
@@ -398,7 +411,139 @@ const AboutUs = (props) => {
         setCurrNewsPage(pageNum);
       });
   };
-  const newsListPageClick = (pageNum) => {
+
+  const fetchNews2 = (pageNum, category, year) => {
+    fetch(
+      `${process.env.REACT_APP_API_ENDPOINT}/news2?count=9&page=${pageNum}&category=${category}&year=${year}`,
+      {
+        headers: {
+          accept: "*/*",
+          "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+          "sec-ch-ua":
+            '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+          "sec-ch-ua-mobile": "?0",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "cross-site",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setnews(data.items);
+        setTotalNewsCount(data.totalCount);
+        setCurrNewsPage(1);
+      });
+  };
+
+  const fetchNewsCategories = () => {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/news-categories`, {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+        "sec-ch-ua":
+          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setNewsCategories(data.items);
+      });
+  };
+
+  const fetchNewsYears = () => {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/news-years`, {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+        "sec-ch-ua":
+          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setNewsYears(data.items);
+      });
+  };
+
+  const featuredNewsClick = () => {
+    window.open(`/in-the-news/${featuredNewsId}`, "_self");
+  };
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const fetchFeaturedNews = () => {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/news-featured`, {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9,hi;q=0.8,th;q=0.7,la;q=0.6",
+        "sec-ch-ua":
+          '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        let featuredNews = data.items[0];
+        if (!featuredNews) return;
+        featuredNews.date = new Date(featuredNews.date);
+        if (featuredNews) {
+          setFeaturedNewsTitle(featuredNews.title);
+          setFeaturedNewsDate(
+            `${
+              monthNames[featuredNews.date.getMonth()]
+            } ${featuredNews.date.getDate()}, ${featuredNews.date.getFullYear()}`
+          );
+          setFeaturedNewsSummary(featuredNews.summary);
+          setFeaturedNewsImageUrl(
+            `${data.url_origin}/${featuredNews.uploadedFile.key}`
+          );
+          setFeaturedNewsId(featuredNews._id);
+        }
+      });
+  };
+
+  const categoryChange = (e) => {
+    console.log(e.target.value);
+    setcategorySelected(e.target.value);
+    fetchNews2(1, e.target.value, yearselected);
+  };
+  const yearChange = (e) => {
+    console.log(e.target.value);
+    setyearselected(e.target.value);
+    console.log(yearselected);
+    fetchNews2(1, categorySelected, e.target.value);
+  };
+
+  const newsListPageClick = (e, num) => {
+    const pageNum = num || e.selected + 1;
     if (pageNum < 1 || pageNum > totalNewsCount) return;
     fetchNews(pageNum);
   };
@@ -420,27 +565,11 @@ const AboutUs = (props) => {
     setJobApplyInView(title);
     setApplyShow(true);
   };
-  const handleJobSearch = (evt) => {
-    console.log(evt);
-    console.log(evt.target.value);
-    var requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch(
-      `${process.env.REACT_APP_API_ENDPOINT}/job-search?search=${evt.target.value}`,
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result);
-        setJobDescriptions(result.items);
-      })
-      .catch((error) => console.log("error", error));
-  };
   useEffect(() => {
     fetchNews(currNewsPage);
+    fetchNewsCategories();
+    fetchNewsYears();
+    fetchFeaturedNews();
   }, []);
 
   useEffect(() => {
@@ -460,13 +589,21 @@ const AboutUs = (props) => {
   }, []);
 
   const newsList = news.map((item, i) => {
-    return (
+    return item.external_link ? (
+      <NewsItem
+        title={item.title}
+        date={item.date}
+        description={item.summary}
+        external_link={item.external_link}
+        key={i}
+      />
+    ) : (
       <NavLink to={`/in-the-news/${item._id}`}>
         <NewsItem
           title={item.title}
           date={item.date}
           description={item.summary}
-          link={item.link}
+          external_link={item.external_link}
           key={i}
         />
       </NavLink>
@@ -550,60 +687,47 @@ const AboutUs = (props) => {
           </div>
         </div>
       </section>
-      <section className="main-news">
+      <section className="main-news" onClick={featuredNewsClick}>
         <div className="details">
           {width > 480 ? (
             <div className="title">
-              Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners
+              {/* Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners */}
+              {featuredNewsTitle}
             </div>
           ) : (
             <div className="title">
-              Flexmoney welcomes ICICI Bank to its Merchant Partners
+              {/* Flexmoney welcomes ICICI Bank to its Merchant Partners */}
+              {featuredNewsTitle}
             </div>
           )}
 
-          <div className="date">FEB 21, 2021</div>
-          <div className="desc">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et...
-          </div>
+          <div className="date">{featuredNewsDate}</div>
+          <div className="desc">{featuredNewsSummary}</div>
           <div className="read-more">Read more</div>
         </div>
         <div className="image">
-          <img src={icici} alt="" />
+          <img src={featuredNewsImageUrl} alt="" />
         </div>
       </section>
+
       <section className="newssec2 wow fadeIn">
-        {/* <div className="dropdown-cont">
-          <InputText
-            dropdown
-            list={[
-              {
-                name: "",
-                value: "",
-                notselected: true,
-              },
-              {
-                name: "Merchant",
-                value: "Merchant",
-              },
-              {
-                name: "Lender",
-                value: "Lender",
-              },
-              {
-                name: "Others",
-                value: "Others",
-              },
-            ]}
-            onChange={(e) => setwhoareyou(e.target.value)}
-            title="Who are you?*"
-            id="Who are you?"
-          />
-        </div> */}
-        {newsList}
+        <div className="dropdowns">
+          <select onChange={categoryChange}>
+            <option value="all">All posts</option>
+            {newsCategories.map((cat) => {
+              return <option value={cat}>{cat}</option>;
+            })}
+          </select>
+          <select onChange={yearChange}>
+            <option value="all">All</option>
+            {newsYears.map((year) => {
+              return <option value={year}>{year}</option>;
+            })}
+          </select>
+        </div>
+        <div className="list">{newsList}</div>
         <div className="pagination_container">
-          <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             width="8.86"
             height="14.6"
@@ -648,7 +772,57 @@ const AboutUs = (props) => {
               transform="translate(-1.933 -2.648)"
               fill="#4c4c4c"
             />
-          </svg>
+          </svg> */}
+
+          <ReactPaginate
+            previousLabel={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="8.86"
+                height="14.6"
+                viewBox="0 0 8.86 14.6"
+                className={1 == currNewsPage ? "disabled" : ""}
+              >
+                <path
+                  id="Icon_awesome-chevron-right"
+                  data-name="Icon awesome-chevron-right"
+                  d="M2.168,10.515l6.5,6.5a.8.8,0,0,0,1.135,0l.758-.758a.8.8,0,0,0,0-1.133L5.41,9.948l5.15-5.174a.8.8,0,0,0,0-1.133L9.8,2.883a.8.8,0,0,0-1.135,0l-6.5,6.5A.8.8,0,0,0,2.168,10.515Z"
+                  transform="translate(-1.933 -2.648)"
+                  fill="#4c4c4c"
+                />
+              </svg>
+            }
+            nextLabel={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="8.86"
+                height="14.6"
+                viewBox="0 0 8.86 14.6"
+                className={
+                  Math.ceil(totalNewsCount / 9) == currNewsPage
+                    ? "disabled"
+                    : ""
+                }
+              >
+                <path
+                  id="Icon_awesome-chevron-right"
+                  data-name="Icon awesome-chevron-right"
+                  d="M10.558,10.515l-6.5,6.5a.8.8,0,0,1-1.135,0l-.758-.758a.8.8,0,0,1,0-1.133L7.316,9.948,2.167,4.774a.8.8,0,0,1,0-1.133l.758-.758a.8.8,0,0,1,1.135,0l6.5,6.5A.8.8,0,0,1,10.558,10.515Z"
+                  transform="translate(-1.933 -2.648)"
+                  fill="#4c4c4c"
+                />
+              </svg>
+            }
+            breakLabel={"..."}
+            breakClassName={"break-me"}
+            pageCount={Math.ceil(totalNewsCount / 9)}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={2}
+            onPageChange={newsListPageClick}
+            containerClassName={"pagination"}
+            subContainerClassName={"pages pagination"}
+            activeClassName={"active"}
+          />
         </div>
       </section>
     </>
