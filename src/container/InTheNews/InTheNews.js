@@ -385,7 +385,7 @@ const AboutUs = (props) => {
   const [featuredNewsDate, setFeaturedNewsDate] = useState("");
   const [featuredNewsSummary, setFeaturedNewsSummary] = useState("");
   const [featuredNewsImageUrl, setFeaturedNewsImageUrl] = useState("");
-  const [featuredNewsId, setFeaturedNewsId] = useState("");
+  const [featuredNews, setFeaturedNews] = useState("");
 
   const fetchNews = (pageNum) => {
     fetch(
@@ -478,7 +478,9 @@ const AboutUs = (props) => {
   };
 
   const featuredNewsClick = () => {
-    window.open(`/in-the-news/${featuredNewsId}`, "_self");
+    if (!featuredNews.external_link)
+      window.open(`/in-the-news/${featuredNews._id}`, "_self");
+    else window.open(featuredNews.external_link, "_blaank");
   };
   const monthNames = [
     "January",
@@ -525,7 +527,7 @@ const AboutUs = (props) => {
           setFeaturedNewsImageUrl(
             `${data.url_origin}/${featuredNews.uploadedFile.key}`
           );
-          setFeaturedNewsId(featuredNews._id);
+          setFeaturedNews(featuredNews);
         }
       });
   };
