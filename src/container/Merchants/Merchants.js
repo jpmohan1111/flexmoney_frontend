@@ -72,6 +72,8 @@ import slider1desk from "../../images/merchants/merchants_banner1.jpg";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
 import bg_ipad from "../../images/careers/bg_ipad.png";
+// import bg_ipad from "../../images/careers/bg_ipad_1.png";
+
 import slider1mob from "../../images/merchants/merchants_banner1_mob.jpg";
 
 import sec2logo1 from "../../images/careers/sec2logo1.png";
@@ -297,9 +299,9 @@ var newcareersec1_swiper = new Swiper(".newsec1_swiper.swiper-container", {
   slidesPerView: 1,
   spaceBetween: 0,
   loop: true,
-  // autoplay: {
-  //   delay: 2000,
-  // },
+  autoplay: {
+    delay: 2000,
+  },
   pagination: {
     el: ".newsec1_swiper .swiper-pagination",
     clickable: true,
@@ -309,9 +311,9 @@ var mbnewsec1_swiper = new Swiper(".mbnewsec1_swiper.swiper-container", {
   slidesPerView: 1,
   spaceBetween: 0,
   loop: true,
-  // autoplay: {
-  //   delay: 2000,
-  // },
+  autoplay: {
+    delay: 2000,
+  },
   pagination: {
     el: ".mbnewsec1_swiper .swiper-pagination",
     clickable: true,
@@ -444,12 +446,12 @@ const Lenders = (props) => {
         },
       },
       pagination: {
-        el: ".lendersec5 .swiper-pagination",
+        el: ".m_lendersec5 .swiper-pagination",
         clickable: true,
       },
       navigation: {
-        nextEl: ".lendersec5 .right_arrow",
-        prevEl: ".lendersec5 .left_arrow",
+        nextEl: ".m_lendersec5 .right_arrow",
+        prevEl: ".m_lendersec5 .left_arrow",
       },
     });
   }, []);
@@ -471,7 +473,7 @@ const Lenders = (props) => {
       className="desc_wrapper"
       style={
         index === i
-          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC" }
+          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC", fontWeight: 'bold' }
           : null
       }
       key={i}
@@ -537,7 +539,7 @@ const Lenders = (props) => {
         &nbsp; {">"} &nbsp;Merchants
       </div>
 
-      <section className="newsec1 wow fadeIn">
+      <section className="m_newsec1 wow fadeIn">
         {width > 1023 ? (
           <div className="newsec1_wrapper">
             <div className="newsec1_swiper swiper-container">
@@ -607,7 +609,7 @@ const Lenders = (props) => {
         )}
       </section>
 
-      <div className="lenderssec2 wow fadeInUp">
+      <div className="m_lenderssec2 wow fadeInUp">
         {width > 1023 ? (
           <div className="lendersec2_flex">
             <div className="flex_left">
@@ -676,7 +678,7 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="lendersec5 wow fadeInUp">
+      <div className="m_lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />

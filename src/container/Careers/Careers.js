@@ -96,8 +96,9 @@ import AdvisorItem from "../../component/AdvisorItem/AdvisorItem";
 import slider1desk from "../../images/careers/slider1desk.png";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
-import bg_ipad from "../../images/careers/bg_ipad.png";
+import bg_ipad from "../../images/careers/bg_ipad_1.png";
 import slider1mob from "../../images/careers/slider1mob.png";
+import ipadbanner from "../../images/careers/ipadbanner.jpg";
 
 import sec2logo1 from "../../images/careers/sec2logo1.png";
 import sec2logo2 from "../../images/careers/sec2logo2.png";
@@ -802,13 +803,13 @@ const Careers = (props) => {
             <div className="mbnewsec1_swiper swiper-container">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
+                  <img src={ipadbanner} className="mb_slider_img" />
                 </div>
                 <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
+                  <img src={ipadbanner} className="mb_slider_img" />
                 </div>
                 <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
+                  <img src={ipadbanner} className="mb_slider_img" />
                 </div>
               </div>
               <div className="swiper-pagination"></div>

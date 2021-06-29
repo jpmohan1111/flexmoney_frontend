@@ -60,6 +60,7 @@ import slider1desk from "../../images/careers/slider1desk.png";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
 import bg_ipad from "../../images/careers/bg_ipad.png";
+// import bg_ipad from "../../images/careers/bg_ipad_1.png";
 import slider1mob from "../../images/careers/slider1mob.png";
 
 //-----------------------end of images imports ------------------------//
@@ -406,7 +407,7 @@ const Lenders = (props) => {
       className="desc_wrapper"
       style={
         index === i
-          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC" }
+          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC", fontWeight: 'bold' }
           : null
       }
       key={i}
@@ -472,7 +473,7 @@ const Lenders = (props) => {
         &nbsp; {">"} &nbsp;Lenders
       </div>
 
-      <section className="newsec1 wow fadeIn">
+      <section className="l_newsec1 wow fadeIn">
         {width > 1023 ? (
           <div className="newsec1_wrapper">
             <div className="newsec1_swiper swiper-container">
