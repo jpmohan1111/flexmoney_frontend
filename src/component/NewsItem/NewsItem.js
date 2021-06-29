@@ -26,7 +26,7 @@ const LenderItem = (props) => {
   };
   return (
     <div className="c-p newsItemContainer" onClick={externalLinkClick}>
-      <div className="lenderItem d-f f-c p-r">
+      <div className="lenderItem d-f f-c p-r j-c">
         <img src={props.img} className="hexagone" />
 
         <div className="itemTitle c-p">{props.title}</div>

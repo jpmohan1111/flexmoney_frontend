@@ -90,7 +90,7 @@
 
 @media (min-width: 834px) {
   .newssec1 {
-    height: 70vh;
+    height: 75vh;
     .main-head {
       position: relative;
       top: 10%;
@@ -99,15 +99,15 @@
     }
   }
   .main-news-section {
-    height: 150px;
+    height: 17em;
   }
   .main-news {
     cursor: pointer;
     display: flex;
-    width: 55%;
+    width: 70%;
     position: relative;
     left: 50%;
-    transform: translateX(-50%) translateY(-70%);
+    transform: translateX(-50%) translateY(-65%);
 
     box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.16);
     border-radius: 20px;
@@ -121,6 +121,9 @@
       padding: 30px;
       max-width: 50%;
       min-width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       .title {
         font-size: 2em;
@@ -134,7 +137,7 @@
       }
       .date,
       .read-more {
-        font-size: 1em;
+        font-size: 1.3em;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -162,6 +165,10 @@
     .image {
       width: 50%;
       max-width: 50%;
+      img {
+        width: 100%;
+        height: auto;
+      }
       //   background-image: url("../../images/inthenews/innews_bg.png");
     }
   }
@@ -499,7 +506,7 @@
     .list {
       display: flex;
       flex-wrap: wrap;
-      padding: 0px 100px 0px 100px;
+      padding: 0px 5em;
       justify-content: space-around;
       background-color: #eeeeee;
       position: relative;

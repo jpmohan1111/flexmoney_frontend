@@ -685,9 +685,7 @@ const AboutUs = (props) => {
           <div className="title">In the News</div>
           <div className="desc">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et.Lorem ipsum dolor sit
-            amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt ut labore et.
+            nonumy eirmod tempor invidunt ut
           </div>
         </div>
       </section>
