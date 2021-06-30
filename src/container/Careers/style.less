@@ -714,7 +714,8 @@ ul {
 .careersec7 {
   padding: 5.2625em 6.25em 5.938em;
   .drop-cv-container {
-    // border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
     > div {
@@ -725,6 +726,8 @@ ul {
       }
       img {
         width: 53.75em;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
       }
       .head {
         margin-bottom: 0;
@@ -1741,9 +1744,12 @@ ul {
   }
   .careersec7 {
     // padding: 0px 2em;
-    // .drop-cv-container {
-      // border-radius: 10px;
-    // }
+    .drop-cv-container {
+      border-radius: 10px;
+      border-top-left-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+    }
     .drop-cv-container > div {
       flex-direction: column;
       width: 100%;
@@ -1794,6 +1800,11 @@ ul {
       }
       img {
         width: 100%;
+        border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+
+    border-bottom-left-radius: 0;
+
       }
       > div {
         text-align: center;
