@@ -56,13 +56,9 @@ import leftquoteBlur from "../../images/lenders/left-quote.png";
 import footerbg from "../../images/lenders/footerbg.png";
 import footerrightimg from "../../images/lenders/footerrightimg.png";
 import mbfooterbg from "../../images/lenders/mbfooterbg.png";
-import slider1desk from "../../images/careers/slider1desk.png";
-import bgdesk from "../../images/careers/bgdesk.png";
-import bgmobile from "../../images/careers/bgmobile.png";
-import bg_ipad from "../../images/careers/bg_ipad.png";
-// import bg_ipad from "../../images/careers/bg_ipad_1.png";
-import slider1mob from "../../images/careers/slider1mob.png";
-
+import bgdesk from "../../images/lenders/bgdesk.png";
+import bgmobile from "../../images/lenders/bgmobile.png";
+import bg_ipad from "../../images/lenders/bg_ipad.png";
 
 import bottombg_mob from "../../images/lenders/bottombg_mob.png";
 import bottombg_desktop from "../../images/lenders/bottombg_desktop.png";
