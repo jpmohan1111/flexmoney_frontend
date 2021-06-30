@@ -8,7 +8,8 @@
   position: relative;
 
   //   height: 46.875em;
-  background-image: url("../../images/aboutus/bannerbg480.png");
+  //   background-image: url("../../images/aboutus/bannerbg480.png");
+  background-image: url("../../images/inthenews/inner_page_banner.jpeg");
   background-position: center;
   background-size: cover;
 
@@ -225,6 +226,7 @@
     // display: flex;
     padding: 20px 100px 100px 100px;
     background-image: url("../../images/inthenews/news_footer_bg.png");
+    // background-image: url("../../images/inthenews/inner_page_banner.jpeg");
     background-size: 100%;
     min-height: 500px;
     // align-items: flex-end;
@@ -246,6 +248,7 @@
     }
     .articles {
       display: flex;
+      justify-content: space-around;
       > a {
         display: contents;
         text-decoration: none;
@@ -255,7 +258,8 @@
 }
 @media (max-width: 834px) {
   .newspage1 {
-    background-image: url("../../images/aboutus/bannerbg480.png");
+    // background-image: url("../../images/aboutus/bannerbg480.png");
+    background-image: url("../../images/inthenews/inner_page_banner.jpeg");
     background-position: center;
     background-size: cover;
     // .mbPadding();
@@ -327,7 +331,8 @@
 }
 @media (max-width: 480px) {
   .newspage1 {
-    background-image: url("../../images/aboutus/bannerbg480.png");
+    // background-image: url("../../images/aboutus/bannerbg480.png");
+    background-image: url("../../images/inthenews/inner_page_banner.jpeg");
     clip-path: url(#myCurve);
     padding: 0px 1.25em;
     .breadcrumbFlex {
@@ -342,7 +347,7 @@
     .title {
       font-size: 2em;
       color: #fff;
-      top: 10px;
+      top: 60px;
       position: relative;
     }
     .date {
@@ -363,7 +368,8 @@
       text-transform: uppercase;
     }
     .main-head {
-      //   position: relative;
+      min-height: 40vh;
+
       .back-btn {
         position: absolute;
         top: 8em;
@@ -418,6 +424,18 @@
   }
   .news-footer {
     padding: 0px 10px;
+    background-image: url("../../images/inthenews/news_footer_bg.png");
+    .more-articles {
+      font-size: 24px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.92;
+      letter-spacing: normal;
+      text-align: left;
+      color: #333333;
+      padding-left: 15px;
+    }
     > a,
     a:hover {
       display: contents;
