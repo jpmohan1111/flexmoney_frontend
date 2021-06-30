@@ -729,7 +729,10 @@ const AboutUs = (props) => {
             })}
           </select>
         </div>
-        <div className="list">{newsList}</div>
+        <div className="list">
+          {newsList}
+          {newsList.length == 0 && <div className="no-news">No news found</div>}
+        </div>
         <div className="pagination_container">
           {/* <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -792,7 +795,7 @@ const AboutUs = (props) => {
                   data-name="Icon awesome-chevron-right"
                   d="M2.168,10.515l6.5,6.5a.8.8,0,0,0,1.135,0l.758-.758a.8.8,0,0,0,0-1.133L5.41,9.948l5.15-5.174a.8.8,0,0,0,0-1.133L9.8,2.883a.8.8,0,0,0-1.135,0l-6.5,6.5A.8.8,0,0,0,2.168,10.515Z"
                   transform="translate(-1.933 -2.648)"
-                  fill="#3bb859"
+                  fill="#333333"
                 />
               </svg>
             }
@@ -813,7 +816,7 @@ const AboutUs = (props) => {
                   data-name="Icon awesome-chevron-right"
                   d="M10.558,10.515l-6.5,6.5a.8.8,0,0,1-1.135,0l-.758-.758a.8.8,0,0,1,0-1.133L7.316,9.948,2.167,4.774a.8.8,0,0,1,0-1.133l.758-.758a.8.8,0,0,1,1.135,0l6.5,6.5A.8.8,0,0,1,10.558,10.515Z"
                   transform="translate(-1.933 -2.648)"
-                  fill="#3bb859"
+                  fill="#333333"
                 />
               </svg>
             }
