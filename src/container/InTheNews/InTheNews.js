@@ -731,7 +731,11 @@ const AboutUs = (props) => {
         </div>
         <div className="list">
           {newsList}
-          {newsList.length == 0 && <div className="no-news">No news found</div>}
+          {newsList.length == 0 && (
+            <div className="no-news">
+              No result found. Please do another search
+            </div>
+          )}
         </div>
         <div className="pagination_container">
           {/* <svg
