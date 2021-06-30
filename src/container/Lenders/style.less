@@ -558,6 +558,7 @@
 // --------------------------------section 6--------------------------------//
 .lenderssec6 {
   position: relative;
+  margin-top: 6em;
   .footer_right_img {
     position: absolute;
     width: 28.063em;
@@ -567,7 +568,7 @@
   }
   .text_wrapper {
     position: absolute;
-    top: 9.48em;
+    top: 7.48em;
     left: 6.375em;
   }
   .title {
@@ -577,18 +578,19 @@
     letter-spacing: 0px;
     line-height: 2.167em;
     margin-bottom: 0;
-    color: #ffffff;
+    color: #333333;
   }
 
   .desc {
     font-family: "Merriweather Sans";
-    font-weight: normal;
+    font-weight: 500;
     font-size: 1.563em;
     letter-spacing: 0px;
     line-height: 1.8em;
     color: #ffffff;
-    margin-top: 1.28em;
     max-width: 34.32em;
+    color: #333333;
+    // margin-top: 1.28em;
   }
   .lenderssec6_btn {
     font-family: "Merriweather Sans";
@@ -596,7 +598,8 @@
     font-size: 1.563em;
     letter-spacing: 0px;
     line-height: 1.8em;
-    color: #0dad46;
+    color: #ffffff;
+    background-color: #0dad46;
     width: 14.56em;
     height: 3em;
     margin-top: 1.8em;
@@ -626,6 +629,11 @@
   .lenderssec4 {
     height: 45.563em;
     padding: 12em 0 6em 0;
+  }
+}
+@media (max-width: 1600px){
+  .lenderssec2 .flex_right img {
+    max-width: 73%;
   }
 }
 @media (max-width: 1910px) {
@@ -667,7 +675,7 @@
 }
 @media (max-width: 1280px) {
   .lenderssec2 .flex_right img {
-    max-width: 100%;
+    max-width: 87%;
   }
 }
 @media (max-width: 1024px) {
@@ -676,6 +684,10 @@
       height: calc(100vh - 82.625em);
     }
   }
+  .lenderssec2 .flex_right img {
+    max-width: 100%;
+  }
+
   .l_newsec1 {
     .newsec1_wrapper {
       height: calc(100vh - 82.625em);
@@ -847,6 +859,7 @@
   }
 
   .lenderssec6 {
+    margin-top: 5em;
     .text_wrapper {
       top: 0;
       left: 1.6em;
