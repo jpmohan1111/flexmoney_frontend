@@ -65,9 +65,12 @@ import leftquote from "../../images/merchants/leftquote.svg";
 import footerbg from "../../images/merchants/footerbg.png";
 import footerrightimg from "../../images/merchants/footerrightimg.png";
 import mbfooterbg from "../../images/merchants/mbfooterbg.png";
+import bottombg_mob from "../../images/lenders/bottombg_mob.png";
+import bottombg_desktop from "../../images/lenders/bottombg_desktop.png";
+
 //-----------------------end of images imports ------------------------//
 
-// -----------------------vijay image imports start----------------
+// -----------------------vijay career image imports start----------------
 import slider1desk from "../../images/merchants/merchants_banner1.jpg";
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
@@ -80,7 +83,7 @@ import sec2logo1 from "../../images/careers/sec2logo1.png";
 import sec2logo2 from "../../images/careers/sec2logo2.png";
 import sec2logo3 from "../../images/careers/sec2logo3.png";
 
-// -----------------------vijay image imports end ----------------
+// -----------------------vijay career image imports end ----------------
 
 Swiper.use([
   Navigation,
@@ -654,7 +657,7 @@ const Lenders = (props) => {
           <div className="ms4_counting_num">
             <div className="ms4_cn_left">
               <img className="ms4_img_left" src={people2} alt="" />
-              <CounterContainerItem colorClass="cw" span="M+" count="28" />
+              <CounterContainerItem colorClass="cw" span="M+" count="25" />
               <p>Credit Lines</p>
             </div>
 
@@ -678,11 +681,11 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="m_lendersec5 wow fadeInUp">
+      {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
+      {/* <div className="m_lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />
-            {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
 
             <div className="quote_content">
               <div className="title">What our Merchant Partners say</div>
@@ -711,14 +714,14 @@ const Lenders = (props) => {
             </div>
           </Col>
         </Row>
-      </div>
+      </div> */}
 
       <div className="m_lenderssec6 wow fadeInUp">
         <div className="lenderssec6_wrapper">
           {width > 1023 ? (
-            <img src={footerbg} className="footerbg fluid" />
+            <img src={bottombg_desktop} className="footerbg fluid" />
           ) : (
-            <img src={mbfooterbg} className="mbfooter_bg fluid" />
+            <img src={bottombg_mob} className="mbfooter_bg fluid" />
           )}
           {width > 1023 ? (
             <img src={footerrightimg} className="footer_right_img" />

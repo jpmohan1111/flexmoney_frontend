@@ -63,6 +63,10 @@ import bg_ipad from "../../images/careers/bg_ipad.png";
 // import bg_ipad from "../../images/careers/bg_ipad_1.png";
 import slider1mob from "../../images/careers/slider1mob.png";
 
+
+import bottombg_mob from "../../images/lenders/bottombg_mob.png";
+import bottombg_desktop from "../../images/lenders/bottombg_desktop.png";
+
 //-----------------------end of images imports ------------------------//
 
 Swiper.use([
@@ -592,11 +596,11 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="lendersec5 wow fadeInUp">
+            {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
+      {/* <div className="lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />
-            {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
 
             <div className="quote_content">
               <div className="title">What our Lending Partners say</div>
@@ -625,14 +629,14 @@ const Lenders = (props) => {
             </div>
           </Col>
         </Row>
-      </div>
+      </div> */}
 
       <div className="lenderssec6 wow fadeInUp">
         <div className="lenderssec6_wrapper">
           {width > 1023 ? (
-            <img src={footerbg} className="footerbg fluid" />
+            <img src={bottombg_desktop} className="footerbg fluid" />
           ) : (
-            <img src={mbfooterbg} className="mbfooter_bg fluid" />
+            <img src={bottombg_mob} className="mbfooter_bg fluid" />
           )}
           {width > 1023 ? (
             <img src={footerrightimg} className="footer_right_img" />
