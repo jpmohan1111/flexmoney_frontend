@@ -386,10 +386,12 @@ const AboutUs = (props) => {
   const [featuredNewsSummary, setFeaturedNewsSummary] = useState("");
   const [featuredNewsImageUrl, setFeaturedNewsImageUrl] = useState("");
   const [featuredNews, setFeaturedNews] = useState("");
+  const newsPerPage = width > 480 ? 9 : 3;
+  console.log(newsPerPage);
 
   const fetchNews = (pageNum) => {
     fetch(
-      `${process.env.REACT_APP_API_ENDPOINT}/news?count=9&page=${pageNum}`,
+      `${process.env.REACT_APP_API_ENDPOINT}/news?count=${newsPerPage}&page=${pageNum}`,
       {
         headers: {
           accept: "*/*",
@@ -414,7 +416,7 @@ const AboutUs = (props) => {
 
   const fetchNews2 = (pageNum, category, year) => {
     fetch(
-      `${process.env.REACT_APP_API_ENDPOINT}/news2?count=9&page=${pageNum}&category=${category}&year=${year}`,
+      `${process.env.REACT_APP_API_ENDPOINT}/news2?count=${newsPerPage}&page=${pageNum}&category=${category}&year=${year}`,
       {
         headers: {
           accept: "*/*",
@@ -810,7 +812,7 @@ const AboutUs = (props) => {
                 height="14.6"
                 viewBox="0 0 8.86 14.6"
                 className={
-                  Math.ceil(totalNewsCount / 9) == currNewsPage
+                  Math.ceil(totalNewsCount / newsPerPage) == currNewsPage
                     ? "disabled"
                     : ""
                 }
@@ -826,7 +828,7 @@ const AboutUs = (props) => {
             }
             breakLabel={"..."}
             breakClassName={"break-me"}
-            pageCount={Math.ceil(totalNewsCount / 9)}
+            pageCount={Math.ceil(totalNewsCount / newsPerPage)}
             marginPagesDisplayed={2}
             pageRangeDisplayed={2}
             onPageChange={newsListPageClick}

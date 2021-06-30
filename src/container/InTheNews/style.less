@@ -368,6 +368,7 @@
     // .mbPadding();
     min-height: 50vh;
     padding: 0px 20px;
+
     .main-head {
       top: 50px;
       position: relative;
@@ -398,6 +399,9 @@
       margin-left: -1.5em;
       margin-right: -1.5em;
     }
+  }
+  .main-news-section {
+    max-height: 490px;
   }
   .newssec2 {
     padding: 0px;
@@ -452,7 +456,7 @@
 
         border: none;
         background-color: #ffffff;
-        margin: 20px 0px;
+        // margin: 10px 0px;
         font-size: 25px;
         font-weight: normal;
         font-stretch: normal;
@@ -467,6 +471,12 @@
         height: 50px;
         box-shadow: 0 6px 11px 0 #00000014;
         padding-left: 1em;
+        &:first-child {
+          margin: 20px 0px 0px 0px;
+        }
+        &:last-child {
+          margin: 15px 0px 20px 0px;
+        }
       }
     }
   }
