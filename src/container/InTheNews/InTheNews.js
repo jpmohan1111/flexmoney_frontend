@@ -777,7 +777,7 @@ const AboutUs = (props) => {
               fill="#4c4c4c"
             />
           </svg> */}
-          <span className="extreme-end-page">First</span>
+          {/* <span className="extreme-end-page">First</span> */}
           <ReactPaginate
             previousLabel={
               <svg
@@ -827,7 +827,7 @@ const AboutUs = (props) => {
             subContainerClassName={"pages pagination"}
             activeClassName={"active"}
           />
-          <span className="extreme-end-page">Last</span>
+          {/* <span className="extreme-end-page">Last</span> */}
         </div>
       </section>
     </>
