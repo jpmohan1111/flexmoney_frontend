@@ -334,7 +334,7 @@ const Lenders = (props) => {
       spaceBetween: 0,
       loop: true,
       autoplay: {
-        delay: 2000,
+        delay: 3000,
       },
       pagination: {
         el: ".newsec1_wrapper .swiper-pagination",
@@ -346,7 +346,7 @@ const Lenders = (props) => {
       spaceBetween: 0,
       loop: true,
       autoplay: {
-        delay: 2000,
+        delay: 3000,
       },
       pagination: {
         el: ".mbnewsec1_swiper .swiper-pagination",
@@ -409,7 +409,7 @@ const Lenders = (props) => {
         loop: true,
         autoHeight: false,
         autoplay: {
-          delay: 2000,
+          delay: 5000,
         },
         pagination: {
           el: ".mblenderssec2_swiper .swiper-pagination",
