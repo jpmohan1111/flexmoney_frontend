@@ -151,6 +151,8 @@
       font-size: 2.4em;
       line-height: 1.5em;
       letter-spacing: 0;
+      min-height: 3em;
+      max-height: 3em;
 
       //   padding-top: 2.063em;
     }
@@ -215,5 +217,19 @@
     padding-top: 1em;
     padding-bottom: 1.214em;
     min-height: unset;
+  }
+}
+
+@media (min-width: 1920px) {
+  .newsItemContainer .lenderItem {
+    width: 540px;
+    height: 350px;
+    .itemTitle {
+      min-height: 2em;
+      line-height: 1.5;
+    }
+    .itemDescrip {
+      font-size: 18px;
+    }
   }
 }
