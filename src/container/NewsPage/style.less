@@ -331,6 +331,8 @@
 }
 @media (max-width: 480px) {
   .newspage1 {
+    width: 375px;
+    height: 310px;
     // background-image: url("../../images/aboutus/bannerbg480.png");
     background-image: url("../../images/inthenews/inner_page_banner.jpeg");
     clip-path: url(#myCurve);
@@ -345,16 +347,19 @@
       text-align: center;
     }
     .title {
-      font-size: 2em;
+      font-size: 2.4em;
+      line-height: 1.5em;
+      margin-bottom: 0.75em;
       color: #fff;
-      top: 60px;
+      top: 0px;
       position: relative;
+      width: 80%;
     }
     .date {
-      position: absolute;
-      bottom: 2em;
-      left: 50%;
-      transform: translateX(-50%);
+      //   position: absolute;
+      //   bottom: 2em;
+      //   left: 50%;
+      //   transform: translateX(-50%);
 
       font-size: 1.5em;
       font-weight: normal;
@@ -364,17 +369,19 @@
       letter-spacing: normal;
       text-align: center;
       color: #ffffff;
-      margin-top: 2em;
+      //   margin-top: 2em;
       text-transform: uppercase;
     }
     .main-head {
-      min-height: 40vh;
+      //   min-height: 40vh;
 
       .back-btn {
-        position: absolute;
-        top: 8em;
-        left: 20px;
-        font-size: 1em;
+        position: relative;
+        top: 2em;
+        left: 0px;
+        margin-bottom: 21px;
+        margin-top: 30px;
+
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -382,6 +389,9 @@
         text-align: left;
         color: #ffffff;
         cursor: pointer;
+        a {
+          font-size: 14px;
+        }
         a:hover {
           color: #ffffff !important;
         }
@@ -392,23 +402,23 @@
     }
   }
   .newsContent {
-    padding: 20px;
+    padding: 20px 15px;
     ul {
       padding-left: 20px;
       li::marker {
         color: #0bb443 !important;
       }
       li {
-        margin: 20px 0px;
+        // margin: 20px 0px;
       }
     }
     > * {
       padding-left: 20px;
-      font-size: 22px;
+      font-size: 1.6em;
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.8;
+      line-height: 1.625;
     }
     * {
       margin: 0px;
@@ -416,14 +426,16 @@
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.8;
-      letter-spacing: normal;
+      line-height: 1.625;
+      letter-spacing: 0.32px;
       text-align: left;
       color: #333333;
     }
   }
   .news-footer {
     padding: 0px 10px;
+    padding-bottom: 50px;
+    background-color: #eaeaea;
     background-image: url("../../images/inthenews/news_footer_bg.png");
     .more-articles {
       font-size: 24px;
