@@ -507,7 +507,8 @@ const Lenders = (props) => {
         )}
       </section>
 
-      <div className="lenderssec2 wow fadeInUp">
+      <div className="lenderssec2 wow fadeInUp" data-wow-duration="1.5s"
+        data-wow-delay="0.5s">
         {width > 1023 ? (
           <div className="lendersec2_flex wow fadeInUp">
             <div className="flex_left">
@@ -531,7 +532,8 @@ const Lenders = (props) => {
         )}
       </div>
 
-      <div className="lenderssec3 wow fadeInUp">
+      <div className="lenderssec3 wow fadeInUp" data-wow-duration="1.5s"
+        data-wow-delay="0.5s">
         <div className="heading_wrapper">
           <div className="title">Multi-category Merchant EMI Network</div>
           <div className="desc">
@@ -545,7 +547,8 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="lenderssec4 wow fadeInUp">
+      <div className="lenderssec4 wow fadeInUp" data-wow-duration="1s"
+        data-wow-delay="0.5s">
         <div className="heading_wrapper">
           <div className="title">3800+ Merchant Partners</div>
           <div className="desc">

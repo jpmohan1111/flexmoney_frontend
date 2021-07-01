@@ -22,8 +22,12 @@ import Swiper, {
 import bannerimg from "../../images/merchants/bannerimg.png";
 import tabbannerimg from "../../images/merchants/tabbannerimg.png";
 
-import rightimg from "../../images/merchants/rightimg.png";
-import mbrightimg from "../../images/merchants/mbrightimg.svg";
+// import rightimg from "../../images/merchants/rightimg.png";
+// import mbrightimg from "../../images/merchants/mbrightimg.svg";
+import merchantsrightimg1 from "../../images/merchants/merchantsrightimg1.png";
+import merchantsrightimg2 from "../../images/merchants/merchantsrightimg2.png";
+import merchantsrightimg3 from "../../images/merchants/merchantsrightimg3.png";
+
 import graydot from "../../images/merchants/graydot.png";
 import greendot from "../../images/merchants/greendot.png";
 import verticalline from "../../images/merchants/verticalline.png";
@@ -110,18 +114,18 @@ const sectionOnebannerDataArr = [
 const sectionTwoDataArr = [
   {
     desc: "Get access to 25M+ Pre-Approved users across 6 Banks & NBFC with Single Integration",
-    rightImg: rightimg,
-    mbImg: mbrightimg,
+    rightImg: merchantsrightimg1,
+    // mbImg: mbrightimg,
   },
   {
     desc: "Increase Conversion & Order Value with our Smart Eligibility Check API",
-    rightImg: rightimg,
-    mbImg: mbrightimg,
+    rightImg: merchantsrightimg2,
+    // mbImg: mbrightimg,
   },
   {
     desc: "Issue new credit lines to users to complete the transaction. Fully Digital and Paperless experience that takes less than 5 minutes",
-    rightImg: rightimg,
-    mbImg: mbrightimg,
+    rightImg: merchantsrightimg3,
+    // mbImg: mbrightimg,
   },
 ];
 const sectionThreeCardDataArr = [
@@ -488,7 +492,7 @@ const Lenders = (props) => {
   const sectionTwoMbCarouselList = sectionTwoDataArr.map((data, i) => (
     <div className="swiper-slide" key={i}>
       <div className="mbdesc">{data.desc}</div>
-      <img src={data.mbImg} className="mbrightimg" />
+      <img src={data.rightImg} className="mbrightimg" />
     </div>
   ));
 
@@ -589,7 +593,8 @@ const Lenders = (props) => {
         )}
       </section>
 
-      <div className="m_lenderssec2 wow fadeInUp">
+      <div className="m_lenderssec2 wow fadeInUp" data-wow-duration="1.5s"
+        data-wow-delay="0.5s">
         {width > 1023 ? (
           <div className="lendersec2_flex">
             <div className="flex_left">
@@ -613,7 +618,8 @@ const Lenders = (props) => {
         )}
       </div>
 
-      <div className="m_lenderssec4 wow fadeInUp">
+      <div className="m_lenderssec4 wow fadeInUp" data-wow-duration="1.5s"
+        data-wow-delay="0.5s">
         <div className="heading_wrapper">
           <div className="title">Our Lending Partners</div>
         </div>
@@ -623,7 +629,8 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="merchant_section_4 wow fadeInUp">
+      <div className="merchant_section_4 wow fadeInUp" data-wow-duration="1.5s"
+        data-wow-delay="0.5s">
         <div className="ms4_content">
           <div className="ms4_heading">
             <div className="title">Consumers on our Network</div>

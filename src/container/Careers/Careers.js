@@ -848,8 +848,8 @@ const Careers = (props) => {
 
       <section
         className="newsec2 wow fadeInUp"
-        data-wow-duration="2s"
-        data-wow-delay="1s"
+        data-wow-duration="1.5s"
+        data-wow-delay="0.5s"
       >
         <div className="title">Working with Flexmoney</div>
         <div className="desc">
@@ -900,8 +900,8 @@ const Careers = (props) => {
 
       <section
         className="careersec6 wow fadeInUp"
-        data-wow-duration="1s"
-        data-wow-delay="0.8s"
+        data-wow-duration="1.5s"
+        data-wow-delay="0.5s"
       >
         <Row className="m-0 opening-head openings-container wow fadeInUp">
           <Col className="p-0 firstcol" lg={12}>
@@ -1042,8 +1042,8 @@ const Careers = (props) => {
       </section>
       <section
         className="careersec7 wow fadeInUp drop-cv"
-        data-wow-duration="1.3s"
-        data-wow-delay="0.8s"
+        // data-wow-duration="1.3s"
+        // data-wow-delay="0.8s"
       >
         <Row className="drop-cv-container wow fadeInUp m-0">
           <div>
