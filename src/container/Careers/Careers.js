@@ -93,7 +93,13 @@ import TeamMemberItem from "../../component/TeamMemberItem/TeamMemberItem";
 import AdvisorItem from "../../component/AdvisorItem/AdvisorItem";
 
 // -----------------------vijay image imports start----------------
-import slider1desk from "../../images/careers/slider1desk.png";
+import banner1 from "../../images/careers/banner1.jpg";
+import banner2 from "../../images/careers/banner2.jpg";
+import banner3 from "../../images/careers/banner3.jpg";
+import mbbanner1 from "../../images/careers/mbbanner1.jpg";
+import mbbanner2 from "../../images/careers/mbbanner2.jpg";
+import mbbanner3 from "../../images/careers/mbbanner3.jpg";
+
 import bgdesk from "../../images/careers/bgdesk.png";
 import bgmobile from "../../images/careers/bgmobile.png";
 import bg_ipad from "../../images/careers/bg_ipad_1.png";
@@ -103,7 +109,8 @@ import ipadbanner from "../../images/careers/ipadbanner.jpg";
 import sec2logo1 from "../../images/careers/sec2logo1.png";
 import sec2logo2 from "../../images/careers/sec2logo2.png";
 import sec2logo3 from "../../images/careers/sec2logo3.png";
-import mbleftimgcv from "../../images/careers/mbleftimgcv.png";
+import uploadcv from "../../images/careers/uploadcv.jpg";
+import uploadcvmob from "../../images/careers/uploadcvmob.jpg";
 
 // -----------------------vijay image imports end ----------------
 
@@ -119,6 +126,22 @@ Swiper.use([
 const arry2 = [banner, banner, banner, banner, banner];
 
 const arry3 = [bannermobile, bannermobile, bannermobile, bannermobile];
+
+const sectionOnebannerDataArr = [
+  {
+    img: banner1,
+    mbimg: mbbanner1,
+  },
+
+  {
+    img: banner2,
+    mbimg: mbbanner2,
+  },
+  {
+    img: banner3,
+    mbimg: mbbanner3,
+  },
+];
 
 const teamArr = [
   {
@@ -763,7 +786,17 @@ const Careers = (props) => {
       </div>
     );
   });
+  const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
+    <div className="swiper-slide" key={i}>
+      <img src={bannerData.img} className="slider_img" />
+    </div>
+  ));
 
+  const mbBannerList = sectionOnebannerDataArr.map((mbbannerData, i) => (
+    <div className="swiper-slide" key={i}>
+      <img src={mbbannerData.mbimg} className="mb_slider_img" />
+    </div>
+  ));
   return (
     <>
       <div className="lender_breadcrumb">
@@ -778,15 +811,7 @@ const Careers = (props) => {
           <div className="newsec1_wrapper">
             <div className="newsec1_swiper swiper-container">
               <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={slider1desk} className="slider_img" />
-                </div>
-                <div className="swiper-slide">
-                  <img src={slider1desk} className="slider_img" />
-                </div>
-                <div className="swiper-slide">
-                  <img src={slider1desk} className="slider_img" />
-                </div>
+                {bannerList}
               </div>
             </div>
             <div className="text_content">
@@ -802,15 +827,7 @@ const Careers = (props) => {
           <div className="mb_newsec1_wrapper">
             <div className="mbnewsec1_swiper swiper-container">
               <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={ipadbanner} className="mb_slider_img" />
-                </div>
-                <div className="swiper-slide">
-                  <img src={ipadbanner} className="mb_slider_img" />
-                </div>
-                <div className="swiper-slide">
-                  <img src={ipadbanner} className="mb_slider_img" />
-                </div>
+                {mbBannerList}
               </div>
               <div className="swiper-pagination"></div>
             </div>
@@ -1025,15 +1042,15 @@ const Careers = (props) => {
       </section>
       <section
         className="careersec7 wow fadeInUp drop-cv"
-        data-wow-duration="1.5s"
-        data-wow-delay="1.5s"
+        data-wow-duration="1.3s"
+        data-wow-delay="0.8s"
       >
         <Row className="drop-cv-container wow fadeInUp m-0">
           <div>
             {width > 1023 ? (
-              <img src={cvImage} className="img-fluid" />
+              <img src={uploadcv} className="img-fluid" />
             ) : (
-              <img src={mbleftimgcv} className="img-fluid" />
+              <img src={uploadcvmob} className="img-fluid" />
             )}
             <div>
               <h2 className="head">Drop your CV here</h2>

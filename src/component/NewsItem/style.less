@@ -5,7 +5,7 @@
 }
 
 .newsItemContainer {
-  margin-right: 1.875em;
+  //   margin-right: 1.875em;
 }
 
 .lenderItem {
@@ -25,13 +25,21 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.71;
+    line-height: 2;
     letter-spacing: normal;
     text-align: left;
     color: #333333;
     border-bottom: 1px solid #e5e5e5;
     .fontbold();
-    padding-bottom: 0.75em;
+    // padding-bottom: 0.75em;
+    min-height: 4em;
+    max-height: 4em;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
   }
 
   .itemDate {
@@ -111,17 +119,27 @@
 
 @media (min-width: 480px) {
   .newsItemContainer {
-    margin-right: 1.875em;
+    // margin-right: 1.875em;
     max-width: 30%;
     // min-width: 30%;
-    min-width: 410px;
-    margin: 20px 10px;
+    // min-width: 410px;
+    margin: 20px 1.2em;
+  }
+}
+
+@media (min-width: 1920px) {
+  .newsItemContainer {
+    // margin-right: 1.875em;
+    max-width: 30%;
+    // min-width: 30%;
+    // min-width: 410px;
+    margin: 20px 25px;
   }
 }
 
 @media (max-width: 1023px) {
   .newsItemContainer {
-    margin-right: 1.875em;
+    // margin-right: 1.875em;
     max-width: 30%;
     // min-width: 30%;
     min-width: 300px;
@@ -139,7 +157,13 @@
     padding-right: 2.188em;
 
     .itemTitle {
-      .mf18();
+      //   .mf18();
+      font-size: 2.4em;
+      line-height: 1.5em;
+      letter-spacing: 0;
+      min-height: 3em;
+      max-height: 3em;
+
       //   padding-top: 2.063em;
     }
 
@@ -165,8 +189,26 @@
     position: relative;
   }
   .lenderItem {
-    margin: 20px 0px;
+    width: 345px;
+    height: 326px;
+    padding: 20px 15px;
+    justify-content: space-between;
+    margin: 20px auto 10px auto;
     box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.12);
+    .itemDescrip {
+      font-size: 1.6em;
+      font-weight: normal;
+      line-height: 1.625;
+      letter-spacing: 0.32px;
+      color: #333333;
+    }
+    .readMore {
+      font-size: 1.4em;
+      line-height: 2.143em;
+      letter-spacing: 0.28px;
+      margin-bottom: 1.85em;
+      text-decoration: underline;
+    }
   }
   .newsItemContainer {
     max-width: 100%;
@@ -179,11 +221,26 @@
     width: 9.9em;
   }
   .lenderItem .itemDate {
-    font-size: 1.6em;
-    letter-spacing: 0.25px;
-    line-height: 1.625em;
+    font-size: 1.4em;
+    letter-spacing: 0;
+    line-height: 2.14em;
     padding-top: 1em;
-    padding-bottom: 1.119em;
+    padding-bottom: 1.214em;
     min-height: unset;
+  }
+}
+
+@media (min-width: 1920px) {
+  .newsItemContainer .lenderItem {
+    width: 540px;
+    height: 350px;
+    .itemTitle {
+      min-height: 2em;
+      line-height: 1.5;
+      height: 3em;
+    }
+    .itemDescrip {
+      font-size: 18px;
+    }
   }
 }

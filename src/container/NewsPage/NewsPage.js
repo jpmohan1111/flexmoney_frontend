@@ -570,8 +570,11 @@ const AboutUs = (props) => {
   return (
     <>
       <section className="newspage1 wow fadeIn">
-        <Breadcrumb history={props.history} t2={`In the News > ${newsTitle}`} />
+        <Breadcrumb history={props.history} t2={`In The News > ${newsTitle}`} />
         <div className="main-head">
+          <div className="back-btn">
+            <NavLink to={`/in-the-news/`}>&lt; BACK</NavLink>
+          </div>
           <div className="title">{newsTitle}</div>
 
           <div className="date">{formatDate(newsDate)}</div>

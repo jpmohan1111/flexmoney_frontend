@@ -65,22 +65,25 @@ import leftquote from "../../images/merchants/leftquote.svg";
 import footerbg from "../../images/merchants/footerbg.png";
 import footerrightimg from "../../images/merchants/footerrightimg.png";
 import mbfooterbg from "../../images/merchants/mbfooterbg.png";
+import bottombg_mob from "../../images/lenders/bottombg_mob.png";
+import bottombg_desktop from "../../images/lenders/bottombg_desktop.png";
+
 //-----------------------end of images imports ------------------------//
 
-// -----------------------vijay image imports start----------------
-import slider1desk from "../../images/merchants/merchants_banner1.jpg";
+import banner1 from "../../images/merchants/banner1.jpg";
+import banner2 from "../../images/merchants/banner2.jpg";
+import mbbanner1 from "../../images/merchants/mbbanner1.jpg";
+import mbbanner2 from "../../images/merchants/mbbanner2.jpg";
 import bgdesk from "../../images/careers/bgdesk.png";
-import bgmobile from "../../images/careers/bgmobile.png";
-import bg_ipad from "../../images/careers/bg_ipad.png";
+import bgmobile from "../../images/merchants/bgmobile.png";
+import bg_ipad from "../../images/merchants/bg_ipad.png";
 // import bg_ipad from "../../images/careers/bg_ipad_1.png";
 
 import slider1mob from "../../images/merchants/merchants_banner1_mob.jpg";
-
 import sec2logo1 from "../../images/careers/sec2logo1.png";
 import sec2logo2 from "../../images/careers/sec2logo2.png";
 import sec2logo3 from "../../images/careers/sec2logo3.png";
 
-// -----------------------vijay image imports end ----------------
 
 Swiper.use([
   Navigation,
@@ -93,23 +96,16 @@ Swiper.use([
 
 const sectionOnebannerDataArr = [
   {
-    img: bannerimg,
-    mbimg: tabbannerimg,
-    title: "Merchants",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
+    img: banner1,
+    mbimg: mbbanner1,
+   
   },
   {
-    img: bannerimg,
-    mbimg: tabbannerimg,
-    title: "Merchants",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
+    img: banner2,
+    mbimg: mbbanner2,
+  
   },
-  {
-    img: bannerimg,
-    mbimg: tabbannerimg,
-    title: "Merchants",
-    desc: "Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network",
-  },
+ 
 ];
 const sectionTwoDataArr = [
   {
@@ -458,13 +454,13 @@ const Lenders = (props) => {
 
   const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
     <div className="swiper-slide" key={i}>
-      <img src={bannerData.img} className="banner_slide_img" />
+      <img src={bannerData.img} className="slider_img" />
     </div>
   ));
 
   const mbBannerList = sectionOnebannerDataArr.map((mbbannerData, i) => (
-    <div key={i} className="swiper-slide">
-      <img src={mbbannerData.mbimg} className="mb_banner_slide_img" />
+    <div className="swiper-slide" key={i}>
+      <img src={mbbannerData.mbimg} className="mb_slider_img" />
     </div>
   ));
 
@@ -543,16 +539,8 @@ const Lenders = (props) => {
         {width > 1023 ? (
           <div className="newsec1_wrapper">
             <div className="newsec1_swiper swiper-container">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={slider1desk} className="slider_img" />
-                </div>
-                <div className="swiper-slide">
-                  <img src={slider1desk} className="slider_img" />
-                </div>
-                <div className="swiper-slide">
-                  <img src={slider1desk} className="slider_img" />
-                </div>
+              <div className="swiper-wrapper">      
+                {bannerList}
               </div>
             </div>
             <div className="text_content">
@@ -574,23 +562,15 @@ const Lenders = (props) => {
             <div className="swiper-pagination"></div>
           </div>
         ) : (
-          <div className="mb_newsec1_wrapper wow fadeInUp">
+          <div className="mb_newsec1_wrapper wow fadeIn">
             <div className="mbnewsec1_swiper swiper-container">
               <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
-                </div>
-                <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
-                </div>
-                <div className="swiper-slide">
-                  <img src={slider1mob} className="mb_slider_img" />
-                </div>
+                {mbBannerList}
               </div>
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
-            {
+              {
                 width < 500 ? (
                     <img src={bgmobile} className="bgmobile" />
                   ): (
@@ -633,8 +613,6 @@ const Lenders = (props) => {
         )}
       </div>
 
-    
-
       <div className="m_lenderssec4 wow fadeInUp">
         <div className="heading_wrapper">
           <div className="title">Our Lending Partners</div>
@@ -654,7 +632,7 @@ const Lenders = (props) => {
           <div className="ms4_counting_num">
             <div className="ms4_cn_left">
               <img className="ms4_img_left" src={people2} alt="" />
-              <CounterContainerItem colorClass="cw" span="M+" count="28" />
+              <CounterContainerItem colorClass="cw" span="M+" count="25" />
               <p>Credit Lines</p>
             </div>
 
@@ -678,11 +656,11 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="m_lendersec5 wow fadeInUp">
+      {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
+      {/* <div className="m_lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
-            
-            {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
+            <img src={leftquote} alt="leftquote" className="leftquote" />
 
             <div className="quote_content">
               <img src={leftquote} alt="leftquote" className="leftquote" />
@@ -712,14 +690,14 @@ const Lenders = (props) => {
             </div>
           </Col>
         </Row>
-      </div>
+      </div> */}
 
       <div className="m_lenderssec6 wow fadeInUp">
         <div className="lenderssec6_wrapper">
           {width > 1023 ? (
-            <img src={footerbg} className="footerbg fluid" />
+            <img src={bottombg_desktop} className="footerbg fluid" />
           ) : (
-            <img src={mbfooterbg} className="mbfooter_bg fluid" />
+            <img src={bottombg_mob} className="mbfooter_bg fluid" />
           )}
           {width > 1023 ? (
             <img src={footerrightimg} className="footer_right_img" />
