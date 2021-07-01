@@ -24,8 +24,12 @@ import banner2 from "../../images/lenders/banner2.jpg";
 import mbbanner1 from "../../images/lenders/mbbanner1.jpg";
 import mbbanner2 from "../../images/lenders/mbbanner2.jpg";
 
-import rightimg from "../../images/lenders/rightimg.png";
-import mbrightimg from "../../images/lenders/mbrightimg.png";
+// import rightimg from "../../images/lenders/rightimg.png";
+// import mbrightimg from "../../images/lenders/mbrightimg.png";
+import lenderrightimg1 from "../../images/lenders/lenderrightimg1.png";
+import lenderrightimg2 from "../../images/lenders/lenderrightimg2.png";
+import lenderrightimg3 from "../../images/lenders/lenderrightimg3.png";
+
 import graydot from "../../images/lenders/graydot.png";
 import greendot from "../../images/lenders/greendot.png";
 import verticalline from "../../images/lenders/verticalline.png";
@@ -89,18 +93,18 @@ const sectionOnebannerDataArr = [
 const sectionTwoDataArr = [
   {
     desc: "Start offering EMI & Pay Later solutions across 3800+ merchants across leading categories with your Branding",
-    rightImg: rightimg,
-    mbImg: mbrightimg,
+    rightImg: lenderrightimg1,
+    // mbImg: mbrightimg,
   },
   {
     desc: "Offer Purchase financing to all existing customer segments through Mobile number based Cardless experience",
-    rightImg: rightimg,
-    mbImg: mbrightimg,
+    rightImg: lenderrightimg2,
+    // mbImg: mbrightimg,
   },
   {
     desc: "Secure & frictionless integration with legacy banking systems. Access entire merchant network with Single Integration",
-    rightImg: rightimg,
-    mbImg: mbrightimg,
+    rightImg: lenderrightimg3,
+    // mbImg: mbrightimg,
   },
 ];
 const sectionThreeCardDataArr = [
@@ -114,7 +118,7 @@ const sectionThreeCardDataArr = [
   },
   {
     img: cardimg3,
-    cardTitle: "Laptops & Tablets",
+    cardTitle: "Insurance",
   },
   {
     img: cardimg4,
@@ -406,7 +410,7 @@ const Lenders = (props) => {
   const sectionTwoMbCarouselList = sectionTwoDataArr.map((data, i) => (
     <div className="swiper-slide" key={i}>
       <div className="mbdesc">{data.desc}</div>
-      <img src={data.mbImg} className="mbrightimg" />
+      <img src={data.rightImg} className="mbrightimg" />
     </div>
   ));
 
@@ -503,7 +507,8 @@ const Lenders = (props) => {
         )}
       </section>
 
-      <div className="lenderssec2 wow fadeInUp">
+      <div className="lenderssec2 wow fadeInUp" data-wow-duration="1.5s"
+        data-wow-delay="0.5s">
         {width > 1023 ? (
           <div className="lendersec2_flex wow fadeInUp">
             <div className="flex_left">
@@ -527,7 +532,8 @@ const Lenders = (props) => {
         )}
       </div>
 
-      <div className="lenderssec3 wow fadeInUp">
+      <div className="lenderssec3 wow fadeInUp" data-wow-duration="1.5s"
+        data-wow-delay="0.5s">
         <div className="heading_wrapper">
           <div className="title">Multi-category Merchant EMI Network</div>
           <div className="desc">
@@ -541,7 +547,8 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="lenderssec4 wow fadeInUp">
+      <div className="lenderssec4 wow fadeInUp" data-wow-duration="1s"
+        data-wow-delay="0.5s">
         <div className="heading_wrapper">
           <div className="title">3800+ Merchant Partners</div>
           <div className="desc">
