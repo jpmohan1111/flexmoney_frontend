@@ -1041,7 +1041,7 @@ const Careers = (props) => {
         </Row>
       </section>
       <section
-        className="careersec7 wow fadeInUp drop-cv"
+        className="careersec7 wow fadeIn drop-cv"
         // data-wow-duration="1.3s"
         // data-wow-delay="0.8s"
       >

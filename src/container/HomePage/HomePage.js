@@ -588,7 +588,7 @@ const HomePage = (props) => {
           data-wow-delay="0.5s"
         >
           <Col lg={5} className="p-0">
-            <CounterContainerItem img={people} span="M+" count="28" />
+            <CounterContainerItem img={people} span="M+" count="25" />
             <div className="countertitle">
               <span>InstaCred™ </span> Credit Lines
             </div>

@@ -48,11 +48,11 @@ import cardimg8 from "../../images/lenders/mob-green.png";
 import cardimg9 from "../../images/lenders/watchces.png";
 import cardimg10 from "../../images/lenders/homedeco.png";
 
-import amazon from "../../images/lenders/amazon.png";
-import decathlon from "../../images/lenders/decathlon.png";
-import flipkart from "../../images/lenders/flipkart.png";
-import myntra from "../../images/lenders/myntra.png";
-import vijaysales from "../../images/lenders/vijaysales.png";
+// import amazon from "../../images/lenders/amazon.png";
+// import decathlon from "../../images/lenders/decathlon.png";
+// import flipkart from "../../images/lenders/flipkart.png";
+// import myntra from "../../images/lenders/myntra.png";
+// import vijaysales from "../../images/lenders/vijaysales.png";
 
 import cardbg from "../../images/lenders/cardbg.svg";
 import leftquote from "../../images/lenders/leftquote.svg";
@@ -67,6 +67,32 @@ import bg_ipad from "../../images/lenders/bg_ipad.png";
 
 import bottombg_mob from "../../images/lenders/bottombg_mob.png";
 import bottombg_desktop from "../../images/lenders/bottombg_desktop.png";
+
+import amazon from "../../images/homepage/amazon.png";
+import decathlon from "../../images/homepage/decathlon.png";
+import flipkart from "../../images/homepage/flipkart.png";
+import myntra from "../../images/homepage/myntra.png";
+import sangeetha from "../../images/homepage/sangeetha.png";
+import tatacliq from "../../images/homepage/tatacliq.png";
+import vijaysales from "../../images/homepage/vijaysales.png";
+import bharatbooking from "../../images/homepage/bharatbooking.png";
+import bigc from "../../images/homepage/bigc.png";
+import curefit from "../../images/homepage/curefit.png";
+import dell from "../../images/homepage/dell.png";
+import duroflex from "../../images/homepage/duroflex.png";
+import emibaba from "../../images/homepage/emibaba.png";
+import khoslaelectronics from "../../images/homepage/khoslaelectronics.png";
+import kurlon from "../../images/homepage/kurlon.png";
+import lot from "../../images/homepage/lot.png";
+import pai from "../../images/homepage/pai.png";
+import poorvika from "../../images/homepage/poorvika.png";
+import qrs from "../../images/homepage/qrs.png";
+import royaloak from "../../images/homepage/royaloak.png";
+import sastiticket from "../../images/homepage/sastiticket.png";
+import urbanladder from "../../images/homepage/urbanladder.png";
+import via from "../../images/homepage/via.png";
+import zebrs from "../../images/homepage/zebrs.png";
+import zefo from "../../images/homepage/zefo.png";
 
 //-----------------------end of images imports ------------------------//
 
@@ -150,90 +176,85 @@ const sectionThreeCardDataArr = [
   },
 ];
 const sectionFourImgArr = [
-  {
-    img: vijaysales,
-  },
-  {
-    img: amazon,
-  },
-  {
-    img: flipkart,
-  },
-  {
-    img: decathlon,
-  },
-  {
-    img: myntra,
-  },
-  {
-    img: vijaysales,
-  },
-  {
-    img: decathlon,
-  },
-  {
-    img: vijaysales,
-  },
-  {
-    img: amazon,
-  },
-  {
-    img: flipkart,
-  },
-  {
-    img: decathlon,
-  },
-  {
-    img: myntra,
-  },
-  {
-    img: vijaysales,
-  },
-  {
-    img: decathlon,
-  },
-  {
-    img: vijaysales,
-  },
-  {
-    img: amazon,
-  },
-  {
-    img: flipkart,
-  },
-  {
-    img: decathlon,
-  },
-  {
-    img: myntra,
-  },
-  {
-    img: vijaysales,
-  },
-  {
-    img: decathlon,
-  },
-  {
-    img: vijaysales,
-  },
-  {
-    img: amazon,
-  },
-  {
-    img: flipkart,
-  },
-  {
-    img: decathlon,
-  },
-  {
-    img: myntra,
-  },
-  {
-    img: vijaysales,
-  },
-  {
-    img: decathlon,
-  },
+ 
+  { img: urbanladder },
+  { img: via },
+  { img: vijaysales },
+  { img: zebrs },
+  { img: zefo },
+  { img: amazon },
+  { img: bharatbooking },
+  { img: bigc },
+  { img: curefit },
+  { img: decathlon },
+  { img: dell },
+  { img: duroflex },
+  { img: emibaba },
+  { img: flipkart },
+  { img: khoslaelectronics },
+  { img: kurlon },
+  { img: lot },
+  { img: myntra },
+  { img: pai },
+  { img: poorvika },
+  { img: qrs },
+  { img: royaloak },
+  { img: sangeetha },
+  { img: sastiticket },
+  { img: tatacliq },
+ 
+  { img: urbanladder },
+  { img: via },
+  { img: vijaysales },
+  { img: zebrs },
+  { img: zefo },
+  { img: amazon },
+  { img: bharatbooking },
+  { img: bigc },
+  { img: curefit },
+  { img: decathlon },
+  { img: dell },
+  { img: duroflex },
+  { img: emibaba },
+  { img: flipkart },
+  { img: khoslaelectronics },
+  { img: kurlon },
+  { img: lot },
+  { img: myntra },
+  { img: pai },
+  { img: poorvika },
+  { img: qrs },
+  { img: royaloak },
+  { img: sangeetha },
+  { img: sastiticket },
+  { img: tatacliq },
+  
+  { img: urbanladder },
+  { img: via },
+  { img: vijaysales },
+  { img: zebrs },
+  { img: zefo },
+  { img: amazon },
+  { img: bharatbooking },
+  { img: bigc },
+  { img: curefit },
+  { img: decathlon },
+  { img: dell },
+  { img: duroflex },
+  { img: emibaba },
+  { img: flipkart },
+  { img: khoslaelectronics },
+  { img: kurlon },
+  { img: lot },
+  { img: myntra },
+  { img: pai },
+  { img: poorvika },
+  { img: qrs },
+  { img: royaloak },
+  { img: sangeetha },
+  { img: sastiticket },
+  { img: tatacliq },
+ 
 ];
 const sectionFiveLendersDataArr = [
   {
@@ -562,7 +583,7 @@ const Lenders = (props) => {
       </div>
 
       {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
-      {/* <div className="lendersec5 wow fadeInUp">
+      <div className="lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />
@@ -594,9 +615,9 @@ const Lenders = (props) => {
             </div>
           </Col>
         </Row>
-      </div> */}
+      </div>
 
-      <div className="lenderssec6 wow fadeInUp">
+      <div className="lenderssec6 wow fadeIn">
         <div className="lenderssec6_wrapper">
           {width > 1023 ? (
             <img src={bottombg_desktop} className="footerbg fluid" />
