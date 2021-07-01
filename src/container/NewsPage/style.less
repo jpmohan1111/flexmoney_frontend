@@ -2,6 +2,7 @@
 
 .newspage1 {
   min-height: 35vh;
+  .fontreg();
   padding-left: 6.25em;
   padding-right: 6.25em;
 
@@ -30,7 +31,9 @@
     .color(#FFFFFF);
   }
 }
-
+.news-footer {
+  .fontreg();
+}
 .pagination_container {
   width: 100%;
   display: flex;
@@ -76,11 +79,13 @@
 
 @media (max-width: 850px) {
   .newsContent {
+    .fontreg();
+    font-weight: 400;
     padding: 70px 100px;
     * {
       margin: 20px 0px;
       margin: 0px;
-      font-size: 1.25em;
+      font-size: 1em;
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
@@ -91,7 +96,7 @@
       //   list-style: none;
     }
     > p {
-      font-size: 2.5em;
+      font-size: 1.5em;
     }
     li::marker {
       color: #0bb443 !important;
