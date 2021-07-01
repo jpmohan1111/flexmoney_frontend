@@ -354,42 +354,6 @@ const Lenders = (props) => {
       },
     });
 
-    // var lenderssec1_swiper = new Swiper(".banner_right_img.swiper-container", {
-    //   slidesPerView: 1,
-    //   spaceBetween: 0,
-    //   loop: true,
-    //   effect: "fade",
-    //   fadeEffect: {
-    //     crossFade: true,
-    //   },
-    //   autoplay: {
-    //     delay: 2000,
-    //   },
-    //   pagination: {
-    //     el: ".lenderssec1 .swiper-pagination",
-    //     clickable: true,
-    //   },
-    // });
-    // var mb_lenderssec1_swiper = new Swiper(
-    //   ".mb_lenderssec1_swiper.swiper-container",
-    //   {
-    //     slidesPerView: 1,
-    //     spaceBetween: 0,
-    //     autoHeight: false,
-    //     loop: true,
-    //     effect: "fade",
-    //     fadeEffect: {
-    //       crossFade: true,
-    //     },
-    //     autoplay: {
-    //       delay: 2000,
-    //     },
-    //     pagination: {
-    //       el: ".mb_lenderssec1_swiper .swiper-pagination",
-    //       clickable: true,
-    //     },
-    //   }
-    // );
     // setInterval for section 2
     setInterval(() => {
       if (indexCount.current <= 2) {
@@ -664,7 +628,7 @@ const Lenders = (props) => {
       </div>
 
       {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
-      {/* <div className="m_lendersec5 wow fadeInUp">
+      <div className="m_lendersec5 wow fadeIn">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />
@@ -696,9 +660,9 @@ const Lenders = (props) => {
             </div>
           </Col>
         </Row>
-      </div> */}
+      </div>
 
-      <div className="m_lenderssec6 wow fadeInUp">
+      <div className="m_lenderssec6 wow fadeIn">
         <div className="lenderssec6_wrapper">
           {width > 1023 ? (
             <img src={bottombg_desktop} className="footerbg fluid" />
