@@ -229,31 +229,31 @@ const sectionFourImgArr = [
   { img: sastiticket },
   { img: tatacliq },
   
-  { img: urbanladder },
-  { img: via },
-  { img: vijaysales },
-  { img: zebrs },
-  { img: zefo },
-  { img: amazon },
-  { img: bharatbooking },
-  { img: bigc },
-  { img: curefit },
-  { img: decathlon },
-  { img: dell },
-  { img: duroflex },
-  { img: emibaba },
-  { img: flipkart },
-  { img: khoslaelectronics },
-  { img: kurlon },
-  { img: lot },
-  { img: myntra },
-  { img: pai },
-  { img: poorvika },
-  { img: qrs },
-  { img: royaloak },
-  { img: sangeetha },
-  { img: sastiticket },
-  { img: tatacliq },
+  // { img: urbanladder },
+  // { img: via },
+  // { img: vijaysales },
+  // { img: zebrs },
+  // { img: zefo },
+  // { img: amazon },
+  // { img: bharatbooking },
+  // { img: bigc },
+  // { img: curefit },
+  // { img: decathlon },
+  // { img: dell },
+  // { img: duroflex },
+  // { img: emibaba },
+  // { img: flipkart },
+  // { img: khoslaelectronics },
+  // { img: kurlon },
+  // { img: lot },
+  // { img: myntra },
+  // { img: pai },
+  // { img: poorvika },
+  // { img: qrs },
+  // { img: royaloak },
+  // { img: sangeetha },
+  // { img: sastiticket },
+  // { img: tatacliq },
  
 ];
 const sectionFiveLendersDataArr = [
@@ -389,6 +389,19 @@ const Lenders = (props) => {
         setIndex(indexCount.current);
       }, 2500);
       // end of setInterval for section 2
+
+      var element = document.querySelector(".lenderssec4 .slider_track");
+      element.animate(
+      {
+        transform: ["translateX(0)", "translateX(calc(-18.813em * 24))"], // move by 500px
+      },
+      {
+        delay: 500,
+        duration: 20000,
+        iterationCount: "infinite",
+      }
+    );
+
   }, []);
 
   const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
