@@ -393,12 +393,12 @@ const Lenders = (props) => {
       var element = document.querySelector(".lenderssec4 .slider_track");
       element.animate(
       {
-        transform: ["translateX(0)", "translateX(calc(-18.813em * 24))"], // move by 500px
+        transform: ["translateX(0)", "translateX(calc(-18.813em * 24))"], //7224px to left and then repeat
       },
       {
         delay: 500,
-        duration: 20000,
-        iterationCount: "infinite",
+        duration: 30000,
+        iterations: Infinity,
       }
     );
 
