@@ -423,7 +423,7 @@ const Lenders = (props) => {
       {
         delay: 500,
         duration: 20000,
-        iterationCount: "infinite",
+        iterations: Infinity,
       }
     );
   }, []);
