@@ -631,7 +631,7 @@ const AboutUs = (props) => {
       <div key={i} className="opening">
         <div className="title">{item.title}</div>
         <div className="desc" onClick={() => handleDescShow(item.description)}>
-          Job Description >
+          Job Description {">"}
         </div>
         {/* <button onClick={() => handleApplyShow(item.title)}>Apply now</button> */}
         <div
@@ -691,30 +691,32 @@ const AboutUs = (props) => {
           </div>
         </div>
       </section>
-      <section onClick={featuredNewsClick} className="main-news-section">
-        <div className="main-news">
-          <div className="details">
-            {width > 480 ? (
-              <div className="title">
-                {/* Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners */}
-                {featuredNewsTitle}
-              </div>
-            ) : (
-              <div className="title">
-                {/* Flexmoney welcomes ICICI Bank to its Merchant Partners */}
-                {featuredNewsTitle}
-              </div>
-            )}
 
-            <div className="date">{featuredNewsDate}</div>
-            <div className="desc">{featuredNewsSummary}</div>
-            <div className="read-more">Read more</div>
+      <section onClick={featuredNewsClick} className="main-news-section">
+          <div className="main-news">
+            <div className="details">
+              {width > 480 ? (
+                <div className="title">
+                  {/* Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners */}
+                  {featuredNewsTitle}
+                </div>
+              ) : (
+                <div className="title">
+                  {/* Flexmoney welcomes ICICI Bank to its Merchant Partners */}
+                  {featuredNewsTitle}
+                </div>
+              )}
+
+              <div className="date">{featuredNewsDate}</div>
+              <div className="desc">{featuredNewsSummary}</div>
+              <div className="read-more">Read more</div>
+            </div>
+            <div className="image">
+              <img src={featuredNewsImageUrl} alt="" />
+            </div>
           </div>
-          <div className="image">
-            <img src={featuredNewsImageUrl} alt="" />
-          </div>
-        </div>
-      </section>
+        </section>
+      
 
       <section className="newssec2 wow fadeIn">
         <div className="dropdowns">

@@ -10,25 +10,28 @@
 
   //   height: 46.875em;
   background-image: url("../../images/aboutus/bannerbg2560.png");
-  background-position: center;
+  // background-position: center;
   background-size: cover;
 
   .title {
-    .f90();
-    .t-c();
-    .fontbold();
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 5.625em;
+    letter-spacing: 0px;
+    line-height: 1.222em;
     color: #fff;
   }
 
   .desc {
-    .f30();
-    // .t-c();
-    .fontreg();
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.563em;
+    letter-spacing: 0.5px;
+    line-height: 1.600em;
+    color: #FFFFFF;
     padding-top: 0.7em;
-    .color(#FFFFFF);
     width: 50%;
-    margin: auto;
-    font-weight: 300;
+    margin: auto
   }
 }
 .main-news-section {
@@ -65,7 +68,6 @@
     .extreme-end-page {
       font-size: 18px;
       font-weight: normal;
-      font-stretch: normal;
       font-style: normal;
       line-height: normal;
       letter-spacing: normal;
@@ -96,6 +98,7 @@
     }
   }
 }
+
 @media (width: 1024px) {
   .newssec1 {
     background-image: url("../../images/aboutus/bannerbg1024.png");
@@ -131,13 +134,13 @@
     margin: 0;
     // width: 70%;
     // width: 1200px;
-    height: 426px;
+    // height: 426px;
     // position: relative;
-    // left: 50%;
-    // transform: translateX(-50%) translateY(-55%);
-    margin: 0 auto;
+    left: 50%;
+    
+    // margin: 0 auto;
     position: absolute;
-    bottom: 70px;
+    bottom: 110px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -152,12 +155,12 @@
     .details {
       padding: 30px;
       max-width: 50%;
-      min-width: 50%;
+       min-width: 50%;
       display: flex;
       flex-direction: column;
-      //   justify-content: space-between;
+         justify-content: space-around;
       > *:not(:last-child) {
-        margin-bottom: 32px;
+        // margin-bottom: 32px;
       }
 
       .title {
@@ -204,11 +207,13 @@
       }
     }
     .image {
-      width: 50%;
-      max-width: 50%;
+      // width: 100%;
+      // max-width: 100%;
       img {
         width: 100%;
-        height: auto;
+        max-width: 100%;
+        display: block;
+        // height: auto;
       }
       //   background-image: url("../../images/inthenews/innews_bg.png");
     }
@@ -269,25 +274,25 @@
     background-size: cover;
     // .mbPadding();
 
-    .title {
-      .mf50();
-      padding-top: 1.16em;
-      padding-top: 0.5em;
-      .t-c();
-      .fontbold();
-      color: #fff;
-    }
+    // .title {
+    //   .mf50();
+    //   padding-top: 1.16em;
+    //   padding-top: 0.5em;
+    //   .t-c();
+    //   .fontbold();
+    //   color: #fff;
+    // }
 
-    .desc {
-      font-weight: 300;
-      font-size: 1em;
-      width: 100%;
-      max-width: 70.1%;
-      margin: auto;
-      padding-top: 1.181em;
-      .color(#FFFFFF);
-      padding-bottom: 2.688em;
-    }
+    // .desc {
+    //   font-weight: 300;
+    //   font-size: 1em;
+    //   width: 100%;
+    //   max-width: 70.1%;
+    //   margin: auto;
+    //   padding-top: 1.181em;
+    //   .color(#FFFFFF);
+    //   padding-bottom: 2.688em;
+    // }
 
     .imageContainer {
       margin-left: -1.5em;
@@ -297,17 +302,14 @@
   .main-news {
     cursor: pointer;
     display: flex;
-    width: 55%;
+    // max-width: 55%;
     position: relative;
     // left: 50%;
     // transform: translateX(-50%) translateY(-65%);
-
     box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.16);
     border-radius: 20px;
-    overflow: hidden;
-    position: relative;
+    // overflow: hidden;
     // bottom: 150px;
-
     background: #fff;
 
     .details {
@@ -353,7 +355,7 @@
       }
     }
     .image {
-      max-width: 45%;
+      // max-width: 45%;
       //   max-width: 45%;
       //   background-image: url("../../images/inthenews/innews_bg.png");
     }
@@ -370,8 +372,7 @@
     }
   }
 }
-@media (max-width: 834px) {
-}
+
 @media (max-width: 480px) {
   .newssec1 {
     background-image: url("../../images/aboutus/bannerbg834.png");
@@ -382,29 +383,38 @@
     padding: 0px 20px;
 
     .main-head {
-      top: 50px;
-      position: relative;
+      // top: 50px;
+      // position: relative;
+      margin-top: 5.8em;
     }
 
     .title {
-      .mf50();
-      padding-top: 1.16em;
-      padding-top: 0.5em;
-      .t-c();
-      .fontbold();
+      padding-top: 0px;
+      font-size: 5em;
+      letter-spacing: 0px;
+      line-height: 1.200em;
       color: #fff;
+      font-family: "Merriweather Sans";
+      font-weight: bold;
     }
 
     .desc {
-      font-size: 1.5em;
+      font-family: "Merriweather Sans";
       font-weight: 300;
+      font-size: 1.6em;
+      line-height: 1.625em;
+      letter-spacing: 0px;
+      color: #FFFFFF;
+      // font-weight: 300;
       width: 100%;
-      max-width: 70.1%;
-      margin: auto;
-      padding-top: 1.181em;
-      .color(#FFFFFF);
-      padding-bottom: 2.688em;
+      max-width: 88%;
       text-align: center;
+      margin: 0 auto;
+
+      // margin: auto;
+      // padding-top: 1.181em;
+      // padding-bottom: 2.688em;
+      // text-align: center;
     }
 
     .imageContainer {
@@ -418,6 +428,14 @@
   .newssec2 {
     padding: 0px;
     .itemTitle {
+      font-family: "Merriweather Sans";
+      font-weight: bold;
+      font-size: 2.4em;
+      line-height: 1.500em;
+      letter-spacing: 0px;
+      padding-bottom: 3em;
+
+
       padding-top: 0px;
       max-height: 3em;
       min-height: 60px;
@@ -468,13 +486,17 @@
 
         border: none;
         background-color: #ffffff;
-        // margin: 10px 0px;
-        font-size: 25px;
+        
+        font-family: "Merriweather Sans";
         font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.52;
-        letter-spacing: 0.5px;
+        font-size: 1.8em;
+        line-height: 2.111em;
+        letter-spacing: 0.36px;
+        // font-weight: normal;
+        // font-stretch: normal;
+        // font-style: normal;
+        // margin: 10px 0px;
+        
         text-align: left;
         color: #3bb859;
         min-width: 80%;
@@ -492,6 +514,25 @@
       }
     }
   }
+  .newsItemContainer .lenderItem .itemDate{
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.4em;
+    line-height: 2.143em;
+    letter-spacing: 0.28px;
+    padding: 0;
+  }
+
+  .newsItemContainer .lenderItem .readMore{
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.4em;
+    line-height: 2.143em;
+    letter-spacing: 0.28px;
+    padding: 0;
+    margin: 0 ;
+  }
+
   .main-news {
     width: 345px;
     height: 530px;
@@ -507,8 +548,6 @@
     box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.16);
     border-radius: 10px;
     overflow: hidden;
-    position: relative;
-
     background: #fff;
 
     .details {
@@ -520,12 +559,19 @@
       max-width: unset;
 
       .title {
-        font-size: 2.5em;
-        min-height: 90px;
+        font-size: 2.4em;
+        line-height: 1.500em;
+        letter-spacing: 0px;
+        color: #333333;
+        font-family: "Merriweather Sans";
+        font-weight: bold;
+        min-height: 79px;
+
+        // min-height: 90px;
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.8;
+        
         letter-spacing: normal;
         text-align: left;
         color: #333333;
@@ -538,15 +584,20 @@
       }
       .date,
       .read-more {
-        font-size: 1.5em;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1;
-        letter-spacing: normal;
+        font-family: "Merriweather Sans";
+        font-weight: bold;
+        font-size: 1.4em;
+        letter-spacing: 0.28px;
+        line-height: 2.143em;
         text-align: left;
         color: #3bb859;
         padding: 0.5em 0px;
+
+        // font-weight: normal;
+        // font-stretch: normal;
+        // font-style: normal;
+        // line-height: 1;
+        // letter-spacing: normal;
       }
       .date {
         font-weight: bold;
@@ -555,12 +606,11 @@
         text-decoration: underline;
       }
       .desc {
-        font-size: 1.5em;
-        font-weight: 300;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.8;
-        letter-spacing: 0.5px;
+        font-family: "Merriweather Sans";
+        font-weight: normal;
+        font-size: 1.6em;
+        letter-spacing: 0.32px;
+        line-height: 1.625em;
         text-align: left;
         color: #333333;
         -webkit-line-clamp: 3;
@@ -569,13 +619,20 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         word-wrap: break-word;
+
+        // font-weight: 300;
+        // font-stretch: normal;
+        // font-style: normal;
+        // line-height: 1.8;
+        // letter-spacing: 0.5px;
       }
     }
     .image {
       order: 1;
       width: 100%;
       max-width: unset;
-      min-height: 250px;
+      display: block;
+      // min-height: 250px;
 
       //   max-width: 45%;
       //   background-image: url("../../images/inthenews/innews_bg.png");
@@ -590,7 +647,7 @@
       flex-wrap: wrap;
       padding: 0px 5em;
       min-height: 50vh;
-      justify-content: space-between;
+      justify-content: flex-start;
       background-color: #eeeeee;
       position: relative;
       align-items: center;
@@ -680,12 +737,16 @@
   .newssec2 {
     position: relative;
     // top: -100px;
-    margin-top: 150px;
+    margin-top: 16.313em;
   }
   .main-news {
     height: auto;
     bottom: 80px;
   }
+  .newsItemContainer {
+    max-width: 31%;
+    margin: 20px 1.2em;
+}
 }
 
 @media (max-width: 1280px) and (min-width: 960px) {
@@ -707,6 +768,239 @@
 
 @media (min-width: 1920px) {
   .newssec2 {
-    margin-top: 250px;
+    margin-top: 13.438em;
+  }
+  .newsItemContainer {
+    max-width: 30%;
+    margin: 1.813em ;
+  }
+  .main-news .image img{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  .newsItemContainer .lenderItem .itemTitle {
+    min-height: 2em;
+    height: 3em;
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 1.563em;
+    letter-spacing: 0.5px;
+    line-height: 1.520em;
+    color: #333333;
+  }
+  .newsItemContainer .lenderItem:hover .itemTitle{
+    color:#FFFFFF;
+  }
+  .newsItemContainer .lenderItem .itemDescrip {
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.125em;
+    letter-spacing: 0.36px;
+    line-height: 1.667em;
+    color: #333333;
+  }
+  .lenderItem:hover .itemDescrip{
+    color:#FFFFFF;
+  }
+}
+@media (max-width: 1600px) {
+  .newsItemContainer {
+    max-width: 30%;
+    margin: 2.1em;
+    //margin: 2.15em; 
+  }
+}
+@media (max-width: 1520px) {
+  .newsItemContainer {
+    max-width: 30%;
+    margin: 2em;
+  }
+}
+@media (max-width: 1440px) {
+  .newsItemContainer {
+    max-width: 30%;
+    margin: 2em;
+  }
+}
+@media (max-width: 1366px) {
+  .newsItemContainer {
+    max-width: 30%;
+    margin:2em;
+  }
+}
+@media (max-width: 1280px) {
+  .newsItemContainer {
+    max-width: 30%;
+    margin: 1.8em;
+  }
+}
+
+@media(max-width: 834px){
+  .newssec1 {
+    height: auto;
+  }
+
+  .newssec1 .title {
+    font-size: 5em;
+    letter-spacing: 0.25px;
+    padding-top: 1.16em;
+    padding-top: 0.5em;
+    text-align: center;
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    color: #fff;
+  }
+  .newssec1 .desc {
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.6em;
+    letter-spacing: 0px;
+    line-height: 1.625em;
+    color: #FFFFFF;
+    width: 72%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .main-news{
+    margin: 0px;
+    width: 100%;
+    max-width: 90%;
+    // height: auto;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    top: -140px;
+  }
+  .main-news .details .title {
+    font-size: 1.6em;
+    font-weight: bold;
+    font-family: "Merriweather Sans";
+    line-height: 1.500em;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #333333;
+  }
+  .main-news .details .date, .main-news .details .read-more {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Merriweather Sans";
+    line-height: 2.143em;
+    letter-spacing: 0.28px;
+    color: #3bb859;
+    padding: 0px;
+  }
+  .main-news .details .desc {
+    font-size: 1.4em;
+    font-weight: normal;
+    font-family: "Merriweather Sans";
+    line-height: 1.625em;
+    letter-spacing: 0.32px;
+    text-align: left;
+    color: #333333;
+  }
+  .newssec2 {
+    position: relative;
+    margin-top: -100px;
+    background-color: #eeeeee;
+  }
+  .main-news .details {
+    padding: 20px;
+    max-width: 50%;
+    width: 100%;
+    min-width: 50%;
+  }
+  .newssec2 .dropdowns > select:first-child {
+    min-width: 70%;
+  }
+  .newssec2 .dropdowns > select:last-child {
+    min-width: 40%;
+  }
+  .newsItemContainer {
+    max-width: 46%;
+    min-width: 300px;
+    margin: 1.5em 1em;
+  }
+  .newssec2 .list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 1.315em;
+    min-height: 50vh;
+    justify-content: space-between;
+    background-color: #eeeeee;
+    position: relative;
+    align-items: center;
+  }
+  .newssec2 .dropdowns > select {
+    font-family: "Merriweather Sans";
+    font-size: 1.8em;
+    letter-spacing: 0.36px;
+    line-height:2.11em;
+    font-weight: normal;
+    color: #3BB859;
+  }
+  .lenderItem .itemTitle {
+    min-height: 3.2em;
+    font-size: 1.6em;
+    font-weight: bold;
+    font-family: "Merriweather Sans";
+    line-height: 1.5em;
+    letter-spacing: 0px;
+    
+  }
+  .lenderItem .itemDate,.lenderItem .readMore {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Merriweather Sans";
+    line-height: 1.143em;
+    letter-spacing: 0.28px;
+    padding-top: 1em;
+    padding-bottom: 0;
+  }
+  .lenderItem .readMore{
+    padding-top: 0px;
+  }
+  .lenderItem .itemDescrip {
+    font-size: 1.4em;
+    font-weight: normal;
+    font-family: "Merriweather Sans";
+    line-height: 1.625em;
+    letter-spacing: 0.32px;
+    color: #333333;
+    padding-top: 1em;
+  }
+  .lenderItem {
+    border-radius: 1.25em;
+    margin-top: 0;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-news{
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    top: -80px;
+  }
+  .main-news .details {
+    padding: 20px;
+    max-width: 100%;
+    width: 100%;
+    min-width: 50%;
+  }
+  .main-news .details  {
+    > *:not(:last-child) {
+       margin-bottom: 10px;
+    }
+  } 
+  .main-news .details .title{
+    min-height: auto;
+  }
+  .newssec2 {
+    margin-top: -50px;
   }
 }
