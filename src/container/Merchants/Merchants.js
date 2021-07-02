@@ -88,7 +88,6 @@ import sec2logo1 from "../../images/careers/sec2logo1.png";
 import sec2logo2 from "../../images/careers/sec2logo2.png";
 import sec2logo3 from "../../images/careers/sec2logo3.png";
 
-
 Swiper.use([
   Navigation,
   Pagination,
@@ -102,14 +101,11 @@ const sectionOnebannerDataArr = [
   {
     img: banner1,
     mbimg: mbbanner1,
-   
   },
   {
     img: banner2,
     mbimg: mbbanner2,
-  
   },
- 
 ];
 const sectionTwoDataArr = [
   {
@@ -418,6 +414,18 @@ const Lenders = (props) => {
         prevEl: ".m_lendersec5 .left_arrow",
       },
     });
+
+    var element = document.querySelector(".m_lenderssec4 .slider_track");
+    element.animate(
+      {
+        transform: ["translateX(0)", "translateX(calc(-10.813em * 24))"], // move by 500px
+      },
+      {
+        delay: 500,
+        duration: 20000,
+        iterationCount: "infinite",
+      }
+    );
   }, []);
 
   const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
@@ -437,7 +445,11 @@ const Lenders = (props) => {
       className="desc_wrapper"
       style={
         index === i
-          ? { backgroundColor: "#ffffff", border: "1px dashed #7EFFAC", fontWeight: 'bold' }
+          ? {
+              backgroundColor: "#ffffff",
+              border: "1px dashed #7EFFAC",
+              fontWeight: "bold",
+            }
           : null
       }
       key={i}
@@ -507,9 +519,7 @@ const Lenders = (props) => {
         {width > 1023 ? (
           <div className="newsec1_wrapper">
             <div className="newsec1_swiper swiper-container">
-              <div className="swiper-wrapper">      
-                {bannerList}
-              </div>
+              <div className="swiper-wrapper">{bannerList}</div>
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -532,19 +542,15 @@ const Lenders = (props) => {
         ) : (
           <div className="mb_newsec1_wrapper wow fadeIn">
             <div className="mbnewsec1_swiper swiper-container">
-              <div className="swiper-wrapper">
-                {mbBannerList}
-              </div>
+              <div className="swiper-wrapper">{mbBannerList}</div>
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
-              {
-                width < 500 ? (
-                    <img src={bgmobile} className="bgmobile" />
-                  ): (
-                    <img src={bg_ipad} className="bgmobile" />
-                  )
-              }
+              {width < 500 ? (
+                <img src={bgmobile} className="bgmobile" />
+              ) : (
+                <img src={bg_ipad} className="bgmobile" />
+              )}
               <div className="mb_text_container">
                 <div className="title">Merchants</div>
                 <div className="m1_desc">
@@ -557,8 +563,11 @@ const Lenders = (props) => {
         )}
       </section>
 
-      <div className="m_lenderssec2 wow fadeInUp" data-wow-duration="1.5s"
-        data-wow-delay="0.5s">
+      <div
+        className="m_lenderssec2 wow fadeInUp"
+        data-wow-duration="1.5s"
+        data-wow-delay="0.5s"
+      >
         {width > 1023 ? (
           <div className="lendersec2_flex">
             <div className="flex_left">
@@ -582,8 +591,11 @@ const Lenders = (props) => {
         )}
       </div>
 
-      <div className="m_lenderssec4 wow fadeInUp" data-wow-duration="1.5s"
-        data-wow-delay="0.5s">
+      <div
+        className="m_lenderssec4 wow fadeInUp"
+        data-wow-duration="1.5s"
+        data-wow-delay="0.5s"
+      >
         <div className="heading_wrapper">
           <div className="title">Our Lending Partners</div>
         </div>
@@ -593,8 +605,11 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="merchant_section_4 wow fadeInUp" data-wow-duration="1.5s"
-        data-wow-delay="0.5s">
+      <div
+        className="merchant_section_4 wow fadeInUp"
+        data-wow-duration="1.5s"
+        data-wow-delay="0.5s"
+      >
         <div className="ms4_content">
           <div className="ms4_heading">
             <div className="title">Consumers on our Network</div>
