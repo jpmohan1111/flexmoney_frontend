@@ -299,18 +299,6 @@ const Lenders = (props) => {
       live: false,
     }).init();
 
-    // setInterval for section 2
-    setInterval(() => {
-      if (indexCount.current <= 2) {
-        indexCount.current++;
-      }
-      if (indexCount.current > 2) {
-        indexCount.current = 0;
-      }
-      setIndex(indexCount.current);
-    }, 2500);
-    // end of setInterval for section 2
-
     var newcareersec1_swiper = new Swiper(".newsec1_swiper.swiper-container", {
       slidesPerView: 1,
       spaceBetween: 0,
@@ -389,6 +377,18 @@ const Lenders = (props) => {
         prevEl: ".lendersec5 .left_arrow",
       },
     });
+
+      // setInterval for section 2
+      setInterval(() => {
+        if (indexCount.current <= 2) {
+          indexCount.current++;
+        }
+        if (indexCount.current > 2) {
+          indexCount.current = 0;
+        }
+        setIndex(indexCount.current);
+      }, 2500);
+      // end of setInterval for section 2
   }, []);
 
   const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
