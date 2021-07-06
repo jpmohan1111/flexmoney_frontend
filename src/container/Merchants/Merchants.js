@@ -649,6 +649,7 @@ const Lenders = (props) => {
             <img src={leftquote} alt="leftquote" className="leftquote" />
 
             <div className="quote_content">
+              <img src={leftquote} alt="leftquote" className="leftquote" />
               <div className="title">What our Merchant Partners say</div>
               <div className="desc">
                 Hear from those who have been with us in our journey
