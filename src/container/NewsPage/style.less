@@ -116,11 +116,11 @@
         position: absolute;
         top: 4em;
         left: 0px;
-        font-size: 18px;
+        font-family: "Merriweather Sans";
         font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        letter-spacing: normal;
+        font-size: 1.125em;
+        letter-spacing: 0px;
+        line-height: 6.111em;
         text-align: left;
         color: #ffffff;
         cursor: pointer;
@@ -133,12 +133,11 @@
       }
     }
     .date {
-      font-size: 25px;
+      font-family: "Merriweather Sans";
+      font-size: 1.563em;
+      line-height: 1.2em;
+      letter-spacing: 0px;
       font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: normal;
       text-align: center;
       color: #ffffff;
       margin-top: 2em;
@@ -146,13 +145,12 @@
     }
   }
   .newsContent {
-    padding: 70px 100px;
+    padding:4.375em 6.250em;
     * {
-      margin: 20px 0px;
-      // margin: 0px;
+      margin: 0.800em 0;
       font-family: "Merriweather Sans";
-      // font-weight: normal;
-      font-size: 25px;
+      font-weight: normal;
+      font-size:1.563em;
       letter-spacing: 0px;
       line-height: 1.8em;
       text-align: left;
@@ -181,12 +179,11 @@
       text-decoration: none;
     }
     .more-articles {
-      font-size: 4em;
+      font-family: "Merriweather Sans";
       font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.17;
-      letter-spacing: normal;
+      font-size: 3.750em;
+      line-height: 1.167em;
+      letter-spacing: 0px;
       text-align: center;
       color: #333333;
       padding: 1em 0px;
@@ -236,12 +233,9 @@
       }
     }
     .date {
-      font-size: 25px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: normal;
+      font-size: 1.4em;
+      line-height: 2.143em;
+      letter-spacing: 0.28px;
       text-align: center;
       color: #ffffff;
       margin-top: 2em;
@@ -436,6 +430,9 @@
   }
 }
 @media (min-width:2560px){
+  .news-footer{
+    background-position: unset;
+  }
  .newsItemContainer .lenderItem {
   width: 100%;
  } 
@@ -444,8 +441,64 @@
  }
 }
 @media (max-width:1920px){
+  // .main-head .back-btn a{
+  //   text-decoration: underline;
+  // }
   .news-footer .articles .newsItemContainer{
     margin: 25px 25px 25px 0px;
+  }
+  .newsItemContainer .lenderItem .itemTitle {
+    min-height: 3.2em;
+  }
+  .news-footer .articles .newsItemContainer .lenderItem .itemTitle{
+    min-height: 3.2em;
+    height: 3em;
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 1.563em;
+    letter-spacing: 0.5px;
+    line-height: 1.52em;
+    color: #333333;
+  }
+  .news-footer .articles .newsItemContainer .lenderItem .itemDate{
+    font-family: Merriweather Sans;
+    font-size:1.125em;
+    font-weight: bold;
+    line-height: 1.667em;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #3bb859;
+  }
+  .news-footer .articles .newsItemContainer .lenderItem .itemDescrip {
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.125em;
+    letter-spacing: 0.36px;
+    line-height: 1.667em;
+    color: #333333;
+ }
+}
+@media (max-width:1600px){
+  .news-footer .articles .newsItemContainer {
+    margin: 24px;
+  }
+}
+@media (max-width:1520px){
+  .news-footer .articles .newsItemContainer {
+    margin: 23px;
+  }
+}
+@media(min-width:1376px) and (max-width: 1440px){
+  .newspage1 .main-head .back-btn {
+   top: 3em;
+  }
+}
+@media only screen and (max-width:1194px){
+  .news-footer .articles .lenderItem{
+    min-height: auto;
+  }
+  .news-footer .articles .newsItemContainer {
+    margin: 13px;
   }
 }
 @media(max-width: 834px){
@@ -638,6 +691,7 @@
   .newsItemContainer .lenderItem{
     height: auto;
   }
+  
 
 }
 @media(max-width: 375px){
