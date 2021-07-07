@@ -1,7 +1,7 @@
 @import url("../../common.less");
 
 .newspage1 {
-  min-height: 35vh;
+  // min-height: 35vh;
   .fontreg();
   padding-left: 6.25em;
   padding-right: 6.25em;
@@ -15,12 +15,18 @@
   background-size: cover;
 
   .title {
-    .f90();
-    .t-c();
-    font-size: 2em;
-    color: #fff;
-    width: 70%;
-    margin: auto;
+    font-family: "Merriweather Sans";
+    font-size: 3.750em;
+    letter-spacing: 1.2px;
+    line-height: 1.5em;
+    color: #ffffff;
+    font-weight: bold;
+    width: 100%;
+    max-width: 65%;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 2.62em;
+    height: 100%;
   }
 
   .desc {
@@ -63,24 +69,12 @@
     }
   }
 }
-// @media (width: 1024px) {
-//   .newspage1 {
-//     background-image: url("../../images/aboutus/bannerbg1024.png");
-//     background-position: center;
-//     background-size: cover;
-//     .main-head {
-//       z-index: 999999;
-//       position: absolute;
-//       top: 20%;
-//       left: 100px;
-//     }
-//   }
-// }
 
 .newsContent {
   .fontreg();
   font-weight: 300;
 }
+
 @media (max-width: 850px) {
   .newsContent {
     .fontreg();
@@ -90,6 +84,7 @@
       margin: 20px 0px;
       margin: 0px;
       font-size: 1em;
+
       //   font-weight: normal;
       font-stretch: normal;
       font-style: normal;
@@ -109,23 +104,23 @@
 }
 @media (min-width: 834px) {
   .newspage1 {
-    min-height: 368.5px;
+    // min-height: 520px;
     .main-head {
-      padding: 2em 0px;
+      padding: 4.244em 0px 6.125em;
       left: 100px;
-      font-size: 2em;
+      // font-size: 2em;
       width: 100%;
       left: 0px;
       position: relative;
       .back-btn {
         position: absolute;
-        top: 3em;
+        top: 4em;
         left: 0px;
-        font-size: 18px;
+        font-family: "Merriweather Sans";
         font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        letter-spacing: normal;
+        font-size: 1.125em;
+        letter-spacing: 0px;
+        line-height: 6.111em;
         text-align: left;
         color: #ffffff;
         cursor: pointer;
@@ -138,12 +133,11 @@
       }
     }
     .date {
-      font-size: 25px;
+      font-family: "Merriweather Sans";
+      font-size: 1.563em;
+      line-height: 1.2em;
+      letter-spacing: 0px;
       font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: normal;
       text-align: center;
       color: #ffffff;
       margin-top: 2em;
@@ -151,19 +145,16 @@
     }
   }
   .newsContent {
-    padding: 70px 100px;
+    padding:4.375em 6.250em;
     * {
-      margin: 20px 0px;
-      margin: 0px;
-      font-size: 1.25em;
-      //   font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.8;
-      letter-spacing: normal;
+      margin: 0.800em 0;
+      font-family: "Merriweather Sans";
+      font-weight: normal;
+      font-size:1.563em;
+      letter-spacing: 0px;
+      line-height: 1.8em;
       text-align: left;
       color: #333333;
-      //   list-style: none;
     }
     > p {
       font-size: 1.5em;
@@ -174,11 +165,13 @@
   }
   .news-footer {
     // display: flex;
-    padding: 20px 100px 100px 100px;
+    padding: 1.250em 6.250em 4.688em 6.250em;
     background-image: url("../../images/inthenews/news_footer_bg.png");
     // background-image: url("../../images/inthenews/inner_page_banner.jpeg");
     background-size: 100%;
-    min-height: 500px;
+    // min-height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
     // align-items: flex-end;
     > a,
     a:hover {
@@ -186,19 +179,18 @@
       text-decoration: none;
     }
     .more-articles {
-      font-size: 4em;
+      font-family: "Merriweather Sans";
       font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.17;
-      letter-spacing: normal;
+      font-size: 3.750em;
+      line-height: 1.167em;
+      letter-spacing: 0px;
       text-align: center;
       color: #333333;
       padding: 1em 0px;
     }
     .articles {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       > a {
         display: contents;
         text-decoration: none;
@@ -241,12 +233,9 @@
       }
     }
     .date {
-      font-size: 25px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: normal;
+      font-size: 1.4em;
+      line-height: 2.143em;
+      letter-spacing: 0.28px;
       text-align: center;
       color: #ffffff;
       margin-top: 2em;
@@ -275,14 +264,14 @@
       margin-left: -1.5em;
       margin-right: -1.5em;
     }
+    
   }
 }
-@media (max-width: 834px) {
-}
+
 @media (max-width: 480px) {
   .newspage1 {
-    width: 375px;
-    height: 310px;
+    // width: 375px;
+    // height: 310px;
     // background-image: url("../../images/aboutus/bannerbg480.png");
     background-image: url("../../images/inthenews/inner_page_banner.jpeg");
     clip-path: url(#myCurve);
@@ -414,6 +403,369 @@
     background-color: #eeeeee;
   }
 }
+@media(max-width: 1366px){
+  .newspage1 {
+    // min-height: 400px !important;
+    height: 100%;
+    background-position: inherit;
+  }
+  .newspage1 .main-head {
+    padding: 6.244em 0px 6.125em ;
+    left: 100px;
+    width: 100%;
+    left: 0px;
+    position: relative;
+  }
+  // .newspage1 .title {
+  //   min-height: 1.867em;
+  // }
+  .news-footer .articles .newsItemContainer{
+    max-width: 31%;
+  }
+  .newsContent {
+    padding: 5em 8em 5em;
+  }
+  .newsContent ul {
+    padding-left: 0px;
+  }
+}
+@media (min-width:2560px){
+  .news-footer{
+    background-position: unset;
+  }
+ .newsItemContainer .lenderItem {
+  width: 100%;
+ } 
+ .newsItemContainer .lenderItem .itemTitle {
+  min-height: 3em;
+ }
+}
+@media (max-width:1920px){
+  // .main-head .back-btn a{
+  //   text-decoration: underline;
+  // }
+  .news-footer .articles .newsItemContainer{
+    margin: 25px 25px 25px 0px;
+  }
+  .newsItemContainer .lenderItem .itemTitle {
+    min-height: 3.2em;
+  }
+  .news-footer .articles .newsItemContainer .lenderItem .itemTitle{
+    min-height: 3.2em;
+    height: 3em;
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 1.563em;
+    letter-spacing: 0.5px;
+    line-height: 1.52em;
+    color: #333333;
+  }
+  .news-footer .articles .newsItemContainer .lenderItem .itemDate{
+    font-family: Merriweather Sans;
+    font-size:1.125em;
+    font-weight: bold;
+    line-height: 1.667em;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #3bb859;
+  }
+  .news-footer .articles .newsItemContainer .lenderItem .itemDescrip {
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.125em;
+    letter-spacing: 0.36px;
+    line-height: 1.667em;
+    color: #333333;
+ }
+}
+@media (max-width:1600px){
+  .news-footer .articles .newsItemContainer {
+    margin: 24px;
+  }
+}
+@media (max-width:1520px){
+  .news-footer .articles .newsItemContainer {
+    margin: 23px;
+  }
+}
+@media(min-width:1376px) and (max-width: 1440px){
+  .newspage1 .main-head .back-btn {
+   top: 3em;
+  }
+}
+@media only screen and (max-width:1194px){
+  .news-footer .articles .lenderItem{
+    min-height: auto;
+  }
+  .news-footer .articles .newsItemContainer {
+    margin: 13px;
+  }
+}
+@media(max-width: 834px){
+  // .newspage1 {
+  //   // min-height: 310px !important;
+  // }
+  .newspage1 .title {
+    font-size: 2.4em;
+    line-height: 1.500em;
+    letter-spacing: 0px;
+    padding-top: 0px; 
+    padding-top: 0px; 
+    text-align: center;
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    color: #fff;
+  }
+  .newspage1 .date {
+    font-family: "Merriweather Sans";
+    font-size: 1.4em;
+    font-weight: normal;
+    line-height: 2.143em;
+    letter-spacing: 0.28px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 2em;
+    text-transform: uppercase;
+  }
+  .newsContent {
+    padding: 5em 6.5em 5em;
+  }
+  .newspage1 .main-head .back-btn {
+    top: 6.5em;
+  }
+  .newsContent * {
+    margin: 0px 0px 20px 0px;
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.6em;
+    letter-spacing: 0.32px;
+    line-height: 1.625em;
+    text-align: left;
+    color: #333333;
+  }
+  .news-footer {
+    padding: 1.25em 1.25em 4.688em 1.25em;
+    background-image: url("../../images/inthenews/news_footer_bg.png");
+    background-size: 100%;
+    // min-height: 500px;
+    background-repeat: no-repeat;
+    // background-position: right;
+    background-size: cover;
+  }
+  .news-footer .more-articles {
+    font-family: "Merriweather Sans";
+    font-size: 2.4em;
+    font-weight: bold;
+    line-height: 2.917em;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #333333;
+    padding:0px;
+  }
+  .news-footer .articles {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    // flex-direction: column;
+  }
+  .news-footer .articles .newsItemContainer {
+    max-width: 45%;
+    margin: 1.75em;
+  }
 
-@media (max-width: 834px) {
+  .newsItemContainer .lenderItem {
+    border-radius: 1.25em;
+    margin-top: 0px;
+    padding: 1.5em;
+    min-height: auto;
+  }
+
+  .lenderItem .itemTitle {
+    min-height: 3.2em;  
+    font-size: 1.6em;
+    font-weight: bold;
+    font-family: "Merriweather Sans";
+    line-height: 1.5em;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #333333;
+  }
+  .lenderItem .itemDate,.lenderItem .readMore {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Merriweather Sans";
+    line-height: 2.143em;
+    letter-spacing: 0.28px;
+    color: #3bb859;
+    padding-top: 1em;
+    padding-bottom: 0px;
+  }
+  .lenderItem .readMore{
+    padding-top: 0px;
+  }
+  .lenderItem .itemDescrip {
+    font-size: 1.4em;
+    font-weight: normal;
+    font-family: "Merriweather Sans";
+    line-height: 1.625em;
+    letter-spacing: 0.32px;
+    color: #333333;
+    padding-top: 1em;
+  }
+}
+@media(max-width:768px){
+  .news-footer .articles {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+ }
+ .news-footer .articles .newsItemContainer {
+  max-width: 44%;
+  margin: 1.75em;
+ }
+ .news-footer .articles a{
+    display: contents;
+  }
+}
+@media(max-width:767px){
+  .news-footer .articles {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .news-footer .articles .newsItemContainer {
+    max-width: 45%;
+    margin: 0px;
+    margin-bottom: 1em;
+  }
+  .news-footer {
+    // padding: 1.25em 1.25em 4.688em 1.25em;
+    background-image: url("../../images/inthenews/itn_375_mb.svg");
+    background-size: 100%;
+    // min-height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .newsContent{
+    padding: 1.5em 1.25em 1.5em 3em;
+  }
+  .newsContent * {
+    margin: 0px 0px 20px 0px;
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.4em; // 1.6em
+    letter-spacing: 0.32px;
+    line-height: 1.4em; //1.625em
+    text-align: left;
+    color: #333333;
+  }
+  .newspage1 .main-head {
+    padding: 5em 0px 3.3em;
+    left: 100px;
+    width: 100%;
+    left: 0px;
+    position: relative;
+  } 
+  .newspage1 .main-head .back-btn {
+    top: -2.5em;
+  }
+  .newspage1 .title {
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 2.4em;
+    letter-spacing: 0px;
+    line-height: 1.5em;
+    color: #ffffff;
+    padding-top: 0px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0px;
+  }
+  .news-footer {
+    background-image: url("../../images/inthenews/itn_375_mb.svg");
+    background-color: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .newsItemContainer .lenderItem{
+    height: auto;
+  }
+  
+
+}
+@media(max-width: 375px){
+  .newspage1 {
+    // min-height: 310px !important;
+    height: 100%;
+    background-position: inherit;
+  }
+  .newspage1 .main-head .back-btn {
+    position: relative;
+    top: -2em;
+    left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.4em;
+    letter-spacing: 0px;  
+    color: #ffffff;
+    cursor: pointer;
+}
+  .newspage1 .main-head {
+    padding: 6.5em 0 3.3em 0;
+    left: 100px;
+    width: 100%;
+    left: 0px;
+    position: relative;
+  }
+  .newspage1 .title{
+    font-family: "Merriweather Sans";
+    font-weight: bold;
+    font-size: 2.4em;
+    letter-spacing: 0px;
+    line-height: 1.500em;
+    color: #ffffff;
+    padding-top: 0px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0px;
+  }
+
+  .newspage1 .date {
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 1.4em;
+    letter-spacing: 0.28px;
+    line-height:2.143em;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 1.351em;
+  }
+  .newsContent {
+    padding:1.5em 1.25em 1.5em 3em; 
+  }
+  .newsContent *{
+    margin: 0px 0px 0.938em 0px;
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    // font-size: 1.6em;
+    letter-spacing: 0.32px;
+    line-height: 1.625em;
+  }
+  .news-footer {
+    background-image: url("../../images/inthenews/itn_375_mb.svg");
+    background-color: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .newsItemContainer .lenderItem{
+    padding: 2em 1.5em 0em 1.5em;
+  }
+  .newsItemContainer .lenderItem .itemTitle{
+    padding-bottom: 3.167em;
+  }
+
 }
