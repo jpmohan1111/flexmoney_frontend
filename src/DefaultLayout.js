@@ -89,7 +89,7 @@ const DefaultLayout = (props) => {
               <Route exact path="/merchants" component={Merchants} />
               <Route exact path="/in-the-news" component={InTheNews} />
               <Route exact path="/in-the-news/:id">
-                <NewsPage key="idd" />
+                <NewsPage history={props.history} key="idd" />
               </Route>
               <Route exact path="/contactus" component={ContactUs} />
               <Route exact path="/404" component={PageNotFound} />
