@@ -481,7 +481,7 @@
     color: #333333;
   }
   .news-footer .articles .newsItemContainer .lenderItem .itemDate{
-    font-family: Merriweather Sans;
+    font-family: "Merriweather Sans";
     font-size:1.125em;
     font-weight: bold;
     line-height: 1.667em;
@@ -489,6 +489,7 @@
     text-align: left;
     color: #3bb859;
   }
+
   .news-footer .articles .newsItemContainer .lenderItem .itemDescrip {
     font-family: "Merriweather Sans";
     font-weight: normal;
@@ -496,7 +497,16 @@
     letter-spacing: 0.36px;
     line-height: 1.667em;
     color: #333333;
- }
+  }
+ .news-footer .articles .newsItemContainer .lenderItem:hover .itemDescrip{
+  color:#FFFFFF;
+  }
+  .news-footer .articles .newsItemContainer .lenderItem:hover .itemDate{
+    color:#FFFFFF;
+  }
+  .news-footer .articles .newsItemContainer .lenderItem:hover .itemTitle{
+    color:#FFFFFF;
+  }
  .newspage1 .main-head .back-btn{
    top: 2em;
  }
@@ -608,11 +618,11 @@
   .newsItemContainer .lenderItem {
     border-radius: 1.25em;
     margin-top: 0px;
-    padding: 1.5em;
+    padding: 1.5em !important;
     min-height: auto;
   }
 
-  .lenderItem .itemTitle {
+  .news-footer .articles .newsItemContainer .lenderItem .itemTitle {
     min-height: 3.2em;  
     font-size: 1.6em;
     font-weight: bold;
@@ -622,7 +632,7 @@
     text-align: left;
     color: #333333;
   }
-  .lenderItem .itemDate,.lenderItem .readMore {
+  .news-footer .articles .newsItemContainer .lenderItem .itemDate {
     font-size: 1.2em;
     font-weight: bold;
     font-family: "Merriweather Sans";
@@ -634,8 +644,10 @@
   }
   .lenderItem .readMore{
     padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
-  .lenderItem .itemDescrip {
+  .news-footer .articles .newsItemContainer .lenderItem .itemDescrip {
     font-size: 1.4em;
     font-weight: normal;
     font-family: "Merriweather Sans";
