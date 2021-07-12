@@ -24,9 +24,9 @@ import tabbannerimg from "../../images/merchants/tabbannerimg.png";
 
 // import rightimg from "../../images/merchants/rightimg.png";
 // import mbrightimg from "../../images/merchants/mbrightimg.svg";
-import merchantsrightimg1 from "../../images/merchants/merchantsrightimg1.png";
-import merchantsrightimg2 from "../../images/merchants/merchantsrightimg2.png";
-import merchantsrightimg3 from "../../images/merchants/merchantsrightimg3.png";
+import merchantsrightimg1 from "../../images/merchants/merchants1.png";
+import merchantsrightimg2 from "../../images/merchants/merchants2.png";
+import merchantsrightimg3 from "../../images/merchants/merchants3.png";
 
 import graydot from "../../images/merchants/graydot.png";
 import greendot from "../../images/merchants/greendot.png";
