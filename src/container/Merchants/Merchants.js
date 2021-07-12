@@ -111,7 +111,7 @@ const sectionOnebannerDataArr = [
 ];
 const sectionTwoDataArr = [
   {
-    desc: "Get access to 25M+ Pre-Approved users across 6 Banks & NBFC with Single Integration",
+    desc: "Get access to 25M+ pre-approved users across 6 Banks & NBFC with a Single Integration",
     rightImg: merchantsrightimg1,
     // mbImg: mbrightimg,
   },
