@@ -21,7 +21,7 @@ const Header = (props) => {
   const handleScroll = () => {
     try {
       if (width < 1023) {
-        if (window.pageYOffset > 0) {
+        if (window.pageYOffset > 2) {
           setSticky(true);
         } else {
           setSticky(false);

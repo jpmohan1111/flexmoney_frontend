@@ -21,6 +21,8 @@ import Swiper, {
 //----------------------- images imports ------------------------//
 import bannerimg from "../../images/merchants/bannerimg.png";
 import tabbannerimg from "../../images/merchants/tabbannerimg.png";
+import banapproved1 from "../../images/merchants/banapproved1.jpg";
+import mbbanapproved1 from "../../images/merchants/mbbanapproved1.jpg";
 
 // import rightimg from "../../images/merchants/rightimg.png";
 // import mbrightimg from "../../images/merchants/mbrightimg.svg";
@@ -320,7 +322,18 @@ const Lenders = (props) => {
   const { height, width } = useWindowDimensions();
   const [index, setIndex] = useState(0);
   const indexCount = useRef(0);
-
+  var swiperOptions = {
+    loop: true,
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false,
+    },
+    slidesPerView: "auto",
+    speed: 1000,
+    grabCursor: true,
+    mousewheelControl: true,
+    keyboardControl: true,
+  };
   useEffect(() => {
     new WOW.WOW({
       live: false,
@@ -415,16 +428,21 @@ const Lenders = (props) => {
       },
     });
 
-    var element = document.querySelector(".m_lenderssec4 .slider_track");
-    element.animate(
-      {
-        transform: ["translateX(0)", "translateX(calc(-10.813em * 24))"], // move by 500px
-      },
-      {
-        delay: 500,
-        duration: 20000,
-        iterations: Infinity,
-      }
+    // var element = document.querySelector(".m_lenderssec4 .slider_track");
+    // element.animate(
+    //   {
+    //     transform: ["translateX(0)", "translateX(calc(-10.813em * 24))"], // move by 500px
+    //   },
+    //   {
+    //     delay: 500,
+    //     duration: 20000,
+    //     iterations: Infinity,
+    //   }
+    // );
+
+    var swiper_container_free_mode = new Swiper(
+      ".m_lenderssec4 .swiper-container-free-mode",
+      swiperOptions
     );
   }, []);
 
@@ -500,8 +518,15 @@ const Lenders = (props) => {
 
   const merchantsImgList = sectionFourImgArr.map((merchantImg, i) => {
     return (
-      <div className="img_wrapper" key={i}>
-        <img src={merchantImg.img} />
+      // <div className="img_wrapper" key={i}>
+      //   <img src={merchantImg.img} />
+      // </div>
+      <div
+        className="swiper-slide"
+        key={i}
+        // style={{ backgroundImage: `url(${merchantImg.img})` }}
+      >
+        <img src={merchantImg.img} className="freemode_fluid" />
       </div>
     );
   });
@@ -518,8 +543,11 @@ const Lenders = (props) => {
       <section className="m_newsec1 wow fadeIn">
         {width > 1023 ? (
           <div className="newsec1_wrapper">
-            <div className="newsec1_swiper swiper-container">
+            {/* <div className="newsec1_swiper swiper-container">
               <div className="swiper-wrapper">{bannerList}</div>
+            </div> */}
+            <div className="newsec1_swiper">
+              <img src={banapproved1} className="slider_img" />
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -537,13 +565,16 @@ const Lenders = (props) => {
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
-            <div className="swiper-pagination"></div>
+            {/* <div className="swiper-pagination"></div> */}
           </div>
         ) : (
           <div className="mb_newsec1_wrapper wow fadeIn">
-            <div className="mbnewsec1_swiper swiper-container">
+            {/* <div className="mbnewsec1_swiper swiper-container">
               <div className="swiper-wrapper">{mbBannerList}</div>
               <div className="swiper-pagination"></div>
+            </div> */}
+            <div className="mbnewsec1_swiper">
+              <img src={mbbanapproved1} className="mb_slider_img" />
             </div>
             <div className="mb_container">
               {width < 500 ? (
@@ -600,8 +631,11 @@ const Lenders = (props) => {
           <div className="title">Our Lending Partners</div>
         </div>
 
-        <div className="slider">
+        {/* <div className="slider">
           <div className="slider_track">{merchantsImgList}</div>
+        </div> */}
+        <div className="swiper-container swiper-container-free-mode">
+          <div class="swiper-wrapper">{merchantsImgList}</div>
         </div>
       </div>
 
@@ -643,13 +677,13 @@ const Lenders = (props) => {
       </div>
 
       {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
-      <div className="m_lendersec5 wow fadeIn">
+      {/* <img src={leftquote} alt="leftquote" className="leftquote" /> */}
+      {/* <div className="m_lendersec5 wow fadeIn">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />
 
             <div className="quote_content">
-              <img src={leftquote} alt="leftquote" className="leftquote" />
               <div className="title">What our Merchant Partners say</div>
               <div className="desc">
                 Hear from those who have been with us in our journey
@@ -676,7 +710,7 @@ const Lenders = (props) => {
             </div>
           </Col>
         </Row>
-      </div>
+      </div> */}
 
       <div className="m_lenderssec6 wow fadeIn">
         <div className="lenderssec6_wrapper">
