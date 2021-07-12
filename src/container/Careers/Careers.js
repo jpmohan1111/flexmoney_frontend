@@ -449,6 +449,7 @@ const Careers = (props) => {
   };
   useEffect(() => {
     fetchJobDesc(currJobDescPage);
+    window.scroll(0, 0);
   }, []);
 
   const getVal = (selector) => {
@@ -810,9 +811,7 @@ const Careers = (props) => {
         {width > 1023 ? (
           <div className="newsec1_wrapper">
             <div className="newsec1_swiper swiper-container">
-              <div className="swiper-wrapper">
-                {bannerList}
-              </div>
+              <div className="swiper-wrapper">{bannerList}</div>
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -826,9 +825,7 @@ const Careers = (props) => {
         ) : (
           <div className="mb_newsec1_wrapper">
             <div className="mbnewsec1_swiper swiper-container">
-              <div className="swiper-wrapper">
-                {mbBannerList}
-              </div>
+              <div className="swiper-wrapper">{mbBannerList}</div>
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">

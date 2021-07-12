@@ -338,6 +338,9 @@ const Lenders = (props) => {
     new WOW.WOW({
       live: false,
     }).init();
+
+    window.scroll(0, 0);
+
     var newcareersec1_swiper = new Swiper(".newsec1_swiper.swiper-container", {
       slidesPerView: 1,
       spaceBetween: 0,

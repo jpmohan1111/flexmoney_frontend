@@ -120,7 +120,7 @@ const sectionOnebannerDataArr = [
 ];
 const sectionTwoDataArr = [
   {
-    desc: "Start offering EMI & Pay Later solutions across 3800+ merchants across leading categories with your Branding",
+    desc: "Start offering EMI & Pay Later solutions at 3800+ merchants across leading consumer categories, with your branding",
     rightImg: lenderrightimg1,
     // mbImg: mbrightimg,
   },
@@ -294,31 +294,6 @@ const Lenders = (props) => {
   const [index, setIndex] = useState(0);
   const indexCount = useRef(0);
 
-  const handleScroll = () => {
-    if (window.pageYOffset > 500) {
-      // var swiper_container_free_mode = new Swiper(
-      //   ".lenderssec4 .swiper-container-free-mode",
-      //   {
-      //     loop: true,
-      //     autoplay: {
-      //       delay: 1,
-      //       disableOnInteraction: false,
-      //     },
-      //     slidesPerView: "auto",
-      //     speed: 1000,
-      //     grabCursor: true,
-      //     mousewheelControl: true,
-      //     keyboardControl: true,
-      //   }
-      // );
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   var swiperOptions = {
     loop: true,
     autoplay: {
@@ -340,7 +315,7 @@ const Lenders = (props) => {
     new WOW.WOW({
       live: false,
     }).init();
-
+    window.scroll(0, 0);
     var newcareersec1_swiper = new Swiper(".newsec1_swiper.swiper-container", {
       slidesPerView: 1,
       spaceBetween: 0,
