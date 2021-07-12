@@ -484,11 +484,12 @@ const AboutUs = (props) => {
           <span
             className="c-p"
             onClick={
-              () => props.history.push("careers")
-              // window.open(
-              //   "https://www.linkedin.com/company/flexmoney-technologies-pvt-ltd/jobs/",
-              //   "_blank"
-              // )
+              () =>
+                window.open(
+                  "https://www.linkedin.com/company/flexmoney-technologies-pvt-ltd/jobs/",
+                  "_blank"
+                )
+              // props.history.push("careers")
             }
           >
             Click here
