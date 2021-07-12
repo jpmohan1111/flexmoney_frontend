@@ -312,6 +312,11 @@ const Lenders = (props) => {
   };
 
   useEffect(() => {
+    document.title =
+      "Lenders: Flexmoney - Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network";
+    document.getElementsByTagName("META")[3].content =
+      "Instantly offer EMI & Pay Later solutions at 3800+ merchants across leading consumer categories with your Branding";
+
     new WOW.WOW({
       live: false,
     }).init();

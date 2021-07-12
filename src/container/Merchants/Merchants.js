@@ -335,6 +335,11 @@ const Lenders = (props) => {
     keyboardControl: true,
   };
   useEffect(() => {
+    document.title =
+      "Flexmoney: Merchants - Grow your business with Instant EMI from a network of reputed Lenders";
+    document.getElementsByTagName("META")[3].content =
+      "Get access to 25M+ pre-approved users across 6 Banks & NBFC with a Single Integration";
+
     new WOW.WOW({
       live: false,
     }).init();
