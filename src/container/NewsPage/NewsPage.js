@@ -566,14 +566,29 @@ const AboutUs = (props) => {
       monthNames[date.getMonth()]
     } ${date.getDate()}, ${date.getFullYear()}`;
   };
+  const bread = () => {
+    return (
+      <>
+        <span
+          style={{ cursor: "pointer" }}
+          onClick={() => props.history.push("/in-the-news")}
+        >
+          In The News
+        </span>{" "}
+        > {`${newsTitle}`}
+      </>
+    );
+  };
+  console.log(bread);
+  console.log();
 
   return (
     <>
       <section className="newspage1 wow fadeIn">
-        <Breadcrumb history={props.history} t2={`In The News > ${newsTitle}`} />
+        <Breadcrumb history={props.history} t2={bread()} />
         <div className="main-head">
-          <div className="back-btn">
-            <NavLink to={`/in-the-news/`}>&lt; BACK</NavLink>
+          <div className="back-btn">&lt;
+            <NavLink to={`/in-the-news/`}>BACK</NavLink>
           </div>
           <div className="title">{newsTitle}</div>
 
