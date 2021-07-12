@@ -74,6 +74,9 @@ import yezdi from "../../images/aboutus/yezdi.png";
 import rajeev from "../../images/aboutus/rajeev.png";
 import rishad from "../../images/aboutus/rishad.png";
 
+import z5 from "../../images/aboutus/z5.png";
+import pravega from "../../images/aboutus/pravega.png";
+
 import useWindowDimensions from "../../useWindowDimensions";
 import TeamMemberItem from "../../component/TeamMemberItem/TeamMemberItem";
 import AdvisorItem from "../../component/AdvisorItem/AdvisorItem";
@@ -217,8 +220,7 @@ const advisorArr = [
     name: "Ben Davey ",
     designation:
       "Chief Investment Officer EFIC1 (SPAC focused on Fintech and Fin Svcs), (former) CEO Barclays Ventures, Group Head of Strategy, Barclays ",
-    link:
-      "https://www.linkedin.com/in/ben-davey-7186b7161/?originalSubdomain=uk",
+    link: "https://www.linkedin.com/in/ben-davey-7186b7161/?originalSubdomain=uk",
     img: ben,
   },
   {
@@ -235,14 +237,13 @@ const advisorArr = [
     link: "https://www.linkedin.com/in/rajeevdewal/",
     img: rajeev,
   },
-  {
-    name: "Ramesh Narayanaswamy",
-    designation:
-      "Group CTO Aditya Birla Capital, (former) Group CTO & CIOO CIMB Group, Group CIO SingPost, Global Head of Retail Banking Technology Soln Delivery, Standard Chartered Group",
-    link:
-      "https://www.linkedin.com/in/ramesh-narayanaswamy-276aa9/?originalSubdomain=sg",
-    img: ramesh,
-  },
+  // {
+  //   name: "Ramesh Narayanaswamy",
+  //   designation:
+  //     "Group CTO Aditya Birla Capital, (former) Group CTO & CIOO CIMB Group, Group CIO SingPost, Global Head of Retail Banking Technology Soln Delivery, Standard Chartered Group",
+  //   link: "https://www.linkedin.com/in/ramesh-narayanaswamy-276aa9/?originalSubdomain=sg",
+  //   img: ramesh,
+  // },
   {
     name: "Rishad Byramjee",
     designation:
@@ -534,7 +535,7 @@ const AboutUs = (props) => {
           </div>
         </div>
       </section>
-      {/* <section
+      <section
         className="abtsec4 wow fadeInUp"
         data-wow-duration="2s"
         data-wow-delay="0.5s"
@@ -556,9 +557,8 @@ const AboutUs = (props) => {
               </div>
             </div>
             <div className="desc">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat.
+              Pravega Ventures is an early-stage venture capital fund with a
+              sector focus on fintech and enterprise SaaS domains.
             </div>
           </div>
           <div className="line"></div>
@@ -575,13 +575,12 @@ const AboutUs = (props) => {
               </div>
             </div>
             <div className="desc">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat.
+              Z5 Capital is a Silicon Valley based enterprise-focused seed fund
+              founded by seasoned tech investors and entrepreneurs.
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       <section className="abtsec5 wow fadeIn">
         <Row className="m-0">

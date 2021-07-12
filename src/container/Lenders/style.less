@@ -301,7 +301,7 @@
     }
     100% {
       // transform: translateX(-4112.5px);
-      transform: translateX(-8225px);
+      transform: translateX(-8000px);
       // transform: translateX(-16450px);
     }
   }
@@ -309,7 +309,7 @@
     display: flex;
     justify-content: center;
     animation: scroll 30s linear infinite;
-    width: 16450px;
+    width: 16000px;
     // width: 8225px;
   }
   .slider_track img {
@@ -322,7 +322,30 @@
     overflow: hidden;
   }
 
-  .slider::before {
+  // .slider::before {
+  //   content: "";
+  //   position: absolute;
+  //   background-image: url("../../images/lenders/gradientleft.png");
+  //   background-size: cover;
+  //   background-position: center;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 180px;
+  //   height: 271px;
+  //   z-index: 5;
+  // }
+  // .slider::after {
+  //   content: "";
+  //   position: absolute;
+  //   background-image: url("../../images/lenders/gradientright.png");
+  //   background-size: cover;
+  //   background-position: center;
+  //   bottom: 0;
+  //   right: 0;
+  //   width: 225px;
+  //   height: 271px;
+  // }
+  .swiper-container::before {
     content: "";
     position: absolute;
     background-image: url("../../images/lenders/gradientleft.png");
@@ -334,7 +357,7 @@
     height: 271px;
     z-index: 5;
   }
-  .slider::after {
+  .swiper-container::after {
     content: "";
     position: absolute;
     background-image: url("../../images/lenders/gradientright.png");
@@ -344,6 +367,27 @@
     right: 0;
     width: 225px;
     height: 271px;
+    z-index: 3;
+  }
+  // .swiper-container {
+  // height: 7.688em;
+  // margin: 0px;
+  // }
+
+  .swiper-container-free-mode > .swiper-wrapper {
+    transition-timing-function: linear;
+  }
+
+  .swiper-slide {
+    // overflow: hidden;
+    // background-position: center center;
+    // background-size: cover;
+    max-width: 16.813em;
+    margin: 0 1em;
+  }
+  .swiper-slide img {
+    // max-width: 16.813em;
+    width: 100%;
   }
 }
 // --------------------------------section 5--------------------------------//
@@ -469,7 +513,7 @@
 // --------------------------------section 6--------------------------------//
 .lenderssec6 {
   position: relative;
-  // margin-top: 1.5em;
+  margin-top: 7.5em;
   .footer_right_img {
     // position: absolute;
     // width: 28.063em;
@@ -901,10 +945,14 @@
       max-width: 89%;
       margin: 1.063em auto 2.813em;
     }
-    .slider::before {
-      display: none;
-    }
-    .slider::after {
+    // .slider::before {
+    //   display: none;
+    // }
+    // .slider::after {
+    //   display: none;
+    // }
+    .swiper-container::before,
+    .swiper-container::after {
       display: none;
     }
     .slider_track img {
@@ -990,6 +1038,8 @@
   }
   //<------------------------ section 6----------------------------->
   .lenderssec6 {
+    margin-top: 4.5em;
+
     .text_wrapper {
       bottom: initial;
       display: initial;
