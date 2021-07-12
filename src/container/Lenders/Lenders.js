@@ -176,7 +176,6 @@ const sectionThreeCardDataArr = [
   },
 ];
 const sectionFourImgArr = [
- 
   { img: urbanladder },
   { img: via },
   { img: vijaysales },
@@ -202,7 +201,7 @@ const sectionFourImgArr = [
   { img: sangeetha },
   { img: sastiticket },
   { img: tatacliq },
- 
+
   { img: urbanladder },
   { img: via },
   { img: vijaysales },
@@ -228,7 +227,7 @@ const sectionFourImgArr = [
   { img: sangeetha },
   { img: sastiticket },
   { img: tatacliq },
-  
+
   // { img: urbanladder },
   // { img: via },
   // { img: vijaysales },
@@ -254,7 +253,6 @@ const sectionFourImgArr = [
   // { img: sangeetha },
   // { img: sastiticket },
   // { img: tatacliq },
- 
 ];
 const sectionFiveLendersDataArr = [
   {
@@ -311,6 +309,7 @@ const Lenders = (props) => {
         clickable: true,
       },
     });
+
     var mbnewsec1_swiper = new Swiper(".mbnewsec1_swiper.swiper-container", {
       slidesPerView: 1,
       spaceBetween: 0,
@@ -378,30 +377,29 @@ const Lenders = (props) => {
       },
     });
 
-      // setInterval for section 2
-      setInterval(() => {
-        if (indexCount.current <= 2) {
-          indexCount.current++;
-        }
-        if (indexCount.current > 2) {
-          indexCount.current = 0;
-        }
-        setIndex(indexCount.current);
-      }, 2500);
-      // end of setInterval for section 2
-
-      var element = document.querySelector(".lenderssec4 .slider_track");
-      element.animate(
-      {
-        transform: ["translateX(0)", "translateX(calc(-18.813em * 24))"], //7224px to left and then repeat
-      },
-      {
-        delay: 500,
-        duration: 30000,
-        iterations: Infinity,
+    // setInterval for section 2
+    setInterval(() => {
+      if (indexCount.current <= 2) {
+        indexCount.current++;
       }
-    );
+      if (indexCount.current > 2) {
+        indexCount.current = 0;
+      }
+      setIndex(indexCount.current);
+    }, 2500);
+    // end of setInterval for section 2
 
+    //   var element = document.querySelector(".lenderssec4 .slider_track");
+    //   element.animate(
+    //   {
+    //     transform: ["translateX(0)", "translateX(calc(-18.813em * 24))"], //7224px to left and then repeat
+    //   },
+    //   {
+    //     delay: 500,
+    //     duration: 30000,
+    //     iterations: Infinity,
+    //   }
+    // );
   }, []);
 
   const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
@@ -518,9 +516,7 @@ const Lenders = (props) => {
         ) : (
           <div className="mb_newsec1_wrapper">
             <div className="mbnewsec1_swiper swiper-container">
-              <div className="swiper-wrapper">
-                {mbBannerList}
-              </div>
+              <div className="swiper-wrapper">{mbBannerList}</div>
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
@@ -541,8 +537,11 @@ const Lenders = (props) => {
         )}
       </section>
 
-      <div className="lenderssec2 wow fadeInUp" data-wow-duration="1.5s"
-        data-wow-delay="0.5s">
+      <div
+        className="lenderssec2 wow fadeInUp"
+        data-wow-duration="1.5s"
+        data-wow-delay="0.5s"
+      >
         {width > 1023 ? (
           <div className="lendersec2_flex wow fadeInUp">
             <div className="flex_left">
@@ -566,8 +565,11 @@ const Lenders = (props) => {
         )}
       </div>
 
-      <div className="lenderssec3 wow fadeInUp" data-wow-duration="1.5s"
-        data-wow-delay="0.5s">
+      <div
+        className="lenderssec3 wow fadeInUp"
+        data-wow-duration="1.5s"
+        data-wow-delay="0.5s"
+      >
         <div className="heading_wrapper">
           <div className="title">Multi-category Merchant EMI Network</div>
           <div className="desc">
@@ -581,8 +583,11 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="lenderssec4 wow fadeInUp" data-wow-duration="1s"
-        data-wow-delay="0.5s">
+      <div
+        className="lenderssec4 wow fadeInUp"
+        data-wow-duration="1s"
+        data-wow-delay="0.5s"
+      >
         <div className="heading_wrapper">
           <div className="title">3800+ Merchant Partners</div>
           <div className="desc">
