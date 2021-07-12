@@ -613,9 +613,9 @@ const Careers = (props) => {
     }
   };
   useEffect(() => {
-    document.title = "Flexmoney: Careers";
+    document.title = "Flexmoney: Careers - We are hiring";
     document.getElementsByTagName("META")[3].content =
-      "Leading the Buy Now Pay Later Revolution in India. InstaCred, Flexmoney's Credit Platform, enables Lenders to offer instant cardless finance across its merchant network";
+      "Looking for talented and passionate individuals to join our team. Apply now";
 
     window.scroll(0, 0);
 
