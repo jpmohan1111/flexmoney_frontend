@@ -577,7 +577,7 @@ const AboutUs = (props) => {
   }, []);
 
   useEffect(() => {
-    document.title = "Flexmoney: Careers";
+    document.title = "Flexmoney: In the news";
     document.getElementsByTagName("META")[3].content =
       "Leading the Buy Now Pay Later Revolution in India. InstaCred, Flexmoney's Credit Platform, enables Lenders to offer instant cardless finance across its merchant network";
 
@@ -693,30 +693,29 @@ const AboutUs = (props) => {
       </section>
 
       <section onClick={featuredNewsClick} className="main-news-section">
-          <div className="main-news">
-            <div className="details">
-              {width > 480 ? (
-                <div className="title">
-                  {/* Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners */}
-                  {featuredNewsTitle}
-                </div>
-              ) : (
-                <div className="title">
-                  {/* Flexmoney welcomes ICICI Bank to its Merchant Partners */}
-                  {featuredNewsTitle}
-                </div>
-              )}
+        <div className="main-news">
+          <div className="details">
+            {width > 480 ? (
+              <div className="title">
+                {/* Flexmoney welcomes ICICI Bank to its <br /> Merchant Partners */}
+                {featuredNewsTitle}
+              </div>
+            ) : (
+              <div className="title">
+                {/* Flexmoney welcomes ICICI Bank to its Merchant Partners */}
+                {featuredNewsTitle}
+              </div>
+            )}
 
-              <div className="date">{featuredNewsDate}</div>
-              <div className="desc">{featuredNewsSummary}</div>
-              <div className="read-more">Read more</div>
-            </div>
-            <div className="image">
-              <img src={featuredNewsImageUrl} alt="" />
-            </div>
+            <div className="date">{featuredNewsDate}</div>
+            <div className="desc">{featuredNewsSummary}</div>
+            <div className="read-more">Read more</div>
           </div>
-        </section>
-      
+          <div className="image">
+            <img src={featuredNewsImageUrl} alt="" />
+          </div>
+        </div>
+      </section>
 
       <section className="newssec2 wow fadeIn">
         <div className="dropdowns">
