@@ -459,7 +459,8 @@ const AboutUs = (props) => {
   });
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchNewsById(id);
+    const regex = /-/gi;
+    fetchNewsById(id.replace(regex, " "));
   }, [location]);
   useEffect(() => {
     document.title = "Flexmoney: Careers";
@@ -587,7 +588,8 @@ const AboutUs = (props) => {
       <section className="newspage1 wow fadeIn">
         <Breadcrumb history={props.history} t2={bread()} />
         <div className="main-head">
-          <div className="back-btn">&lt;
+          <div className="back-btn">
+            &lt;
             <NavLink to={`/in-the-news/`}>BACK</NavLink>
           </div>
           <div className="title">{newsTitle}</div>

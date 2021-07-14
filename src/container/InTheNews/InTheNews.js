@@ -593,6 +593,7 @@ const AboutUs = (props) => {
   }, []);
 
   const newsList = news.map((item, i) => {
+    const regex = / /gi;
     return item.external_link ? (
       <NewsItem
         title={item.title}
@@ -602,7 +603,7 @@ const AboutUs = (props) => {
         key={i}
       />
     ) : (
-      <NavLink to={`/in-the-news/${item._id}`}>
+      <NavLink to={`/in-the-news/${item.title.replace(regex, "-")}`}>
         <NewsItem
           title={item.title}
           date={item.date}
