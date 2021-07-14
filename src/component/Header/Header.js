@@ -21,7 +21,7 @@ const Header = (props) => {
   const handleScroll = () => {
     try {
       if (width < 1023) {
-        if (window.pageYOffset > 0) {
+        if (window.pageYOffset > 2) {
           setSticky(true);
         } else {
           setSticky(false);
@@ -129,8 +129,6 @@ const Header = (props) => {
                 Contact Us
               </NavLink>
 
-              
-
               {/* <Link className="title c-p">In The News</Link>
               <Link className="title c-p">Lenders</Link>
               <Link className="title c-p">Merchants</Link>
@@ -203,7 +201,7 @@ const Header = (props) => {
               >
                 Merchants
               </NavLink>
-              
+
               <Link
                 onClick={() => setisList(false)}
                 to="/careers"

@@ -449,6 +449,7 @@ const Careers = (props) => {
   };
   useEffect(() => {
     fetchJobDesc(currJobDescPage);
+    window.scroll(0, 0);
   }, []);
 
   const getVal = (selector) => {
@@ -612,9 +613,9 @@ const Careers = (props) => {
     }
   };
   useEffect(() => {
-    document.title = "Flexmoney: Careers";
+    document.title = "Flexmoney: Careers - We are hiring";
     document.getElementsByTagName("META")[3].content =
-      "Leading the Buy Now Pay Later Revolution in India. InstaCred, Flexmoney's Credit Platform, enables Lenders to offer instant cardless finance across its merchant network";
+      "Looking for talented and passionate individuals to join our team. Apply now";
 
     window.scroll(0, 0);
 
@@ -810,9 +811,7 @@ const Careers = (props) => {
         {width > 1023 ? (
           <div className="newsec1_wrapper">
             <div className="newsec1_swiper swiper-container">
-              <div className="swiper-wrapper">
-                {bannerList}
-              </div>
+              <div className="swiper-wrapper">{bannerList}</div>
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -826,9 +825,7 @@ const Careers = (props) => {
         ) : (
           <div className="mb_newsec1_wrapper">
             <div className="mbnewsec1_swiper swiper-container">
-              <div className="swiper-wrapper">
-                {mbBannerList}
-              </div>
+              <div className="swiper-wrapper">{mbBannerList}</div>
               <div className="swiper-pagination"></div>
             </div>
             <div className="mb_container">
@@ -964,55 +961,57 @@ const Careers = (props) => {
                 }
               )} */}
 
-              <ReactPaginate
-                previousLabel={
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8.86"
-                    height="14.6"
-                    viewBox="0 0 8.86 14.6"
-                    className={1 == currJobDescPage ? "disabled" : ""}
-                  >
-                    <path
-                      id="Icon_awesome-chevron-right"
-                      data-name="Icon awesome-chevron-right"
-                      d="M2.168,10.515l6.5,6.5a.8.8,0,0,0,1.135,0l.758-.758a.8.8,0,0,0,0-1.133L5.41,9.948l5.15-5.174a.8.8,0,0,0,0-1.133L9.8,2.883a.8.8,0,0,0-1.135,0l-6.5,6.5A.8.8,0,0,0,2.168,10.515Z"
-                      transform="translate(-1.933 -2.648)"
-                      fill="#4c4c4c"
-                    />
-                  </svg>
-                }
-                nextLabel={
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8.86"
-                    height="14.6"
-                    viewBox="0 0 8.86 14.6"
-                    className={
-                      Math.ceil(totalJobDescCount / 5) == currJobDescPage
-                        ? "disabled"
-                        : ""
-                    }
-                  >
-                    <path
-                      id="Icon_awesome-chevron-right"
-                      data-name="Icon awesome-chevron-right"
-                      d="M10.558,10.515l-6.5,6.5a.8.8,0,0,1-1.135,0l-.758-.758a.8.8,0,0,1,0-1.133L7.316,9.948,2.167,4.774a.8.8,0,0,1,0-1.133l.758-.758a.8.8,0,0,1,1.135,0l6.5,6.5A.8.8,0,0,1,10.558,10.515Z"
-                      transform="translate(-1.933 -2.648)"
-                      fill="#4c4c4c"
-                    />
-                  </svg>
-                }
-                breakLabel={"..."}
-                breakClassName={"break-me"}
-                pageCount={Math.ceil(totalJobDescCount / 5)}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={2}
-                onPageChange={jobDescListPageClick}
-                containerClassName={"pagination"}
-                subContainerClassName={"pages pagination"}
-                activeClassName={"active"}
-              />
+              {totalJobDescCount >= 5 && (
+                <ReactPaginate
+                  previousLabel={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="8.86"
+                      height="14.6"
+                      viewBox="0 0 8.86 14.6"
+                      className={1 == currJobDescPage ? "disabled" : ""}
+                    >
+                      <path
+                        id="Icon_awesome-chevron-right"
+                        data-name="Icon awesome-chevron-right"
+                        d="M2.168,10.515l6.5,6.5a.8.8,0,0,0,1.135,0l.758-.758a.8.8,0,0,0,0-1.133L5.41,9.948l5.15-5.174a.8.8,0,0,0,0-1.133L9.8,2.883a.8.8,0,0,0-1.135,0l-6.5,6.5A.8.8,0,0,0,2.168,10.515Z"
+                        transform="translate(-1.933 -2.648)"
+                        fill="#4c4c4c"
+                      />
+                    </svg>
+                  }
+                  nextLabel={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="8.86"
+                      height="14.6"
+                      viewBox="0 0 8.86 14.6"
+                      className={
+                        Math.ceil(totalJobDescCount / 5) == currJobDescPage
+                          ? "disabled"
+                          : ""
+                      }
+                    >
+                      <path
+                        id="Icon_awesome-chevron-right"
+                        data-name="Icon awesome-chevron-right"
+                        d="M10.558,10.515l-6.5,6.5a.8.8,0,0,1-1.135,0l-.758-.758a.8.8,0,0,1,0-1.133L7.316,9.948,2.167,4.774a.8.8,0,0,1,0-1.133l.758-.758a.8.8,0,0,1,1.135,0l6.5,6.5A.8.8,0,0,1,10.558,10.515Z"
+                        transform="translate(-1.933 -2.648)"
+                        fill="#4c4c4c"
+                      />
+                    </svg>
+                  }
+                  breakLabel={"..."}
+                  breakClassName={"break-me"}
+                  pageCount={Math.ceil(totalJobDescCount / 5)}
+                  marginPagesDisplayed={2}
+                  pageRangeDisplayed={2}
+                  onPageChange={jobDescListPageClick}
+                  containerClassName={"pagination"}
+                  subContainerClassName={"pages pagination"}
+                  activeClassName={"active"}
+                />
+              )}
 
               {/* <svg
                 xmlns="http://www.w3.org/2000/svg"

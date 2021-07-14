@@ -21,6 +21,8 @@ import Swiper, {
 
 import banner1 from "../../images/lenders/banner1.jpg";
 import banner2 from "../../images/lenders/banner2.jpg";
+import bannerapproved1 from "../../images/lenders/bannerapproved1.jpg";
+import mbbannerapproved1 from "../../images/lenders/mbbannerapproved1.jpg";
 import mbbanner1 from "../../images/lenders/mbbanner1.jpg";
 import mbbanner2 from "../../images/lenders/mbbanner2.jpg";
 
@@ -118,7 +120,7 @@ const sectionOnebannerDataArr = [
 ];
 const sectionTwoDataArr = [
   {
-    desc: "Start offering EMI & Pay Later solutions across 3800+ merchants across leading categories with your Branding",
+    desc: "Start offering EMI & Pay Later solutions at 3800+ merchants across leading consumer categories, with your branding",
     rightImg: lenderrightimg1,
     // mbImg: mbrightimg,
   },
@@ -176,7 +178,6 @@ const sectionThreeCardDataArr = [
   },
 ];
 const sectionFourImgArr = [
- 
   { img: urbanladder },
   { img: via },
   { img: vijaysales },
@@ -202,7 +203,7 @@ const sectionFourImgArr = [
   { img: sangeetha },
   { img: sastiticket },
   { img: tatacliq },
- 
+
   { img: urbanladder },
   { img: via },
   { img: vijaysales },
@@ -228,33 +229,32 @@ const sectionFourImgArr = [
   { img: sangeetha },
   { img: sastiticket },
   { img: tatacliq },
-  
-  { img: urbanladder },
-  { img: via },
-  { img: vijaysales },
-  { img: zebrs },
-  { img: zefo },
-  { img: amazon },
-  { img: bharatbooking },
-  { img: bigc },
-  { img: curefit },
-  { img: decathlon },
-  { img: dell },
-  { img: duroflex },
-  { img: emibaba },
-  { img: flipkart },
-  { img: khoslaelectronics },
-  { img: kurlon },
-  { img: lot },
-  { img: myntra },
-  { img: pai },
-  { img: poorvika },
-  { img: qrs },
-  { img: royaloak },
-  { img: sangeetha },
-  { img: sastiticket },
-  { img: tatacliq },
- 
+
+  // { img: urbanladder },
+  // { img: via },
+  // { img: vijaysales },
+  // { img: zebrs },
+  // { img: zefo },
+  // { img: amazon },
+  // { img: bharatbooking },
+  // { img: bigc },
+  // { img: curefit },
+  // { img: decathlon },
+  // { img: dell },
+  // { img: duroflex },
+  // { img: emibaba },
+  // { img: flipkart },
+  // { img: khoslaelectronics },
+  // { img: kurlon },
+  // { img: lot },
+  // { img: myntra },
+  // { img: pai },
+  // { img: poorvika },
+  // { img: qrs },
+  // { img: royaloak },
+  // { img: sangeetha },
+  // { img: sastiticket },
+  // { img: tatacliq },
 ];
 const sectionFiveLendersDataArr = [
   {
@@ -294,23 +294,33 @@ const Lenders = (props) => {
   const [index, setIndex] = useState(0);
   const indexCount = useRef(0);
 
+  var swiperOptions = {
+    loop: true,
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false,
+    },
+    slidesPerView: "auto",
+    speed: 1000,
+    grabCursor: true,
+    mousewheelControl: true,
+    keyboardControl: true,
+    // navigation: {
+    //   nextEl: ".swiper-button-next",
+    //   prevEl: ".swiper-button-prev"
+    // }
+  };
+
   useEffect(() => {
+    document.title =
+      "Lenders: Flexmoney - Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network";
+    document.getElementsByTagName("META")[3].content =
+      "Instantly offer EMI & Pay Later solutions at 3800+ merchants across leading consumer categories with your Branding";
+
     new WOW.WOW({
       live: false,
     }).init();
-
-    // setInterval for section 2
-    setInterval(() => {
-      if (indexCount.current <= 2) {
-        indexCount.current++;
-      }
-      if (indexCount.current > 2) {
-        indexCount.current = 0;
-      }
-      setIndex(indexCount.current);
-    }, 2500);
-    // end of setInterval for section 2
-
+    window.scroll(0, 0);
     var newcareersec1_swiper = new Swiper(".newsec1_swiper.swiper-container", {
       slidesPerView: 1,
       spaceBetween: 0,
@@ -323,6 +333,7 @@ const Lenders = (props) => {
         clickable: true,
       },
     });
+
     var mbnewsec1_swiper = new Swiper(".mbnewsec1_swiper.swiper-container", {
       slidesPerView: 1,
       spaceBetween: 0,
@@ -389,6 +400,35 @@ const Lenders = (props) => {
         prevEl: ".lendersec5 .left_arrow",
       },
     });
+
+    // setInterval for section 2
+    setInterval(() => {
+      if (indexCount.current <= 2) {
+        indexCount.current++;
+      }
+      if (indexCount.current > 2) {
+        indexCount.current = 0;
+      }
+      setIndex(indexCount.current);
+    }, 2500);
+    // end of setInterval for section 2
+
+    //   var element = document.querySelector(".lenderssec4 .slider_track");
+    //   element.animate(
+    //   {
+    //     transform: ["translateX(0)", "translateX(calc(-18.813em * 24))"], //7224px to left and then repeat
+    //   },
+    //   {
+    //     delay: 500,
+    //     duration: 30000,
+    //     iterations: Infinity,
+    //   }
+    // );
+
+    var swiper_container_free_mode = new Swiper(
+      ".lenderssec4 .swiper-container-free-mode",
+      swiperOptions
+    );
   }, []);
 
   const bannerList = sectionOnebannerDataArr.map((bannerData, i) => (
@@ -463,8 +503,15 @@ const Lenders = (props) => {
 
   const merchantsImgList = sectionFourImgArr.map((merchantImg, i) => {
     return (
-      <div className="img_wrapper" key={i}>
-        <img src={merchantImg.img} />
+      // <div className="img_wrapper" key={i}>
+      //   <img src={merchantImg.img} />
+      // </div>
+      <div
+        className="swiper-slide"
+        key={i}
+        // style={{ backgroundImage: `url(${merchantImg.img})` }}
+      >
+        <img src={merchantImg.img} className="freemode_fluid" />
       </div>
     );
   });
@@ -481,8 +528,11 @@ const Lenders = (props) => {
       <section className="l_newsec1 wow fadeIn">
         {width > 1023 ? (
           <div className="newsec1_wrapper">
-            <div className="newsec1_swiper swiper-container">
+            {/* <div className="newsec1_swiper swiper-container">
               <div className="swiper-wrapper">{bannerList}</div>
+            </div> */}
+            <div className="newsec1_swiper">
+              <img src={bannerapproved1} className="slider_img" />
             </div>
             <div className="text_content">
               <div className="text_wrapper">
@@ -500,15 +550,16 @@ const Lenders = (props) => {
               </div>
               <img src={bgdesk} className="greenbgcut" />
             </div>
-            <div className="swiper-pagination"></div>
+            {/* <div className="swiper-pagination"></div> */}
           </div>
         ) : (
           <div className="mb_newsec1_wrapper">
-            <div className="mbnewsec1_swiper swiper-container">
-              <div className="swiper-wrapper">
-                {mbBannerList}
-              </div>
+            {/* <div className="mbnewsec1_swiper swiper-container">
+              <div className="swiper-wrapper">{mbBannerList}</div>
               <div className="swiper-pagination"></div>
+            </div> */}
+            <div className="mbnewsec1_swiper">
+              <img src={mbbannerapproved1} className="mb_slider_img" />
             </div>
             <div className="mb_container">
               {width < 500 ? (
@@ -528,8 +579,11 @@ const Lenders = (props) => {
         )}
       </section>
 
-      <div className="lenderssec2 wow fadeInUp" data-wow-duration="1.5s"
-        data-wow-delay="0.5s">
+      <div
+        className="lenderssec2 wow fadeInUp"
+        data-wow-duration="1.5s"
+        data-wow-delay="0.5s"
+      >
         {width > 1023 ? (
           <div className="lendersec2_flex wow fadeInUp">
             <div className="flex_left">
@@ -553,8 +607,11 @@ const Lenders = (props) => {
         )}
       </div>
 
-      <div className="lenderssec3 wow fadeInUp" data-wow-duration="1.5s"
-        data-wow-delay="0.5s">
+      <div
+        className="lenderssec3 wow fadeInUp"
+        data-wow-duration="1.5s"
+        data-wow-delay="0.5s"
+      >
         <div className="heading_wrapper">
           <div className="title">Multi-category Merchant EMI Network</div>
           <div className="desc">
@@ -568,8 +625,11 @@ const Lenders = (props) => {
         </div>
       </div>
 
-      <div className="lenderssec4 wow fadeInUp" data-wow-duration="1s"
-        data-wow-delay="0.5s">
+      <div
+        className="lenderssec4 wow fadeInUp"
+        data-wow-duration="1s"
+        data-wow-delay="0.5s"
+      >
         <div className="heading_wrapper">
           <div className="title">3800+ Merchant Partners</div>
           <div className="desc">
@@ -577,13 +637,16 @@ const Lenders = (props) => {
           </div>
         </div>
 
-        <div className="slider">
+        {/* <div className="slider">
           <div className="slider_track">{merchantsImgList}</div>
+        </div> */}
+        <div className="swiper-container swiper-container-free-mode">
+          <div class="swiper-wrapper">{merchantsImgList}</div>
         </div>
       </div>
 
       {/* <img src={leftquoteBlur} alt="leftquoteBlur" className="leftquote leftquote_blur" /> */}
-      <div className="lendersec5 wow fadeInUp">
+      {/* <div className="lendersec5 wow fadeInUp">
         <Row className="m-0">
           <Col className="p-0 first_col" lg={4}>
             <img src={leftquote} alt="leftquote" className="leftquote" />
@@ -615,7 +678,7 @@ const Lenders = (props) => {
             </div>
           </Col>
         </Row>
-      </div>
+      </div> */}
 
       <div className="lenderssec6 wow fadeIn">
         <div className="lenderssec6_wrapper">
