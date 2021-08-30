@@ -325,6 +325,7 @@ const Careers = (props) => {
   const [jobSearchVal, setJobSearchVal] = useState("");
 
   const [fileSizealert, setFileSizealert] = useState("");
+  const [fileSizealertDrop, setFileSizealertDrop] = useState("");
   const [showApplySuccesstxt, setShowApplySuccesstxt] = useState(false);
 
   const [nojobsFoundErr, setNojobsFoundErr] = useState(false);
@@ -370,7 +371,8 @@ const Careers = (props) => {
     setDropCvFileName(e.target.files[0].name);
     setNofileErr("");
     if (!["pdf", "doc", "docx"].includes(extFile)) {
-      setFileSizealert("File format not valid");
+      //   setFileSizealert("File format not valid");
+      setFileSizealertDrop("File format not valid");
       return;
     }
 
@@ -595,7 +597,8 @@ const Careers = (props) => {
       })
         .then((response) => {
           console.log(response);
-          if (response.status == 200) {
+          if (response.status == 200 && response.data.status == "success") {
+            console.log();
             setCvapplyFile("");
             document.querySelector("#cv-upload").value = null;
             setDropCvFileName("");
@@ -604,11 +607,14 @@ const Careers = (props) => {
             setTimeout(() => {
               setShowApplySuccesstxt(false);
             }, 2000);
+          } else if (response.data.status == "failure") {
+            setNofileErr("upload only pdf files");
+            setDropCvFileName("");
+            setCvapplyFile("");
           }
         })
         .catch((error) => {
           //   alert("Something Went Wrong");
-          //showToast("danger");
         });
     }
   };
@@ -1251,7 +1257,7 @@ const Careers = (props) => {
                     )}
                   </p>
                 </div>
-                <span className="err">{fileSizealert}</span>
+                <span className="err">{fileSizealertDrop}</span>
                 <span className="err">{nofileErr}</span>
               </Col>
               <Col lg={12}>
