@@ -1122,7 +1122,7 @@ const Careers = (props) => {
                   Upload docx file, pdf upto 1 mb only{" "}
                   <div style={{ color: "#3AB658" }}>{dropCvFileName}</div>
                   <span className="err">{nofileErr}</span>
-                  <span className="err">{fileSizealert}</span>
+                  <span className="err">{fileSizealertDrop}</span>
                 </p>
                 <div className="cv-btn">
                   <Button title="Submit" onClick={handleDropCvSubmit} />
@@ -1257,7 +1257,7 @@ const Careers = (props) => {
                     )}
                   </p>
                 </div>
-                <span className="err">{fileSizealertDrop}</span>
+                <span className="err">{fileSizealert}</span>
                 <span className="err">{nofileErr}</span>
               </Col>
               <Col lg={12}>
