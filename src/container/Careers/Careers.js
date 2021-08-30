@@ -578,6 +578,7 @@ const Careers = (props) => {
     }
   };
   const handleDropCvSubmit = (evt) => {
+    if (fileSizealertDrop != "") return;
     if (
       document.querySelector("#cv-upload").files.length == 0 ||
       fileSizealert
