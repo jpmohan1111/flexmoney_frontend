@@ -380,7 +380,9 @@ const Careers = (props) => {
     if (e.target.files[0].size > 1000000) {
       setFileSizealert("file size more than 1 MB!");
       setFileerr("");
-    } else setFileSizealert("");
+    } else {
+      setFileSizealertDrop("");
+    }
   };
   const handleJobApplyFileChosen = (e) => {
     if (!e.target.files[0]) return;
@@ -415,6 +417,7 @@ const Careers = (props) => {
     if (!applyShow) {
       setDropApplyFileName("");
       setFileSizealert("");
+      setFileSizealertDrop("");
       setnameerr("");
       setemailIderr("");
       setPhoneNumbererr("");
