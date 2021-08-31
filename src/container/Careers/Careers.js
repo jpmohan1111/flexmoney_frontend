@@ -1076,6 +1076,7 @@ const Careers = (props) => {
                 <input
                   type="file"
                   className="cv-file-input"
+                  accept=".pdf,.doc,.docx"
                   id="cv-upload"
                   onChange={dropCvFileChosen}
                   hidden
