@@ -319,6 +319,7 @@ const Careers = (props) => {
   const [subject, setsubject] = useState("");
   const [cvapplyFile, setCvapplyFile] = useState([]);
   const [nofileErr, setNofileErr] = useState("");
+  const [nofileErrDrop, setNofileErrDrop] = useState("");
 
   const [totalJobDescCount, setTotalJobDescCount] = useState(0);
   const [currJobDescPage, setCurrJobDescPage] = useState(1);
@@ -369,14 +370,14 @@ const Careers = (props) => {
     let dot = fileName.lastIndexOf(".") + 1;
     var extFile = fileName.substr(dot, fileName.length).toLowerCase();
     setDropCvFileName(e.target.files[0].name);
-    setNofileErr("");
+    setNofileErrDrop("");
     if (!["pdf", "doc", "docx"].includes(extFile)) {
       //   setFileSizealert("File format not valid");
       setFileSizealertDrop("File format not valid");
       return;
     }
 
-    setNofileErr("");
+    setNofileErrDrop("");
     if (e.target.files[0].size > 1000000) {
       setFileSizealert("file size more than 1 MB!");
       setFileerr("");
@@ -554,7 +555,7 @@ const Careers = (props) => {
         //   withCredentials: true,
       })
         .then((response) => {
-          if (response.status == 200) {
+          if (response.status == 200 && response.data.status == "success") {
             setname("");
             setemailId("");
             setsubject("");
@@ -568,6 +569,10 @@ const Careers = (props) => {
               document.querySelector("#upload").value = null;
               setDropCvFileName("");
             }, 2000);
+          } else if (response.data.status == "failure") {
+            setFileSizealert("upload only pdf/doc files");
+            setDropCvFileName("");
+            setCvapplyFile("");
           }
         })
         .catch((error) => {
@@ -583,7 +588,7 @@ const Careers = (props) => {
       fileSizealert
     ) {
       if (document.querySelector("#cv-upload").files.length == 0)
-        setNofileErr("choose file");
+        setNofileErrDrop("choose file");
     } else {
       let formData = new FormData();
       formData.append(
@@ -606,12 +611,12 @@ const Careers = (props) => {
             document.querySelector("#cv-upload").value = null;
             setDropCvFileName("");
             setShowApplySuccesstxt(true);
-            setNofileErr("");
+            setNofileErrDrop("");
             setTimeout(() => {
               setShowApplySuccesstxt(false);
             }, 2000);
           } else if (response.data.status == "failure") {
-            setNofileErr("upload only pdf files");
+            setNofileErrDrop("upload only pdf/doc files");
             setDropCvFileName("");
             setCvapplyFile("");
           }
@@ -1071,7 +1076,6 @@ const Careers = (props) => {
                 <input
                   type="file"
                   className="cv-file-input"
-                  accept=".pdf,.doc,.docx"
                   id="cv-upload"
                   onChange={dropCvFileChosen}
                   hidden
@@ -1124,7 +1128,7 @@ const Careers = (props) => {
                 <p>
                   Upload docx file, pdf upto 1 mb only{" "}
                   <div style={{ color: "#3AB658" }}>{dropCvFileName}</div>
-                  <span className="err">{nofileErr}</span>
+                  <span className="err">{nofileErrDrop}</span>
                   <span className="err">{fileSizealertDrop}</span>
                 </p>
                 <div className="cv-btn">
