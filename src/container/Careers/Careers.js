@@ -570,7 +570,7 @@ const Careers = (props) => {
               setDropCvFileName("");
             }, 2000);
           } else if (response.data.status == "failure") {
-            setFileSizealert("upload only pdf/doc files");
+            setFileSizealert("Upload only pdf/doc files");
             setDropCvFileName("");
             setCvapplyFile("");
           }
@@ -616,7 +616,7 @@ const Careers = (props) => {
               setShowApplySuccesstxt(false);
             }, 2000);
           } else if (response.data.status == "failure") {
-            setNofileErrDrop("upload only pdf/doc files");
+            setNofileErrDrop("Upload only pdf/doc files");
             setDropCvFileName("");
             setCvapplyFile("");
           }
