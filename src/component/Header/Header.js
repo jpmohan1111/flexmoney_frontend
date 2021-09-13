@@ -33,7 +33,7 @@ const Header = (props) => {
           setSticky(false);
         }
       }
-    } catch (error) {}
+    } catch (error) { }
   };
 
   // return <h1>Header</h1>;
@@ -95,6 +95,13 @@ const Header = (props) => {
 
               <NavLink
                 onClick={() => setisList(false)}
+                to="/In-the-news"
+                className="title c-p"
+              >
+                In the News
+              </NavLink>
+              <NavLink
+                onClick={() => setisList(false)}
                 to="/lenders"
                 className="title c-p"
               >
@@ -121,13 +128,6 @@ const Header = (props) => {
                 className="title c-p"
               >
                 Contact Us
-              </NavLink>
-              <NavLink
-                onClick={() => setisList(false)}
-                to="/In-the-news"
-                className="title c-p"
-              >
-                In the News
               </NavLink>
               {/* <Link className="title c-p">In The News</Link>
               <Link className="title c-p">Lenders</Link>
@@ -179,7 +179,13 @@ const Header = (props) => {
               >
                 About Us
               </Link>
-
+              <NavLink
+                onClick={() => setisList(false)}
+                to="/In-the-news"
+                className="title c-p"
+              >
+                In the News
+              </NavLink>
               <Link
                 onClick={() => setisList(false)}
                 to="/lenders"
@@ -210,13 +216,7 @@ const Header = (props) => {
               >
                 Contact Us
               </Link>
-              <NavLink
-                onClick={() => setisList(false)}
-                to="/In-the-news"
-                className="title c-p"
-              >
-                In the News
-              </NavLink>
+
               {/* <Link onClick={() => setisList(false)} className="title c-p">
                 In The News
               </Link>
