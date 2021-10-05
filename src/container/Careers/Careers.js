@@ -365,10 +365,14 @@ const Careers = (props) => {
   const dropCvFileChosen = (e) => {
     if (!e.target.files[0]) return;
     setFileerr("");
-    console.log(e.target.files[0].name);
+
+    console.log("e.target.files[0]", e.target.files[0]);
+    console.log("e.target.files[0].slice", e.target.files[0].slice(0, 4));
+    // console.log("e.target.files[0].name", e.target.files[0].name);
     let fileName = e.target.files[0].name;
     let dot = fileName.lastIndexOf(".") + 1;
     var extFile = fileName.substr(dot, fileName.length).toLowerCase();
+    console.log("dot:-", dot, "extFile:-", extFile);
     setDropCvFileName(e.target.files[0].name);
     setNofileErrDrop("");
     if (!["pdf", "doc", "docx"].includes(extFile)) {
