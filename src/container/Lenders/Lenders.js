@@ -120,7 +120,7 @@ const sectionOnebannerDataArr = [
 ];
 const sectionTwoDataArr = [
   {
-    desc: "Start offering EMI & Pay Later solutions at 3800+ merchants across leading consumer categories, with your branding",
+    desc: "Start offering EMI & Pay Later solutions at 4800+ merchants across leading consumer categories, with your branding",
     rightImg: lenderrightimg1,
     // mbImg: mbrightimg,
   },
@@ -315,7 +315,7 @@ const Lenders = (props) => {
     document.title =
       "Lenders: Flexmoney - Offer branded Cardless EMI & Pay Later across our omni-channel Merchant Network";
     document.getElementsByTagName("META")[3].content =
-      "Instantly offer EMI & Pay Later solutions at 3800+ merchants across leading consumer categories with your Branding";
+      "Instantly offer EMI & Pay Later solutions at 4800+ merchants across leading consumer categories with your Branding";
 
     new WOW.WOW({
       live: false,
@@ -631,7 +631,7 @@ const Lenders = (props) => {
         data-wow-delay="0.5s"
       >
         <div className="heading_wrapper">
-          <div className="title">3800+ Merchant Partners</div>
+          <div className="title">4800+ Merchant Partners</div>
           <div className="desc">
             Plug-in to our network of merchants with ‘Single Integration’
           </div>

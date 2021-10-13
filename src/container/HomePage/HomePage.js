@@ -507,7 +507,7 @@ const HomePage = (props) => {
             <Row className="m-0">
               <Col className="p-0 d-f" lg={3}>
                 <div className="d-f f-c numbercontainer">
-                  <div className="numberText">3800+</div>
+                  <div className="numberText">4800+</div>
                   <div className="numberdesc">Top Merchants</div>
                 </div>
               </Col>
@@ -538,7 +538,7 @@ const HomePage = (props) => {
           <Row className="m-0">
             <Col className="p-0" lg={2}>
               <div className="d-f f-c numbercontainer">
-                <div className="numberText">3800+</div>
+                <div className="numberText">4800+</div>
                 <div className="numberdesc">Top Merchants</div>
               </div>
               <div className="slider">
